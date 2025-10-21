@@ -1,3 +1,2 @@
 # Burndown Chart
-This folder contains the Sprint burndown chart.
-#
+![Burndown Chart](BurndownChart.png)
