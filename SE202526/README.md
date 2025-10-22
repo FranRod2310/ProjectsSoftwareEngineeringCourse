@@ -4,4 +4,5 @@
 
 ## Authors
 - 67819 - Dinis Raleiras - [@DinisRaleiras](https://github.com/DinisRaleiras)
+- 68301 - Luís Muacho - [@lmuacho2005](https://github.com/lmuacho2005)
 
