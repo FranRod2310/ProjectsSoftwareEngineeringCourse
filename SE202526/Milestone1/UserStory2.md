@@ -7,8 +7,8 @@
 
 ## Reviewer(s)
 
-- name surname (number)
-- name surname (number)
+- Leandro Rodrigues 68211
+- Luís Muacho 68301
 
 ### User story
 
@@ -30,3 +30,4 @@
 #### Change Log
 
 - (2025-10-23) New Towers features to automate User Story.
+- (2025-10-23) Reviewers assigned to the User Story.

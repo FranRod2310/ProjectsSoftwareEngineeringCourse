@@ -3,12 +3,12 @@
 ## Author(s)
 
 - Leandro Rodrigues 68211
-- name surname (number)
+- Luís Muacho 68301
 
 ## Reviewer(s)
 
-- name surname (number)
-- name surname (number)
+- Dinis Raleiras 67819
+- Filipe Nobre 67850
 
 ### User story
 
@@ -31,3 +31,4 @@ The sandbox mode is accessible from the main menu, as a new option alongside exi
 #### Change Log
 
 - (2025-10-23): Initial creation of the “Sandbox Mode” User Story.
+- (2025-10-23): Reviewers assigned to the User Story.
