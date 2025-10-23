@@ -2,8 +2,8 @@
 
 ## Author(s)
 
-- name surname (number)
-- name surname (number)
+- Filipe Nobre 67850
+- Dinis Raleiras 67819
 
 ## Reviewer(s)
 
@@ -12,15 +12,21 @@
 
 ### User story
 
-*( please write up the User story here.)*
+*As an experienced player I think we should have a greater diversity of towers that can help us automate the way we defend orders*
 
 #### Notes
 
-*(Please add any notes about this user story here.)*
+*Increase defensive automation and strategic variety, not just raw power*
+
+#### Towers ideas:
+
+- Enemy Priority Tower (Towers can prioritize targets (fliers, bosses, fast units) automatically)
+- Support Tower (A tower that gives a damage boost to the nearby towers)
+
 
 ### Review
 *(Please add your review here)*
 
 #### Change Log
 
-*(date: change description)*
+- (2025-10-23) New Towers features to automate User Story.

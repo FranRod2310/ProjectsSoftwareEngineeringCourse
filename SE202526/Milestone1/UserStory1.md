@@ -7,7 +7,7 @@
 
 ## Reviewer(s)
 
-- name surname (numrrber)
+- name surname (number)
 - name surname (number)
 
 ### User story
