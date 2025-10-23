@@ -6,4 +6,4 @@
 - 67819 - Dinis Raleiras - [@DinisRaleiras](https://github.com/DinisRaleiras)
 - 68210 - Miguel Rosalino - [@MiguelRosalino](https://github.com/MiguelRosalino)
 - 68301 - Luís Muacho - [@lmuacho2005](https://github.com/lmuacho2005)
-- 67753 - Francisco Rodrigues - [@FranRod23]([https://github.com/FranRod23)
+- 67753 - Francisco Rodrigues - [@FranRod23](https://github.com/FranRod23)
