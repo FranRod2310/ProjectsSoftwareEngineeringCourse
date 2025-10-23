@@ -29,7 +29,7 @@ During the meeting, the team decided the following:
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+![Scrum Board - Sprint 2](ScrumBoardMid.png)
 
 ### Scrum Board at the end of the sprint
 
