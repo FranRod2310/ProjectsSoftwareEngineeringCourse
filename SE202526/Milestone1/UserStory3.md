@@ -2,8 +2,8 @@
 
 ## Author(s)
 
-- name surname (number)
-- name surname (number)
+- Francisco Rodrigues (67753)
+- Miguel Rosalino (68210)
 
 ## Reviewer(s)
 
@@ -12,11 +12,12 @@
 
 ### User story
 
-*( please write up the User story here.)*
+As a player brand new to Mindustry, I want a more intuitive game tutorial so that I don't get lost and demotivated.
 
 #### Notes
 
-*(Please add any notes about this user story here.)*
+For example, it's not always clear what material is required just by an icon. 
+Adding the material name would simplify things and leave new players less frustrated.
 
 ### Review
 *(Please add your review here)*
