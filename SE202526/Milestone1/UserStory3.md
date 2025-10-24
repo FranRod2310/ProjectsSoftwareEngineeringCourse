@@ -25,4 +25,4 @@ Adding the material name would simplify things and leave new players less frustr
 
 #### Change Log
 
-*(date: change description)*
+(2025-10-24): Initial creation of the “Improved Tutorial” User Story.
