@@ -25,6 +25,6 @@ It’s a clear and focused user story that effectively addresses a real onboardi
 
 #### Change Log
 
-(2025-10-24): Initial creation of the “Improved Tutorial” User Story.
-(2025-10-24): Reviewers assigned to the User Story.
-(2025-10-24): Review added.
+- (2025-10-24): Initial creation of the “Improved Tutorial” User Story.
+- (2025-10-24): Reviewers assigned to the User Story.
+- (2025-10-24): Review added.
