@@ -7,8 +7,8 @@
 
 ## Reviewer(s)
 
-- name surname (number)
-- name surname (number)
+- Leandro Rodrigues (68211)
+- Luís Muacho (68301)
 
 ### User story
 
@@ -20,8 +20,8 @@ For example, it's not always clear what material is required just by an icon.
 Adding the material name would simplify things and leave new players less frustrated.
 
 ### Review
-*(Please add your review here)*
 
+It’s a clear and focused user story that effectively addresses a real onboarding issue for new players, helping them connect with the gameplay and, later on, with the story.
 
 #### Change Log
 
