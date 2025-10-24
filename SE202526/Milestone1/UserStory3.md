@@ -12,7 +12,7 @@
 
 ### User story
 
-As a player brand new to Mindustry, I want a more intuitive game tutorial so that I don't get lost and demotivated.
+As a brand new player to Mindustry, I want a more intuitive game tutorial so that I don't get lost and demotivated.
 
 #### Notes
 
