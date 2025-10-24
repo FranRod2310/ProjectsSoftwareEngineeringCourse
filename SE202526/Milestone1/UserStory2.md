@@ -7,8 +7,8 @@
 
 ## Reviewer(s)
 
-- Leandro Rodrigues 68211
-- Luís Muacho 68301
+- Francisco Rodrigues 67753
+- Miguel Rosalino 68210
 
 ### User story
 
@@ -25,9 +25,10 @@
 
 
 ### Review
-*(Please add your review here)*
+We find this user story very clear and focused on improving gameplay depth. The new tower concepts are intersting and bring new gameplay possiblities for more experienced players, keeping them hooked.
 
 #### Change Log
 
 - (2025-10-23) New Towers features to automate User Story.
 - (2025-10-23) Reviewers assigned to the User Story.
+- (2025-10-24) Added review.
