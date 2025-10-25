@@ -33,13 +33,12 @@ During the meeting, the team decided the following:
 
 ### Scrum Board at the end of the sprint
 
-Please add the scrumboard picture here.
+![Scrum Board - Sprint 2](ScrumBoardEnd.png)
 
 ### Burndown Chart for the sprint
 
-Please add the burndown chart here.
+[Burndown Chart Sprint 2](./Burndown_Chart_Sprint_2.xlsx)
 
 ### Gantt Chart
-
-Please add the Gantt chart here.
+[Gantt Chart Sprint 2](./Gantt_Chart_Sprint_2.xlsx)
 
