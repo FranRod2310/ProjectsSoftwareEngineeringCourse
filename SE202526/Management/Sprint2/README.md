@@ -16,7 +16,10 @@ During the meeting, the team decided the following:
 - The **remaining members** will continue exploring the Mindustry game and developing potential **user stories** for the upcoming sprint.
 - Once these user stories are completed, the team will meet again to **decide who reviews what** and ensure quality before implementation.
 ### Sprint Review Meeting: 
-*(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
+*This week was quite busy for everyone, with several tests and academic deadlines, so we had to manage our time carefully. Even though the overall time spent on the sprint was well balanced, most of the work ended up happening later in the week rather as an even spread throughout the days.
+Throughout the sprint, we focused on exploring the Mindustry game, understanding its structure, and preparing user stories for future development. While there weren’t many visible features yet, the groundwork for the next sprint was successfully set.
+Looking at the burndown chart, we could see that progress was slower at the start and picked up significantly towards the end. The team managed to stay on track overall, but we agreed that it would be better to distribute the workload more evenly in future sprints to avoid last-minute rushes.
+Overall, the sprint went well considering the busy schedule — we learned more about the project and stayed coordinated.)*
 
 ### Sprint Retrospective Meeting: 
 *(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
