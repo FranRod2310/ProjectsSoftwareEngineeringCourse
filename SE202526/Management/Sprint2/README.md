@@ -22,7 +22,15 @@ Looking at the burndown chart, we could see that progress was slower at the star
 Overall, the sprint went well considering the busy schedule — we learned more about the project and stayed coordinated.)*
 
 ### Sprint Retrospective Meeting: 
-*(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
+*What went well:
+- We stayed coordinated and communicated often despite the busy week.
+- Everyone contributed and helped push things forward near the end.
+- We learned a lot about the Mindustry project and defined a clearer path for next sprint. <br>
+<br>
+
+What could be improved:
+- Try to balance the workload better across the week instead of saving most of it for the last days.
+- Plan around academic weeks to avoid last-minute stress.
 
 ## Relevant resources
 
