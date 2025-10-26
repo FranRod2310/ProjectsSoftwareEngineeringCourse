@@ -49,7 +49,9 @@ What could be improved:
 ### Burndown Chart for the sprint
 
 [Burndown Chart Sprint 2](./Burndown_Chart_Sprint_2.xlsx)
+![Burndown Chart - Sprint 2](BurnDownChart_Sprint2.png)
 
 ### Gantt Chart
 [Gantt Chart Sprint 2](./Gantt_Chart_Sprint_2.xlsx)
+![Gantt Chart - Sprint 2](Gantt_chart_Sprint2.png)
 
