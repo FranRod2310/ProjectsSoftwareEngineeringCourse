@@ -6,11 +6,16 @@
 
 ## Scrum master
 
-Student name and number
+Luís Muacho 68301
 
 ## Management info
 ### Sprint Planning Meeting: 
-*(This meeting is held at the beginning of the sprint to define the primary purpose and goal of the sprint. The Scrum team, comprising the product manager, development team, and Scrum Master, selects and commits to a set of product backlog items (PBIs) referred to as the sprint backlog. You can use this section to log what happened during this meeting. A few bullet points should be enough.)*
+In our meeting this week, we defined the following work for this sprint.
+Unfortunately this sprint overlaps with academics tests period. To mitigate this risk, we agreed that if any of us have a delay due to tests must be communicated immediately so the team can adapt and redistribute tasks if necessary. For the same reason we decided to do just the tasks related with code smells.
+
+Tasks:
+- each member will identify and document 3 code smells;
+- each member will review 3 code smells from 3 different colleagues;
 
 ### Sprint Review Meeting: 
 *(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
