@@ -1,6 +1,6 @@
 # Data Class
 
-`...\core\src\mindustry\core\net\Host`
+`...\core\src\mindustry\net\Host`
 
 ## Code Snippet
 ```java
