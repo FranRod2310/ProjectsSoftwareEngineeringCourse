@@ -1,6 +1,6 @@
 # Long Method
 
-`...\core\src\mindustry\net\Host`
+`...\core\src\mindustry\service\GameService`
 
 ## Code Snippet
 Get ready, let's take a look at a method that has 439 lines of code.
@@ -835,4 +835,5 @@ private void registerEvents(){
 ```
 
 ## From 439 to 38 lines!
+
 
