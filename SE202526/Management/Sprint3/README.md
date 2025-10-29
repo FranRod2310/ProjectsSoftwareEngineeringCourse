@@ -27,7 +27,7 @@ Tasks:
 
 ### Scrum Board at the beginning of the sprint
 
-Please add the scrumboard picture here.
+![ScrumBoard Initial](Scrum_Board_Sprint_3_init.png)
 
 ### Scrum Board in the middle of the sprint
 
