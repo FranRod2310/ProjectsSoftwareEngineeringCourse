@@ -31,7 +31,7 @@ Tasks:
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+![ScrumBoard Middle](Scrum_Board_Sprint_3_mid.png)
 
 ### Scrum Board at the end of the sprint
 
