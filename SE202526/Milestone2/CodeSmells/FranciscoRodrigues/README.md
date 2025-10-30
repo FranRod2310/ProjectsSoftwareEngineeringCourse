@@ -138,21 +138,16 @@ The `class LegDestroyData` is clearly a case of a **Data Class** code smell.
 Doesn't have any logic, only data.
 
 ### Suggested Refactoring
-To fix this, we can try to add new logic functions to the class so it isn't a "dumb" class anymore.
+To fix this, after trying to add new logic functions to the class, I concluded that the best option was to remove the Data Class, and store it as a record.
 
 ### Extract Methods to add
 ```java
-public Vec2 midpoint() {
-  return new Vec2((a.x + b.x) / 2f, (a.y + b.y) / 2f);
-}
-
-public void draw() {
-  Vec2 mid = midpoint();
-  float angle = a.angleTo(b);
-  float length = a.dst(b);
-
-  Draw.rect(region, mid.x, mid.y, length, region.height, angle);
-}
+// record for LegDestroyData 
+public record LegDestroyData(
+ Vec2 a,
+ Vec2 b,
+ TextureRegion region
+) { }
 ```
 
 ## Update `LegDestroyData`
@@ -163,29 +158,9 @@ package mindustry.entities;
 import arc.graphics.g2d.*;
 import arc.math.geom.*;
 
-public class LegDestroyData{
-    public Vec2 a, b;
-    public TextureRegion region;
-
-    public LegDestroyData(Vec2 a, Vec2 b, TextureRegion region){
-        this.a = a;
-        this.b = b;
-        this.region = region;
-    }
-    
-    public Vec2 midpoint() {
-        return new Vec2((a.x + b.x) / 2f, (a.y + b.y) / 2f);
-    }
-
-    public void draw() {
-        Vec2 mid = midpoint();
-        float angle = a.angleTo(b);
-        float length = a.dst(b);
-
-        Draw.rect(region, mid.x, mid.y, length, region.height, angle);
-    }
-}
+public record LegDestroyData(Vec2 a, Vec2 b, TextureRegion region) { }
 ```
+
 
 
 
