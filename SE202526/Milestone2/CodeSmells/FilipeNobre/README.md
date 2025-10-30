@@ -169,8 +169,8 @@ public void write(Writes write){
 ```
 ### Rationale
 The problem with this design is that each subclass duplicates nearly identical logic. While the type and 
-minor details differ, the pattern—count active elements, write the count, loop over elements, serialize index
-and value—is repeated in multiple places.
+minor details differ, the pattern — count active elements, write the count, loop over elements, serialize index
+and value — is repeated in multiple places.
 
 #### This creates several issues:
 - **Maintenance difficulty**: Any change to the serialization logic (for example, changing how zeros are handled or how indices are encoded) requires editing each subclass individually. This increases the risk of introducing errors and inconsistencies.
