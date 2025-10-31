@@ -9,9 +9,11 @@ The code smell is correct and clearly to see.
 The suggested refactoring is a good option, and the methods added are useful.
 
 ## Code Smell 2
-**Reviewer**:
+**Reviewer**: [Dinis Raleiras] nº[67819]
 
 **Comments/Points to be corrected/Suggestions:**
+- Code Smell is well identified.
+- Rationale and Refactoring are well structured and perceptible.
 
 ## Code Smell 3
 **Reviewer**:
