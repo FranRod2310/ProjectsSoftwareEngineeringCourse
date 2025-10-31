@@ -1,8 +1,9 @@
-# Data Class
+# Code Smell 1
+## Data Class
 
 `...\core\src\mindustry\net\Host`
 
-## Code Snippet
+### Code Snippet
 ```java
 package mindustry.net;
 
@@ -93,3 +94,9 @@ To adress que *Data Class* code smell we need to introduce behavior to the `Host
     (...)
 ```
 This way we have more functionalities related to the data encapsulated within the `Host` class itself, improving cohesion and maintainability.
+
+
+
+
+
+

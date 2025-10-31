@@ -1,8 +1,9 @@
-# Long Method
+# Code Smell 2
+## Long Method
 
 `...\core\src\mindustry\game\FogControl`
 
-## Code Snippet
+### Code Snippet
 ```java
 public FogControl(){
         Events.on(ResetEvent.class, e -> {
@@ -142,7 +143,3 @@ public class Host {
     }
 }
 ```
-
-
-
-
