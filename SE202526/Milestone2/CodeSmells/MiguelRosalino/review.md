@@ -25,3 +25,6 @@ The suggested refactoring is a good option, and the methods added are useful.
 ## Date [31/10/25]
  - Reviewed code smell 1
 
+## Date [01/11/25]
+ - Reviewed code smell 2
+
