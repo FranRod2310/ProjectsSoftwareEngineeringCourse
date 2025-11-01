@@ -19,6 +19,7 @@ The Code Smell found is a very good catch, and it needs clearly an upgrade. The 
 **Reviewer**:[Dinis Raleiras] nº[67819]
 
 **Comments/Points to be corrected/Suggestions:**
+
 Code smell well identified and rationale is objective
 
 
@@ -31,4 +32,5 @@ Code smell well identified and rationale is objective
 
 ## Date [01/12/25]
  - Reviewed code smell 3
+
 
