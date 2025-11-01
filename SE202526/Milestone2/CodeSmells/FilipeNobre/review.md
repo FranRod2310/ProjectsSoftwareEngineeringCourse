@@ -16,9 +16,10 @@ Suggested refactoring is simple and effective.
 The Code Smell found is a very good catch, and it needs clearly an upgrade. The suggested refactoring is the best option, making an abstract class, each class uses this method instead of making it's own, which will reduce the difficulty to maintain the code, if something needs to be changed, it is only necessary to do it in 1 place.
 
 ## Code Smell 3
-**Reviewer**:
+**Reviewer**:[Dinis Raleiras] nº[67819]
 
 **Comments/Points to be corrected/Suggestions:**
+Code smell well identified and rationale is objective
 
 
 # Log
@@ -27,4 +28,7 @@ The Code Smell found is a very good catch, and it needs clearly an upgrade. The 
 
 ## Date [31/10/25]
  - Reviewed code smell 2
+
+## Date [01/12/25]
+ - Reviewed code smell 3
 
