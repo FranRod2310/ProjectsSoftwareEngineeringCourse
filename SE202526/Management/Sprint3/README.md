@@ -27,11 +27,10 @@ Tasks:
 
 ### Scrum Board at the beginning of the sprint
 
-![ScrumBoard Initial](Scrum_Board_Sprint_3_init.png)
+![Scrum Board Initial](Scrum_Board_Sprint_3_init.png)
 
 ### Scrum Board in the middle of the sprint
-
-![ScrumBoard Middle](Scrum_Board_Sprint_3_mid.png)
+![Scrum Board Mid](Scrum_Board_Sprint_3_mid.png)
 
 ### Scrum Board at the end of the sprint
 
