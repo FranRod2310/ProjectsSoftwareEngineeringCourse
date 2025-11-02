@@ -201,8 +201,6 @@ public void runTurn(){
     save();
 }
 
-// ---------- Métodos auxiliares ---------- //
-
 private boolean shouldSimulatePlanet(Planet planet, Planet current){
     if(current != null && current.allowWaveSimulation != planet.allowWaveSimulation) return false;
     if(!planet.allowWaveSimulation && planet.sectors.contains(s -> s.hasBase() && !s.isBeingPlayed() && s.isAttacked()))
