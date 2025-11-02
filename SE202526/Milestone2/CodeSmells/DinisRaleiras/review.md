@@ -17,9 +17,14 @@ The code smell is there and it is well defined. The suggested refactoring (addin
 
 
 ## Code Smell 3
-**Reviewer**:
+**Reviewer** [Filipe Nobre] nº [67850]:
 
 **Comments/Points to be corrected/Suggestions:**
+- **Accurate Identification**: The Feature Envy smell is correctly spotted — the method heavily depends on data and behavior from the `Tile` class.
+- **Clear Explanation**: The rationale effectively explains how `FogControl` violates encapsulation by directly accessing multiple `Tile` internals.
+- **Refactoring Proposal**: The suggested method `hasFogAffectingBuild()` neatly encapsulates related checks inside `Tile`, restoring proper object responsibility.
+- **Design Improvement**: The refactor enhances **cohesion** and **encapsulation**, reducing cross-class coupling and improving code readability.
+- **Overall**: Strong and precise analysis with a practical, minimal-impact refactoring that aligns well with clean code principles.
 
 
 # Log
@@ -28,3 +33,6 @@ The code smell is there and it is well defined. The suggested refactoring (addin
 
 ## Date [31/10/25]
  - Reviewed code smell 2
+
+## Date [02/11/25]
+ - Reviewed code smell 3
