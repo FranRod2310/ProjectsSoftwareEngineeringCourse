@@ -17,7 +17,7 @@ Suggested refactoring using a record is a good idea and well executed.
 **Reviewer**: [Leandro Rodrigues] nº[68211]
 
 **Comments/Points to be corrected/Suggestions:**
-The code smell was correctly identified, but the refactoring suggestion could have been more in-depth.
+The code smell is correctly identified, but the refactoring suggestion could have been more in-depth.
 
 
 # Log
