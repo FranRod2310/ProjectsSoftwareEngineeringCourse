@@ -2,15 +2,24 @@
 
 ## Dates
 
-2025-11-03 - 2025-10-09
+2025-11-03 - 2025-11-09
 
 ## Scrum master
 
-Student name and number
+Miguel Rosalino [68210]
 
 ## Management info
 ### Sprint Planning Meeting: 
-*(This meeting is held at the beginning of the sprint to define the primary purpose and goal of the sprint. The Scrum team, comprising the product manager, development team, and Scrum Master, selects and commits to a set of product backlog items (PBIs) referred to as the sprint backlog. You can use this section to log what happened during this meeting. A few bullet points should be enough.)*
+_Today, November 3rd, we held a team meeting to start our next sprint. The last two weeks have been challenging, balancing work and tests. Now, evaluations are over and we can catch up to speed._
+
+_The team agreed on the following goals for this week:_
+
+_- Each team member will **identify 3 different Design Patterns** in the base code. Each member will then review 3 other patterns documented by other members (prioritizing diversity in reviews)._
+
+_- Each team member will **write a Codebase Metrics Assessment report**. We distributed the available metrics, one per member without repetition. Afterwards, each one will review one other report._
+
+_- Each team member will **build at least one Use Case Diagram**, and review at least one other._
+
 
 ### Sprint Review Meeting: 
 *(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
