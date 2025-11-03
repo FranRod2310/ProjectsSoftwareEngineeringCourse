@@ -10,15 +10,15 @@ Miguel Rosalino [68210]
 
 ## Management info
 ### Sprint Planning Meeting: 
-_Today, November 3rd, we held a team meeting to start our next sprint. The last two weeks have been challenging, balancing work and tests. Now, evaluations are over and we can catch up to speed._
+Today, November 3rd, we held a team meeting to start our next sprint. The last two weeks have been challenging, balancing work and tests. Now, evaluations are over and we can catch up to speed.
 
-_The team agreed on the following goals for this week:_
+The team agreed on the following goals for this week:
 
-_- Each team member will **identify 3 different Design Patterns** in the base code. Each member will then review 3 other patterns documented by other members (prioritizing diversity in reviews)._
+- Each team member will **identify 3 different Design Patterns** in the base code. Each member will then review 3 other patterns documented by other members (prioritizing diversity in reviews).
 
-_- Each team member will **write a Codebase Metrics Assessment report**. We distributed the available metrics, one per member without repetition. Afterwards, each one will review one other report._
+- Each team member will **write a Codebase Metrics Assessment report**. We distributed the available metrics, one per member without repetition. Afterwards, each one will review one other report.
 
-_- Each team member will **build at least one Use Case Diagram**, and review at least one other._
+- Each team member will **build at least one Use Case Diagram**, and review at least one other.
 
 
 ### Sprint Review Meeting: 
