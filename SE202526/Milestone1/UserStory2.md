@@ -12,7 +12,7 @@
 
 ### User story
 
-*As an experienced player I think we should have a greater diversity of towers that can help us automate the way we defend orders*
+*As an experienced player I want to have a greater diversity of towers so that it can help me automate the way I defend orders*
 
 #### Notes
 
