@@ -27,7 +27,7 @@ public class UnitType extends UnlockableContent {
         return unit;
     }
 ```
-UnitType defines the factory method create(Team), which standardizes how Unit objects are created.
+`UnitType` defines the factory method `create(Team)`, which standardizes how Unit objects are created.
 However, it delegates the exact class of Unit to the constructor supplier, allowing flexible customization by subclasses.
 
 ## Concrete Creator A
@@ -47,7 +47,7 @@ public class MissileUnitType extends UnitType{
     }
 }
 ```
-MissileUnitType redefines the constructor to produce TimedKillUnit objects, making it a Concrete Creator in the Factory Method pattern.
+`MissileUnitType` redefines the constructor to produce `TimedKillUnit` objects, making it a Concrete Creator in the Factory Method pattern.
 
 ## Concrete Creator B
 `core/src/mindustry/type/unit/ErekirUnitType`
@@ -63,14 +63,14 @@ public class ErekirUnitType extends UnitType {
     }
 }
 ```
-ErekirUnitType doesn’t replace the constructor but customizes the produced unit’s behavior and attributes, representing another Concrete Creator variant.
+`ErekirUnitType` doesn’t replace the constructor but customizes the produced unit’s behavior and attributes, representing another Concrete Creator variant.
 
 ## Rationale
 
-The UnitType class defines a factory method (create(Team)) that delegates object creation to subclasses, allowing each to instantiate specific Unit variants like UnitEntity or TimedKillUnit.
+The `UnitType` class defines a factory method (`create(Team)`) that delegates object creation to subclasses, allowing each to instantiate specific Unit variants like `UnitEntity` or `TimedKillUnit`.
 This encapsulates instantiation logic and simplifies extending the system with new unit types without altering core creation code.
 
-UnitEntity and TimedKillUnit don’t appear as normal classes because they are automatically generated when the game is built.
+`Unit`, `UnitEntity` and `TimedKillUnit` don’t appear as normal classes because they are automatically generated when the game is built.
 
 <img width="2186" height="831" alt="image" src="https://github.com/user-attachments/assets/18b2158c-8647-4a1e-9a9c-af45528f3cdc" />
 
