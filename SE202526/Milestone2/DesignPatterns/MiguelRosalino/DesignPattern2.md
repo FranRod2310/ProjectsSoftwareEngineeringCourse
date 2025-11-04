@@ -65,6 +65,13 @@ public class ErekirUnitType extends UnitType {
 ```
 ErekirUnitType doesn’t replace the constructor but customizes the produced unit’s behavior and attributes, representing another Concrete Creator variant.
 
+## Rationale
+
+The UnitType class defines a factory method (create(Team)) that delegates object creation to subclasses, allowing each to instantiate specific Unit variants like UnitEntity or TimedKillUnit.
+This encapsulates instantiation logic and simplifies extending the system with new unit types without altering core creation code.
+
+UnitEntity and TimedKillUnit don’t appear as normal classes because they are automatically generated when the game is built.
+
 <img width="2186" height="831" alt="image" src="https://github.com/user-attachments/assets/18b2158c-8647-4a1e-9a9c-af45528f3cdc" />
 
 
