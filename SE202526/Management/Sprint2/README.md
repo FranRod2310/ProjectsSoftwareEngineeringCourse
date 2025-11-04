@@ -53,5 +53,5 @@ What could be improved:
 
 ### Gantt Chart
 [Gantt Chart Sprint 2](./Gantt_Chart_Sprint_2.xlsx)
-![Gantt Chart - Sprint 2](Gantt_chart_Sprint2.png)
+![Gantt Chart - Sprint 2](Gantt_Chart_Sprint2.png)
 

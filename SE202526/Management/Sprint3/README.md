@@ -18,29 +18,29 @@ Tasks:
 - each member will review 3 code smells from 3 different colleagues;
 
 ### Sprint Review Meeting: 
-*(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
+This was a challenging sprint. We had a slow start, with effective work only beginning on Wednesday, due to external constraints on the team—namely other assignments and academic tests that required the attention of several members. However, despite these obstacles and the compressed timeline, the team managed to focus, and the main sprint goal was achieved. All the code we set out to analyze was, in fact, reviewed and validated.
 
 ### Sprint Retrospective Meeting: 
-*(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
+**What went well:** The most positive point is that, despite all the difficulties, we met the final objective. Once we finally managed to get started, there was good focus, and all the planned work was reviewed and analyzed. We showed resilience and an ability to deliver, even under pressure.
 
+**What went wrong (and needs improvement):** Our biggest problem was the process. The late start on Wednesday, combined with external blockers (other assignments and tests), created very inconsistent work paces. Each member was working at a different speed. This inconsistency had a direct consequence: we failed one of our own process goals. We had defined that a member's code smell reviews should be done by different members to ensure a diversity of opinions. Due to time pressure and irregular availability, this did not happen
 ## Relevant resources
 
 ### Scrum Board at the beginning of the sprint
 
-![ScrumBoard Initial](Scrum_Board_Sprint_3_init.png)
+![Scrum Board Initial](Scrum_Board_Sprint_3_init.png)
 
 ### Scrum Board in the middle of the sprint
-
-![ScrumBoard Middle](Scrum_Board_Sprint_3_mid.png)
+![Scrum Board Mid](Scrum_Board_Sprint_3_mid.png)
 
 ### Scrum Board at the end of the sprint
 
-Please add the scrumboard picture here.
+![Scrum Board Final](Scrum_Board_Sprint_3_final.png)
 
 ### Burndown Chart for the sprint
 
-Please add the burndown chart here.
+![Burndown Chart](Burndown_Chart_Sprint3.png)
 
 ### Gantt Chart
 
-Please add the Gantt chart here.
+![Gantt Chart Sprint 3](Gantt_Chart_Sprint3.png)

@@ -2,13 +2,7 @@
 1. Filipe Nobre 67850
 2. Dinis Raleiras 67819
 3. Luís Muacho 68301
-4. dddd dddd (ddddd)
+4. Miguel Rosalino (68210)
 5. eeee eeee (eeeee)
 6. ffff ffff (fffff)
 7. gggg gggg (ggggg)
-
-*Note:* Please replace the above lines with the student's name, last name, and student number. No student may serve as Scrum Master for two consecutive sprints. No student may serve as Scrum Master more than two sprints overall. After understanding the file fomat, you may safely remove this note. Here is an example of the expected format:
-
-1. Barbara Liskov (12345)
-2. Fred Brooks (67890)
-3. ...
