@@ -8,3 +8,4 @@ Evolving Mindustry - Software Engineering Assignment 2025/26
 - 68301 - Luís Muacho - [@lmuacho2005](https://github.com/lmuacho2005)
 - 67753 - Francisco Rodrigues - [@FranRod23](https://github.com/FranRod23)
 - 68211 - Leandro Rodrigues - [@lmsrodrigues101](https://github.com/lmsrodrigues101)
+- 67850 - Filipe Nobre - [@FilipeNobree04](https://github.com/FilipeNobree04)
