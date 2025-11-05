@@ -62,7 +62,8 @@ A low value means it's very stable and a high value means it's unstable
 
 <img width="2208" height="1039" alt="image" src="https://github.com/user-attachments/assets/83f3b8c7-a111-4271-8345-31378f039810" />
 
-On the chart we can see that the most of the 
+On the chart we can see that the most of the packets have a high value, this means that they are unstable. 
+This can be problematic because if there is something that needs to be changed in the way things are done, you need to pay extra attention to how other classes use this packet.
 
 **Distance**
 
@@ -78,3 +79,4 @@ On the other side if we have 2 low values like 0.2 for each, it means that it's 
 
 On the last chart we can see that there are a lot of high values, this means that these packages are not well-balanced. 
 The architectural design quality is not the best and so it should be changed.
+
