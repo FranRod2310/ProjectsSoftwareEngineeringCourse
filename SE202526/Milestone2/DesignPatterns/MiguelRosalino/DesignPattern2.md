@@ -47,7 +47,7 @@ public class MissileUnitType extends UnitType{
     }
 }
 ```
-`MissileUnitType` redefines the constructor to produce `TimedKillUnit` objects, making it a Concrete Creator in the Factory Method pattern.
+`MissileUnitType` redefines the constructor to produce `TimedKillUnit` objects, making it a Concrete Creator.
 
 ## Concrete Creator B
 `core/src/mindustry/type/unit/ErekirUnitType`
@@ -63,12 +63,12 @@ public class ErekirUnitType extends UnitType {
     }
 }
 ```
-`ErekirUnitType` doesn’t replace the constructor but customizes the produced unit’s behavior and attributes, representing another Concrete Creator variant.
+`ErekirUnitType` doesn’t replace the constructor but customizes the produced units behavior and attributes.
 
 ## Rationale
 
 The `UnitType` class defines a factory method (`create(Team)`) that delegates object creation to subclasses, allowing each to instantiate specific Unit variants like `UnitEntity` or `TimedKillUnit`.
-This encapsulates instantiation logic and simplifies extending the system with new unit types without altering core creation code.
+This simplifies extending the system with new unit types without altering core creation code.
 
 `Unit`, `UnitEntity` and `TimedKillUnit` don’t appear as normal classes because they are automatically generated when the game is built.
 
