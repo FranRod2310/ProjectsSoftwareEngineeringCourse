@@ -12,7 +12,6 @@ public class AsyncCore{
             new PhysicsProcess(),
             avoidance = new AvoidanceProcess()
     );
-
     //futures to be awaited
     private final Seq<Future<?>> futures = new Seq<>();
 
