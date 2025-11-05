@@ -110,6 +110,13 @@ Despite these issues, the **low coupling factor (CF)** is a strong positive indi
 
 ## Relation Between MOOD Metrics and Code Smells We Identified
 
-**TODO**
+The collected MOOD metrics provide useful insights into the structural quality of the codebase and show partial alignment with the detected code smells.
+
+- The **low encapsulation metrics** (AHF = 24.27%, MHF = 22.14%) are consistent with the presence of **Data Class** and **Inappropriate Intimacy** smells, which often occur when classes expose too many public attributes or share internal data directly.
+- The **very high inheritance metrics** (AIF = 95.59%, MIF = 94.64%) may relate to **Feature Envy** and **Shotgun Surgery**, as deep inheritance hierarchies can increase inter-class dependencies and make changes propagate across multiple files.
+- The **low polymorphism factor** (PF = 2.58%) suggests limited behavioral flexibility, which may indirectly support the occurrence of **Long Method** and **Message Chaining**, as these smells appear in codebases where reuse and abstraction are not well utilized.
+- The **low coupling factor** (CF = 3.11%) indicates that coupling between modules is generally well controlled, so not all identified smells (e.g., **Data Clumps** or **Long Parameter List**) are directly reflected in the metrics.
+
+Overall, the MOOD metrics confirm several design weaknesses related to encapsulation and inheritance but do not capture all types of code smells, especially those related to method complexity or data grouping.
 
 
