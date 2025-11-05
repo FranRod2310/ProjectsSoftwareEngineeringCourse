@@ -80,3 +80,4 @@ On the other side if we have 2 low values like 0.2 for each, it means that it's 
 On the last chart we can see that there are a lot of high values, this means that these packages are not well-balanced. 
 The architectural design quality is not the best and so it should be changed.
 
+To conclude, we can see that for example in the efferent coupling chart, the package "mindustry.game" has a high value, which can help proving the feature envy code smell found in "mindustry/game/fogcontrol", by @DinisRaleiras. 
