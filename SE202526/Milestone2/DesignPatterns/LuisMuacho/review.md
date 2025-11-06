@@ -21,6 +21,20 @@ Overall, this is a **well-applied Facade Pattern** that effectively reduces syst
 
 ## Design Pattern 3
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** [Leandro Rodrigues] [nº68211]
 
 **Comments/Points to be  corrected/Sugestions:**
+
+Here is the review structured into the requested sections:
+
+Comments:
+- This is an excellent and accurate identification of the Interpreter pattern.
+- The rationale correctly pinpoints all the key components of the pattern:
+- LAssembler is perfectly identified as the Context, managing the global state and symbol table (vars).
+- The l.build(asm) method is the classic interpret(context) operation, where each statement uses the context to produce its result (an LInstruction).
+
+Points to be corrected:
+- None. The analysis is very strong, accurate, and well-justified.
+
+Suggestions:
+- No suggestions are necessary; the analysis is complete and very well-written.
