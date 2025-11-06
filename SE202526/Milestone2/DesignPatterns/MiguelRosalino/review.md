@@ -14,10 +14,14 @@ This design correctly applies the **Memento** pattern because it allows the game
 
 ## Design Pattern 2
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** Luís Muacho 68301
 
 **Comments/Points to be  corrected/Sugestions:**
 
+The Rationale precisely identifies the Factory Method pattern. It correctly points to the `UnitType` as the Creator and the method `create(Team)` as the main factory method that encapsulates the creation logic.
+The Identification of "Concrete Creators" is well-done. It demonstrates a good understanding of the pattern's flexibility by showing how `MissileUnitType` changes the type of the created object, while `ErekirUnitType` personalizes the properties of the default object.
+The diagram clearly shows the Creator hierarchy and its dependency relationship with the product interface.
+To summarize, it seems that this pattern identification is precise and correct.
 
 ## Design Pattern 3
 
