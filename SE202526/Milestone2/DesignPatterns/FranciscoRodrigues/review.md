@@ -26,6 +26,10 @@ Suggestions:
 
 ## Design Pattern 3
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** [Miguel Rosalino] [68210]
 
 **Comments/Points to be  corrected/Sugestions:**
+The code snippet illustrates the Singleton design pattern, and the code location is shown.
+The class diagram is accurate and straightforward.
+The Rationale checks out and well justifies the design pattern being a singleton.
+Overall a solid analysis.
