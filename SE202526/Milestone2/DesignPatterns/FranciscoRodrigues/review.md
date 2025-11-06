@@ -5,6 +5,7 @@
 **Reviewer:** [Leandro Rodrigues] [nº68211]
 
 **Comments/Points to be  corrected/Sugestions:**
+
 Comments:
 - Perfect and clear identification of the Facade pattern.
 - ContentLoader acts as the Facade, and ImagePacker is the Client.
