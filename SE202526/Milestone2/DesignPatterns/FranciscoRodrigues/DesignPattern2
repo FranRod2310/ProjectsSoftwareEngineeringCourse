@@ -1,0 +1,85 @@
+## State Pattern 
+
+`core/src/mindustry/core/GameState.java`
+
+### Code Snippet
+
+```Java
+(...)
+
+private State state = State.menu;
+
+(...)
+
+public void set(State astate){
+    //nothing to change.
+    if(state == astate) return;
+
+    Events.fire(new StateChangeEvent(state, astate));
+    state = astate;
+}
+
+(...)
+
+public boolean is(State astate){
+    return state == astate;
+}
+
+public State getState(){
+    return state;
+}
+
+public enum State{
+    paused, playing, menu
+}
+
+(...)
+
+```
+
+
+`core/src/mindustry/core/Control.java`
+
+### Code Snippet
+
+```Java
+
+(...)
+
+  @Override
+    public void pause(){
+        if(settings.getBool("backgroundpause", true) && !net.active()){
+            backgroundPaused = true;
+            wasPaused = state.is(State.paused);
+            if(state.is(State.playing)) state.set(State.paused);
+        }
+    }
+
+    @Override
+    public void resume(){
+        if(state.is(State.paused) && !wasPaused && settings.getBool("backgroundpause", true) && !net.active()){
+            state.set(State.playing);
+        }
+        backgroundPaused = false;
+    }
+
+(...)
+
+```
+
+### Class Diagram
+
+
+
+
+### Rationale
+
+The State Pattern is used to save a state in it's class, so that other classes change their behavior depending on it's state.
+
+In this case the class `core/src/mindustry/core/GameState.java` is the **State** class, which has the current state (game paused, playing, menu).
+This can be accessed by other classes that can change their behavior depending on the result.
+The class `core/src/mindustry/core/Control.java` changes the state of the game and accesses it's state to check if it's current actions are possible.
+
+**Benefits**
+- Makes it possible to have a global state that affects multiple classes.
+- If the state changes, it changes for everyone.
