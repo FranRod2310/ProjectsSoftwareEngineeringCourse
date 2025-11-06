@@ -14,9 +14,14 @@ Overall, this is a **well-applied Facade Pattern** that effectively reduces syst
 
 ## Design Pattern 2
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** [Miguel Rosalino] [68210]
 
 **Comments/Points to be  corrected/Sugestions:**
+The code snippet well illustrates the template design pattern, and exact code locations are provided.
+The class diagram is well structured and simple to follow.
+The Rationale is a good explanation of the template implementation.
+The benefits make sense for the template pattern.
+Overall, a solid report.
 
 
 ## Design Pattern 3
