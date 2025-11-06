@@ -69,6 +69,7 @@ public enum State{
 
 ### Class Diagram
 
+![ClassDiagram2](https://github.com/user-attachments/assets/8626765f-2fc7-479d-a354-fdacfbc359c8)
 
 
 
