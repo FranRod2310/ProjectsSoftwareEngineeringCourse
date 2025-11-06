@@ -77,12 +77,12 @@ public abstract class DrawBlock{
 
 ### All classes with the template
 
-![img_1.png](img_1.png)
+![img_1.png](ClassesDesignpattern1pt2.png)
 
-![img.png](img.png)
+![img.png](ClassesDesignpattern1pt1.png)
  
 ### Class Diagram
-![img_2.png](img_2.png)
+![img_2.png](ClassDiagram1.png)
 ##### example with only 3 classes but there are more of them
 
 ### Rationale
