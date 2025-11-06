@@ -1,0 +1,1410 @@
+Dependency metrics,quinta, 6 nov. 2025 17:42:03 WET
+Class,Cyclic,Dcy,Dcy*,Dpt,Dpt*,PDcy,PDpt
+mindustry.ClientLauncher,0,29,1 239,1,1,12,1
+mindustry.Vars,912,47,1 233,522,1 080,20,60
+mindustry.ai.Astar,912,7,1 233,6,1 080,4,4
+mindustry.ai.BaseBuilderAI,912,36,1 233,2,1 080,13,2
+mindustry.ai.BaseRegistry,912,18,1 233,6,1 080,12,5
+mindustry.ai.BaseRegistry.BasePart,912,3,1 233,4,1 080,3,3
+mindustry.ai.BlockIndexer,912,30,1 233,37,1 080,14,21
+mindustry.ai.BlockIndexer.TurretQuadtree,0,2,4,1,1 081,2,1
+mindustry.ai.ControlPathfinder,912,31,1 233,6,1 080,11,4
+mindustry.ai.ControlPathfinder.Cluster,0,0,0,1,1 081,0,1
+mindustry.ai.ControlPathfinder.FieldCache,912,4,1 233,2,1 080,4,1
+mindustry.ai.ControlPathfinder.FieldIndexStruct,0,0,0,0,0,0,0
+mindustry.ai.ControlPathfinder.IntraEdgeStruct,0,0,0,0,0,0,0
+mindustry.ai.ControlPathfinder.NodeIndexStruct,0,0,0,0,0,0,0
+mindustry.ai.ControlPathfinder.PathRequest,912,6,1 233,1,1 080,5,1
+mindustry.ai.ItemUnitStance,912,4,1 233,4,1 080,3,3
+mindustry.ai.PathfindQueue,0,1,1,2,1 081,0,1
+mindustry.ai.Pathfinder,912,25,1 233,16,1 080,10,10
+mindustry.ai.Pathfinder.EnemyCoreField,912,13,1 233,1,1 080,8,1
+mindustry.ai.Pathfinder.Flowfield,912,5,1 233,6,1 080,4,3
+mindustry.ai.Pathfinder.PathTileStruct,0,0,0,0,0,0,0
+mindustry.ai.Pathfinder.PositionTarget,0,3,1 234,0,0,3,0
+mindustry.ai.RtsAI,912,28,1 233,2,1 080,15,2
+mindustry.ai.UnitCommand,912,11,1 233,16,1 080,5,12
+mindustry.ai.UnitGroup,912,13,1 233,2,1 080,10,2
+mindustry.ai.UnitStance,912,10,1 233,10,1 080,7,9
+mindustry.ai.WaveSpawner,912,32,1 233,19,1 080,12,14
+mindustry.ai.types.AssemblerAI,912,3,1 233,4,1 080,2,4
+mindustry.ai.types.BoostAI,912,4,1 233,2,1 080,4,2
+mindustry.ai.types.BuilderAI,912,31,1 233,3,1 080,12,3
+mindustry.ai.types.CargoAI,912,15,1 233,2,1 080,9,2
+mindustry.ai.types.CommandAI,912,34,1 233,21,1 080,13,13
+mindustry.ai.types.DefenderAI,912,11,1 233,2,1 080,7,2
+mindustry.ai.types.FlyingAI,912,18,1 233,5,1 080,11,3
+mindustry.ai.types.FlyingFollowAI,912,12,1 233,2,1 080,8,2
+mindustry.ai.types.GroundAI,912,17,1 233,5,1 080,10,4
+mindustry.ai.types.HugAI,912,19,1 233,2,1 080,10,2
+mindustry.ai.types.LogicAI,912,20,1 233,10,1 080,9,8
+mindustry.ai.types.MinerAI,912,22,1 233,2,1 080,10,2
+mindustry.ai.types.MissileAI,912,12,1 233,4,1 080,7,4
+mindustry.ai.types.PrebuildAI,912,31,1 233,2,1 080,12,2
+mindustry.ai.types.RepairAI,912,10,1 233,2,1 080,6,2
+mindustry.ai.types.SuicideAI,912,24,1 233,2,1 080,15,2
+mindustry.async.AsyncCore,912,7,1 233,3,1 080,4,2
+mindustry.async.AvoidanceProcess,912,12,1 233,4,1 080,5,4
+mindustry.async.PhysicsProcess,912,15,1 233,9,1 080,7,5
+mindustry.async.PhysicsProcess.PhysicRef,0,2,2,2,1 082,2,2
+mindustry.async.PhysicsProcess.PhysicsWorld,912,2,1 233,1,1 080,1,1
+mindustry.async.PhysicsProcess.PhysicsWorld.PhysicsBody,0,0,0,3,1 083,0,1
+mindustry.audio.SoundControl,912,19,1 233,8,1 080,9,4
+mindustry.audio.SoundControl.SoundData,0,0,0,1,1 081,0,1
+mindustry.audio.SoundLoop,0,0,0,4,1 081,0,4
+mindustry.content.Blocks,912,200,1 233,100,1 080,33,34
+mindustry.content.Bullets,912,5,1 233,9,1 080,3,7
+mindustry.content.ErekirTechTree,912,28,1 233,1,1 080,10,1
+mindustry.content.Fx,912,27,1 233,131,1 080,11,30
+mindustry.content.Items,912,2,1 233,26,1 080,2,15
+mindustry.content.Liquids,912,4,1 233,24,1 080,3,18
+mindustry.content.Loadouts,912,2,1 233,7,1 080,1,5
+mindustry.content.Planets,912,25,1 233,21,1 080,10,13
+mindustry.content.SectorPresets,912,4,1 233,6,1 080,4,4
+mindustry.content.SerpuloTechTree,912,12,1 233,1,1 080,3,1
+mindustry.content.StatusEffects,912,15,1 233,30,1 080,9,18
+mindustry.content.TeamEntries,0,0,0,1,1 081,0,1
+mindustry.content.TechTree,912,7,1 233,10,1 080,4,7
+mindustry.content.TechTree.TechNode,912,10,1 233,15,1 080,4,9
+mindustry.content.UnitTypes,912,80,1 233,20,1 080,19,13
+mindustry.content.Weathers,912,6,1 233,3,1 080,6,3
+mindustry.core.ContentLoader,912,37,1 233,138,1 080,11,42
+mindustry.core.Control,912,77,1 233,50,1 080,21,21
+mindustry.core.FileTree,912,2,1 233,10,1 080,2,8
+mindustry.core.GameState,912,14,1 233,201,1 080,7,49
+mindustry.core.GameState.State,0,0,0,16,1 082,0,8
+mindustry.core.Logic,912,80,1 233,19,1 080,19,11
+mindustry.core.NetClient,912,61,1 233,15,1 080,16,9
+mindustry.core.NetServer,912,73,1 233,22,1 080,19,10
+mindustry.core.NetServer.VoteSession,912,8,1 233,1,1 080,4,1
+mindustry.core.PerfCounter,0,0,0,4,1 081,0,2
+mindustry.core.Renderer,912,41,1 233,60,1 080,12,23
+mindustry.core.Renderer.EnvRenderer,0,0,0,1,1 081,0,1
+mindustry.core.UI,912,51,1 233,103,1 080,10,30
+mindustry.core.Version,0,0,0,20,1 081,0,11
+mindustry.core.World,912,41,1 233,155,1 080,14,39
+mindustry.core.World.Context,912,5,1 233,2,1 080,3,1
+mindustry.core.World.FilterContext,912,7,1 233,2,1 080,4,2
+mindustry.ctype.Content,912,4,1 233,127,1 080,3,42
+mindustry.ctype.Content.ModContentInfo,912,1,1 233,15,1 080,1,11
+mindustry.ctype.ContentType,912,13,1 233,41,1 080,5,19
+mindustry.ctype.MappableContent,912,3,1 233,89,1 080,3,28
+mindustry.ctype.UnlockableContent,912,20,1 233,231,1 080,12,42
+mindustry.editor.BannedContentDialog,912,12,1 233,1,1 080,9,1
+mindustry.editor.DrawOperation,912,11,1 233,4,1 080,7,1
+mindustry.editor.DrawOperation.TileOpDataStruct,0,0,0,0,0,0,0
+mindustry.editor.DrawOperation.TileOpStruct,0,0,0,0,0,0,0
+mindustry.editor.EditorRenderer,912,17,1 233,8,1 080,10,1
+mindustry.editor.EditorSpriteCache,0,0,0,1,1 081,0,1
+mindustry.editor.EditorTile,912,22,1 233,4,1 080,11,3
+mindustry.editor.EditorTool,912,14,1 233,2,1 080,8,1
+mindustry.editor.MapEditor,912,23,1 233,16,1 080,12,4
+mindustry.editor.MapEditor.Context,912,7,1 233,1,1 080,4,1
+mindustry.editor.MapEditorDialog,912,55,1 233,7,1 080,18,5
+mindustry.editor.MapGenerateDialog,912,30,1 233,2,1 080,14,1
+mindustry.editor.MapInfoDialog,912,20,1 233,1,1 080,11,1
+mindustry.editor.MapLoadDialog,912,7,1 233,1,1 080,5,1
+mindustry.editor.MapLocalesDialog,912,18,1 233,1,1 080,11,1
+mindustry.editor.MapLocalesDialog.PropertyStatus,0,0,0,1,1 081,0,1
+mindustry.editor.MapObjectivesCanvas,912,3,1 233,4,1 080,3,1
+mindustry.editor.MapObjectivesCanvas.ObjectiveTilemap,912,6,1 233,5,1 080,4,1
+mindustry.editor.MapObjectivesCanvas.ObjectiveTilemap.ObjectiveTile,912,13,1 233,3,1 080,6,1
+mindustry.editor.MapObjectivesCanvas.ObjectiveTilemap.ObjectiveTile.Connector,912,5,1 233,2,1 080,4,1
+mindustry.editor.MapObjectivesCanvas.ObjectiveTilemap.ObjectiveTile.Mover,912,3,1 233,1,1 080,1,1
+mindustry.editor.MapObjectivesDialog,912,40,1 233,4,1 080,14,1
+mindustry.editor.MapObjectivesDialog.TypeInfo,912,2,1 233,4,1 080,1,1
+mindustry.editor.MapProcessorsDialog,912,24,1 233,2,1 080,13,2
+mindustry.editor.MapResizeDialog,912,4,1 233,1,1 080,3,1
+mindustry.editor.MapView,912,11,1 233,1,1 080,7,1
+mindustry.editor.OperationStack,912,1,1 233,1,1 080,1,1
+mindustry.editor.SectorGenerateDialog,912,19,1 233,1,1 080,12,1
+mindustry.editor.WaveGraph,912,12,1 233,1,1 080,9,1
+mindustry.editor.WaveGraph.Mode,0,0,0,1,1 081,0,1
+mindustry.editor.WaveInfoDialog,912,24,1 233,1,1 080,15,1
+mindustry.editor.WaveInfoDialog.Sort,912,3,1 233,1,1 080,3,1
+mindustry.entities.Damage,912,34,1 233,22,1 080,14,7
+mindustry.entities.Damage.Collided,0,1,1,1,1 081,1,1
+mindustry.entities.Effect,912,14,1 233,154,1 080,9,31
+mindustry.entities.Effect.EffectContainer,0,0,0,10,1 081,0,5
+mindustry.entities.EntityCollisions,912,9,1 233,11,1 080,6,6
+mindustry.entities.EntityGroup,912,7,1 233,53,1 080,3,27
+mindustry.entities.Fires,912,12,1 233,8,1 080,9,4
+mindustry.entities.GroupDefs,0,12,12,0,0,1,0
+mindustry.entities.Leg,0,0,0,2,1 081,0,2
+mindustry.entities.LegDestroyData,0,0,0,2,1 081,0,2
+mindustry.entities.Lightning,912,13,1 233,8,1 080,8,5
+mindustry.entities.Predict,0,2,2,4,1 081,1,4
+mindustry.entities.Puddles,912,18,1 233,11,1 080,12,6
+mindustry.entities.TargetPriority,0,0,0,16,1 081,0,8
+mindustry.entities.UnitSorts,912,7,1 233,4,1 080,5,4
+mindustry.entities.Units,912,31,1 233,55,1 080,11,20
+mindustry.entities.Units.UnitSyncContainer,0,1,1,2,1 081,1,2
+mindustry.entities.abilities.Ability,912,3,1 233,22,1 080,3,7
+mindustry.entities.abilities.ArmorPlateAbility,912,7,1 233,1,1 080,6,1
+mindustry.entities.abilities.EnergyFieldAbility,912,25,1 233,2,1 080,12,2
+mindustry.entities.abilities.ForceFieldAbility,912,14,1 233,4,1 080,10,2
+mindustry.entities.abilities.LiquidExplodeAbility,912,10,1 233,2,1 080,9,2
+mindustry.entities.abilities.LiquidRegenAbility,912,14,1 233,2,1 080,9,2
+mindustry.entities.abilities.MoveEffectAbility,912,8,1 233,3,1 080,6,2
+mindustry.entities.abilities.MoveLightningAbility,912,8,1 233,1,1 080,6,1
+mindustry.entities.abilities.RegenAbility,912,3,1 233,2,1 080,2,2
+mindustry.entities.abilities.RepairFieldAbility,912,8,1 233,2,1 080,5,2
+mindustry.entities.abilities.ShieldArcAbility,912,21,1 233,3,1 080,11,2
+mindustry.entities.abilities.ShieldRegenFieldAbility,912,7,1 233,2,1 080,6,2
+mindustry.entities.abilities.SpawnDeathAbility,912,6,1 233,2,1 080,6,2
+mindustry.entities.abilities.StatusFieldAbility,912,10,1 233,2,1 080,8,2
+mindustry.entities.abilities.SuppressionFieldAbility,912,7,1 233,2,1 080,6,2
+mindustry.entities.abilities.UnitSpawnAbility,912,15,1 233,2,1 080,11,2
+mindustry.entities.bullet.ArtilleryBulletType,912,6,1 233,2,1 080,4,2
+mindustry.entities.bullet.BasicBulletType,912,3,1 233,13,1 080,3,3
+mindustry.entities.bullet.BombBulletType,912,3,1 233,1,1 080,2,1
+mindustry.entities.bullet.BulletType,912,52,1 233,86,1 080,16,20
+mindustry.entities.bullet.ContinuousBulletType,912,6,1 233,6,1 080,4,4
+mindustry.entities.bullet.ContinuousFlameBulletType,912,8,1 233,2,1 080,5,2
+mindustry.entities.bullet.ContinuousLaserBulletType,912,7,1 233,2,1 080,5,2
+mindustry.entities.bullet.EmpBulletType,912,17,1 233,2,1 080,9,2
+mindustry.entities.bullet.EmptyBulletType,912,1,1 233,1,1 080,1,1
+mindustry.entities.bullet.ExplosionBulletType,912,2,1 233,1,1 080,2,1
+mindustry.entities.bullet.FireBulletType,912,6,1 233,1,1 080,5,1
+mindustry.entities.bullet.FlakBulletType,912,7,1 233,3,1 080,4,2
+mindustry.entities.bullet.InterceptorBulletType,912,4,1 233,1,1 080,3,1
+mindustry.entities.bullet.LaserBoltBulletType,912,5,1 233,1,1 080,4,1
+mindustry.entities.bullet.LaserBulletType,912,8,1 233,3,1 080,5,2
+mindustry.entities.bullet.LightningBulletType,912,6,1 233,1,1 080,5,1
+mindustry.entities.bullet.LiquidBulletType,912,10,1 233,2,1 080,8,2
+mindustry.entities.bullet.MassDriverBolt,912,15,1 233,4,1 080,9,3
+mindustry.entities.bullet.MissileBulletType,912,4,1 233,1,1 080,3,1
+mindustry.entities.bullet.MultiBulletType,912,6,1 233,2,1 080,4,1
+mindustry.entities.bullet.PointBulletType,912,10,1 233,1,1 080,5,1
+mindustry.entities.bullet.PointLaserBulletType,912,8,1 233,1,1 080,6,1
+mindustry.entities.bullet.RailBulletType,912,6,1 233,3,1 080,4,2
+mindustry.entities.bullet.SapBulletType,912,11,1 233,2,1 080,5,2
+mindustry.entities.bullet.ShrapnelBulletType,912,6,1 233,3,1 080,5,2
+mindustry.entities.bullet.SpaceLiquidBulletType,912,4,1 233,1,1 080,4,1
+mindustry.entities.comp.BlockUnitComp,0,9,1 234,0,0,5,0
+mindustry.entities.comp.BuilderComp,0,34,1 235,0,0,16,0
+mindustry.entities.comp.BuildingComp,0,92,1 237,0,0,28,0
+mindustry.entities.comp.BuildingTetherComp,0,6,1 234,0,0,3,0
+mindustry.entities.comp.BulletComp,0,32,1 240,0,0,10,0
+mindustry.entities.comp.ChildComp,0,3,3,0,0,2,0
+mindustry.entities.comp.CrawlComp,0,20,1 234,0,0,9,0
+mindustry.entities.comp.DamageComp,0,0,0,0,0,0,0
+mindustry.entities.comp.DecalComp,0,6,6,0,0,2,0
+mindustry.entities.comp.DrawComp,0,1,1,0,0,1,0
+mindustry.entities.comp.EffectStateComp,0,7,1 237,0,0,2,0
+mindustry.entities.comp.ElevationMoveComp,0,6,1 234,0,0,2,0
+mindustry.entities.comp.EntityComp,0,4,1 234,0,0,3,0
+mindustry.entities.comp.FireComp,0,34,1 236,0,0,13,0
+mindustry.entities.comp.HealthComp,0,2,2,0,0,1,0
+mindustry.entities.comp.HitboxComp,0,3,3,0,0,2,0
+mindustry.entities.comp.ItemsComp,0,3,1 234,0,0,2,0
+mindustry.entities.comp.LaunchCoreComp,0,11,1 236,0,0,6,0
+mindustry.entities.comp.LegsComp,0,26,1 235,0,0,11,0
+mindustry.entities.comp.MechComp,0,13,1 234,0,0,7,0
+mindustry.entities.comp.MinerComp,0,27,1 234,0,0,11,0
+mindustry.entities.comp.OwnerComp,0,1,1,0,0,1,0
+mindustry.entities.comp.PayloadComp,0,32,1 234,0,0,12,0
+mindustry.entities.comp.PhysicsComp,0,4,6,0,0,2,0
+mindustry.entities.comp.PlayerComp,0,44,1 237,0,0,17,0
+mindustry.entities.comp.PosComp,0,7,1 234,0,0,6,0
+mindustry.entities.comp.PosTeamDef,0,1,1,0,0,1,0
+mindustry.entities.comp.PowerGraphUpdaterComp,0,3,1 234,0,0,2,0
+mindustry.entities.comp.PuddleComp,0,25,1 235,0,0,8,0
+mindustry.entities.comp.RotComp,0,1,1,0,0,1,0
+mindustry.entities.comp.SegmentComp,0,14,1 234,0,0,5,0
+mindustry.entities.comp.ShieldComp,0,11,1 234,0,0,7,0
+mindustry.entities.comp.ShielderComp,0,3,3,0,0,1,0
+mindustry.entities.comp.StatusComp,0,13,1 234,0,0,8,0
+mindustry.entities.comp.SyncComp,0,5,1 234,0,0,4,0
+mindustry.entities.comp.TankComp,0,21,1 234,0,0,11,0
+mindustry.entities.comp.TeamComp,0,8,1 234,0,0,5,0
+mindustry.entities.comp.TimedComp,0,1,1,0,0,1,0
+mindustry.entities.comp.TimedKillComp,0,2,2,0,0,1,0
+mindustry.entities.comp.TimerComp,0,0,0,0,0,0,0
+mindustry.entities.comp.UnderwaterMoveComp,0,6,1 234,0,0,5,0
+mindustry.entities.comp.UnitComp,0,83,1 235,0,0,24,0
+mindustry.entities.comp.UnitTetherComp,0,9,1 234,0,0,4,0
+mindustry.entities.comp.VelComp,0,6,1 234,0,0,4,0
+mindustry.entities.comp.WaterCrawlComp,0,12,1 234,0,0,6,0
+mindustry.entities.comp.WaterMoveComp,0,15,1 234,0,0,9,0
+mindustry.entities.comp.WeaponsComp,0,12,1 234,0,0,4,0
+mindustry.entities.comp.WorldLabelComp,0,10,1 235,0,0,5,0
+mindustry.entities.effect.ExplosionEffect,912,4,1 233,3,1 080,2,2
+mindustry.entities.effect.MultiEffect,912,1,1 233,5,1 080,1,3
+mindustry.entities.effect.ParticleEffect,912,3,1 233,2,1 080,2,1
+mindustry.entities.effect.RadialEffect,912,2,1 233,2,1 080,2,2
+mindustry.entities.effect.SeqEffect,912,3,1 233,1,1 080,1,1
+mindustry.entities.effect.SoundEffect,912,2,1 233,1,1 080,2,1
+mindustry.entities.effect.WaveEffect,912,3,1 233,3,1 080,2,2
+mindustry.entities.effect.WrapEffect,912,3,1 233,5,1 080,2,4
+mindustry.entities.part.DrawPart,0,1,1,15,1 083,1,7
+mindustry.entities.part.DrawPart.PartMove,0,1,3,4,1 081,1,3
+mindustry.entities.part.DrawPart.PartParams,0,0,0,15,1 086,0,6
+mindustry.entities.part.EffectSpawnerPart,912,8,1 233,1,1 080,6,1
+mindustry.entities.part.FlarePart,912,6,1 233,2,1 080,2,2
+mindustry.entities.part.HaloPart,912,4,1 233,2,1 080,2,2
+mindustry.entities.part.HoverPart,0,2,2,2,1 081,1,2
+mindustry.entities.part.RegionPart,912,8,1 233,5,1 080,2,3
+mindustry.entities.part.ShapePart,0,3,4,3,1 081,1,2
+mindustry.entities.pattern.ShootAlternate,0,2,4,3,1 081,1,2
+mindustry.entities.pattern.ShootBarrel,0,3,5,2,1 081,1,2
+mindustry.entities.pattern.ShootHelix,0,4,4,3,1 081,3,2
+mindustry.entities.pattern.ShootMulti,0,5,5,2,1 081,3,2
+mindustry.entities.pattern.ShootPattern,0,1,3,14,1 088,1,5
+mindustry.entities.pattern.ShootSine,0,2,4,1,1 081,1,1
+mindustry.entities.pattern.ShootSpread,0,2,4,3,1 081,1,2
+mindustry.entities.pattern.ShootSummon,0,2,4,2,1 081,1,2
+mindustry.entities.units.AIController,912,28,1 233,20,1 080,12,5
+mindustry.entities.units.BuildPlan,912,11,1 233,78,1 080,6,28
+mindustry.entities.units.StatusEntry,912,1,1 233,5,1 080,1,4
+mindustry.entities.units.WeaponMount,912,4,1 233,16,1 080,3,7
+mindustry.game.AttackIndicators,0,1,1,2,1 081,1,2
+mindustry.game.AttackIndicators.IndicatorStruct,0,0,0,0,0,0,0
+mindustry.game.CampaignRules,912,11,1 233,11,1 080,6,8
+mindustry.game.Difficulty,0,0,0,4,1 081,0,4
+mindustry.game.EventType,0,0,0,1,1,0,1
+mindustry.game.EventType.AdminRequestEvent,0,2,2,1,1 081,2,1
+mindustry.game.EventType.AtlasPackEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.BlockBuildBeginEvent,912,3,1 233,2,1 080,3,2
+mindustry.game.EventType.BlockBuildEndEvent,912,3,1 233,6,1 080,3,6
+mindustry.game.EventType.BlockDestroyEvent,912,1,1 233,3,1 080,1,3
+mindustry.game.EventType.BlockInfoEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.BuildDamageEvent,0,2,2,3,1 081,1,3
+mindustry.game.EventType.BuildRotateEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.BuildSelectEvent,0,3,1 234,1,1,3,1
+mindustry.game.EventType.BuildTeamChangeEvent,912,2,1 233,2,1 080,2,2
+mindustry.game.EventType.BuildingBulletDestroyEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.BuildingCommandEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.ClientChatEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.ClientCreateEvent,0,0,0,2,2,0,2
+mindustry.game.EventType.ClientLoadEvent,0,0,0,14,1 081,0,11
+mindustry.game.EventType.ClientPreConnectEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.ClientServerConnectEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.ConfigEvent,0,2,2,1,1 081,1,1
+mindustry.game.EventType.ConnectPacketEvent,912,2,1 233,1,1 080,1,1
+mindustry.game.EventType.ConnectionEvent,912,1,1 233,1,1 080,1,1
+mindustry.game.EventType.ContentInitEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.CoreChangeEvent,912,1,1 233,3,1 080,1,3
+mindustry.game.EventType.CoreItemDeliverEvent,0,0,0,0,0,0,0
+mindustry.game.EventType.DepositEvent,912,3,1 233,1,1 080,2,1
+mindustry.game.EventType.DisposeEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.FileTreeInitEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.GameOverEvent,912,1,1 233,3,1 080,1,2
+mindustry.game.EventType.GeneratorPressureExplodeEvent,0,1,1,2,1 081,1,2
+mindustry.game.EventType.HostEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.LaunchItemEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.LineConfirmEvent,0,0,0,2,1 081,0,1
+mindustry.game.EventType.LoseEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.MapMakeEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.MapPublishEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.MenuOptionChooseEvent,0,1,1,1,1,1,1
+mindustry.game.EventType.ModContentLoadEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.MusicRegisterEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.PayloadDropEvent,0,2,2,3,1 081,1,3
+mindustry.game.EventType.PickupEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.PlayEvent,0,0,0,3,1 081,0,2
+mindustry.game.EventType.PlayerBanEvent,0,1,1,1,1 081,1,1
+mindustry.game.EventType.PlayerChatEvent,0,1,1,1,1 081,1,1
+mindustry.game.EventType.PlayerConnect,0,1,1,1,1 081,1,1
+mindustry.game.EventType.PlayerConnectionConfirmed,0,1,1,1,1 081,1,1
+mindustry.game.EventType.PlayerIpBanEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.PlayerIpUnbanEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.PlayerJoin,0,1,1,2,1 081,1,2
+mindustry.game.EventType.PlayerLeave,0,1,1,1,1 081,1,1
+mindustry.game.EventType.PlayerUnbanEvent,0,1,1,1,1 081,1,1
+mindustry.game.EventType.ResearchEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.ResetEvent,0,0,0,20,1 081,0,12
+mindustry.game.EventType.ResizeEvent,0,0,0,4,1 081,0,3
+mindustry.game.EventType.SaveLoadEvent,0,0,0,3,1 081,0,2
+mindustry.game.EventType.SaveWriteEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.SchematicCreateEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.SectorCaptureEvent,912,1,1 233,5,1 080,1,4
+mindustry.game.EventType.SectorInvasionEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.SectorLaunchEvent,912,1,1 233,2,1 080,1,2
+mindustry.game.EventType.SectorLaunchLoadoutEvent,912,2,1 233,2,1 080,2,2
+mindustry.game.EventType.SectorLoseEvent,912,1,1 233,3,1 080,1,3
+mindustry.game.EventType.ServerLoadEvent,0,0,0,2,2,0,1
+mindustry.game.EventType.StateChangeEvent,0,1,1,4,1 081,1,2
+mindustry.game.EventType.TapEvent,912,2,1 233,1,1 080,2,1
+mindustry.game.EventType.TextInputEvent,0,1,1,1,1,1,1
+mindustry.game.EventType.TileChangeEvent,912,1,1 233,8,1 080,1,5
+mindustry.game.EventType.TileFloorChangeEvent,912,2,1 233,2,1 080,2,2
+mindustry.game.EventType.TileOverlayChangeEvent,912,2,1 233,2,1 080,2,2
+mindustry.game.EventType.TilePreChangeEvent,912,1,1 233,6,1 080,1,4
+mindustry.game.EventType.Trigger,0,0,0,40,1 081,0,24
+mindustry.game.EventType.TurnEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.TurretAmmoDeliverEvent,0,0,0,0,0,0,0
+mindustry.game.EventType.UnitBulletDestroyEvent,0,2,2,3,1 081,1,3
+mindustry.game.EventType.UnitChangeEvent,0,2,2,1,1,1,1
+mindustry.game.EventType.UnitControlEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.UnitCreateEvent,0,2,2,6,1 081,1,5
+mindustry.game.EventType.UnitDamageEvent,0,2,2,2,1 081,1,2
+mindustry.game.EventType.UnitDestroyEvent,0,1,1,6,1 081,1,5
+mindustry.game.EventType.UnitDrownEvent,0,1,1,2,1 081,1,2
+mindustry.game.EventType.UnitSpawnEvent,0,1,1,1,1 081,1,1
+mindustry.game.EventType.UnitUnloadEvent,0,1,1,1,1 081,1,1
+mindustry.game.EventType.UnlockEvent,912,1,1 233,6,1 080,1,5
+mindustry.game.EventType.WaveEvent,0,0,0,7,1 081,0,5
+mindustry.game.EventType.WinEvent,0,0,0,2,1 081,0,2
+mindustry.game.EventType.WithdrawEvent,912,3,1 233,2,1 080,2,2
+mindustry.game.EventType.WorldLoadBeginEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.WorldLoadEndEvent,0,0,0,1,1 081,0,1
+mindustry.game.EventType.WorldLoadEvent,0,0,0,20,1 081,0,9
+mindustry.game.FogControl,912,31,1 233,14,1 080,11,10
+mindustry.game.FogControl.DynamicFogThread,912,1,1 233,1,1 080,1,1
+mindustry.game.FogControl.FogData,912,1,1 233,1,1 080,1,1
+mindustry.game.FogControl.FogEventStruct,0,0,0,0,0,0,0
+mindustry.game.FogControl.StaticFogThread,912,1,1 233,1,1 080,1,1
+mindustry.game.GameStats,912,2,1 233,10,1 080,2,6
+mindustry.game.Gamemode,912,4,1 233,15,1 080,2,7
+mindustry.game.MapMarkers,912,2,1 233,5,1 080,2,3
+mindustry.game.MapObjectives,912,26,1 233,15,1 080,5,7
+mindustry.game.MapObjectives.BuildCountObjective,912,7,1 233,1,1 080,6,1
+mindustry.game.MapObjectives.CommandModeObjective,912,7,1 233,1,1 080,6,1
+mindustry.game.MapObjectives.CoreItemObjective,912,7,1 233,1,1 080,6,1
+mindustry.game.MapObjectives.DestroyBlockObjective,912,8,1 233,1,1 080,7,1
+mindustry.game.MapObjectives.DestroyBlocksObjective,912,9,1 233,1,1 080,7,1
+mindustry.game.MapObjectives.DestroyCoreObjective,912,5,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.DestroyUnitsObjective,912,4,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.FlagObjective,912,5,1 233,1,1 080,4,1
+mindustry.game.MapObjectives.ItemObjective,912,9,1 233,1,1 080,7,1
+mindustry.game.MapObjectives.LineMarker,912,5,1 233,1,1 080,4,1
+mindustry.game.MapObjectives.MapObjective,912,4,1 233,25,1 080,3,6
+mindustry.game.MapObjectives.ObjectiveMarker,912,6,1 233,18,1 080,5,6
+mindustry.game.MapObjectives.PointMarker,912,4,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.PosMarker,912,3,1 233,6,1 080,3,1
+mindustry.game.MapObjectives.ProduceObjective,912,3,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.QuadMarker,912,5,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.ResearchObjective,912,3,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.ShapeMarker,912,4,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.ShapeTextMarker,912,5,1 233,1,1 080,4,1
+mindustry.game.MapObjectives.TextMarker,912,4,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.TextureMarker,912,5,1 233,1,1 080,3,1
+mindustry.game.MapObjectives.TimerObjective,912,5,1 233,1,1 080,4,1
+mindustry.game.MapObjectives.UnitCountObjective,912,9,1 233,1,1 080,6,1
+mindustry.game.Objectives,0,0,0,1,1 081,0,1
+mindustry.game.Objectives.OnPlanet,912,4,1 233,2,1 080,3,2
+mindustry.game.Objectives.OnSector,912,4,1 233,3,1 080,3,2
+mindustry.game.Objectives.Produce,912,2,1 233,3,1 080,2,2
+mindustry.game.Objectives.Research,912,3,1 233,5,1 080,3,2
+mindustry.game.Objectives.SectorComplete,912,4,1 233,6,1 080,3,3
+mindustry.game.Rules,912,19,1 233,171,1 080,9,45
+mindustry.game.Rules.TeamRule,0,0,0,23,1 081,0,13
+mindustry.game.Rules.TeamRules,912,3,1 233,4,1 080,1,2
+mindustry.game.Saves,912,15,1 233,14,1 080,6,7
+mindustry.game.Saves.SaveSlot,912,16,1 233,12,1 080,9,6
+mindustry.game.Schematic,912,11,1 233,21,1 080,8,9
+mindustry.game.Schematic.Stile,912,2,1 233,7,1 080,2,4
+mindustry.game.Schematics,912,46,1 233,21,1 080,19,10
+mindustry.game.SectorInfo,912,34,1 233,20,1 080,15,12
+mindustry.game.SectorInfo.ExportStat,912,1,1 233,4,1 080,1,3
+mindustry.game.SpawnGroup,912,14,1 233,15,1 080,8,11
+mindustry.game.Team,912,14,1 233,186,1 080,8,42
+mindustry.game.Teams,912,19,1 233,28,1 080,8,18
+mindustry.game.Teams.BlockPlan,912,1,1 233,12,1 080,1,10
+mindustry.game.Teams.TeamData,912,21,1 233,47,1 080,10,21
+mindustry.game.Universe,912,27,1 233,10,1 080,12,6
+mindustry.game.Waves,912,7,1 233,7,1 080,3,6
+mindustry.graphics.BlockRenderer,912,34,1 233,9,1 080,12,6
+mindustry.graphics.BlockRenderer.BlockLightQuadtree,912,2,1 233,1,1 080,1,1
+mindustry.graphics.BlockRenderer.BlockQuadtree,912,2,1 233,1,1 080,1,1
+mindustry.graphics.BlockRenderer.FloorQuadtree,912,3,1 233,1,1 080,2,1
+mindustry.graphics.CacheLayer,912,3,1 233,13,1 080,1,8
+mindustry.graphics.CacheLayer.ShaderLayer,912,5,1 233,1,1 080,3,1
+mindustry.graphics.CubemapMesh,0,1,1,1,1 081,0,1
+mindustry.graphics.DebugCollisionRenderer,912,12,1 233,1,1 080,7,1
+mindustry.graphics.Drawf,912,13,1 233,114,1 080,6,24
+mindustry.graphics.EnvRenderers,912,9,1 233,1,1 080,6,1
+mindustry.graphics.FloorRenderer,912,10,1 233,7,1 080,6,4
+mindustry.graphics.FloorRenderer.ChunkMesh,0,0,0,1,1 081,0,1
+mindustry.graphics.FloorRenderer.FloorRenderBatch,912,2,1 233,1,1 080,1,1
+mindustry.graphics.FogRenderer,912,18,1 233,3,1 080,9,3
+mindustry.graphics.GpuDetect,0,0,0,2,2,0,2
+mindustry.graphics.InverseKinematics,0,0,0,1,1,0,1
+mindustry.graphics.Layer,0,0,0,96,1 082,0,26
+mindustry.graphics.LightRenderer,912,8,1 233,3,1 080,4,2
+mindustry.graphics.LightRenderer.CircleLight,0,0,0,1,1 081,0,1
+mindustry.graphics.LoadRenderer,0,11,1 235,1,2,6,1
+mindustry.graphics.LoadRenderer.Bar,0,0,0,1,3,0,1
+mindustry.graphics.MenuRenderer,912,14,1 233,1,1 080,8,1
+mindustry.graphics.MinimapRenderer,912,37,1 233,10,1 080,14,9
+mindustry.graphics.MultiPacker,912,3,1 233,10,1 080,2,6
+mindustry.graphics.MultiPacker.PageType,0,0,0,11,1 081,0,7
+mindustry.graphics.NvGpuInfo,0,0,0,1,2,0,1
+mindustry.graphics.OverlayRenderer,912,39,1 233,2,1 080,14,2
+mindustry.graphics.OverlayRenderer.CoreEdge,912,3,1 233,1,1 080,3,1
+mindustry.graphics.Pal,0,0,0,181,1 088,0,41
+mindustry.graphics.ParticleRenderer,0,3,1 234,0,0,2,0
+mindustry.graphics.Pixelator,912,4,1 233,1,1 080,3,1
+mindustry.graphics.Shaders,912,19,1 233,25,1 080,3,12
+mindustry.graphics.Shaders.AtmosphereShader,912,2,1 233,2,1 080,2,2
+mindustry.graphics.Shaders.BlockBuildShader,912,1,1 233,5,1 080,1,5
+mindustry.graphics.Shaders.BuildBeamShader,912,1,1 233,1,1 080,1,1
+mindustry.graphics.Shaders.CloudShader,912,5,1 233,2,1 080,5,2
+mindustry.graphics.Shaders.DarknessShader,912,1,1 233,1,1 080,1,1
+mindustry.graphics.Shaders.FogShader,912,1,1 233,1,1 080,1,1
+mindustry.graphics.Shaders.LightShader,912,1,1 233,2,1 080,1,1
+mindustry.graphics.Shaders.LoadShader,912,1,1 233,15,1 080,1,1
+mindustry.graphics.Shaders.MeshShader,912,1,1 233,1,1 080,1,1
+mindustry.graphics.Shaders.PlanetGridShader,912,1,1 233,2,1 080,1,2
+mindustry.graphics.Shaders.PlanetShader,912,5,1 233,2,1 080,5,2
+mindustry.graphics.Shaders.ShieldShader,912,1,1 233,1,1 080,1,1
+mindustry.graphics.Shaders.ShockwaveShader,912,4,1 233,1,1 080,4,1
+mindustry.graphics.Shaders.SpaceShader,912,3,1 233,1,1 080,3,1
+mindustry.graphics.Shaders.SurfaceShader,912,3,1 233,2,1 080,3,1
+mindustry.graphics.Shaders.UnitArmorShader,912,1,1 233,2,1 080,1,2
+mindustry.graphics.Shaders.UnitBuildShader,912,1,1 233,2,1 080,1,1
+mindustry.graphics.Trail,0,0,0,7,1 081,0,4
+mindustry.graphics.Voronoi,0,5,5,1,1 081,1,1
+mindustry.graphics.Voronoi.Edge,0,1,1,2,1 083,1,1
+mindustry.graphics.Voronoi.GraphEdge,0,0,0,2,1 082,0,1
+mindustry.graphics.Voronoi.Halfedge,0,2,2,1,1 082,1,1
+mindustry.graphics.Voronoi.Site,0,0,0,3,1 084,0,1
+mindustry.graphics.g3d.HexMesh,912,7,1 233,3,1 080,3,2
+mindustry.graphics.g3d.HexSkyMesh,912,6,1 233,2,1 080,3,2
+mindustry.graphics.g3d.MatMesh,912,2,1 233,2,1 080,1,2
+mindustry.graphics.g3d.MeshBuilder,912,6,1 233,7,1 080,2,3
+mindustry.graphics.g3d.MultiMesh,912,2,1 233,2,1 080,1,2
+mindustry.graphics.g3d.NoiseMesh,912,5,1 233,2,1 080,3,2
+mindustry.graphics.g3d.PlanetGrid,0,4,4,3,1 081,1,3
+mindustry.graphics.g3d.PlanetGrid.Corner,2,2,2,6,1 084,1,2
+mindustry.graphics.g3d.PlanetGrid.Edge,2,2,2,3,1 084,1,1
+mindustry.graphics.g3d.PlanetGrid.Ptile,2,2,2,13,1 084,1,8
+mindustry.graphics.g3d.PlanetMesh,912,3,1 233,4,1 080,2,1
+mindustry.graphics.g3d.PlanetParams,912,3,1 233,14,1 080,3,7
+mindustry.graphics.g3d.PlanetRenderer,912,8,1 233,5,1 080,4,4
+mindustry.graphics.g3d.ShaderSphereMesh,912,3,1 233,2,1 080,2,2
+mindustry.graphics.g3d.SunMesh,912,4,1 233,2,1 080,3,2
+mindustry.input.Binding,912,1,1 233,19,1 080,1,8
+mindustry.input.DesktopInput,912,45,1 233,2,1 080,14,2
+mindustry.input.InputHandler,912,101,1 233,31,1 080,27,16
+mindustry.input.InputHandler.PlaceLine,0,0,0,1,1 081,0,1
+mindustry.input.MobileInput,912,46,1 233,3,1 080,15,3
+mindustry.input.PlaceMode,0,0,0,2,1 081,0,1
+mindustry.input.Placement,912,17,1 233,10,1 080,9,5
+mindustry.input.Placement.NormalizeDrawResult,0,0,0,2,1 081,0,1
+mindustry.input.Placement.NormalizeResult,0,0,0,3,1 081,0,2
+mindustry.io.JsonIO,912,29,1 233,27,1 080,11,12
+mindustry.io.JsonIO.CustomJson,912,1,1 233,1,1 080,1,1
+mindustry.io.MapIO,912,20,1 233,6,1 080,10,4
+mindustry.io.SaveFileReader,912,3,1 233,11,1 080,2,6
+mindustry.io.SaveIO,912,21,1 233,13,1 080,6,10
+mindustry.io.SaveIO.SaveException,0,0,0,4,1 081,0,4
+mindustry.io.SaveMeta,912,5,1 233,9,1 080,4,5
+mindustry.io.SavePreviewLoader,0,0,0,1,1 081,0,1
+mindustry.io.SaveVersion,912,50,1 233,11,1 080,15,6
+mindustry.io.TypeIO,912,58,1 233,13,1 080,19,11
+mindustry.io.TypeIO.BuildingBox,912,4,1 233,1,1 080,4,1
+mindustry.io.TypeIO.UnitBox,912,4,1 233,1,1 080,3,1
+mindustry.io.versions.LegacyIO,912,1,1 233,2,1 080,1,2
+mindustry.io.versions.LegacyRegionSaveVersion,912,7,1 233,3,1 080,5,1
+mindustry.io.versions.LegacySaveVersion,912,15,1 233,3,1 080,10,1
+mindustry.io.versions.LegacySaveVersion2,912,4,1 233,2,1 080,3,1
+mindustry.io.versions.Save1,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save10,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save2,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save3,912,6,1 233,1,1 080,4,1
+mindustry.io.versions.Save4,912,3,1 233,1,1 080,3,1
+mindustry.io.versions.Save5,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save6,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save7,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save8,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.Save9,912,1,1 233,1,1 080,1,1
+mindustry.io.versions.ShortChunkSaveVersion,912,14,1 233,4,1 080,8,1
+mindustry.logic.ConditionOp,912,3,1 233,4,1 080,1,1
+mindustry.logic.CutsceneAction,0,0,0,2,2,0,1
+mindustry.logic.FetchType,0,0,0,2,2,0,1
+mindustry.logic.GlobalVars,912,23,1 233,18,1 080,10,8
+mindustry.logic.GlobalVars.VarEntry,0,0,0,2,1 081,0,1
+mindustry.logic.GlobalVarsDialog,912,7,1 233,1,1 080,6,1
+mindustry.logic.LAccess,0,1,1,54,1 081,0,17
+mindustry.logic.LAssembler,912,6,1 233,57,1 080,2,3
+mindustry.logic.LCanvas,912,8,1 233,12,1 080,3,1
+mindustry.logic.LCanvas.DragLayout,912,4,1 233,4,1 080,2,1
+mindustry.logic.LCanvas.JumpButton,912,6,1 233,2,1 080,3,1
+mindustry.logic.LCanvas.JumpCurve,912,5,1 233,3,1 080,2,1
+mindustry.logic.LCanvas.StatementElem,912,8,1 233,6,1 080,3,1
+mindustry.logic.LCategory,0,2,2,52,1 081,2,1
+mindustry.logic.LExecutor,912,22,1 233,61,1 080,9,3
+mindustry.logic.LExecutor.ApplyEffectI,0,8,1 234,1,1,5,1
+mindustry.logic.LExecutor.ClientDataI,0,4,1 234,1,1,2,1
+mindustry.logic.LExecutor.ControlI,0,6,1 234,1,1,3,1
+mindustry.logic.LExecutor.CutsceneI,0,8,1 235,1,1,4,1
+mindustry.logic.LExecutor.DrawFlushI,0,6,1 234,1,1,4,1
+mindustry.logic.LExecutor.DrawI,0,9,1 234,1,1,6,1
+mindustry.logic.LExecutor.EffectI,0,6,1 234,1,1,3,1
+mindustry.logic.LExecutor.EndI,0,4,1 234,1,1,1,1
+mindustry.logic.LExecutor.ExplosionI,0,8,1 234,1,1,6,1
+mindustry.logic.LExecutor.FetchI,0,12,1 235,1,1,5,1
+mindustry.logic.LExecutor.FlushMessageI,0,11,1 235,1,1,6,1
+mindustry.logic.LExecutor.FormatI,0,4,1 234,1,1,1,1
+mindustry.logic.LExecutor.GetBlockI,0,7,1 235,1,1,4,1
+mindustry.logic.LExecutor.GetFlagI,0,6,1 234,1,1,4,1
+mindustry.logic.LExecutor.GetLinkI,0,4,1 234,1,1,1,1
+mindustry.logic.LExecutor.JumpI,912,4,1 233,1,1 080,1,1
+mindustry.logic.LExecutor.LocalePrintI,0,7,1 234,1,1,4,1
+mindustry.logic.LExecutor.LookupI,0,6,1 234,1,1,3,1
+mindustry.logic.LExecutor.MakeMarkerI,0,9,1 234,1,1,4,1
+mindustry.logic.LExecutor.NoopI,912,2,1 233,1,1 080,1,1
+mindustry.logic.LExecutor.OpI,0,7,1 238,1,1,1,1
+mindustry.logic.LExecutor.PackColorI,0,3,1 234,1,1,1,1
+mindustry.logic.LExecutor.PlaySoundI,0,5,1 234,1,1,3,1
+mindustry.logic.LExecutor.PrintCharI,0,4,1 234,1,1,2,1
+mindustry.logic.LExecutor.PrintFlushI,0,6,1 234,1,1,4,1
+mindustry.logic.LExecutor.PrintI,912,8,1 233,5,1 080,4,1
+mindustry.logic.LExecutor.RadarI,0,23,1 239,2,2,8,1
+mindustry.logic.LExecutor.ReadI,0,4,1 234,1,1,1,1
+mindustry.logic.LExecutor.SelectI,0,4,1 234,1,1,1,1
+mindustry.logic.LExecutor.SenseI,0,6,1 234,1,1,2,1
+mindustry.logic.LExecutor.SenseWeatherI,0,4,1 234,1,1,2,1
+mindustry.logic.LExecutor.SetBlockI,0,13,1 235,1,1,8,1
+mindustry.logic.LExecutor.SetFlagI,0,7,1 234,1,1,5,1
+mindustry.logic.LExecutor.SetI,0,3,1 234,1,1,1,1
+mindustry.logic.LExecutor.SetMarkerI,0,9,1 234,1,1,4,1
+mindustry.logic.LExecutor.SetPropI,0,6,1 235,1,1,2,1
+mindustry.logic.LExecutor.SetRateI,0,6,1 234,1,1,3,1
+mindustry.logic.LExecutor.SetRuleI,0,15,1 235,1,1,8,1
+mindustry.logic.LExecutor.SetWeatherI,0,6,1 234,1,1,3,1
+mindustry.logic.LExecutor.SpawnUnitI,0,11,1 234,1,1,9,1
+mindustry.logic.LExecutor.SpawnWaveI,0,11,1 234,1,1,6,1
+mindustry.logic.LExecutor.StopI,0,3,1 234,1,1,1,1
+mindustry.logic.LExecutor.SyncI,0,4,1 234,1,1,2,1
+mindustry.logic.LExecutor.UnitBindI,0,11,1 234,1,1,7,1
+mindustry.logic.LExecutor.UnitControlI,0,36,1 234,3,6,16,1
+mindustry.logic.LExecutor.UnitLocateI,0,18,1 237,1,1,10,1
+mindustry.logic.LExecutor.UnitLocateI.Cache,0,1,1,1,2,1,1
+mindustry.logic.LExecutor.UnpackColorI,0,3,1 234,1,1,1,1
+mindustry.logic.LExecutor.WaitI,0,3,1 234,1,1,1,1
+mindustry.logic.LExecutor.WriteI,0,4,1 234,1,1,1,1
+mindustry.logic.LLocate,0,0,0,2,2,0,1
+mindustry.logic.LMarkerControl,0,0,0,14,1 081,0,3
+mindustry.logic.LParser,912,8,1 233,1,1 080,2,1
+mindustry.logic.LParser.JumpIndex,912,1,1 233,1,1 080,1,1
+mindustry.logic.LStatement,912,13,1 233,57,1 080,7,2
+mindustry.logic.LStatements,0,0,0,0,0,0,0
+mindustry.logic.LStatements.ApplyStatusStatement,0,10,1 235,0,0,6,0
+mindustry.logic.LStatements.ClientDataStatement,0,8,1 235,0,0,4,0
+mindustry.logic.LStatements.CommentStatement,0,4,1 234,0,0,2,0
+mindustry.logic.LStatements.ControlStatement,0,8,1 235,0,0,2,0
+mindustry.logic.LStatements.CutsceneStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.DrawFlushStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.DrawStatement,0,7,1 235,0,0,3,0
+mindustry.logic.LStatements.EffectStatement,0,11,1 235,0,0,5,0
+mindustry.logic.LStatements.EndStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.ExplosionStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.FetchStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.FlushMessageStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.FormatStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.GetBlockStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.GetFlagStatement,0,6,1 235,0,0,1,0
+mindustry.logic.LStatements.GetLinkStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.InvalidStatement,912,4,1 233,2,1 080,1,1
+mindustry.logic.LStatements.JumpStatement,912,9,1 233,4,1 080,2,1
+mindustry.logic.LStatements.LocalePrintStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.LookupStatement,0,8,1 235,0,0,3,0
+mindustry.logic.LStatements.MakeMarkerStatement,0,7,1 235,0,0,3,0
+mindustry.logic.LStatements.OperationStatement,0,8,1 239,0,0,2,0
+mindustry.logic.LStatements.PackColorStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.PlaySoundStatement,0,8,1 235,0,0,3,0
+mindustry.logic.LStatements.PrintCharStatement,0,7,1 235,0,0,3,0
+mindustry.logic.LStatements.PrintFlushStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.PrintStatement,0,5,1 234,0,0,1,0
+mindustry.logic.LStatements.RadarStatement,0,8,1 240,1,1,2,1
+mindustry.logic.LStatements.ReadStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.SelectStatement,0,7,1 235,0,0,1,0
+mindustry.logic.LStatements.SensorStatement,0,18,1 235,0,0,8,0
+mindustry.logic.LStatements.SetBlockStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.SetFlagStatement,0,6,1 235,0,0,1,0
+mindustry.logic.LStatements.SetMarkerStatement,0,10,1 235,0,0,4,0
+mindustry.logic.LStatements.SetPropStatement,0,16,1 236,0,0,7,0
+mindustry.logic.LStatements.SetRateStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.SetRuleStatement,0,7,1 236,0,0,2,0
+mindustry.logic.LStatements.SetStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.SpawnUnitStatement,0,6,1 235,0,0,1,0
+mindustry.logic.LStatements.SpawnWaveStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.StopStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.SyncStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.UnitBindStatement,0,12,1 235,0,0,7,0
+mindustry.logic.LStatements.UnitControlStatement,0,12,1 235,0,0,5,0
+mindustry.logic.LStatements.UnitLocateStatement,0,14,1 238,0,0,8,0
+mindustry.logic.LStatements.UnitRadarStatement,0,5,1 241,0,0,1,0
+mindustry.logic.LStatements.UnpackColorStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.WaitStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LStatements.WeatherSenseStatement,0,11,1 235,0,0,7,0
+mindustry.logic.LStatements.WeatherSetStatement,0,11,1 235,0,0,7,0
+mindustry.logic.LStatements.WriteStatement,0,5,1 235,0,0,1,0
+mindustry.logic.LUnitControl,0,0,0,3,1 081,0,2
+mindustry.logic.LVar,912,3,1 233,60,1 080,2,3
+mindustry.logic.LogicDialog,912,27,1 233,3,1 080,11,3
+mindustry.logic.LogicFx,912,3,1 233,2,1 080,3,2
+mindustry.logic.LogicFx.EffectEntry,912,1,1 233,5,1 080,1,2
+mindustry.logic.LogicOp,0,4,1 237,2,2,1,1
+mindustry.logic.LogicRule,0,0,0,2,2,0,1
+mindustry.logic.MessageType,0,0,0,2,2,0,1
+mindustry.logic.RadarSort,0,2,2,2,3,2,1
+mindustry.logic.RadarTarget,0,5,1 235,2,3,3,1
+mindustry.logic.TileLayer,0,0,0,4,4,0,1
+mindustry.maps.Map,912,16,1 233,36,1 080,12,14
+mindustry.maps.MapException,912,1,1 233,2,1 080,1,2
+mindustry.maps.MapPreviewLoader,912,9,1 233,3,1 080,6,2
+mindustry.maps.MapPreviewLoader.MapPreviewParameter,912,1,1 233,2,1 080,1,1
+mindustry.maps.Maps,912,40,1 233,19,1 080,12,8
+mindustry.maps.Maps.ShuffleMode,912,5,1 233,2,1 080,3,2
+mindustry.maps.SectorDamage,912,41,1 233,5,1 080,17,3
+mindustry.maps.SectorSubmissions,912,6,1 233,2,1 080,4,2
+mindustry.maps.SectorSubmissions.MapSubmission,0,0,0,1,1 081,0,1
+mindustry.maps.filters.BlendFilter,912,9,1 233,1,1 080,4,1
+mindustry.maps.filters.ClearFilter,912,7,1 233,1,1 080,4,1
+mindustry.maps.filters.CoreSpawnFilter,912,10,1 233,1,1 080,7,1
+mindustry.maps.filters.DistortFilter,912,7,1 233,1,1 080,3,1
+mindustry.maps.filters.EnemySpawnFilter,912,8,1 233,1,1 080,4,1
+mindustry.maps.filters.FilterOption,912,6,1 233,21,1 080,5,2
+mindustry.maps.filters.FilterOption.BlockOption,912,10,1 233,8,1 080,8,1
+mindustry.maps.filters.FilterOption.SliderOption,912,3,1 233,12,1 080,3,1
+mindustry.maps.filters.FilterOption.ToggleOption,912,1,1 233,2,1 080,1,1
+mindustry.maps.filters.GenerateFilter,912,12,1 233,22,1 080,8,5
+mindustry.maps.filters.GenerateFilter.GenerateInput,912,3,1 233,19,1 080,2,3
+mindustry.maps.filters.GenerateFilter.PackTileStruct,0,0,0,0,0,0,0
+mindustry.maps.filters.LogicFilter,912,15,1 233,1,1 080,6,1
+mindustry.maps.filters.MedianFilter,912,10,1 233,1,1 080,6,1
+mindustry.maps.filters.MirrorFilter,912,9,1 233,1,1 080,4,1
+mindustry.maps.filters.NoiseFilter,912,8,1 233,1,1 080,4,1
+mindustry.maps.filters.OreFilter,912,9,1 233,1,1 080,5,1
+mindustry.maps.filters.OreMedianFilter,912,11,1 233,1,1 080,7,1
+mindustry.maps.filters.RandomItemFilter,0,11,1 234,0,0,6,0
+mindustry.maps.filters.RiverNoiseFilter,912,8,1 233,1,1 080,4,1
+mindustry.maps.filters.ScatterFilter,912,8,1 233,1,1 080,4,1
+mindustry.maps.filters.SpawnPathFilter,912,18,1 233,1,1 080,10,1
+mindustry.maps.filters.TerrainFilter,912,8,1 233,1,1 080,4,1
+mindustry.maps.generators.BaseGenerator,912,36,1 233,1,1 080,16,1
+mindustry.maps.generators.BasicGenerator,912,17,1 233,7,1 080,9,3
+mindustry.maps.generators.BlankPlanetGenerator,912,6,1 233,1,1 080,4,1
+mindustry.maps.generators.FileMapGenerator,912,27,1 233,6,1 080,14,6
+mindustry.maps.generators.PlanetGenerator,912,31,1 233,13,1 080,13,8
+mindustry.maps.planet.AsteroidGenerator,912,17,1 233,2,1 080,10,2
+mindustry.maps.planet.ErekirPlanetGenerator,912,24,1 233,1,1 080,12,1
+mindustry.maps.planet.SerpuloPlanetGenerator,912,35,1 233,1,1 080,14,1
+mindustry.maps.planet.TantrosPlanetGenerator,912,12,1 233,1,1 080,8,1
+mindustry.mod.ClassLoaderCloser,0,0,0,1,1 081,0,1
+mindustry.mod.ClassMap,912,496,1 233,1,1 080,31,1
+mindustry.mod.ContentParser,912,119,1 233,1,1 080,29,1
+mindustry.mod.ContentParser.UnitReq,912,3,1 233,1,1 080,2,1
+mindustry.mod.Mod,912,2,1 233,8,1 080,2,5
+mindustry.mod.ModClassLoader,0,0,0,1,1 081,0,1
+mindustry.mod.ModListing,0,0,0,1,1 081,0,1
+mindustry.mod.Mods,912,40,1 233,24,1 080,11,13
+mindustry.mod.Mods.LoadedMod,912,9,1 233,26,1 080,5,15
+mindustry.mod.Mods.ModDependency,0,0,0,2,1 082,0,1
+mindustry.mod.Mods.ModLoadException,0,0,0,1,1 081,0,1
+mindustry.mod.Mods.ModMeta,912,1,1 233,9,1 080,1,6
+mindustry.mod.Mods.ModResolutionContext,0,2,2,1,1 081,1,1
+mindustry.mod.Mods.ModState,0,0,0,4,1 082,0,2
+mindustry.mod.Plugin,912,1,1 233,1,1 080,1,1
+mindustry.mod.Scripts,912,4,1 233,5,1 080,3,4
+mindustry.mod.Scripts.ScriptModuleProvider,912,4,1 233,1,1 080,2,1
+mindustry.net.Administration,912,16,1 233,14,1 080,6,8
+mindustry.net.Administration.ActionType,0,0,0,4,1 081,0,3
+mindustry.net.Administration.Config,912,2,1 233,7,1 080,2,3
+mindustry.net.Administration.PlayerAction,912,7,1 233,4,1 080,5,3
+mindustry.net.Administration.PlayerInfo,0,0,0,7,1 081,0,5
+mindustry.net.Administration.TraceInfo,0,0,0,4,1 081,0,3
+mindustry.net.ArcNetProvider,912,17,1 233,4,1 080,4,3
+mindustry.net.ArcNetProvider.ArcConnection,912,6,1 233,1,1 080,1,1
+mindustry.net.ArcNetProvider.PacketSerializer,912,4,1 233,3,1 080,1,2
+mindustry.net.BeControl,912,12,1 233,2,1 080,8,2
+mindustry.net.CrashHandler,0,7,1 234,3,3,4,3
+mindustry.net.Host,912,2,1 233,9,1 080,2,5
+mindustry.net.Net,912,18,1 233,86,1 080,6,32
+mindustry.net.NetConnection,912,11,1 233,18,1 080,5,9
+mindustry.net.NetworkIO,912,25,1 233,3,1 080,11,2
+mindustry.net.Packet,912,1,1 233,10,1 080,1,2
+mindustry.net.Packets,0,0,0,0,0,0,0
+mindustry.net.Packets.AdminAction,0,0,0,5,1 082,0,4
+mindustry.net.Packets.Connect,912,1,1 233,4,1 080,1,3
+mindustry.net.Packets.ConnectPacket,912,4,1 233,5,1 080,3,4
+mindustry.net.Packets.Disconnect,912,1,1 233,4,1 080,1,3
+mindustry.net.Packets.KickReason,0,0,0,11,1 081,0,7
+mindustry.net.Packets.StreamBegin,912,1,1 233,4,1 080,1,1
+mindustry.net.Packets.StreamChunk,912,2,1 233,5,1 080,1,2
+mindustry.net.Packets.WorldStream,912,1,1 233,3,1 080,1,2
+mindustry.net.ServerGroup,0,1,1,2,1 081,0,2
+mindustry.net.Streamable,912,1,1 233,6,1 080,1,2
+mindustry.net.Streamable.StreamBuilder,912,3,1 233,1,1 080,1,1
+mindustry.net.ValidateException,0,1,1,3,1 081,1,3
+mindustry.net.WorldReloader,912,9,1 233,2,1 080,5,2
+mindustry.service.Achievement,912,5,1 233,4,1 080,4,3
+mindustry.service.GameService,912,90,1 233,4,1 080,22,3
+mindustry.service.SStat,912,3,1 233,2,1 080,2,1
+mindustry.type.Category,0,1,1,8,1 081,0,8
+mindustry.type.CellLiquid,912,14,1 233,2,1 080,11,2
+mindustry.type.ErrorContent,912,2,1 233,2,1 080,1,1
+mindustry.type.Item,912,16,1 233,138,1 080,10,38
+mindustry.type.ItemSeq,912,10,1 233,17,1 080,6,9
+mindustry.type.ItemStack,912,4,1 233,69,1 080,3,28
+mindustry.type.Liquid,912,18,1 233,82,1 080,10,32
+mindustry.type.LiquidStack,912,4,1 233,16,1 080,3,9
+mindustry.type.MapLocales,0,0,0,10,1 081,0,7
+mindustry.type.PayloadSeq,912,6,1 233,8,1 080,4,5
+mindustry.type.PayloadStack,912,4,1 233,11,1 080,2,6
+mindustry.type.Planet,912,34,1 233,62,1 080,14,23
+mindustry.type.Planet.PlanetData,0,0,0,3,1 081,0,2
+mindustry.type.Sector,912,25,1 233,57,1 080,13,18
+mindustry.type.Sector.SectorRect,0,0,0,5,1 081,0,5
+mindustry.type.SectorPreset,912,12,1 233,31,1 080,6,17
+mindustry.type.StatusEffect,912,22,1 233,26,1 080,10,21
+mindustry.type.TeamEntry,912,4,1 233,3,1 080,2,2
+mindustry.type.UnitType,912,102,1 233,147,1 080,26,36
+mindustry.type.UnitType.UnitEngine,912,3,1 233,3,1 080,3,3
+mindustry.type.Weapon,912,39,1 233,26,1 080,16,12
+mindustry.type.Weather,912,23,1 233,21,1 080,12,10
+mindustry.type.Weather.WeatherEntry,912,2,1 233,5,1 080,2,5
+mindustry.type.Weather.WeatherStateComp,0,8,1 235,0,0,5,0
+mindustry.type.ammo.ItemAmmoType,912,11,1 233,5,1 080,7,4
+mindustry.type.ammo.PowerAmmoType,912,12,1 233,3,1 080,8,2
+mindustry.type.unit.ErekirUnitType,912,5,1 233,3,1 080,5,3
+mindustry.type.unit.MissileUnitType,912,8,1 233,1,1 080,6,1
+mindustry.type.unit.NeoplasmUnitType,912,9,1 233,1,1 080,5,1
+mindustry.type.unit.TankUnitType,912,3,1 233,1,1 080,3,1
+mindustry.type.weapons.BuildWeapon,912,6,1 233,1,1 080,4,1
+mindustry.type.weapons.MineWeapon,912,7,1 233,1,1 080,5,1
+mindustry.type.weapons.PointDefenseBulletWeapon,912,8,1 233,1,1 080,5,1
+mindustry.type.weapons.PointDefenseWeapon,912,13,1 233,1,1 080,9,1
+mindustry.type.weapons.RepairBeamWeapon,912,20,1 233,2,1 080,12,2
+mindustry.type.weapons.RepairBeamWeapon.HealBeamMount,912,2,1 233,2,1 080,2,2
+mindustry.type.weather.MagneticStorm,912,1,1 233,1,1 080,1,1
+mindustry.type.weather.ParticleWeather,912,6,1 233,3,1 080,3,2
+mindustry.type.weather.RainWeather,912,6,1 233,1,1 080,4,1
+mindustry.type.weather.SolarFlare,912,1,1 233,1,1 080,1,1
+mindustry.ui.Bar,912,2,1 233,40,1 080,2,15
+mindustry.ui.BorderImage,0,1,1,7,1 081,1,2
+mindustry.ui.CoreItemsDisplay,912,11,1 233,1,1 080,9,1
+mindustry.ui.Fonts,912,4,1 233,38,1 080,4,18
+mindustry.ui.GridImage,0,0,0,1,1 081,0,1
+mindustry.ui.IntFormat,0,0,0,1,1 081,0,1
+mindustry.ui.ItemsDisplay,912,11,1 233,2,1 080,7,1
+mindustry.ui.Links,0,3,3,1,1 081,3,1
+mindustry.ui.Links.LinkEntry,0,0,0,2,1 082,0,2
+mindustry.ui.Menus,0,15,1 238,0,0,8,0
+mindustry.ui.Minimap,912,9,1 233,1,1 080,6,1
+mindustry.ui.MobileButton,0,0,0,1,1 081,0,1
+mindustry.ui.MultiReqImage,0,1,2,5,1 081,1,2
+mindustry.ui.ReqImage,0,1,1,14,1 082,1,4
+mindustry.ui.Styles,912,4,1 233,103,1 080,3,19
+mindustry.ui.WarningBar,0,1,1,1,1 081,1,1
+mindustry.ui.dialogs.AboutDialog,912,9,1 233,1,1 080,7,1
+mindustry.ui.dialogs.AdminsDialog,912,11,1 233,1,1 080,6,1
+mindustry.ui.dialogs.BansDialog,912,8,1 233,1,1 080,5,1
+mindustry.ui.dialogs.BaseDialog,912,9,1 233,52,1 080,6,9
+mindustry.ui.dialogs.CampaignCompleteDialog,912,10,1 233,2,1 080,8,1
+mindustry.ui.dialogs.CampaignRulesDialog,912,9,1 233,1,1 080,7,1
+mindustry.ui.dialogs.ColorPicker,912,3,1 233,6,1 080,2,6
+mindustry.ui.dialogs.ContentInfoDialog,912,11,1 233,7,1 080,7,5
+mindustry.ui.dialogs.CustomGameDialog,912,3,1 233,1,1 080,2,1
+mindustry.ui.dialogs.CustomRulesDialog,912,29,1 233,3,1 080,13,2
+mindustry.ui.dialogs.DatabaseDialog,912,19,1 233,1,1 080,10,1
+mindustry.ui.dialogs.DiscordDialog,912,5,1 233,1,1 080,4,1
+mindustry.ui.dialogs.EditorMapsDialog,912,14,1 233,1,1 080,9,1
+mindustry.ui.dialogs.EffectsDialog,912,10,1 233,3,1 080,6,3
+mindustry.ui.dialogs.EffectsDialog.BoundsBatch,0,0,0,1,1 081,0,1
+mindustry.ui.dialogs.EffectsDialog.EffectCell,912,4,1 233,1,1 080,4,1
+mindustry.ui.dialogs.FileChooser,912,5,1 233,2,1 080,3,2
+mindustry.ui.dialogs.FileChooser.FileHistory,912,1,1 233,1,1 080,1,1
+mindustry.ui.dialogs.FullTextDialog,912,1,1 233,2,1 080,1,2
+mindustry.ui.dialogs.GameOverDialog,912,23,1 233,2,1 080,9,1
+mindustry.ui.dialogs.GameOverDialog.StatLabel,912,3,1 233,1,1 080,3,1
+mindustry.ui.dialogs.HostDialog,912,13,1 233,1,1 080,8,1
+mindustry.ui.dialogs.IconSelectDialog,912,8,1 233,1,1 080,6,1
+mindustry.ui.dialogs.JoinDialog,912,24,1 233,4,1 080,10,3
+mindustry.ui.dialogs.JoinDialog.Server,912,2,1 233,2,1 080,2,2
+mindustry.ui.dialogs.KeybindDialog,912,3,1 233,1,1 080,3,1
+mindustry.ui.dialogs.LanguageDialog,912,5,1 233,2,1 080,5,2
+mindustry.ui.dialogs.LaunchLoadoutDialog,912,25,1 233,1,1 080,13,1
+mindustry.ui.dialogs.LoadDialog,912,20,1 233,4,1 080,9,3
+mindustry.ui.dialogs.LoadoutDialog,912,12,1 233,2,1 080,7,1
+mindustry.ui.dialogs.MapListDialog,912,13,1 233,2,1 080,9,1
+mindustry.ui.dialogs.MapPlayDialog,912,12,1 233,2,1 080,7,2
+mindustry.ui.dialogs.ModsDialog,912,25,1 233,2,1 080,12,2
+mindustry.ui.dialogs.PaletteDialog,912,5,1 233,2,1 080,3,1
+mindustry.ui.dialogs.PausedDialog,912,24,1 233,3,1 080,10,2
+mindustry.ui.dialogs.PlanetDialog,912,59,1 233,9,1 080,18,5
+mindustry.ui.dialogs.PlanetDialog.Mode,0,0,0,1,1 081,0,1
+mindustry.ui.dialogs.ResearchDialog,912,35,1 233,4,1 080,15,2
+mindustry.ui.dialogs.ResearchDialog.LayoutNode,912,3,1 233,1,1 080,2,1
+mindustry.ui.dialogs.ResearchDialog.TechTreeNode,912,4,1 233,3,1 080,3,1
+mindustry.ui.dialogs.ResearchDialog.View,912,24,1 233,1,1 080,12,1
+mindustry.ui.dialogs.SaveDialog,912,9,1 233,1,1 080,6,1
+mindustry.ui.dialogs.SchematicsDialog,912,25,1 233,4,1 080,11,3
+mindustry.ui.dialogs.SchematicsDialog.SchematicImage,912,6,1 233,3,1 080,4,1
+mindustry.ui.dialogs.SchematicsDialog.SchematicInfoDialog,912,15,1 233,1,1 080,9,1
+mindustry.ui.dialogs.SectorSelectDialog,912,10,1 233,1,1 080,8,1
+mindustry.ui.dialogs.SettingsMenuDialog,912,30,1 233,1,1 080,11,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsCategory,912,1,1 233,1,1 080,1,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable,912,6,1 233,7,1 080,1,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.AreaTextSetting,912,3,1 233,1,1 080,1,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.CheckSetting,912,2,1 233,1,1 080,1,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.Setting,912,3,1 233,5,1 080,3,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.SliderSetting,912,4,1 233,1,1 080,2,1
+mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.TextSetting,912,2,1 233,2,1 080,1,1
+mindustry.ui.dialogs.TraceDialog,912,8,1 233,2,1 080,6,1
+mindustry.ui.fragments.BlockConfigFragment,912,4,1 233,9,1 080,4,8
+mindustry.ui.fragments.BlockInventoryFragment,912,17,1 233,3,1 080,9,2
+mindustry.ui.fragments.ChatFragment,912,12,1 233,10,1 080,8,4
+mindustry.ui.fragments.ChatFragment.ChatMode,912,2,1 233,1,1 080,1,1
+mindustry.ui.fragments.ConsoleFragment,912,8,1 233,6,1 080,7,5
+mindustry.ui.fragments.FadeInFragment,0,0,0,1,1 081,0,1
+mindustry.ui.fragments.HintsFragment,912,27,1 233,3,1 080,12,2
+mindustry.ui.fragments.HintsFragment.DefaultHint,912,35,1 233,1,1 080,17,1
+mindustry.ui.fragments.HudFragment,912,70,1 233,11,1 080,17,7
+mindustry.ui.fragments.LoadingFragment,912,5,1 233,14,1 080,2,8
+mindustry.ui.fragments.MenuFragment,912,15,1 233,1,1 080,9,1
+mindustry.ui.fragments.MenuFragment.MenuButton,0,0,0,1,1 081,0,1
+mindustry.ui.fragments.MinimapFragment,912,12,1 233,6,1 080,7,5
+mindustry.ui.fragments.PlacementFragment,912,51,1 233,3,1 080,21,3
+mindustry.ui.fragments.PlanConfigFragment,912,10,1 233,3,1 080,9,2
+mindustry.ui.fragments.PlayerListFragment,912,21,1 233,4,1 080,10,4
+mindustry.ui.layout.BranchTreeLayout,0,5,5,1,1 081,1,1
+mindustry.ui.layout.BranchTreeLayout.TreeAlignment,0,0,0,1,1 082,0,1
+mindustry.ui.layout.BranchTreeLayout.TreeLocation,0,0,0,2,1 082,0,2
+mindustry.ui.layout.RadialTreeLayout,0,3,3,0,0,1,0
+mindustry.ui.layout.RowTreeLayout,0,2,3,0,0,1,0
+mindustry.ui.layout.TreeLayout.TreeNode,0,1,1,8,1 085,0,2
+mindustry.world.Block,912,69,1 233,449,1 080,20,51
+mindustry.world.Build,912,28,1 233,11,1 080,12,8
+mindustry.world.CachedTile,912,7,1 233,3,1 080,4,3
+mindustry.world.ColorMapper,912,4,1 233,2,1 080,4,2
+mindustry.world.DirectionalItemBuffer,912,7,1 233,3,1 080,5,1
+mindustry.world.DirectionalItemBuffer.BufferItemLegacyStruct,0,0,0,0,0,0,0
+mindustry.world.DirectionalItemBuffer.BufferItemStruct,0,0,0,0,0,0,0
+mindustry.world.Edges,912,6,1 233,18,1 080,4,8
+mindustry.world.ItemBuffer,912,6,1 233,1,1 080,5,1
+mindustry.world.ItemBuffer.TimeItemStruct,0,0,0,0,0,0,0
+mindustry.world.Tile,912,35,1 233,245,1 080,14,42
+mindustry.world.Tile.PackedTileDataStruct,0,0,0,0,0,0,0
+mindustry.world.TileGen,912,2,1 233,4,1 080,2,2
+mindustry.world.Tiles,912,5,1 233,38,1 080,2,13
+mindustry.world.Tiles.TileIterator,912,3,1 233,1,1 080,1,1
+mindustry.world.WorldParams,0,0,0,9,1 081,0,4
+mindustry.world.blocks.Attributes,912,2,1 233,18,1 080,1,11
+mindustry.world.blocks.Autotiler.AutotilerHolder,912,1,1 233,2,1 080,1,2
+mindustry.world.blocks.Autotiler.SliceMode,0,0,0,6,1 081,0,4
+mindustry.world.blocks.ConstructBlock,912,18,1 233,11,1 080,10,8
+mindustry.world.blocks.ConstructBlock.ConstructBuild,912,35,1 233,15,1 080,19,11
+mindustry.world.blocks.ItemSelection,912,10,1 233,14,1 080,8,8
+mindustry.world.blocks.TileBitmask,0,0,0,4,1 081,0,2
+mindustry.world.blocks.campaign.Accelerator,912,14,1 233,3,1 080,11,3
+mindustry.world.blocks.campaign.Accelerator.AcceleratorBuild,912,35,1 233,1,1 080,18,1
+mindustry.world.blocks.campaign.LandingPad,912,23,1 233,3,1 080,15,3
+mindustry.world.blocks.campaign.LandingPad.LandingPadBuild,912,31,1 233,2,1 080,17,2
+mindustry.world.blocks.campaign.LaunchPad,912,13,1 233,4,1 080,9,3
+mindustry.world.blocks.campaign.LaunchPad.LaunchPadBuild,912,26,1 233,2,1 080,16,2
+mindustry.world.blocks.campaign.LaunchPad.LaunchPayloadComp,0,23,1 236,0,0,10,0
+mindustry.world.blocks.defense.AutoDoor,912,11,1 233,2,1 080,7,2
+mindustry.world.blocks.defense.AutoDoor.AutoDoorBuild,912,11,1 233,2,1 080,9,2
+mindustry.world.blocks.defense.BaseShield,912,14,1 233,3,1 080,9,3
+mindustry.world.blocks.defense.BaseShield.BaseShieldBuild,912,10,1 233,2,1 080,7,2
+mindustry.world.blocks.defense.BuildTurret,912,10,1 233,3,1 080,7,3
+mindustry.world.blocks.defense.BuildTurret.BuildTurretBuild,912,34,1 233,1,1 080,14,1
+mindustry.world.blocks.defense.DirectionalForceProjector,912,18,1 233,3,1 080,11,3
+mindustry.world.blocks.defense.DirectionalForceProjector.DirectionalForceProjectorBuild,912,11,1 233,2,1 080,9,2
+mindustry.world.blocks.defense.Door,912,12,1 233,4,1 080,9,4
+mindustry.world.blocks.defense.Door.DoorBuild,912,9,1 233,2,1 080,7,2
+mindustry.world.blocks.defense.ForceProjector,912,24,1 233,4,1 080,13,4
+mindustry.world.blocks.defense.ForceProjector.ForceBuild,912,19,1 233,2,1 080,13,2
+mindustry.world.blocks.defense.MendProjector,912,16,1 233,4,1 080,8,4
+mindustry.world.blocks.defense.MendProjector.MendBuild,912,10,1 233,1,1 080,9,1
+mindustry.world.blocks.defense.OverdriveProjector,912,18,1 233,3,1 080,10,3
+mindustry.world.blocks.defense.OverdriveProjector.OverdriveBuild,912,7,1 233,2,1 080,7,2
+mindustry.world.blocks.defense.Radar,912,5,1 233,2,1 080,4,2
+mindustry.world.blocks.defense.Radar.RadarBuild,912,8,1 233,1,1 080,6,1
+mindustry.world.blocks.defense.RegenProjector,912,22,1 233,3,1 080,12,3
+mindustry.world.blocks.defense.RegenProjector.RegenProjectorBuild,912,10,1 233,1,1 080,9,1
+mindustry.world.blocks.defense.ShieldWall,912,5,1 233,2,1 080,4,2
+mindustry.world.blocks.defense.ShieldWall.ShieldWallBuild,912,9,1 233,1,1 080,7,1
+mindustry.world.blocks.defense.ShockMine,912,3,1 233,4,1 080,3,4
+mindustry.world.blocks.defense.ShockMine.ShockMineBuild,912,6,1 233,1,1 080,5,1
+mindustry.world.blocks.defense.ShockwaveTower,912,11,1 233,3,1 080,8,3
+mindustry.world.blocks.defense.ShockwaveTower.ShockwaveTowerBuild,912,14,1 233,1,1 080,9,1
+mindustry.world.blocks.defense.Thruster,912,3,1 233,2,1 080,3,2
+mindustry.world.blocks.defense.Thruster.ThrusterBuild,912,4,1 233,1,1 080,3,1
+mindustry.world.blocks.defense.Wall,912,11,1 233,8,1 080,6,4
+mindustry.world.blocks.defense.Wall.WallBuild,912,8,1 233,4,1 080,7,3
+mindustry.world.blocks.defense.turrets.BaseTurret,912,18,1 233,22,1 080,10,4
+mindustry.world.blocks.defense.turrets.BaseTurret.BaseTurretBuild,912,6,1 233,11,1 080,6,5
+mindustry.world.blocks.defense.turrets.ContinuousLiquidTurret,912,15,1 233,4,1 080,10,3
+mindustry.world.blocks.defense.turrets.ContinuousLiquidTurret.ContinuousLiquidTurretBuild,912,15,1 233,1,1 080,7,1
+mindustry.world.blocks.defense.turrets.ContinuousTurret,912,10,1 233,5,1 080,6,3
+mindustry.world.blocks.defense.turrets.ContinuousTurret.ContinuousTurretBuild,912,18,1 233,2,1 080,7,2
+mindustry.world.blocks.defense.turrets.ItemTurret,912,22,1 233,5,1 080,12,3
+mindustry.world.blocks.defense.turrets.ItemTurret.ItemEntry,912,4,1 233,3,1 080,3,2
+mindustry.world.blocks.defense.turrets.ItemTurret.ItemTurretBuild,912,18,1 233,2,1 080,10,2
+mindustry.world.blocks.defense.turrets.LaserTurret,912,11,1 233,3,1 080,5,3
+mindustry.world.blocks.defense.turrets.LaserTurret.LaserTurretBuild,912,18,1 233,1,1 080,9,1
+mindustry.world.blocks.defense.turrets.LiquidTurret,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.defense.turrets.LiquidTurret.LiquidTurretBuild,912,18,1 233,1,1 080,10,1
+mindustry.world.blocks.defense.turrets.PayloadAmmoTurret,912,17,1 233,2,1 080,11,2
+mindustry.world.blocks.defense.turrets.PayloadAmmoTurret.PayloadTurretBuild,912,13,1 233,2,1 080,8,2
+mindustry.world.blocks.defense.turrets.PointDefenseTurret,912,10,1 233,4,1 080,7,4
+mindustry.world.blocks.defense.turrets.PointDefenseTurret.PointDefenseBuild,912,16,1 233,1,1 080,9,1
+mindustry.world.blocks.defense.turrets.PowerTurret,912,7,1 233,4,1 080,5,3
+mindustry.world.blocks.defense.turrets.PowerTurret.PowerTurretBuild,912,9,1 233,2,1 080,6,2
+mindustry.world.blocks.defense.turrets.ReloadTurret,912,6,1 233,9,1 080,4,3
+mindustry.world.blocks.defense.turrets.ReloadTurret.ReloadTurretBuild,912,12,1 233,4,1 080,8,2
+mindustry.world.blocks.defense.turrets.TractorBeamTurret,912,11,1 233,3,1 080,8,3
+mindustry.world.blocks.defense.turrets.TractorBeamTurret.TractorBeamBuild,912,23,1 233,1,1 080,13,1
+mindustry.world.blocks.defense.turrets.Turret,912,26,1 233,18,1 080,14,6
+mindustry.world.blocks.defense.turrets.Turret.AmmoEntry,912,1,1 233,5,1 080,1,2
+mindustry.world.blocks.defense.turrets.Turret.BulletEntry,0,1,1,4,1 081,1,2
+mindustry.world.blocks.defense.turrets.Turret.TurretBuild,912,42,1 233,13,1 080,17,5
+mindustry.world.blocks.distribution.ArmoredConveyor,912,5,1 233,1,1 080,3,1
+mindustry.world.blocks.distribution.ArmoredConveyor.ArmoredConveyorBuild,912,6,1 233,1,1 080,4,1
+mindustry.world.blocks.distribution.BufferedItemBridge,912,6,1 233,3,1 080,4,3
+mindustry.world.blocks.distribution.BufferedItemBridge.BufferedItemBridgeBuild,912,6,1 233,1,1 080,5,1
+mindustry.world.blocks.distribution.Conveyor,912,19,1 233,8,1 080,10,5
+mindustry.world.blocks.distribution.Conveyor.ConveyorBuild,912,21,1 233,3,1 080,11,2
+mindustry.world.blocks.distribution.DirectionBridge,912,15,1 233,8,1 080,10,5
+mindustry.world.blocks.distribution.DirectionBridge.DirectionBridgeBuild,912,8,1 233,4,1 080,5,2
+mindustry.world.blocks.distribution.DirectionLiquidBridge,912,3,1 233,3,1 080,3,3
+mindustry.world.blocks.distribution.DirectionLiquidBridge.DuctBridgeBuild,912,9,1 233,1,1 080,7,1
+mindustry.world.blocks.distribution.DirectionalUnloader,912,11,1 233,3,1 080,7,3
+mindustry.world.blocks.distribution.DirectionalUnloader.DirectionalUnloaderBuild,912,11,1 233,2,1 080,10,2
+mindustry.world.blocks.distribution.Duct,912,20,1 233,4,1 080,10,3
+mindustry.world.blocks.distribution.Duct.DuctBuild,912,14,1 233,1,1 080,10,1
+mindustry.world.blocks.distribution.DuctBridge,912,6,1 233,5,1 080,4,3
+mindustry.world.blocks.distribution.DuctBridge.DuctBridgeBuild,912,6,1 233,1,1 080,5,1
+mindustry.world.blocks.distribution.DuctJunction,912,7,1 233,3,1 080,4,2
+mindustry.world.blocks.distribution.DuctJunction.DuctJunctionBuild,912,9,1 233,1,1 080,8,1
+mindustry.world.blocks.distribution.DuctRouter,912,12,1 233,5,1 080,7,3
+mindustry.world.blocks.distribution.DuctRouter.DuctRouterBuild,912,12,1 233,3,1 080,9,2
+mindustry.world.blocks.distribution.ItemBridge,912,17,1 233,10,1 080,11,6
+mindustry.world.blocks.distribution.ItemBridge.ItemBridgeBuild,912,15,1 233,4,1 080,8,3
+mindustry.world.blocks.distribution.Junction,912,6,1 233,4,1 080,3,3
+mindustry.world.blocks.distribution.Junction.JunctionBuild,912,8,1 233,1,1 080,6,1
+mindustry.world.blocks.distribution.MassDriver,912,18,1 233,4,1 080,13,4
+mindustry.world.blocks.distribution.MassDriver.DriverBulletData,912,3,1 233,3,1 080,3,3
+mindustry.world.blocks.distribution.MassDriver.DriverState,0,0,0,2,1 081,0,2
+mindustry.world.blocks.distribution.MassDriver.MassDriverBuild,912,20,1 233,4,1 080,12,3
+mindustry.world.blocks.distribution.OverflowDuct,912,9,1 233,3,1 080,5,3
+mindustry.world.blocks.distribution.OverflowDuct.OverflowDuctBuild,912,8,1 233,1,1 080,5,1
+mindustry.world.blocks.distribution.OverflowGate,912,2,1 233,3,1 080,2,3
+mindustry.world.blocks.distribution.OverflowGate.OverflowGateBuild,912,6,1 233,1,1 080,5,1
+mindustry.world.blocks.distribution.Router,912,2,1 233,2,1 080,2,2
+mindustry.world.blocks.distribution.Router.RouterBuild,912,17,1 233,1,1 080,7,1
+mindustry.world.blocks.distribution.Sorter,912,6,1 233,4,1 080,5,4
+mindustry.world.blocks.distribution.Sorter.SorterBuild,912,13,1 233,2,1 080,9,2
+mindustry.world.blocks.distribution.StackConveyor,912,18,1 233,5,1 080,12,3
+mindustry.world.blocks.distribution.StackConveyor.StackConveyorBuild,912,17,1 233,2,1 080,11,2
+mindustry.world.blocks.distribution.StackRouter,912,3,1 233,3,1 080,3,3
+mindustry.world.blocks.distribution.StackRouter.StackRouterBuild,912,11,1 233,1,1 080,6,1
+mindustry.world.blocks.environment.AirBlock,912,4,1 233,2,1 080,3,2
+mindustry.world.blocks.environment.CharacterOverlay,912,9,1 233,1,1 080,7,1
+mindustry.world.blocks.environment.CharacterOverlay.CharOverlayDataStruct,0,0,0,0,0,0,0
+mindustry.world.blocks.environment.Cliff,912,3,1 233,1,1 080,2,1
+mindustry.world.blocks.environment.ColoredFloor,0,13,1 234,1,1,9,1
+mindustry.world.blocks.environment.ColoredWall,0,6,1 235,0,0,4,0
+mindustry.world.blocks.environment.EmptyFloor,912,4,1 233,2,1 080,3,2
+mindustry.world.blocks.environment.Floor,912,21,1 233,82,1 080,11,27
+mindustry.world.blocks.environment.Floor.UpdateRenderState,912,2,1 233,4,1 080,2,3
+mindustry.world.blocks.environment.OreBlock,912,10,1 233,8,1 080,6,8
+mindustry.world.blocks.environment.OverlayFloor,912,5,1 233,18,1 080,3,10
+mindustry.world.blocks.environment.Prop,912,7,1 233,5,1 080,5,2
+mindustry.world.blocks.environment.RemoveOre,912,8,1 233,3,1 080,6,3
+mindustry.world.blocks.environment.RemoveWall,912,8,1 233,3,1 080,6,3
+mindustry.world.blocks.environment.RuneOverlay,912,9,1 233,1,1 080,7,1
+mindustry.world.blocks.environment.SeaBush,912,3,1 233,2,1 080,2,2
+mindustry.world.blocks.environment.Seaweed,912,4,1 233,1,1 080,2,1
+mindustry.world.blocks.environment.ShallowLiquid,912,5,1 233,3,1 080,4,3
+mindustry.world.blocks.environment.SpawnBlock,912,5,1 233,2,1 080,3,2
+mindustry.world.blocks.environment.StaticTree,912,5,1 233,2,1 080,3,2
+mindustry.world.blocks.environment.StaticWall,912,11,1 233,9,1 080,8,7
+mindustry.world.blocks.environment.SteamVent,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.environment.TallBlock,912,5,1 233,3,1 080,3,3
+mindustry.world.blocks.environment.TreeBlock,912,4,1 233,2,1 080,2,2
+mindustry.world.blocks.environment.WobbleProp,912,5,1 233,1,1 080,3,1
+mindustry.world.blocks.heat.HeatConductor,912,7,1 233,4,1 080,6,4
+mindustry.world.blocks.heat.HeatConductor.HeatConductorBuild,912,7,1 233,3,1 080,5,3
+mindustry.world.blocks.heat.HeatProducer,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.heat.HeatProducer.HeatProducerBuild,912,4,1 233,2,1 080,3,2
+mindustry.world.blocks.legacy.LegacyBlock,912,3,1 233,8,1 080,2,6
+mindustry.world.blocks.legacy.LegacyCommandCenter,912,2,1 233,1,1 080,2,1
+mindustry.world.blocks.legacy.LegacyCommandCenter.CommandBuild,0,1,1,1,1 081,1,1
+mindustry.world.blocks.legacy.LegacyMechPad,912,2,1 233,2,1 080,2,2
+mindustry.world.blocks.legacy.LegacyMechPad.LegacyMechPadBuild,0,1,1,1,1 081,1,1
+mindustry.world.blocks.legacy.LegacyUnitFactory,912,5,1 233,2,1 080,4,2
+mindustry.world.blocks.legacy.LegacyUnitFactory.LegacyUnitFactoryBuild,0,1,1,1,1 081,1,1
+mindustry.world.blocks.liquid.ArmoredConduit,912,5,1 233,1,1 080,3,1
+mindustry.world.blocks.liquid.ArmoredConduit.ArmoredConduitBuild,912,7,1 233,1,1 080,5,1
+mindustry.world.blocks.liquid.Conduit,912,15,1 233,6,1 080,12,4
+mindustry.world.blocks.liquid.Conduit.ConduitBuild,912,14,1 233,3,1 080,10,3
+mindustry.world.blocks.liquid.LiquidBlock,912,7,1 233,14,1 080,6,7
+mindustry.world.blocks.liquid.LiquidBlock.LiquidBuild,912,6,1 233,4,1 080,6,3
+mindustry.world.blocks.liquid.LiquidBridge,912,4,1 233,1,1 080,3,1
+mindustry.world.blocks.liquid.LiquidBridge.LiquidBridgeBuild,912,3,1 233,1,1 080,3,1
+mindustry.world.blocks.liquid.LiquidJunction,912,5,1 233,5,1 080,4,2
+mindustry.world.blocks.liquid.LiquidJunction.LiquidJunctionBuild,912,5,1 233,1,1 080,4,1
+mindustry.world.blocks.liquid.LiquidRouter,912,2,1 233,3,1 080,2,3
+mindustry.world.blocks.liquid.LiquidRouter.LiquidRouterBuild,912,7,1 233,1,1 080,5,1
+mindustry.world.blocks.logic.CanvasBlock,912,5,1 233,3,1 080,4,3
+mindustry.world.blocks.logic.CanvasBlock.CanvasBuild,912,17,1 233,2,1 080,8,2
+mindustry.world.blocks.logic.LogicBlock,912,18,1 233,6,1 080,9,5
+mindustry.world.blocks.logic.LogicBlock.LogicBuild,912,33,1 233,8,1 080,13,5
+mindustry.world.blocks.logic.LogicBlock.LogicLink,0,1,1,3,1 081,1,2
+mindustry.world.blocks.logic.LogicDisplay,912,6,1 233,5,1 080,3,4
+mindustry.world.blocks.logic.LogicDisplay.DisplayCmdStruct,0,0,0,0,0,0,0
+mindustry.world.blocks.logic.LogicDisplay.GraphicsType,0,0,0,2,1 081,0,2
+mindustry.world.blocks.logic.LogicDisplay.LogicDisplayBuild,912,13,1 233,4,1 080,8,3
+mindustry.world.blocks.logic.MemoryBlock,912,11,1 233,3,1 080,6,3
+mindustry.world.blocks.logic.MemoryBlock.MemoryBuild,912,10,1 233,1,1 080,4,1
+mindustry.world.blocks.logic.MessageBlock,912,8,1 233,2,1 080,6,2
+mindustry.world.blocks.logic.MessageBlock.MessageBuild,912,17,1 233,3,1 080,8,3
+mindustry.world.blocks.logic.SwitchBlock,912,10,1 233,2,1 080,7,2
+mindustry.world.blocks.logic.SwitchBlock.SwitchBuild,912,4,1 233,2,1 080,3,2
+mindustry.world.blocks.logic.TileableLogicDisplay,1,6,1 236,1,1,3,1
+mindustry.world.blocks.logic.TileableLogicDisplay.MergeBuffer,0,0,0,2,2,0,1
+mindustry.world.blocks.logic.TileableLogicDisplay.TileableLogicDisplayBuild,1,11,1 236,1,1,8,1
+mindustry.world.blocks.payloads.BlockProducer,912,12,1 233,5,1 080,10,4
+mindustry.world.blocks.payloads.BlockProducer.BlockProducerBuild,912,18,1 233,5,1 080,9,3
+mindustry.world.blocks.payloads.BuildPayload,912,14,1 233,15,1 080,9,4
+mindustry.world.blocks.payloads.Constructor,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.payloads.Constructor.ConstructorBuild,912,9,1 233,2,1 080,7,2
+mindustry.world.blocks.payloads.PayloadBlock,912,16,1 233,27,1 080,9,6
+mindustry.world.blocks.payloads.PayloadBlock.PayloadBlockBuild,912,13,1 233,16,1 080,7,4
+mindustry.world.blocks.payloads.PayloadConveyor,912,16,1 233,7,1 080,9,5
+mindustry.world.blocks.payloads.PayloadConveyor.PayloadConveyorBuild,912,18,1 233,2,1 080,8,2
+mindustry.world.blocks.payloads.PayloadDeconstructor,912,5,1 233,3,1 080,4,3
+mindustry.world.blocks.payloads.PayloadDeconstructor.PayloadDeconstructorBuild,912,26,1 233,2,1 080,13,2
+mindustry.world.blocks.payloads.PayloadLoader,912,11,1 233,4,1 080,8,2
+mindustry.world.blocks.payloads.PayloadLoader.PayloadLoaderBuild,912,18,1 233,3,1 080,10,2
+mindustry.world.blocks.payloads.PayloadMassDriver,912,24,1 233,3,1 080,13,3
+mindustry.world.blocks.payloads.PayloadMassDriver.PayloadDriverBuild,912,17,1 233,2,1 080,9,2
+mindustry.world.blocks.payloads.PayloadMassDriver.PayloadDriverState,0,0,0,2,1 081,0,2
+mindustry.world.blocks.payloads.PayloadMassDriver.PayloadMassDriverData,912,1,1 233,3,1 080,1,2
+mindustry.world.blocks.payloads.PayloadRouter,912,11,1 233,2,1 080,9,2
+mindustry.world.blocks.payloads.PayloadRouter.PayloadRouterBuild,912,18,1 233,2,1 080,10,2
+mindustry.world.blocks.payloads.PayloadSource,912,12,1 233,1,1 080,9,1
+mindustry.world.blocks.payloads.PayloadSource.PayloadSourceBuild,912,18,1 233,2,1 080,11,2
+mindustry.world.blocks.payloads.PayloadUnloader,912,2,1 233,2,1 080,2,2
+mindustry.world.blocks.payloads.PayloadUnloader.PayloadUnloaderBuild,912,16,1 233,2,1 080,9,2
+mindustry.world.blocks.payloads.PayloadVoid,912,5,1 233,2,1 080,5,2
+mindustry.world.blocks.payloads.PayloadVoid.PayloadVoidBuild,912,9,1 233,1,1 080,5,1
+mindustry.world.blocks.payloads.UnitPayload,912,18,1 233,20,1 080,10,8
+mindustry.world.blocks.power.Battery,912,10,1 233,4,1 080,5,4
+mindustry.world.blocks.power.Battery.BatteryBuild,912,7,1 233,2,1 080,7,2
+mindustry.world.blocks.power.BeamNode,912,20,1 233,4,1 080,11,4
+mindustry.world.blocks.power.BeamNode.BeamNodeBuild,912,14,1 233,2,1 080,9,2
+mindustry.world.blocks.power.ConsumeGenerator,912,15,1 233,5,1 080,8,4
+mindustry.world.blocks.power.ConsumeGenerator.ConsumeGeneratorBuild,912,13,1 233,3,1 080,10,3
+mindustry.world.blocks.power.HeaterGenerator,912,13,1 233,3,1 080,7,3
+mindustry.world.blocks.power.HeaterGenerator.HeaterGeneratorBuild,912,5,1 233,2,1 080,3,2
+mindustry.world.blocks.power.ImpactReactor,912,19,1 233,3,1 080,10,3
+mindustry.world.blocks.power.ImpactReactor.ImpactReactorBuild,912,8,1 233,1,1 080,7,1
+mindustry.world.blocks.power.LightBlock,912,8,1 233,4,1 080,6,4
+mindustry.world.blocks.power.LightBlock.LightBuild,912,14,1 233,2,1 080,9,2
+mindustry.world.blocks.power.LongPowerNode,912,3,1 233,2,1 080,3,2
+mindustry.world.blocks.power.LongPowerNode.LongPowerNodeBuild,912,5,1 233,1,1 080,4,1
+mindustry.world.blocks.power.NuclearReactor,912,15,1 233,3,1 080,9,3
+mindustry.world.blocks.power.NuclearReactor.NuclearReactorBuild,912,13,1 233,2,1 080,11,2
+mindustry.world.blocks.power.PowerBlock,912,2,1 233,5,1 080,2,3
+mindustry.world.blocks.power.PowerDiode,912,10,1 233,2,1 080,9,2
+mindustry.world.blocks.power.PowerDiode.PowerDiodeBuild,912,5,1 233,1,1 080,4,1
+mindustry.world.blocks.power.PowerDistributor,912,2,1 233,3,1 080,2,2
+mindustry.world.blocks.power.PowerGenerator,912,19,1 233,14,1 080,13,5
+mindustry.world.blocks.power.PowerGenerator.GeneratorBuild,912,11,1 233,14,1 080,8,3
+mindustry.world.blocks.power.PowerGraph,912,5,1 233,18,1 080,4,9
+mindustry.world.blocks.power.PowerNode,912,26,1 233,11,1 080,13,8
+mindustry.world.blocks.power.PowerNode.PowerNodeBuild,912,14,1 233,4,1 080,9,3
+mindustry.world.blocks.power.SolarGenerator,912,6,1 233,1,1 080,4,1
+mindustry.world.blocks.power.SolarGenerator.SolarGeneratorBuild,912,6,1 233,1,1 080,6,1
+mindustry.world.blocks.power.ThermalGenerator,912,14,1 233,3,1 080,9,3
+mindustry.world.blocks.power.ThermalGenerator.ThermalGeneratorBuild,912,10,1 233,1,1 080,8,1
+mindustry.world.blocks.power.VariableReactor,912,16,1 233,3,1 080,11,3
+mindustry.world.blocks.power.VariableReactor.VariableReactorBuild,912,8,1 233,2,1 080,7,2
+mindustry.world.blocks.production.AttributeCrafter,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.production.AttributeCrafter.AttributeCrafterBuild,912,6,1 233,3,1 080,4,3
+mindustry.world.blocks.production.BeamDrill,912,25,1 233,3,1 080,14,3
+mindustry.world.blocks.production.BeamDrill.BeamDrillBuild,912,10,1 233,2,1 080,8,2
+mindustry.world.blocks.production.BurstDrill,912,12,1 233,3,1 080,8,3
+mindustry.world.blocks.production.BurstDrill.BurstDrillBuild,912,10,1 233,1,1 080,7,1
+mindustry.world.blocks.production.Drill,912,28,1 233,8,1 080,17,5
+mindustry.world.blocks.production.Drill.DrillBuild,912,9,1 233,3,1 080,8,2
+mindustry.world.blocks.production.Fracker,912,8,1 233,3,1 080,5,3
+mindustry.world.blocks.production.Fracker.FrackerBuild,912,4,1 233,1,1 080,2,1
+mindustry.world.blocks.production.GenericCrafter,912,21,1 233,8,1 080,12,5
+mindustry.world.blocks.production.GenericCrafter.GenericCrafterBuild,912,12,1 233,4,1 080,8,3
+mindustry.world.blocks.production.HeatCrafter,912,9,1 233,3,1 080,6,3
+mindustry.world.blocks.production.HeatCrafter.HeatCrafterBuild,912,4,1 233,3,1 080,3,3
+mindustry.world.blocks.production.Incinerator,912,3,1 233,2,1 080,3,2
+mindustry.world.blocks.production.Incinerator.IncineratorBuild,912,6,1 233,1,1 080,5,1
+mindustry.world.blocks.production.ItemIncinerator,912,3,1 233,2,1 080,3,2
+mindustry.world.blocks.production.ItemIncinerator.ItemIncineratorBuild,912,9,1 233,1,1 080,8,1
+mindustry.world.blocks.production.Pump,912,19,1 233,6,1 080,11,4
+mindustry.world.blocks.production.Pump.PumpBuild,912,10,1 233,4,1 080,9,3
+mindustry.world.blocks.production.Separator,912,13,1 233,3,1 080,7,3
+mindustry.world.blocks.production.Separator.SeparatorBuild,912,10,1 233,1,1 080,8,1
+mindustry.world.blocks.production.SingleBlockProducer,912,3,1 233,2,1 080,3,2
+mindustry.world.blocks.production.SingleBlockProducer.SingleBlockProducerBuild,912,3,1 233,1,1 080,3,1
+mindustry.world.blocks.production.SolidPump,912,20,1 233,5,1 080,14,3
+mindustry.world.blocks.production.SolidPump.SolidPumpBuild,912,13,1 233,4,1 080,9,3
+mindustry.world.blocks.production.WallCrafter,912,25,1 233,3,1 080,15,3
+mindustry.world.blocks.production.WallCrafter.WallCrafterBuild,912,9,1 233,2,1 080,8,2
+mindustry.world.blocks.sandbox.ItemSource,912,10,1 233,4,1 080,6,4
+mindustry.world.blocks.sandbox.ItemSource.ItemSourceBuild,912,9,1 233,2,1 080,9,2
+mindustry.world.blocks.sandbox.ItemVoid,912,3,1 233,1,1 080,2,1
+mindustry.world.blocks.sandbox.ItemVoid.ItemVoidBuild,912,3,1 233,1,1 080,3,1
+mindustry.world.blocks.sandbox.LiquidSource,912,6,1 233,4,1 080,5,4
+mindustry.world.blocks.sandbox.LiquidSource.LiquidSourceBuild,912,10,1 233,2,1 080,10,2
+mindustry.world.blocks.sandbox.LiquidVoid,912,3,1 233,2,1 080,2,2
+mindustry.world.blocks.sandbox.LiquidVoid.LiquidVoidBuild,912,3,1 233,1,1 080,3,1
+mindustry.world.blocks.sandbox.PowerSource,912,3,1 233,3,1 080,3,3
+mindustry.world.blocks.sandbox.PowerSource.PowerSourceBuild,912,3,1 233,1,1 080,3,1
+mindustry.world.blocks.sandbox.PowerVoid,912,6,1 233,1,1 080,4,1
+mindustry.world.blocks.storage.CoreBlock,912,42,1 233,30,1 080,19,19
+mindustry.world.blocks.storage.CoreBlock.CoreBuild,912,45,1 233,35,1 080,19,21
+mindustry.world.blocks.storage.StorageBlock,912,9,1 233,7,1 080,5,4
+mindustry.world.blocks.storage.StorageBlock.StorageBuild,912,13,1 233,3,1 080,9,3
+mindustry.world.blocks.storage.Unloader,912,10,1 233,4,1 080,8,4
+mindustry.world.blocks.storage.Unloader.ContainerStat,0,1,1,2,1 081,1,2
+mindustry.world.blocks.storage.Unloader.UnloaderBuild,912,12,1 233,2,1 080,9,2
+mindustry.world.blocks.units.DroneCenter,912,5,1 233,3,1 080,4,2
+mindustry.world.blocks.units.DroneCenter.DroneCenterBuild,912,21,1 233,2,1 080,9,2
+mindustry.world.blocks.units.DroneCenter.EffectDroneAI,912,7,1 233,2,1 080,3,2
+mindustry.world.blocks.units.Reconstructor,912,33,1 233,5,1 080,16,4
+mindustry.world.blocks.units.Reconstructor.ReconstructorBuild,912,32,1 233,2,1 080,18,2
+mindustry.world.blocks.units.RepairTower,912,8,1 233,3,1 080,5,3
+mindustry.world.blocks.units.RepairTower.RepairTowerBuild,912,10,1 233,1,1 080,5,1
+mindustry.world.blocks.units.RepairTurret,912,22,1 233,4,1 080,11,4
+mindustry.world.blocks.units.RepairTurret.RepairPointBuild,912,14,1 233,2,1 080,10,2
+mindustry.world.blocks.units.UnitAssembler,912,43,1 233,4,1 080,19,4
+mindustry.world.blocks.units.UnitAssembler.AssemblerUnitPlan,912,4,1 233,5,1 080,1,4
+mindustry.world.blocks.units.UnitAssembler.UnitAssemblerBuild,912,48,1 233,4,1 080,18,2
+mindustry.world.blocks.units.UnitAssembler.YeetData,912,1,1 233,3,1 080,1,3
+mindustry.world.blocks.units.UnitAssemblerModule,912,14,1 233,2,1 080,10,2
+mindustry.world.blocks.units.UnitAssemblerModule.UnitAssemblerModuleBuild,912,13,1 233,2,1 080,7,2
+mindustry.world.blocks.units.UnitBlock,912,6,1 233,3,1 080,5,2
+mindustry.world.blocks.units.UnitBlock.UnitBuild,912,4,1 233,5,1 080,2,2
+mindustry.world.blocks.units.UnitCargoLoader,912,18,1 233,3,1 080,13,3
+mindustry.world.blocks.units.UnitCargoLoader.UnitTransportSourceBuild,912,23,1 233,2,1 080,12,2
+mindustry.world.blocks.units.UnitCargoUnloadPoint,912,4,1 233,2,1 080,4,2
+mindustry.world.blocks.units.UnitCargoUnloadPoint.UnitCargoUnloadPointBuild,912,10,1 233,3,1 080,9,3
+mindustry.world.blocks.units.UnitFactory,912,35,1 233,5,1 080,16,4
+mindustry.world.blocks.units.UnitFactory.UnitFactoryBuild,912,32,1 233,2,1 080,17,2
+mindustry.world.blocks.units.UnitFactory.UnitPlan,912,2,1 233,6,1 080,1,4
+mindustry.world.consumers.Consume,912,3,1 233,43,1 080,3,12
+mindustry.world.consumers.ConsumeCoolant,912,3,1 233,6,1 080,2,5
+mindustry.world.consumers.ConsumeItemCharged,912,3,1 233,2,1 080,2,1
+mindustry.world.consumers.ConsumeItemDynamic,912,7,1 233,5,1 080,7,3
+mindustry.world.consumers.ConsumeItemEfficiency,912,6,1 233,6,1 080,3,3
+mindustry.world.consumers.ConsumeItemExplode,912,11,1 233,3,1 080,10,2
+mindustry.world.consumers.ConsumeItemExplosive,912,3,1 233,2,1 080,2,1
+mindustry.world.consumers.ConsumeItemFilter,912,14,1 233,11,1 080,10,4
+mindustry.world.consumers.ConsumeItemFlammable,912,3,1 233,4,1 080,2,3
+mindustry.world.consumers.ConsumeItemList,912,4,1 233,2,1 080,3,1
+mindustry.world.consumers.ConsumeItemRadioactive,912,3,1 233,3,1 080,2,2
+mindustry.world.consumers.ConsumeItems,912,10,1 233,12,1 080,8,6
+mindustry.world.consumers.ConsumeLiquid,912,12,1 233,7,1 080,9,6
+mindustry.world.consumers.ConsumeLiquidBase,912,3,1 233,18,1 080,3,5
+mindustry.world.consumers.ConsumeLiquidFilter,912,15,1 233,6,1 080,10,4
+mindustry.world.consumers.ConsumeLiquidFlammable,912,7,1 233,3,1 080,3,2
+mindustry.world.consumers.ConsumeLiquids,912,12,1 233,3,1 080,9,2
+mindustry.world.consumers.ConsumeLiquidsDynamic,912,8,1 233,2,1 080,8,2
+mindustry.world.consumers.ConsumePayloadDynamic,912,7,1 233,3,1 080,5,2
+mindustry.world.consumers.ConsumePayloadFilter,912,12,1 233,2,1 080,9,2
+mindustry.world.consumers.ConsumePayloads,912,10,1 233,1,1 080,6,1
+mindustry.world.consumers.ConsumePower,912,7,1 233,16,1 080,5,9
+mindustry.world.consumers.ConsumePowerCondition,912,2,1 233,2,1 080,2,2
+mindustry.world.consumers.ConsumePowerDynamic,912,5,1 233,2,1 080,3,2
+mindustry.world.draw.DrawArcSmelt,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawBlock,912,6,1 233,53,1 080,5,8
+mindustry.world.draw.DrawBlurSpin,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawBubbles,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawCells,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawCircles,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawCrucibleFlame,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawCultivator,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawDefault,912,4,1 233,13,1 080,4,6
+mindustry.world.draw.DrawFade,912,4,1 233,2,1 080,4,2
+mindustry.world.draw.DrawFlame,912,6,1 233,3,1 080,5,3
+mindustry.world.draw.DrawFrames,912,4,1 233,1,1 080,4,1
+mindustry.world.draw.DrawGlowRegion,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawHeatInput,912,7,1 233,2,1 080,7,2
+mindustry.world.draw.DrawHeatOutput,912,7,1 233,4,1 080,7,4
+mindustry.world.draw.DrawHeatRegion,912,6,1 233,2,1 080,6,2
+mindustry.world.draw.DrawLiquidOutputs,912,8,1 233,2,1 080,7,2
+mindustry.world.draw.DrawLiquidRegion,912,7,1 233,2,1 080,7,2
+mindustry.world.draw.DrawLiquidTile,912,6,1 233,2,1 080,6,2
+mindustry.world.draw.DrawMulti,912,4,1 233,8,1 080,4,5
+mindustry.world.draw.DrawMultiWeave,912,4,1 233,2,1 080,4,2
+mindustry.world.draw.DrawParticles,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawPistons,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawPlasma,912,6,1 233,2,1 080,5,2
+mindustry.world.draw.DrawPower,912,7,1 233,2,1 080,7,2
+mindustry.world.draw.DrawPulseShape,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawPumpLiquid,912,8,1 233,2,1 080,8,2
+mindustry.world.draw.DrawRegion,912,6,1 233,4,1 080,6,3
+mindustry.world.draw.DrawShape,912,3,1 233,2,1 080,3,2
+mindustry.world.draw.DrawSideRegion,912,5,1 233,1,1 080,5,1
+mindustry.world.draw.DrawSoftParticles,912,3,1 233,2,1 080,3,2
+mindustry.world.draw.DrawSpikes,912,2,1 233,2,1 080,2,2
+mindustry.world.draw.DrawTurret,912,18,1 233,3,1 080,11,3
+mindustry.world.draw.DrawWarmupRegion,912,5,1 233,2,1 080,5,2
+mindustry.world.draw.DrawWeave,912,6,1 233,2,1 080,6,2
+mindustry.world.meta.Attribute,912,4,1 233,21,1 080,3,12
+mindustry.world.meta.BlockFlag,0,0,0,40,1 081,0,21
+mindustry.world.meta.BlockGroup,0,0,0,47,1 081,0,14
+mindustry.world.meta.BlockStatus,0,1,1,8,1 081,1,6
+mindustry.world.meta.BuildVisibility,912,8,1 233,12,1 080,7,12
+mindustry.world.meta.Env,0,0,0,66,1 081,0,23
+mindustry.world.meta.Stat,0,1,1,93,1 081,1,19
+mindustry.world.meta.StatCat,0,0,0,3,1 082,0,2
+mindustry.world.meta.StatUnit,0,1,1,64,1 081,1,18
+mindustry.world.meta.StatValues,912,28,1 233,42,1 080,17,12
+mindustry.world.meta.Stats,912,9,1 233,95,1 080,2,18
+mindustry.world.modules.BlockModule,0,0,0,6,1 081,0,4
+mindustry.world.modules.ItemModule,912,11,1 233,85,1 080,5,32
+mindustry.world.modules.LiquidModule,912,8,1 233,50,1 080,5,21
+mindustry.world.modules.PowerModule,912,2,1 233,30,1 080,2,16
+
+Interface,Cyclic,Dcy,Dcy*,Dpt,Dpt*,PDcy,PDpt
+mindustry.ai.Astar.DistanceHeuristic,0,0,0,2,1 081,0,2
+mindustry.ai.Astar.TileHeuristic,912,1,1 233,6,1 080,1,4
+mindustry.ai.Pathfinder.PathCost,0,0,0,7,1 081,0,3
+mindustry.ai.WaveSpawner.SpawnConsumer,0,0,0,1,1 081,0,1
+mindustry.async.AsyncProcess,0,0,0,3,1 081,0,1
+mindustry.core.NetServer.ChatFormatter,0,1,1,3,1 081,1,2
+mindustry.core.NetServer.InvalidCommandHandler,0,1,1,2,1 081,1,1
+mindustry.core.NetServer.TeamAssigner,912,2,1 233,1,1 080,2,1
+mindustry.core.Platform,912,9,1 233,19,1 080,6,9
+mindustry.core.Platform.FileWriter,0,0,0,3,1 081,0,3
+mindustry.editor.MapObjectivesDialog.FieldInterpreter,912,1,1 233,2,1 080,1,1
+mindustry.editor.MapObjectivesDialog.FieldProvider,912,1,1 233,1,1 080,1,1
+mindustry.editor.MapResizeDialog.ResizeListener,0,0,0,2,1 081,0,1
+mindustry.entities.EntityCollisions.SolidPred,0,0,0,8,1 081,0,3
+mindustry.entities.EntityIndexer,0,1,1,1,1 081,1,1
+mindustry.entities.Mover,0,1,1,8,1 090,1,5
+mindustry.entities.Sized,0,0,0,13,1 082,0,9
+mindustry.entities.Units.BuildingPriorityf,0,1,1,2,1 081,1,2
+mindustry.entities.Units.Sortf,0,1,1,6,1 081,1,4
+mindustry.entities.part.DrawPart.PartFunc,0,0,0,2,1 084,0,2
+mindustry.entities.part.DrawPart.PartProgress,0,2,2,10,1 083,1,3
+mindustry.entities.pattern.ShootPattern.BulletHandler,0,1,2,11,1 089,1,4
+mindustry.entities.units.UnitController,0,2,2,10,1 081,1,9
+mindustry.game.Objectives.Objective,0,0,0,14,1 081,0,5
+mindustry.graphics.g3d.GenericMesh,912,1,1 233,6,1 080,1,4
+mindustry.graphics.g3d.HexMesher,0,0,0,3,1 081,0,2
+mindustry.graphics.g3d.PlanetRenderer.PlanetInterfaceRenderer,912,1,1 233,4,1 080,1,3
+mindustry.io.SaveFileReader.CustomChunk,0,0,0,2,1 081,0,2
+mindustry.io.SaveFileReader.IORunner,0,0,0,4,1 081,0,2
+mindustry.io.SaveFileReader.IORunnerLength,0,0,0,5,1 081,0,2
+mindustry.io.TypeIO.Boxed,0,0,0,3,1 081,0,2
+mindustry.io.TypeIO.ContentMapper,912,2,1 233,2,1 080,1,2
+mindustry.logic.ConditionOp.CondObjOpLambda,0,0,0,1,1 081,0,1
+mindustry.logic.ConditionOp.CondOpLambda,0,0,0,1,1 081,0,1
+mindustry.logic.Controllable,0,2,1 234,1,1,2,1
+mindustry.logic.LExecutor.LInstruction,912,1,1 233,103,1 080,1,1
+mindustry.logic.LReadable,912,2,1 233,5,1 080,1,2
+mindustry.logic.LWritable,912,2,1 233,4,1 080,1,2
+mindustry.logic.LogicOp.OpLambda1,0,0,0,2,3,0,1
+mindustry.logic.LogicOp.OpLambda2,0,0,0,2,3,0,1
+mindustry.logic.LogicOp.OpObjLambda2,0,0,0,2,3,0,1
+mindustry.logic.RadarSort.RadarSortFunc,0,1,1,2,4,1,1
+mindustry.logic.RadarTarget.RadarTargetFunc,0,2,1 234,2,4,2,1
+mindustry.logic.Ranged,0,2,2,14,1 082,1,8
+mindustry.logic.Senseable,912,2,1 233,8,1 080,2,5
+mindustry.logic.Settable,0,2,1 234,3,4,2,2
+mindustry.maps.Maps.MapProvider,912,2,1 233,2,1 080,2,1
+mindustry.maps.filters.GenerateFilter.GenerateInput.TileProvider,912,1,1 233,3,1 080,1,3
+mindustry.maps.generators.WorldGenerator,912,2,1 233,3,1 080,1,2
+mindustry.mod.ContentParser.FieldParser,0,0,0,1,1 081,0,1
+mindustry.mod.ContentParser.ParseListener,0,0,0,2,1 081,0,1
+mindustry.mod.ContentParser.TypeParser,912,1,1 233,1,1 080,1,1
+mindustry.net.Administration.ActionFilter,912,1,1 233,1,1 080,1,1
+mindustry.net.Administration.ChatFilter,0,1,1,1,1 081,1,1
+mindustry.net.Net.NetProvider,912,2,1 233,5,1 080,1,4
+mindustry.type.AmmoType,0,1,1,7,1 081,1,5
+mindustry.type.Publishable,912,1,1 233,10,1 080,1,7
+mindustry.type.StatusEffect.TransitionHandler,912,2,1 233,3,1 080,2,3
+mindustry.ui.Displayable,0,0,0,4,1 081,0,3
+mindustry.ui.Menus.MenuListener,0,1,1,1,1,1,1
+mindustry.ui.Menus.TextInputListener,0,1,1,1,1,1,1
+mindustry.ui.dialogs.SettingsMenuDialog.StringProcessor,0,0,0,3,1 081,0,1
+mindustry.ui.fragments.HintsFragment.Hint,0,0,0,2,1 081,0,1
+mindustry.ui.layout.TreeLayout,0,1,2,3,1 084,1,1
+mindustry.world.WorldContext,912,2,1 233,11,1 080,2,5
+mindustry.world.blocks.Autotiler,912,7,1 233,11,1 080,4,3
+mindustry.world.blocks.ControlBlock,0,2,2,9,1 081,1,8
+mindustry.world.blocks.ExplosionShield,0,0,0,4,1 081,0,4
+mindustry.world.blocks.LaunchAnimator,0,1,1,4,1 081,1,4
+mindustry.world.blocks.RotBlock,0,0,0,7,1 082,0,7
+mindustry.world.blocks.UnitTetherBlock,0,0,0,3,1 081,0,2
+mindustry.world.blocks.distribution.ChainedBuilding,0,1,1,5,1 081,1,4
+mindustry.world.blocks.heat.HeatBlock,0,0,0,6,1 081,0,5
+mindustry.world.blocks.heat.HeatConsumer,0,0,0,5,1 081,0,5
+mindustry.world.blocks.payloads.Payload,912,12,1 233,30,1 080,8,12
+mindustry.world.meta.StatValue,0,0,0,10,1 081,0,7
+mindustry.world.modules.ItemModule.ItemCalculator,912,1,1 233,2,1 080,1,2
+mindustry.world.modules.ItemModule.ItemConsumer,912,1,1 233,8,1 080,1,7
+mindustry.world.modules.LiquidModule.LiquidCalculator,912,1,1 233,3,1 080,1,3
+mindustry.world.modules.LiquidModule.LiquidConsumer,912,1,1 233,1,1 080,1,1
+
+Package,Cyclic,PDcy,PDpt,PDpt*
+mindustry,58,21,59,67
+mindustry.ai,58,26,31,67
+mindustry.ai.types,58,22,17,67
+mindustry.async,58,7,7,67
+mindustry.audio,58,8,5,67
+mindustry.content,58,43,51,67
+mindustry.core,58,33,58,67
+mindustry.ctype,58,14,52,67
+mindustry.editor,58,25,7,67
+mindustry.entities,58,18,48,67
+mindustry.entities.abilities,58,14,7,67
+mindustry.entities.bullet,58,19,20,67
+mindustry.entities.comp,0,33,0,1
+mindustry.entities.effect,58,4,4,67
+mindustry.entities.part,58,5,6,67
+mindustry.entities.pattern,58,2,4,67
+mindustry.entities.units,58,14,34,67
+mindustry.game,58,33,53,67
+mindustry.graphics,58,24,45,67
+mindustry.graphics.g3d,58,5,10,67
+mindustry.input,58,27,19,67
+mindustry.io,58,26,23,67
+mindustry.io.versions,58,11,3,67
+mindustry.logic,58,25,27,67
+mindustry.maps,58,24,14,67
+mindustry.maps.filters,58,16,4,67
+mindustry.maps.generators,58,22,8,67
+mindustry.maps.planet,58,15,2,67
+mindustry.mod,58,48,19,67
+mindustry.net,58,18,33,67
+mindustry.service,58,22,3,67
+mindustry.type,58,34,57,67
+mindustry.type.ammo,58,9,4,67
+mindustry.type.unit,58,9,2,67
+mindustry.type.weapons,58,13,2,67
+mindustry.type.weather,58,4,2,67
+mindustry.ui,58,13,34,67
+mindustry.ui.dialogs,58,26,20,67
+mindustry.ui.fragments,58,25,18,67
+mindustry.ui.layout,0,0,1,68
+mindustry.world,58,22,52,67
+mindustry.world.blocks,58,22,29,67
+mindustry.world.blocks.campaign,58,24,2,67
+mindustry.world.blocks.defense,58,24,5,67
+mindustry.world.blocks.defense.turrets,58,22,8,67
+mindustry.world.blocks.distribution,58,20,8,67
+mindustry.world.blocks.environment,58,17,26,67
+mindustry.world.blocks.heat,58,11,6,67
+mindustry.world.blocks.legacy,58,4,6,67
+mindustry.world.blocks.liquid,58,15,8,67
+mindustry.world.blocks.logic,58,16,5,67
+mindustry.world.blocks.payloads,58,25,18,67
+mindustry.world.blocks.power,58,23,13,67
+mindustry.world.blocks.production,58,23,7,67
+mindustry.world.blocks.sandbox,58,12,5,67
+mindustry.world.blocks.storage,58,24,27,67
+mindustry.world.blocks.units,58,23,5,67
+mindustry.world.consumers,58,12,15,67
+mindustry.world.draw,58,14,7,67
+mindustry.world.meta,58,18,43,67
+mindustry.world.modules,58,5,38,67
+
