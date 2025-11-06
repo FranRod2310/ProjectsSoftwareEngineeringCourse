@@ -23,6 +23,8 @@ So overall, this identification seems correct, meets all the bullet points, and 
 
 ## Design Pattern 3
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** Francisco Rodrigues 67753
 
 **Comments/Points to be  corrected/Sugestions:**
+
+The Pattern is correct since the algorithm of the `BulletType` can be changed without modifying it's connection with `PowerTurret`. The `BulletType` has different classes implementing multiple algorithms, so it can change internally without the `PowerTurret` class noticing. The class diagram showed is also correct, it show the interaction between the 4 classes. The Rationale explained after is also correct. The reason for this pattern is the flexibility in the code, which is mentioned, and the reusability. It helps separating and organizing different logic methods, and makes it easy to change between classes implementing it.

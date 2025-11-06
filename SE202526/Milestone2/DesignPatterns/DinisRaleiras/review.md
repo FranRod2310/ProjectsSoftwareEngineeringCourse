@@ -12,9 +12,13 @@ and while a brief usage example could improve clarity, the explanation is clear 
 
 ## Design Pattern 2
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** [Miguel Rosalino] [68210]
 
 **Comments/Points to be  corrected/Sugestions:**
+The code snippets illustrates the template design pattern very clearly, and code locations are provided.
+The class diagram is simple, intuitive and well produced.
+The Rationale is well explained and the benefits are nice additional information that compeltes the report.
+Overall, a solid analysis.
 
 
 ## Design Pattern 3
@@ -32,3 +36,4 @@ So overall, the identification of this pattern seems correct and precise enough.
 - Reviewed design pattern 1
 ## Date [6/11/25]
 - Reviewed design pattern 3
+- Reviewed design pattern 2

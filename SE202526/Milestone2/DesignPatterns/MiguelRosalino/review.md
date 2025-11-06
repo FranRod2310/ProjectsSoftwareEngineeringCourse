@@ -25,6 +25,9 @@ To summarize, it seems that this pattern identification is precise and correct.
 
 ## Design Pattern 3
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** Francisco Rodrigues 67753
 
 **Comments/Points to be  corrected/Sugestions:**
+
+The design pattern is well chosen, it has a abstract class, `SaveFileReader`, which is used as a template for the class below, `SaveVersion`. It is also explained why it is a template pattern, and what for it can be used. The class diagram showed below the code is also correct, as it's possible to see that the `SaveVersion` class depends on the `SaveFileReader` class. The types "Abstract class" and "Concrete class" are also well identified. 
+The advantages listed are also common characteristics of this pattern. 
