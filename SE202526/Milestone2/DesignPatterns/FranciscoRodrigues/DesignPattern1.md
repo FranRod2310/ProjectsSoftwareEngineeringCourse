@@ -1,6 +1,7 @@
 ## Facade Pattern 
 
 `core/src/mindustry/core/ContentLoader.java`
+
 ### Code Snippet
 
 ```Java
@@ -27,7 +28,9 @@ public void createBaseContent(){
 (...)
 ```
 
+
 `tools/src/mindustry/tools/ImagePacker.java`
+
 ### Code Snippet
 
 ```Java
@@ -57,6 +60,10 @@ public class ImagePacker{
 ```
 
 ### Class Diagram
+
+![DesignPatternFacade](https://github.com/user-attachments/assets/5c1a16fa-4b6d-48f5-939c-e3377ec4dc93)
+
+
 
 ### Rationale
 
