@@ -1,4 +1,4 @@
-## Observer Pattern 
+## Template Method 
 
 `...\core\src\mindustry\world\draw\DrawBlock.java`
 ### Code Snippet
