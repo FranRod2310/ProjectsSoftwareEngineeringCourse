@@ -19,6 +19,13 @@ The identification of the Strategy Pattern in this context is correct. The `Weap
 
 ## Design Pattern 3
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** Filipe Nobre [67850
 
 **Comments/Points to be  corrected/Sugestions:**
+
+The identification is acceptable and can be justified.
+The `Items` class follows the Factory Method pattern in a broad and practical sense because it centralizes the creation of 
+all `Item` objects within the `load()` method. This method acts as a factory responsible for instantiating and configuring every 
+specific item (like copper, lead, coal, etc.), keeping the construction logic separate from the rest of the codebase.
+By encapsulating item creation in one place, the class **ensures consistency, easier maintenance, and reusability**, which are 
+core goals of the Factory Method pattern.
