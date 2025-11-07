@@ -2,9 +2,9 @@
 
 ## *Mindustry* – Additional Gameplay Use Cases
 
-This section presents five gameplay use cases that focus on core interactions a player can have with *Mindustry’s* systems.
-Each use case highlights a distinct action or mechanic, from upgrading structures to managing units and automating production.
-These examples demonstrate how players can engage strategically with the game world.
+This section presents five gameplay use cases that focus on key player interactions with Mindustry’s interface and control systems.
+Each use case represents a direct action performed by the player to navigate, manage, or control aspects of the game environment.
+These examples illustrate how the player can manipulate the game state, visibility, and perspective during gameplay.
 
 ---
 
