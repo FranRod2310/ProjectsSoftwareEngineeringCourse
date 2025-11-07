@@ -62,5 +62,5 @@ traps to protect critical structures.
 | Automate Production | Sets up automated production chains to convert raw resources into advanced materials. | Player | Block System, World System | Place Block, Link Blocks      |
 | Defend Base |Organizes defenses against enemies using turrets, walls, and traps. | Player | World System, Unit System, Block System | Place Block, Upgrade Block                     |
 
-## Defend Base Diagram
-![Defend Base Diagram](UseCaseDiagram.png)
+## Use Case Diagram
+![Use Case Diagram](Use_Case_Diagram.png)
