@@ -49,4 +49,5 @@ The team agreed on the following goals for this week:
 
 ### Gantt Chart
 
-Please add the Gantt chart here.
+<img width="2788" height="587" alt="GanttChart_Sprint4" src="https://github.com/user-attachments/assets/a8ffc7cc-6a93-4e07-99a6-f5aa2dba89f2" />
+
