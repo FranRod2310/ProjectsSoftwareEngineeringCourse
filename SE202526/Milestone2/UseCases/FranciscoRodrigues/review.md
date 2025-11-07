@@ -1,6 +1,6 @@
 # Review
 
-**Reviewer**: [Miguel Rosalino] [68210]
+**Reviewer**: Leandro Rodrigues 68211
 
 The Research Tree System is a good choice and is well explored.
 The actors are appropriate and their roles as main and secondary are well designated.

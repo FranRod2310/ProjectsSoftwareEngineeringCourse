@@ -1,6 +1,6 @@
 ##  MOOD Metrics Report - Review
 
-**Reviewer:** Miguel Rosalino – 68210
+**Reviewer:** Leandro Rodrigues - 68211
 
 The report does a good job at explaining the different metrics available in MOOD.
 It begins by talking about expected values for each metric, which is usefull for analysing the results of the project.
