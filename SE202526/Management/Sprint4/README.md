@@ -45,7 +45,7 @@ The team agreed on the following goals for this week:
 
 ### Burndown Chart for the sprint
 
-Please add the burndown chart here.
+<img width="2206" height="1004" alt="image" src="https://github.com/user-attachments/assets/354da132-f551-4767-9a72-391b46b019f8" />
 
 ### Gantt Chart
 
