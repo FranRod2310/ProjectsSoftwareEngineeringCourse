@@ -55,3 +55,9 @@ All use cases are interconnected as part of the same flow —managing structures
 | Load Game | The player loads a previously saved game, restoring world and progress. | Player | Save System, Game System | Save Game |
 
 
+## Use Case Diagram
+
+![Use Case Diagram](CaseDiagram.png)
+
+
+
