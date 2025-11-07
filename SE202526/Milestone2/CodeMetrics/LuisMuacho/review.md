@@ -1,4 +1,4 @@
-# Chidamber-Kemerer Métrics Review
+# Chidamber-Kemerer Metrics Review
 
 ## Reviewer: Filipe Nobre 67850
 
