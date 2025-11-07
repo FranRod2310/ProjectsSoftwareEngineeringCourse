@@ -1,113 +1,115 @@
-## Template Method Pattern
+## Chains of Responsibility Pattern
+
+`mindustry/net/Administration.java`
+
 ### Code Snippet 1
-`mindustry/ui/dialogs/BaseDialog.java`
+
 ```java
-package mindustry.ui.dialogs;
+package mindustry.net;
 
 import (...);
 
-public class BaseDialog extends Dialog{
-    protected boolean wasPaused;
-    /** If true, this dialog will pause the game while open. */
-    protected boolean shouldPause;
+public class Administration{
+    (...)
+    public Seq<ChatFilter> chatFilters = new Seq<>();
+    public Seq<ActionFilter> actionFilters = new Seq<>();
+    (...)
+    
+    public Administration(){
+        load();
 
-    public BaseDialog(String title, DialogStyle style){
-        super(title, style);
-        setFillParent(true);
-        this.title.setAlignment(Align.center);
-        titleTable.row();
-        titleTable.image(Tex.whiteui, Pal.accent).growX().height(3f).pad(4f);
-
-        hidden(() -> {
-            if(shouldPause && state.isGame() && !net.active() && !wasPaused){
-                state.set(State.playing);
+        //anti-spam
+        addChatFilter((player, message) -> {
+            long resetTime = Config.messageRateLimit.num() * 1000L;
+            if(Config.antiSpam.bool() && !player.isLocal() && !player.admin){
+                //prevent people from spamming messages quickly
+                if(resetTime > 0 && Time.timeSinceMillis(player.getInfo().lastMessageTime) < resetTime){
+                    (...)
+                    return null;
+                }
+                (...)
             }
-            Sounds.back.play();
+            return message;
         });
 
-        shown(() -> {
-            if(shouldPause && state.isGame() && !net.active()){
-                wasPaused = state.is(State.paused);
-                state.set(State.paused);
+        //block interaction rate limit
+        addActionFilter(action -> {
+            if(action.type != ActionType.breakBlock &&
+                action.type != ActionType.placeBlock &&
+                action.type != ActionType.commandUnits &&
+                Config.antiSpam.bool() && !action.player.isLocal()){
+
+                Ratekeeper rate = action.player.getInfo().rate;
+                if(rate.allow(Config.interactRateWindow.num() * 1000L, Config.interactRateLimit.num())){
+                    return true;
+                }else{ (...)
+                    return false;
+                }
             }
+            return true;
         });
     }
+
     (...)
 
-    @Override
-    public void addCloseButton(){
-        addCloseButton(210f);
+    /** Adds a chat filter. This will transform the chat messages of every player.
+     * This functionality can be used to implement things like swear filters and special commands.
+     * Note that commands (starting with /) are not filtered.*/
+    public void addChatFilter(ChatFilter filter){
+        chatFilters.add(filter);
     }
-}
-```
 
-### Code Snippet 2
-`mindustry/editor/BannedContentDialog.java`
-```java
-package mindustry.editor;
+    /** Filters out a chat message. */
+    public @Nullable String filterMessage(Player player, String message){
+        String current = message;
+        for(ChatFilter f : chatFilters){
+            current = f.filter(player, current);
+            if(current == null) return null;
+        }
+        return current;
+    }
 
-import (...);
+    /** Add a filter to actions, preventing things such as breaking or configuring blocks. */
+    public void addActionFilter(ActionFilter filter){
+        actionFilters.add(filter);
+    }
 
-public class BannedContentDialog<T extends UnlockableContent> extends BaseDialog{
+    /** @return whether this action is allowed by the action filters. */
+    public boolean allowAction(Player player, ActionType type, Tile tile, Cons<PlayerAction> setter){
+        return allowAction(player, type, action -> setter.get(action.set(player, type, tile)));
+    }
+
+    /** @return whether this action is allowed by the action filters. */
+    public boolean allowAction(Player player, ActionType type, Cons<PlayerAction> setter){
+        //some actions are done by the server (null player) and thus are always allowed
+        if(player == null) return true;
+
+        PlayerAction act = Pools.obtain(PlayerAction.class, PlayerAction::new);
+        act.player = player;
+        act.type = type;
+        setter.get(act);
+        for(ActionFilter filter : actionFilters){
+            if(!filter.allow(act)){
+                Pools.free(act);
+                return false;
+            }
+        }
+        Pools.free(act);
+        return true;
+    }
+    
     (...)
 
-    public BannedContentDialog(String title, ContentType type, Boolf<T> pred){
-        super(title);
-        this.type = type;
-        this.pred = pred;
-        contentSearch = "";
-
-        selectedTable = new Table();
-        deselectedTable = new Table();
-
-        addCloseButton();
-
-        shown(this::build);
-        resized(this::build);
+    /** Handles chat messages from players and changes their contents. */
+    public interface ChatFilter{
+        /** @return the filtered message; a null string signals that the message should not be sent. */
+        @Nullable String filter(Player player, String message);
     }
 
-    public void show(ObjectSet<T> contentSet){
-        this.contentSet = contentSet;
-        show();
-    }
-
-    public void build(){
-        cont.clear();
-
-        var cell = cont.table(t -> {
-            t.table(s -> {
-                s.label(() -> "@search").padRight(10);
-                var field = s.field(contentSearch, value -> {
-                    contentSearch = value.trim().replaceAll(" +", " ").toLowerCase();
-                    rebuildTables();
-                }).get();
-                s.button(Icon.cancel, Styles.emptyi, () -> {
-                    contentSearch = "";
-                    field.setText("");
-                    rebuildTables();
-                }).padLeft(10f).size(35f);
-            });
-            if(type == ContentType.block){
-                t.row();
-                t.table(c -> {
-                    c.marginTop(8f);
-                    c.defaults().marginRight(4f);
-                    for(Category category : Category.values()){
-                        c.button(ui.getIcon(category.name()), Styles.squareTogglei, () -> {
-                            if(selectedCategory == category){
-                                selectedCategory = null;
-                            }else{
-                                selectedCategory = category;
-                            }
-                            rebuildTables();
-                        }).size(45f).update(i -> i.setChecked(selectedCategory == category)).padLeft(4f);
-                    }
-                    c.add("").padRight(4f);
-                }).center();
-            }
-        });
-        cont.row();
-        (...)
+    /** Allows or disallows player actions. */
+    public interface ActionFilter{
+        /** @return whether this action should be permitted. if applicable, make sure to send this player a message specify why the action was prohibited. */
+        boolean allow(PlayerAction action);
     }
 
     (...)
@@ -115,17 +117,23 @@ public class BannedContentDialog<T extends UnlockableContent> extends BaseDialog
 ```
 
 ### Class Diagram
-![Design Pattern - Template Method](DesignPattern2.png)
-### Rationale
-This class is an instance of Template Method because `BaseDialog` class defines a skeleton for the behavior and appearance of all dialogs in game, deferring the implementation of specific content to its subclasses.
-- **1. The Template Method:** the algorithm here is the lifecycle of a dialog. This skeleton is defined in `BaseDialog` and includes invariant steps:
-    - **Visual Structure** (`titleTable.image(...)`);
-    - **Fix Behaviour** (pause/resume logic);
-    - **Common Functionality** (the `addCloseButton()`);
-- **2.** The skeleton just defines how the dialog works, but not what it shows. The deferred step is the filling of the content. The `BaseDialog` exposes the `Table` (inherited from the Dialog class `arc.scene.ui.Dialog`) called `cont`, as a blank space.
-- **3.** Classes like `BannedContentDialog` inherit from `BaseDialog` and fill the blank space. They do this by implementing their own logic (ex. `build()`) that add extras to the `cont` table.
 
-**Benefits:**
-- Code Reusability;
-- UI Consistency;
-- Simplified Implementations;
+![COR - DesignPattern](DesignPattern2.png)
+
+### Rationale
+
+This class is a perfect example of the Chain of Responsibility pattern. The idea is to create an "chain" to process "requests" (chat messages or player actions).
+
+ - **"Request"**: It's the String of the message in `fileterMessage`, or the object `PlayerAction` in the `allowAction`.
+ - **Handler Interface**: These are the inner interfaces `ChatFilter` and `ActionFilter`. They define the contract that all concrete handlers must follow the method `filter()` or `allow()`.
+ - **ConcreteHandlers**: These are implementations of those interfaces. In the snippet, they are the lambda functions that are passed to `addChatFilter` and `addActionFilter` in the constructor. Each one has specific logic to decide if it processes the request or skips it.
+ - **Client** and **Chain Manage**: The class `Administration` acts as the client,
+    1. Mount the chain: Use methods `addChatFilter` and `addActionFilter` to add handlers to the lists `Seq`.
+    2. Init the Request: The methods `filterMessage` and `allowAction` initiate the process.
+    3. BaseHandler Logic: The skip logic is implemented directly inside the methods `filterMessage` and `allowAction`, using `for` loops. If a handler returns null or false, it "treats" the request and the chain is interrupted. Otherwise, the loop continues to the next handler. 
+
+**Benefits**:
+
+- **Decoupling**: The sender (`Administration`) doesn't know who or how the request is handled.
+- **Extensibility**: Easily add new filters without changing the `Administration` class.
+- **Single Responsibility**: Each filter lambda/class does just one job.
