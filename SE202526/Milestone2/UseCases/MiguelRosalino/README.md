@@ -2,7 +2,7 @@
 
 **System**: Mindustry Modding System
 
-This diagram represent the modding experience in Mindustry, envolving creating mods and playing them.
+This diagram represents the modding experience in Mindustry, envolving creating mods and playing them.
 
 **Actors**:
 - Mod Developer (creates, edits and test mods)
@@ -69,4 +69,5 @@ This diagram represent the modding experience in Mindustry, envolving creating m
 **Main actor**: Player
 
 **Secondary actors**: none
+
 
