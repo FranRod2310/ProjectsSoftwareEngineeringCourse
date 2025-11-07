@@ -31,15 +31,17 @@ The team agreed on the following goals for this week:
 
 ### Scrum Board at the beginning of the sprint
 
-Please add the scrumboard picture here.
+<img width="2327" height="1160" alt="image" src="https://github.com/user-attachments/assets/1a3cd3cd-08f2-427f-9cf4-65bae524d58e" />
+
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+<img width="2321" height="1142" alt="image" src="https://github.com/user-attachments/assets/e1c59546-3634-4ed4-9d66-b31fc52b7f6b" />
 
 ### Scrum Board at the end of the sprint
 
-Please add the scrumboard picture here.
+<img width="2327" height="1162" alt="image" src="https://github.com/user-attachments/assets/b7b40e65-307b-465d-88b4-69dfe7467f2f" />
+
 
 ### Burndown Chart for the sprint
 
