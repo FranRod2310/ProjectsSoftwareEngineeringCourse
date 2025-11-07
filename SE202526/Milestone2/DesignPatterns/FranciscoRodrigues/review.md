@@ -19,9 +19,20 @@ Suggestions:
 
 ## Design Pattern 2
 
-**Reviewer:** [nome] [nº]
+**Reviewer:** [Leandro Rodrigues] [nº 68211]
 
 **Comments/Points to be  corrected/Sugestions:**
+
+Comments:
+
+- The design pattern was well identified. The implementation clearly shows the use of a centralized state management
+- system that controls the game’s flow between different states (paused, playing, menu).
+
+Points to be corrected:
+- None. The analysis is very strong, accurate, and well-justified.
+
+Suggestions:
+- No suggestions are necessary; the analysis is complete and very well-written.
 
 
 ## Design Pattern 3
