@@ -39,33 +39,52 @@ A well-structured codebase aims to minimize all complexity metrics, producing co
 - Simpler to test.
 - More robust and less prone to logic errors.
 
+
+### Complexity Metrics Reference Table
+
+| **Metric** | **low**  | **moderate** | **high**                                                                                                                          |
+|------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **CogC (Cognitive Complexity)** | *0-5*    | *6-15*       |  *>15*    
+| **v(G) (Cyclomatic Complexity)** | *1 – 5*  | *6 – 10*     |  *> 10*  
+| **iv(G) (Design Complexity)** | *0 – 3*  | *4 – 8*      |  *> 8*  
+| **ev(G) (Essential Complexity)** | *0 – 2*  | *3 – 4*      |  *> 4*  
+| **OCavg (Average Operation Complexity)** | *0 – 2*  | *2 – 3*      |  *> 3*  
+| **OCmax (Maximum Operation Complexity)** | *0 – 50* | *50 – 121*   |  *> 121(expect)*  
+| **WMC (Weighted Methods per Class)** | *1 – 15* | *15 – 30*    |  *> 30*
+#### *based on observation of the table*
+
+
+
+
+
 ### Method Metric Analysis
 
-
+![img_2.png](MethodMetrics.png)
 
 The method-level complexity metrics provide insight into the overall complexity and understandability of the system. 
 The average values are:
 
 | Metric         | Value | Interpretation |
 |----------------|-------|----------------|
-| CogC (4.03) |    Moderate   |     The average cognitive complexity per method is 4.03, indicating that most methods require a moderate effort to understand. This suggests that the code is generally readable but some methods may need more attention.          |
-| v(G) (3.45)  |    Low   | The average cyclomatic complexity per method is 3.45, showing that most methods have a small number of independent execution paths. This implies that testing is manageable and logic is not overly complex.       |
-| iv(G) (2.73)  |Low|        The average design complexity per method is 2.73, indicating that the methods generally have simple decision structures and low interdependence between modules.    |
-| ev(G) (1.36) |   Low   |     The average essential complexity per method is 1.36, meaning that most methods have straightforward and well-structured control flow, without unnecessary logic.   |
+| CogC (4.03) | low   |     The average cognitive complexity per method is 4.03, indicating that most methods require a moderate effort to understand. This suggests that the code is generally readable but some methods may need more attention.          |
+| v(G) (3.45)  | Low   | The average cyclomatic complexity per method is 3.45, showing that most methods have a small number of independent execution paths. This implies that testing is manageable and logic is not overly complex.       |
+| iv(G) (2.73)  | Low   |        The average design complexity per method is 2.73, indicating that the methods generally have simple decision structures and low interdependence between modules.    |
+| ev(G) (1.36) | Low   |     The average essential complexity per method is 1.36, meaning that most methods have straightforward and well-structured control flow, without unnecessary logic.   |
 
 
 ### Class Metric Analysis
 
+![img.png](ClassMetrics.png)
 
 
 The class-level complexity metrics provide insight into the overall structural complexity of the system at the class level.
 The average values are:
 
-| Metric         | Value | Interpretation |
-|----------------|-------|----------------|
-| OCavg (2.59) |    Low   |     The average operation complexity per class is 2.59, indicating that most methods within classes are simple and easy to understand.          |
-| OCmax (5.02)  |   Moderate   | The average maximum complexity per class is 5.02, showing that at least one method in each class may be more complex, requiring additional attention or testing.     |
-| WMC (17.75)  |Moderate|    The average weighted methods per class is 17.75, suggesting that classes generally have a moderate total complexity, reflecting manageable responsibilities and maintainability.    |
+| Metric         | Value    | Interpretation |
+|----------------|----------|----------------|
+| OCavg (2.59) | Moderate |     The average operation complexity per class is 2.59, indicating that most methods within classes are simple and easy to understand.          |
+| OCmax (5.02)  | Low      | The average maximum complexity per class is 5.02, showing that at least one method in each class may be more complex, requiring additional attention or testing.     |
+| WMC (17.75)  | Moderate |    The average weighted methods per class is 17.75, suggesting that classes generally have a moderate total complexity, reflecting manageable responsibilities and maintainability.    |
 
 
 
