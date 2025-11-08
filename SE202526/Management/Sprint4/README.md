@@ -22,10 +22,24 @@ The team agreed on the following goals for this week:
 
 
 ### Sprint Review Meeting: 
-*(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
+As Sprint 4 comes to an end, we held a meeting to talk about what was achieved and if all goals for the week were met.
+
+At the start of the sprint, we set individual goals for each team member. By Friday, all goals were met.
+
+Each member did its part responsibly, communication was strong, and the sprint is now finished.
 
 ### Sprint Retrospective Meeting: 
-*(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
+Looking back and comparing Sprint 3 with the sprint we just had, we can agree that things went smoother.
+
+The work load this sprint was almost 3x bigger than last week, but we all had more available time. To account for this, work started right away on Monday.
+
+Each member worked on their reports, communicating with the rest of the team each time a report was concluded, and always asking for feedback when in doubt of anything.
+
+Despite this, the work load was still heavier on the latter half of the week. We made progress, but the work load could still be better distributed throughout the week.
+
+Next sprint marks the start of Milestone 3, and we are now past the half-way mark of the project. Along these sprints, we believe we've made progress on our work ethic and have gotten more communicative as a team. 
+
+We will strive to keep up and even improve our work ethic and keep working well as a team.
 
 ## Relevant resources
 
