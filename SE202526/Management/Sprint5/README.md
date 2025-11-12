@@ -6,7 +6,7 @@
 
 ## Scrum master
 
-Student name and number
+Leandro Rodrigues 68211
 
 ## Management info
 ### Sprint Planning Meeting: 
