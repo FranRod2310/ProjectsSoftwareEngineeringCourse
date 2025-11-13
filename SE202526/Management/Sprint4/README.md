@@ -45,12 +45,12 @@ We will strive to keep up and even improve our work ethic and keep working well 
 
 ### Scrum Board at the beginning of the sprint
 
-<img width="2327" height="1160" alt="image" src="https://github.com/user-attachments/assets/1a3cd3cd-08f2-427f-9cf4-65bae524d58e" />
+<img width="2879" height="1366" alt="image" src="https://github.com/user-attachments/assets/3ff5092e-12f1-4f86-bacb-9fe7ef372132" />
 
 
 ### Scrum Board in the middle of the sprint
 
-<img width="2321" height="1142" alt="image" src="https://github.com/user-attachments/assets/e1c59546-3634-4ed4-9d66-b31fc52b7f6b" />
+<img width="2879" height="1372" alt="image" src="https://github.com/user-attachments/assets/ff20ccbe-3ad5-4a3a-a7f5-d2d7204f9683" />
 
 ### Scrum Board at the end of the sprint
 
@@ -59,7 +59,7 @@ We will strive to keep up and even improve our work ethic and keep working well 
 
 ### Burndown Chart for the sprint
 
-<img width="2206" height="1004" alt="image" src="https://github.com/user-attachments/assets/354da132-f551-4767-9a72-391b46b019f8" />
+<img width="2879" height="1369" alt="image" src="https://github.com/user-attachments/assets/ecf4baaa-681a-4600-be7b-0fa49fb47eea" />
 
 ### Gantt Chart
 
