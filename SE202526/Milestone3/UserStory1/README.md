@@ -1,17 +1,163 @@
 # User story 1
-(*Please add a user story short title here*)
+Markers
 ## Author(s)
-(*Please add the user story author(s) here, one in each line, providing the authors' name and surname, along with their student number*)
+
+- Leandro Rodrigues (68211)
+- Luís Muacho (68301)
+
 ## Reviewer(s)
 (*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
 ## User Story:
-(*Please add your User Story here.*)
+As a player, I want to be able to place customizable markers on the map to identify important areas, so that I can better organize my base and communicate with myself throughout the game.
 ### Review
 *(Please add your user story review here)*
 ## Use case diagram
-(*Please add the use case diagram here.*)
+![img.png](img.png)
 ## Use case textual description
-(*Please add the use case textual description here.*)
+### UC1 – Create Marker
+- **Actor**: Player
+- **Goal**: Create a new marker at the player’s current position.
+
+**Preconditions**:
+
+- The player is inside an active map.
+
+- The system is not paused.
+
+**Main Flow**:
+
+1. The player presses the key assigned to marker creation (e.g., “K”).
+
+2. The system obtains the player’s current X,Y position.
+
+3. The system creates a new Marker object with initial values (position, default color, empty text, unique ID).
+
+4. The system adds the marker to the map’s marker list.
+
+5. The system automatically opens the editing window (see UC2).
+
+**Postconditions**:
+
+- A new marker exists on the map.
+
+**Exceptions**:
+
+None;
+
+### UC2 – Edit Marker
+
+- **Actor**: Player
+- **Goal**: Change the color and/or text of an existing marker.
+
+Preconditions
+
+The marker already exists.
+
+The player clicked on a marker OR has just created one.
+
+Main Flow
+
+The system displays the editing popup.
+
+The player types a text (max 20–30 characters).
+
+The player selects a color from the available options.
+
+The player presses “Confirm.”
+
+The system updates the marker with the new properties.
+
+Postconditions
+
+The marker displays the updated properties.
+
+Exceptions
+
+If the text exceeds the character limit → the system truncates or rejects it.
+
+UC3 – Remove Marker
+
+Actor: Player
+Goal: Delete an existing marker.
+
+Preconditions
+
+The marker exists on the map.
+
+Main Flow
+
+The player opens the editing popup for a marker.
+
+The player presses the trash icon.
+
+The system removes the marker from the map’s marker list.
+
+The marker disappears from the map.
+
+Postconditions
+
+The marker no longer exists on the map.
+
+Exceptions
+
+None; if the marker does not exist, no action occurs.
+
+UC4 – View Markers
+
+Actor: Player
+Goal: See all markers on the map.
+
+Preconditions
+
+Active or saved markers exist on the map.
+
+Main Flow
+
+The player moves around the map.
+
+The system displays the marker icons at their correct positions.
+
+If the player hovers the cursor over a marker:
+
+The marker’s text appears as a tooltip.
+
+Postconditions
+
+The player correctly sees all markers.
+
+Exceptions
+
+None; if no markers exist, the map is displayed normally.
+
+UC5 – Persist Markers
+
+Actor: System (Marker Management System / Game Map)
+Goal: Save and load markers so that they persist between game sessions.
+
+Preconditions
+
+Markers exist on the map created by the player.
+
+The system is ready to save the game state.
+
+Main Flow
+
+Whenever a marker is created, edited, or removed, the system saves the change to the save file.
+
+When loading a map, the system reads all saved markers.
+
+The system recreates the Marker objects on the map with all properties (position, color, text).
+
+Postconditions
+
+All markers reflect the saved state.
+
+When reloading the map, markers appear exactly as they were left.
+
+Exceptions
+
+If the save file is corrupted or inaccessible, the system shows a warning and ignores the markers.
+
 ### Review
 *(Please add your use case review here)*
 ## Implementation documentation
