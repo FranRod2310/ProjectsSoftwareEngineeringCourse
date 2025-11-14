@@ -26,7 +26,7 @@ As a player, I want to be able to place customizable markers on the map to ident
 
 **Main Flow**:
 
-1. The player presses the key assigned to marker creation (e.g., “K”).
+1. The player presses the key assigned to marker creation.
 
 2. The system obtains the player’s current X,Y position.
 
@@ -49,58 +49,57 @@ None;
 - **Actor**: Player
 - **Goal**: Change the color and/or text of an existing marker.
 
-Preconditions
+**Preconditions**:
 
-The marker already exists.
+- The marker already exists.
+- The player clicked on a marker OR has just created one.
 
-The player clicked on a marker OR has just created one.
+**Main Flow**:
 
-Main Flow
+1. The system displays the editing popup.
 
-The system displays the editing popup.
+2. The player types a text (max 15-20 characters).
 
-The player types a text (max 20–30 characters).
+3. The player selects a color from the available options.
 
-The player selects a color from the available options.
+4. The player presses “Confirm.”
 
-The player presses “Confirm.”
+5. The system updates the marker with the new properties.
 
-The system updates the marker with the new properties.
+**Postconditions**: 
 
-Postconditions
+- The marker displays the updated properties.
 
-The marker displays the updated properties.
+**Exceptions**: 
 
-Exceptions
+If the text exceeds the character limit → the system locks it.
 
-If the text exceeds the character limit → the system truncates or rejects it.
+### UC3 – Remove Marker
 
-UC3 – Remove Marker
+- **Actor**: Player
+- **Goal**: Delete an existing marker.
 
-Actor: Player
-Goal: Delete an existing marker.
+**Preconditions**:
 
-Preconditions
+- The marker exists on the map.
 
-The marker exists on the map.
+**Main Flow**:
 
-Main Flow
+1. The player opens the editing popup for a marker.
 
-The player opens the editing popup for a marker.
+2. The player presses the trash icon.
 
-The player presses the trash icon.
+3. The system removes the marker from the map’s marker list.
 
-The system removes the marker from the map’s marker list.
+4. The marker disappears from the map.
 
-The marker disappears from the map.
+**Postconditions**:
 
-Postconditions
+- The marker no longer exists on the map.
 
-The marker no longer exists on the map.
+**Exceptions**: 
 
-Exceptions
-
-None; if the marker does not exist, no action occurs.
+None;
 
 UC4 – View Markers
 
