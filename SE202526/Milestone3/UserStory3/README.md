@@ -1,5 +1,6 @@
 # User story 3
-Introduction to the game
+
+Improved game introduction experience
 
 ---
 
