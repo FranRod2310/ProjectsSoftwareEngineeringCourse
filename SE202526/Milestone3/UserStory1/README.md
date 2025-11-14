@@ -102,61 +102,61 @@ Exceptions
 
 None; if the marker does not exist, no action occurs.
 
-UC4 – View Markers
+### UC4 – View Markers
 
-Actor: Player
-Goal: See all markers on the map.
+- **Actor**: Player
+- **Goal**: See all markers on the map.
 
-Preconditions
+**Preconditions**:
 
-Active or saved markers exist on the map.
+- Active or saved markers exist on the map.
 
-Main Flow
+**Main Flow**:
 
-The player moves around the map.
+1. The player moves around the map.
 
-The system displays the marker icons at their correct positions.
+2. The system displays the marker icons at their correct positions.
 
-If the player hovers the cursor over a marker:
+3. If the player hovers the cursor over a marker:
 
-The marker’s text appears as a tooltip.
+4. The marker’s text appears as a tooltip.
 
-Postconditions
+**Postconditions**:
 
-The player correctly sees all markers.
+- The player correctly sees all markers.
 
-Exceptions
+**Exceptions**:
 
-None; if no markers exist, the map is displayed normally.
+- None.
 
-UC5 – Persist Markers
+### UC5 – Persist Markers
 
-Actor: System (Marker Management System / Game Map)
-Goal: Save and load markers so that they persist between game sessions.
+- **Actor**: System (Marker Management System / Game Map)
+- **Goal**: Save and load markers so that they persist between game sessions.
 
-Preconditions
+**Preconditions**:
 
-Markers exist on the map created by the player.
+- Markers exist on the map created by the player.
 
-The system is ready to save the game state.
+- The system is ready to save the game state.
 
-Main Flow
+**Main Flow**:
 
-Whenever a marker is created, edited, or removed, the system saves the change to the save file.
+1. Whenever a marker is created, edited, or removed, the system saves the change to the save file.
 
-When loading a map, the system reads all saved markers.
+2. When loading a map, the system reads all saved markers.
 
-The system recreates the Marker objects on the map with all properties (position, color, text).
+3. The system recreates the Marker objects on the map with all properties (position, color, text).
 
-Postconditions
+**Postconditions**:
 
-All markers reflect the saved state.
+- All markers reflect the saved state.
 
-When reloading the map, markers appear exactly as they were left.
+-When reloading the map, markers appear exactly as they were left.
 
-Exceptions
+**Exceptions**:
 
-If the save file is corrupted or inaccessible, the system shows a warning and ignores the markers.
+- If the save file is corrupted or inaccessible, the system shows a warning and ignores the markers.
 
 ### Review
 *(Please add your use case review here)*
