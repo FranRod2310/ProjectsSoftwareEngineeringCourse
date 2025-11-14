@@ -248,6 +248,9 @@ None
 The use case descriptions are well-written, with clear actors, objectives, detailed flows, and inclusion of sub-use-cases.
 Postconditions could be improved by specifying the player’s status and the final state of the map. 
 Overall, the descriptions are of high quality.
+The diagram effectively represents the use cases, correctly identifying the key actors and the different tutorial modules .
+The <<Include>> relationships, such as the dependency on Research for both Building and Defense, align well with the dependencies described in the textual flows.
+
 
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
