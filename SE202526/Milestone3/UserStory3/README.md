@@ -11,8 +11,8 @@ Improved game introduction experience
 ---
 
 ## Reviewer(s)
-(*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
-
+- Leandro Rodrigues (68211)
+- Luís Muacho (68301)
 ---
 
 ## User Story:
@@ -21,7 +21,8 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 ---
 
 ### Review
-*(Please add your user story review here)*
+This User Story seems well done, as it is focused on the player (the actor) and specifies objectives such as learning how to build, research, and defend your base.
+The only point to improve is that "step-by-step tutorial" is too vague; it could be made more specific, for example: "in-game tutorial," "pop-ups," or "mini-missions."
 
 ---
 
@@ -241,7 +242,10 @@ New player clicked on cancel and the player is in the tutorial world.
 None
 
 ### Review
-*(Please add your use case review here)*
+The use case descriptions are well-written, with clear actors, objectives, detailed flows, and inclusion of sub-use-cases.
+Postconditions could be improved by specifying the player’s status and the final state of the map. 
+Overall, the descriptions are of high quality.
+
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
 ### Implementation summary
