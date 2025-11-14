@@ -51,12 +51,12 @@ None
 1. The use case starts when the new player clicks on the help icon.
 2. The system starts the tutorial world.
 3. The system starts the building tutorial.
-  3.1 Include: Building tutorial.
-5. The system starts the defense tutorial.
-   5.1 Include: Defense tutorial.
-6. The system shows a pop-up message "Tutorial completed".
-7. The system returns to the real world.
-8. The use case ends.
+3.1 `Include`: Building tutorial.
+4. The system starts the defense tutorial.
+4.1 `Include`: Defense tutorial.
+5. The system shows a pop-up message "Tutorial completed".
+6. The system returns to the real world.
+7. The use case ends.
    
 **Postconditions:**
 None
@@ -84,15 +84,15 @@ New player is in the tutorial world.
 2. The system shows a pop-up message explaining what to do.
 3. The player clicks on the research tree icon.
 4. The system starts the research tutorial.
-   4.1 Include: Research Tutorial.
+4.1 `Include`: Research Tutorial.
 5. The system shows a pop-up message explaining how to build.
 6. The new player clicks on a building.
 7. The system highlights the area where it can be built.
 8. The new player chooses a place to build and clicks on it.
 9. The system shows the factory on the position chosen.
 10. While the position chosen is invalid:
-  10.1 The system shows a pop-up message "Invalid area" with specified error message.
-  10.2 The system changes the color of the factory to red.
+10.1 The system shows a pop-up message "Invalid area" with specified error message.
+10.2 The system changes the color of the factory to red.
 11. The player clicks on the verify button.
 12. The system shows a pop-up message "Not enough resources".
 13. The system alternates the color of the resources between red and white.
@@ -179,7 +179,7 @@ The player has unlocked basic ores for fuel and is in tutorial world.
 4. Camera moves to suggested turret placement location.
 5. System highlights a recommended turret location spot.
 6. Systems highlights Research Tree.
-6.1 Include: Introduce Research Tree
+6.1 `Include`: Introduce Research Tree
 7. Player selects and unlocks a turret from the menu.
 8. Player places the turret in the highlighted location.
 9. System highlights a short wall segment in front of the turret.
