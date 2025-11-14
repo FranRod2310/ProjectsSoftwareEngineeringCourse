@@ -15,8 +15,12 @@ As a player, I want to be able to place customizable markers on the map to ident
 ![img.png](img.png)
 ## Use case textual description
 ### UC1 – Create Marker
-- **Actor**: Player
-- **Goal**: Create a new marker at the player’s current position.
+- **Name**: Create Marker
+- ID: UC1
+- Description: The player creates a new marker at their current position.
+- **Actors** 
+  - **Primary**: Player
+  - **Secondary**: -
 
 **Preconditions**:
 
@@ -24,7 +28,7 @@ As a player, I want to be able to place customizable markers on the map to ident
 
 - The system is not paused.
 
-**Main Flow**:
+**Main Scenario**:
 
 1. The player presses the key assigned to marker creation.
 
@@ -36,25 +40,27 @@ As a player, I want to be able to place customizable markers on the map to ident
 
 5. The system automatically opens the editing window (see UC2).
 
+**Alternative Scenarios**:
+None.
+
 **Postconditions**:
 
 - A new marker exists on the map.
 
-**Exceptions**:
-
-None;
-
 ### UC2 – Edit Marker
-
-- **Actor**: Player
-- **Goal**: Change the color and/or text of an existing marker.
+- **Name**: Edit Marker
+- **ID**: UC2
+- **Description**: The player modifies the text and/or color of an existing marker.
+- **Actors**
+  - **Primary**: Player
+  - **Secondary**: -
 
 **Preconditions**:
 
 - The marker already exists.
 - The player clicked on a marker OR has just created one.
 
-**Main Flow**:
+**Main Scenario**:
 
 1. The system displays the editing popup.
 
@@ -66,17 +72,18 @@ None;
 
 5. The system updates the marker with the new properties.
 
+**Alternative Scenarios**:
+- A1 - Text exceeds character limit:
+The player types more characters than allowed.
+The system blocks addtional input.
 **Postconditions**: 
 
 - The marker displays the updated properties.
 
-**Exceptions**: 
-
-If the text exceeds the character limit → the system locks it.
-
 ### UC3 – Remove Marker
 
-- **Actor**: Player
+- **Primary Actor**: Player
+- **Secondary Actor**: None
 - **Goal**: Delete an existing marker.
 
 **Preconditions**:
@@ -103,7 +110,8 @@ None;
 
 ### UC4 – View Markers
 
-- **Actor**: Player
+- **Primary Actor**: Player
+- **Secondary Actor**: None
 - **Goal**: See all markers on the map.
 
 **Preconditions**:
@@ -130,7 +138,8 @@ None;
 
 ### UC5 – Persist Markers
 
-- **Actor**: System (Marker Management System / Game Map)
+- **Primary Actor**: System (Marker Management System / Game Map)
+- **Secondary Actor**: None
 - **Goal**: Save and load markers so that they persist between game sessions.
 
 **Preconditions**:
