@@ -151,7 +151,7 @@ None;
 
 - All markers reflect the saved state.
 
--When reloading the map, markers appear exactly as they were left.
+- When reloading the map, markers appear exactly as they were left.
 
 **Exceptions**:
 
