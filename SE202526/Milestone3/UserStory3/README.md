@@ -179,7 +179,7 @@ The player has unlocked basic ores for fuel and is in tutorial world.
 4. Camera moves to suggested turret placement location.
 5. System highlights a recommended turret location spot.
 6. Systems highlights Research Tree.
-6.1 `Include`: Introduce Research Tree
+6.1 `Include`: Research tutorial
 7. Player selects and unlocks a turret from the menu.
 8. Player places the turret in the highlighted location.
 9. System highlights a short wall segment in front of the turret.
