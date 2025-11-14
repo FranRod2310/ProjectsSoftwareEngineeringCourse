@@ -20,14 +20,17 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 
 ---
 
-### Review
+## Review:
+
 This User Story seems well done, as it is focused on the player (the actor) and specifies objectives such as learning how to build, research, and defend your base.
 The only point to improve is that "step-by-step tutorial" is too vague; it could be made more specific, for example: "in-game tutorial," "pop-ups," or "mini-missions."
 
 ---
 
 ## Use case diagram
-(*Please add the use case diagram here.*)
+
+<img width="1043" height="548" alt="image" src="https://github.com/user-attachments/assets/26f1b7fa-1ad5-4b55-941b-605d18c51fd2" />
+
 
 ---
 
@@ -248,19 +251,27 @@ Overall, the descriptions are of high quality.
 
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
+
 ### Implementation summary
 (*Summary description of the implementation.*)
+
 #### Review
 *(Please add your implementation summary review here)*
+
 ### Class diagrams
 (*Class diagrams and their discussion in natural language.*)
+
 ### Review
 *(Please add your class diagram review here)*
+
 ### Sequence diagrams
 (*Sequence diagrams and their discussion in natural language.*)
+
 #### Review
 *(Please add your sequence diagram review here)*
+
 ## Test specifications
 (*Test cases specification and pointers to their implementation, where adequate.*)
+
 ### Review
 *(Please add your test specification review here)*
