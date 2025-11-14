@@ -213,23 +213,31 @@ A2 - Turret receives no ammo:
 
 
 ## Use Case: Tutorial cancelled
-ID: 5
-Brief description:
+**ID:** 5
+
+**Brief description:**
 The new player cancelled the tutorial.
-Primary actors:
+
+**Primary actors:**
 New Player 
-Secondary actors:
+
+**Secondary actors:**
 None
-Preconditions:
+
+**Preconditions:**
 New player clicked on cancel and the player is in the tutorial world.
-Main flow:
+
+**Main flow:**
 1. The alternative flow can start anywhere.
 2. The system shows a pop-up message "Tutorial ended".
 3. The system returns to the real world.
 4. The use case ends.
-Postconditions
+
+**Postconditions:**
 1. The player is back to the real world
-Alternative flows:
+   
+**Alternative flows:**
+
 None
 
 ### Review
