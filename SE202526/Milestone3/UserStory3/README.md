@@ -10,8 +10,8 @@ Introduction to the game
 ---
 
 ## Reviewer(s)
-(*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
-
+- Leandro Rodrigues (68211)
+- Luís Muacho (68301)
 ---
 
 ## User Story:
@@ -20,7 +20,9 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 ---
 
 ### Review
-*(Please add your user story review here)*
+
+This User Story seems well done, as it is focused on the player (the actor) and specifies objectives such as learning how to build, research and defend your base. 
+The only point to improve is the "step-by-step tutorial" is too vague; it could be made more specific, for example: "in-game tutorial", "pop-ups" or "mini-missions".
 
 ---
 
