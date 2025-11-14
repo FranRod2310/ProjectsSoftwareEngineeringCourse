@@ -10,8 +10,8 @@ Introduction to the game
 ---
 
 ## Reviewer(s)
-- Leandro Rodrigues (68211)
-- Luís Muacho (68301)
+(*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
+
 ---
 
 ## User Story:
@@ -20,9 +20,7 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 ---
 
 ### Review
-
-This User Story seems well done, as it is focused on the player (the actor) and specifies objectives such as learning how to build, research and defend your base. 
-The only point to improve is the "step-by-step tutorial" is too vague; it could be made more specific, for example: "in-game tutorial", "pop-ups" or "mini-missions".
+*(Please add your user story review here)*
 
 ---
 
@@ -33,17 +31,22 @@ The only point to improve is the "step-by-step tutorial" is too vague; it could 
 
 ## Use case textual description
 
-### Use Case: Tutorial
-ID: 1
-Brief description:
+## Use Case: Tutorial
+**ID**: 1
+
+**Brief description:**
 Start a tutorial explaining how building, researching and defending works.
-Primary actors:
+
+**Primary actors:**
 New Player
-Secondary actors:
+
+**Secondary actors:**
 None
-Preconditions:
+
+**Preconditions:**
 None
-Main flow:
+
+**Main flow:**
 1. The use case starts when the new player clicks on the help icon.
 2. The system starts the tutorial world.
 3. The system starts the building tutorial.
@@ -53,22 +56,29 @@ Main flow:
 6. The system shows a pop-up message "Tutorial completed".
 7. The system returns to the real world.
 8. The use case ends.
-Postconditions
+   
+**Postconditions:**
 None
-Alternative flows:
+
+**Alternative flows:**
 The new player cancels the tutorial.
 
-### Use Case: Building tutorial
-ID: 2
-Brief description:
+## Use Case: Building tutorial
+**ID:** 2
+
+**Brief description:**
 Tutorial showing how to build.
-Primary actors:
+
+**Primary actors:**
 New Player 
-Secondary actors:
+
+**Secondary actors:**
 None
-Preconditions:
+
+**Preconditions:**
 New player is in the tutorial world.
-Main flow:
+
+**Main flow:**
 1. The use case starts when the new player arrives at the tutorial world.
 2. The system shows a pop-up message explaining what to do.
 3. The player clicks on the research tree icon.
@@ -88,14 +98,120 @@ Main flow:
 14. The system adds enough resources.
 15. The system builds a factory on the position chosen.
 16. The use case ends.
-Postconditions
+    
+**Postconditions**
 1. Factory built.
-Alternative flows:
+   
+**Alternative flows:**
+
 The new player cancels the tutorial.
 
+## Use Case: Research Tutorial
+
+**ID:** 3
+
+**Brief introduction:**
+Teach new player how to navigate, understand and unlock items in the Research Tree menu.
+
+**Primary actor:**
+New player
+
+**Secondary actors:** 
+None
+
+**Preconditions:** 
+Player in tutorial world
+
+**Main flow:**
+1. Use case starts when the player opens Research Tree menu.
+2. System highlights Research Tree button on the bottom right interface.
+3. Player selects Research Tree menu.
+4. System highlights the menu structure and displays an introduction message about the Tree System.
+5. System highlights the path to the node the player requires to learn in order to proceed with the tutorial.
+6. The player selects the highlighted node.
+7. System explains in simple terms what that node is used for.
+8. System explains the concept of resource costs and dependencies for learning and building.
+9. System highlights "Research" button.
+10. Player presses "Research".
+11. System checks that player has enough resources to complete research.
+12. System unlocks the technology and notifies the player.
+
+**Postconditions:**
+Technology becomes unlocked for the player.
 
 
-### Use Case: Tutorial cancelled
+**Alternative flows:**
+
+A1 - Not enough resources
+    
+1. System informs the player that they don't have enough resources yet.
+2. System tells the player how to gather resources.
+3. Use case resumes at main flow step 7 when player gets enough resources.
+
+A2 - Player closes menu too soon
+    
+1. System pauses tutorial.
+2. When player opens menu, resume main flow from last incomplete step.
+
+## Use Case: Defence Tutorial
+
+**ID:** 4
+
+**Brief description:**
+Teach the player how to defend their base by building a turret, adding basic walls for protection, and supplying ammo before a wave arrives.
+Introduce wall placement and enemy path awareness.
+
+**Primary actors:**
+Player
+
+**Secondary actors:**
+Enemy Spawner
+
+**Preconditions:**
+The player has unlocked basic ores for fuel and is in tutorial world.
+
+**Main flow:**
+
+1. Use case starts when the building tutorial ends.
+2. System shows the path of incoming enemies.
+3. System informs player of the use of turrets.
+4. Camera moves to suggested turret placement location.
+5. System highlights a recommended turret location spot.
+6. Systems highlights Research Tree.
+6.1 Include: Introduce Research Tree
+7. Player selects and unlocks a turret from the menu.
+8. Player places the turret in the highlighted location.
+9. System highlights a short wall segment in front of the turret.
+10. System highlights wall item location in the menus.
+11. Player places basic walls in the highlighted area.
+12. System highlights the ammo type required by the turret.
+13. System informs player on how to load ammo into turrets.
+14. System highlights a suggested path for conveyor placement into turrets.
+15. Player supplies the turret with ammo using conveyors.
+16. Camera moves to enemy spawn location.
+17. Enemy wave arrives.
+18. Camera follows turret actions.
+19. Turret fires and the walls absorb damage.
+20. System notifies the player that they have successfully defended the base.
+
+**Postconditions:**
+The enemy wave is defeated.
+
+**Alternative flows**:
+
+A1 - Player places turret incorrectly:
+
+1. System highlights the correct location again.
+2. Use case resumes at Main Flow step 8.
+
+A2 - Turret receives no ammo:
+
+1. The system highlights the ammo source and the turret’s ammo bar.
+2. The use case resumes at Main Flow step 15.
+
+
+
+## Use Case: Tutorial cancelled
 ID: 5
 Brief description:
 The new player cancelled the tutorial.
