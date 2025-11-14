@@ -53,7 +53,7 @@ None
 3. The system starts the building tutorial.
   3.1 Include: Building tutorial.
 5. The system starts the defense tutorial.
-   5.1 Include: Defence tutorial.
+   5.1 Include: Defense tutorial.
 6. The system shows a pop-up message "Tutorial completed".
 7. The system returns to the real world.
 8. The use case ends.
@@ -154,7 +154,7 @@ A2 - Player closes menu too soon
 1. System pauses tutorial.
 2. When player opens menu, resume main flow from last incomplete step.
 
-## Use Case: Defence Tutorial
+## Use Case: Defense Tutorial
 
 **ID:** 4
 
