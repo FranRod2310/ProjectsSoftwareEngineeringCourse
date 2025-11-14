@@ -32,7 +32,7 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 
 ## Use case textual description
 
-## Use Case: Tutorial
+## Use Case: Game tutorial
 **ID**: 1
 
 **Brief description:**
