@@ -20,9 +20,11 @@ As a new player to Mindustry I want a clear, step-by-step tutorial that introduc
 
 ---
 
-### Review
+## Review:
+
 This User Story seems well done, as it is focused on the player (the actor) and specifies objectives such as learning how to build, research, and defend your base.
 The only point to improve is that "step-by-step tutorial" is too vague; it could be made more specific, for example: "in-game tutorial," "pop-ups," or "mini-missions."
+
 ---
 
 ## Use case diagram
