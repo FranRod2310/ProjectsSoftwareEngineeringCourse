@@ -16,8 +16,8 @@ As a player, I want to be able to place customizable markers on the map to ident
 ## Use case textual description
 ### UC1 – Create Marker
 - **Name**: Create Marker
-- ID: UC1
-- Description: The player creates a new marker at their current position.
+- **ID**: UC1
+- **Description**: The player creates a new marker at their current position.
 - **Actors**
     - **Primary**: Player
     - **Secondary**: -
@@ -74,24 +74,26 @@ None.
 
 **Alternative Scenarios**:
 - A1 - Text exceeds character limit:
-  The player types more characters than allowed.
-  The system blocks addtional input.
-  **Postconditions**:
+The player types more characters than allowed.
+The system blocks addtional input.
+ 
+**Postconditions**:
 
 - The marker displays the updated properties.
 
-If the text exceeds the character limit → the system locks it.
-
 ### UC3 – Remove Marker
-
-- **Actor**: Player
-- **Goal**: Delete an existing marker.
+- **Name**: Remove Marker
+- **ID**: UC3
+- **Description**: The player deletes an existing marker.
+- **Actors**:
+    - **Primary**: Player
+    - **Secondary**: —
 
 **Preconditions**:
 
 - The marker exists on the map.
 
-**Main Flow**:
+**Main Scenario**:
 
 1. The player opens the editing popup for a marker.
 
@@ -101,24 +103,27 @@ If the text exceeds the character limit → the system locks it.
 
 4. The marker disappears from the map.
 
+
+**Alternative Scenarios**:
+- None.
+
 **Postconditions**:
 
 - The marker no longer exists on the map.
 
-**Exceptions**: 
-
-None;
-
 ### UC4 – View Markers
-
-- **Actor**: Player
-- **Goal**: See all markers on the map.
+- **Name**: View Markers
+- **ID**: UC4
+- **Description**: The player views all markers displayed on the map.
+- **Actors**:
+    - **Primary**: Player
+    - **Secondary**: —
 
 **Preconditions**:
 
 - Active or saved markers exist on the map.
 
-**Main Flow**:
+**Main Scenario**:
 
 1. The player moves around the map.
 
@@ -128,18 +133,21 @@ None;
 
 4. The marker’s text appears as a tooltip.
 
+**Alternative Scenarios**:
+    
+- None.
+
 **Postconditions**:
 
 - The player correctly sees all markers.
 
-**Exceptions**:
-
-- None.
-
 ### UC5 – Persist Markers
-
-- **Actor**: System (Marker Management System / Game Map)
-- **Goal**: Save and load markers so that they persist between game sessions.
+- **Name**: Persist Markers
+- **ID**: UC5
+- **Description**: The system saves and loads marker data so markers persist between gameplay sessions.
+- **Actors**:
+    - **Primary**: System (Marker Management System / Game Map)
+    - **Secondary**: —
 
 **Preconditions**:
 
@@ -147,7 +155,7 @@ None;
 
 - The system is ready to save the game state.
 
-**Main Flow**:
+**Main Scenario**:
 
 1. Whenever a marker is created, edited, or removed, the system saves the change to the save file.
 
@@ -155,15 +163,18 @@ None;
 
 3. The system recreates the Marker objects on the map with all properties (position, color, text).
 
+**Alternative Scenarios**:
+
+A1 — Save file corrupted or inaccessible:
+1. The system detects that the save file is corrupted.
+2. The system shows a warning and ignores all saved markers.
+
+
 **Postconditions**:
 
 - All markers reflect the saved state.
 
 - When reloading the map, markers appear exactly as they were left.
-
-**Exceptions**:
-
-- If the save file is corrupted or inaccessible, the system shows a warning and ignores the markers.
 
 ### Review
 *(Please add your use case review here)*
