@@ -4,11 +4,14 @@
  - Dinis Raleiras (67819)
  - Filipe Nobre (67850)
 ## Reviewer(s)
-(*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
+- Francisco Rodrigues (67753)
+- Miguel Rosalino (68210)
+
 ## User Story:
 *As an experienced player I want to have a greater diversity of towers so that it can help me automate the way I defend waves*
 ### Review
-*(Please add your user story review here)*
+The use story follows a correct structure and the premise is relevant.
+
 ## Use case diagram
 ![UseCaseDiagram.png](UseCase_Diagram_US2.png)
 ## Use case textual description
@@ -213,21 +216,30 @@ Attack turrets automatically fire at enemies within range.
 
 
 ### Review
-*(Please add your use case review here)*
+
+The use cases to develop are well chosen considering the user story. The main and alternative flows seem correct, and pre and post conditions too.
+The actors described in the use cases however don't match the use case diagram. The Support Turret and Attack Turret actor are not present in the diagram.
+The **includes** and **extends** relations make sense, but aren't explained in the use case descriptions. 
+Overall, the use case descriptions are correct, but the diagram doesn't fully reflect them.
+
+
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
 ### Implementation summary
 (*Summary description of the implementation.*)
 #### Review
 *(Please add your implementation summary review here)*
+
 ### Class diagrams
 (*Class diagrams and their discussion in natural language.*)
 ### Review
 *(Please add your class diagram review here)*
+
 ### Sequence diagrams
 (*Sequence diagrams and their discussion in natural language.*)
 #### Review
 *(Please add your sequence diagram review here)*
+
 ## Test specifications
 (*Test cases specification and pointers to their implementation, where adequate.*)
 ### Review
