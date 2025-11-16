@@ -62,3 +62,4 @@ Overall, the team feels prepared and aligned for the development phase starting 
 ### Gantt Chart
 
 ![img.png](Gantt_Chart_Sprint_5.png)
+ 
