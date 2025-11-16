@@ -59,7 +59,7 @@ We will strive to keep up and even improve our work ethic and keep working well 
 
 ### Burndown Chart for the sprint
 
-<img width="2879" height="1369" alt="image" src="https://github.com/user-attachments/assets/ecf4baaa-681a-4600-be7b-0fa49fb47eea" />
+<img width="2193" height="997" alt="image" src="https://github.com/user-attachments/assets/3f5749b3-5de3-49b2-a6c3-68e785bf3d8b" />
 
 ### Gantt Chart
 
