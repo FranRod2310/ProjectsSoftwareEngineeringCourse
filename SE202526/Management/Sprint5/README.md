@@ -17,37 +17,48 @@ the team decided to dedicate this first sprint mainly to updating user stories a
 During the meeting, the team decided the following:
 
 - This week’s focus will be on:
-  - Updating the user stories to reflect the new functionalities that will be implemented.
-  - Creating the use case diagrams and their textual specifications following the lecture template.
-  - Starting work on the class diagrams and sequence diagrams for each use case — these do not need to be finalized this week but should have an initial version ready (if possible).
+  - Updating the user stories to reflect the new functionalities that will be implemented;
+  - Creating the use case diagrams and their textual specifications following the lecture template;
+  - Start planning how each team member will implement their assigned User Story.
 
 No code implementation will be done during this sprint. The goal is to ensure all documentation and designs are ready for development in the next sprint.
 
 
 ### Sprint Review Meeting: 
-*(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
+At the end of this sprint, the team met to evaluate the progress made during the first week of Milestone 3.
+The goal for this sprint was to complete all high-level design and documentation tasks before moving into code implementation next week — and the team successfully achieved all planned activities.
 
+During the review, the following outcomes were confirmed:
+
+ - All user stories were updated to reflect the new functionalities that will be implemented during Milestone 3.
+
+ - All use case diagrams and their textual specifications were created.
+
+ - Initial planning for how each team member will implement their assigned User Story was completed.
+
+The sprint goal was fully accomplished, and all deliverables scheduled for this week were completed on time.
 ### Sprint Retrospective Meeting: 
-*(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
-
+The team reflected on the work done this week and agreed that the sprint went smoothly.
+All tasks were completed on time, communication was clear, and everyone contributed consistently. For the next sprint, the team will keep the same communication flow and make sure to clear up any doubts about the 
+implementation as soon as they appear.
+Overall, the team feels prepared and aligned for the development phase starting next week.
 ## Relevant resources
 
 ### Scrum Board at the beginning of the sprint
-
 ![img.png](Scrum_Board_Sprint5_BeginWeek.png)
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+![img.png](Scrum_Board_Sprint5_MidWeek.png)
 
 ### Scrum Board at the end of the sprint
 
-Please add the scrumboard picture here.
+![img.png](Scrum_Board_Sprint5_EndWeek.png)
 
 ### Burndown Chart for the sprint
 
-Please add the burndown chart here.
+![img.png](Burndown_Chart_Sprint_5.png)
 
 ### Gantt Chart
 
-Please add the Gantt chart here.
+![img.png](Gantt_Chart_Sprint_5.png)
