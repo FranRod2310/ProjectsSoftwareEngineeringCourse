@@ -6,11 +6,14 @@ Markers
 - Luís Muacho (68301)
 
 ## Reviewer(s)
-(*Please add the user story reviewer(s) here, one in each line, providing the authors' name and surname, along with their student number. In the reviews presented in this document, add the corresponding reviewers.*)
+
+- Dinis Raleiras (67819)
+- Filipe Nobre (67850)
+
 ## User Story:
 As a player, I want to be able to place customizable markers on the map to identify important areas, so that I can better organize my base and communicate with myself throughout the game.
 ### Review
-*(Please add your user story review here)*
+The user story is well structured, gives a clear view of the player’s perspective, and is useful for developing the new feature.
 ## Use case diagram
 ![img.png](img.png)
 ## Use case textual description
@@ -177,7 +180,11 @@ A1 — Save file corrupted or inaccessible:
 - When reloading the map, markers appear exactly as they were left.
 
 ### Review
-*(Please add your use case review here)*
+
+Overall the use case is well done, although the System (Marker Management System / Game Map) doesn't appear at the use case diagram as an actor.
+the `Persist Markers` doesn't have the best name what can cause a little bit of confusion at the first look, a name like `Save and Load Markers`
+would be more appropriate.
+
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
 ### Implementation summary
