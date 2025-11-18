@@ -205,6 +205,12 @@ public class MenuFragment{
                 desktopButtons = Seq.with(
                     new MenuButton("@play", Icon.play,
                         new MenuButton("@campaign", Icon.play, () -> checkPlay(ui.planet::show)),
+
+                        // US3 - New tutorial menu button
+                        new MenuButton("Tutorial", Icon.bookOpen, () -> {
+                            ui.showInfo("Tutorial Coming Soon!");
+                        }),
+
                         new MenuButton("@joingame", Icon.add, () -> checkPlay(ui.join::show)),
                         new MenuButton("@customgame", Icon.terrain, () -> checkPlay(ui.custom::show)),
                         new MenuButton("@loadgame", Icon.download, () -> checkPlay(ui.load::show))
