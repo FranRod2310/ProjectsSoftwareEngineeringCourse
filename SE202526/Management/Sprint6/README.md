@@ -29,7 +29,7 @@ Our goals for this week are:
 
 ### Scrum Board at the beginning of the sprint
 
-Please add the scrumboard picture here.
+<img width="1919" height="960" alt="image" src="https://github.com/user-attachments/assets/5d736600-5316-4fbe-a9ba-c56073df0f3d" />
 
 ### Scrum Board in the middle of the sprint
 
