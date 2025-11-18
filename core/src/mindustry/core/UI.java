@@ -28,6 +28,7 @@ import mindustry.logic.*;
 import mindustry.ui.*;
 import mindustry.ui.dialogs.*;
 import mindustry.ui.fragments.*;
+import mindustry.ui.Tutorial;
 
 import static arc.scene.actions.Actions.*;
 import static mindustry.Vars.*;
@@ -81,6 +82,9 @@ public class UI implements ApplicationListener, Loadable{
     public IntMap<Dialog> followUpMenus;
 
     public Cursor drillCursor, unloadCursor, targetCursor, repairCursor;
+
+    //US3
+    public Tutorial tutorial;
 
     private @Nullable Element lastAnnouncement;
 
@@ -219,6 +223,10 @@ public class UI implements ApplicationListener, Loadable{
         fullText = new FullTextDialog();
         campaignComplete = new CampaignCompleteDialog();
         followUpMenus = new IntMap<>();
+
+        //US3
+        tutorial = new Tutorial();
+        //tutorial.init();
 
         Group group = Core.scene.root;
 
