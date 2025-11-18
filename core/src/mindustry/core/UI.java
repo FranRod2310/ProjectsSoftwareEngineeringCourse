@@ -226,7 +226,7 @@ public class UI implements ApplicationListener, Loadable{
 
         //US3
         tutorial = new Tutorial();
-        //tutorial.init();
+        tutorial.init();
 
         Group group = Core.scene.root;
 
