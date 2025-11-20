@@ -1,4 +1,8 @@
+/**
+ * TODO
+ */
 package mindustry.world.blocks.defense;
+
 
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.Lines;
@@ -101,12 +105,12 @@ public class SupportBuffTower extends PowerBlock {
 
                         // se o pulso "atingiu" a torre
                         if (dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance) {
-                            // Aplica buff
-                            turret.supportDamageMultiplier = baseDamageMultiplier;
 
                             // Efeito visual
                             Fx.sparkExplosion.at(turret.x, turret.y, 0, Pal.accent);
                         }
+                        // Aplica buff
+                        turret.supportDamageMultiplier = baseDamageMultiplier;
                     }
             );
         }

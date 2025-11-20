@@ -286,6 +286,8 @@ public class Turret extends ReloadTurret{
         public float[] sideHeat = new float[4];
 
         public @Nullable SoundLoop soundLoop = (loopSound == Sounds.none ? null : new SoundLoop(loopSound, loopSoundVolume));
+
+        //ES US2
         public float supportDamageMultiplier = 1f;
 
         float lastRangeChange;
@@ -571,7 +573,7 @@ public class Turret extends ReloadTurret{
             }
             resetSupportMultiplier();
         }
-
+        // ES US2
         public void resetSupportMultiplier() {
             supportDamageMultiplier = 1f;
         }
@@ -700,7 +702,7 @@ public class Turret extends ReloadTurret{
                 chargeSound.at(bulletX, bulletY, Mathf.random(soundPitchMin, soundPitchMax));
                 type.chargeEffect.at(bulletX, bulletY, rotation);
             }
-
+            // ES US2
             BulletType buffedType = type.copy();
             buffedType.damage *= supportDamageMultiplier;
 
