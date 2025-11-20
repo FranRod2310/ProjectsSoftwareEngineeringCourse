@@ -286,6 +286,7 @@ public class Turret extends ReloadTurret{
         public float[] sideHeat = new float[4];
 
         public @Nullable SoundLoop soundLoop = (loopSound == Sounds.none ? null : new SoundLoop(loopSound, loopSoundVolume));
+        public float supportDamageMultiplier = 1f;
 
         float lastRangeChange;
 
@@ -568,6 +569,11 @@ public class Turret extends ReloadTurret{
                     updateShooting();
                 }
             }
+            resetSupportMultiplier();
+        }
+
+        public void resetSupportMultiplier() {
+            supportDamageMultiplier = 1f;
         }
 
         @Override
@@ -695,6 +701,9 @@ public class Turret extends ReloadTurret{
                 type.chargeEffect.at(bulletX, bulletY, rotation);
             }
 
+            BulletType buffedType = type.copy();
+            buffedType.damage *= supportDamageMultiplier;
+
             shoot.shoot(barrelCounter, (xOffset, yOffset, angle, delay, mover) -> {
                 queuedBullets++;
                 int barrel = barrelCounter;
@@ -704,11 +713,11 @@ public class Turret extends ReloadTurret{
                         //hack: make sure the barrel is the same as what it was when the bullet was queued to fire
                         int prev = barrelCounter;
                         barrelCounter = barrel;
-                        bullet(type, xOffset, yOffset, angle, mover);
+                        bullet(buffedType, xOffset, yOffset, angle, mover);
                         barrelCounter = prev;
                     });
                 }else{
-                    bullet(type, xOffset, yOffset, angle, mover);
+                    bullet(buffedType, xOffset, yOffset, angle, mover);
                 }
             }, () -> barrelCounter++);
 

@@ -108,7 +108,7 @@ public class Blocks{
     //defense - erekir
     radar,
     buildTower,
-    regenProjector, barrierProjector, shockwaveTower,
+    regenProjector, barrierProjector, shockwaveTower, supportBuffTower,
     //campaign only
     shieldProjector,
     largeShieldProjector,
@@ -3303,6 +3303,12 @@ public class Blocks{
             researchCostMultiplier = 0.05f;
 
             limitRange(5f);
+        }};
+
+        supportBuffTower = new SupportBuffTower("support-buff-tower") {{
+            requirements(Category.turret, with(Items.copper, 200, Items.lead, 150, Items.silicon, 100));
+            size = 1;
+            update = true;
         }};
 
         scatter = new ItemTurret("scatter"){{

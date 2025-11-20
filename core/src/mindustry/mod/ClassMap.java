@@ -1,6 +1,8 @@
 package mindustry.mod;
 
 import arc.struct.*;
+import mindustry.world.blocks.defense.SupportBuffTower;
+
 /** Generated class. Maps simple class names to concrete classes. For use in JSON mods. */
 @SuppressWarnings("deprecation")
 public class ClassMap{
@@ -211,6 +213,8 @@ public class ClassMap{
         classes.put("ReloadTurretBuild", mindustry.world.blocks.defense.turrets.ReloadTurret.ReloadTurretBuild.class);
         classes.put("TractorBeamTurret", mindustry.world.blocks.defense.turrets.TractorBeamTurret.class);
         classes.put("TractorBeamBuild", mindustry.world.blocks.defense.turrets.TractorBeamTurret.TractorBeamBuild.class);
+        classes.put("SupportBuffTower", mindustry.world.blocks.defense.SupportBuffTower.class);
+        classes.put("SupportBuffBuild", mindustry.world.blocks.defense.SupportBuffTower.SupportBuffBuild.class);
         classes.put("Turret", mindustry.world.blocks.defense.turrets.Turret.class);
         classes.put("AmmoEntry", mindustry.world.blocks.defense.turrets.Turret.AmmoEntry.class);
         classes.put("BulletEntry", mindustry.world.blocks.defense.turrets.Turret.BulletEntry.class);
