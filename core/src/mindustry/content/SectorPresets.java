@@ -7,7 +7,7 @@ import static mindustry.content.Planets.*;
 
 public class SectorPresets{
     public static SectorPreset
-    groundZero,
+    groundZero, tutorial,
     craters, biomassFacility, taintedWoods, frozenForest, ruinousShores, facility32m, windsweptIslands, stainedMountains, tarFields,
     frontier, fungalPass, infestedCanyons, atolls, sunkenPier, mycelialBastion, extractionOutpost, saltFlats, testingGrounds, overgrowth, //polarAerodrome,
     impact0078, desolateRift, nuclearComplex, planetaryTerminal,
@@ -22,6 +22,16 @@ public class SectorPresets{
         //region serpulo
 
         groundZero = new SectorPreset("groundZero", serpulo, 15){{
+            alwaysUnlocked = true;
+            addStartingItems = true;
+            captureWave = 10;
+            difficulty = 1;
+            overrideLaunchDefaults = true;
+            noLighting = true;
+            startWaveTimeMultiplier = 3f;
+        }};
+
+        tutorial = new SectorPreset("tutorial", serpulo, 12){{
             alwaysUnlocked = true;
             addStartingItems = true;
             captureWave = 10;

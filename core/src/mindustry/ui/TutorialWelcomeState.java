@@ -32,11 +32,11 @@ public class TutorialWelcomeState implements TutorialState {
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
 
-                Sector sector = SectorPresets.groundZero.sector;
+                Sector sector = SectorPresets.tutorial.sector;
 
                 // reset save data for tutorial
                 // otherwise might load groundZero progress from main game
-                if (sector.save != null) {
+                /*if (sector.save != null) {
                     sector.save.delete();
                     sector.save = null;
                 }
@@ -46,9 +46,12 @@ public class TutorialWelcomeState implements TutorialState {
                 // instead, just unlock the blocks we need for the tutorial since they'll be unlocked by the end anyway
                 Blocks.mechanicalDrill.clearUnlock();
                 Blocks.duo.clearUnlock();
-                Blocks.copperWall.clearUnlock();
-
+                Blocks.copperWall.clearUnlock();*/
+                Rules rules = new Rules();
+                //no starting resources
+                rules.loadout = ItemStack.list();
                 Vars.control.playSector(sector);
+                //material and research reset
             });
         });
     }
@@ -69,14 +72,12 @@ public class TutorialWelcomeState implements TutorialState {
 
                 // remove original tutorial objectives in groundZero ONLY for tutorial mode
                 Vars.state.rules.objectives = new MapObjectives();
-
-
             }
 
             // wait for any info box to close
-            if (!Core.scene.hasDialog()) {
+            //if (!Core.scene.hasDialog()) {
                 context.changeState(new TutorialBuildingState());
-            }
+            //}
         }
     }
 
