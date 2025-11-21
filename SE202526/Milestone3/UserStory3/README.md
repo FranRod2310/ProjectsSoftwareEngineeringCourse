@@ -255,6 +255,27 @@ The <<Include>> relationships, such as the dependency on Research for both Build
 ## Implementation documentation
 (*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
 
+**Classes updated so far:**
+
+`mindustry/ui/fragments/MenuFragment.java` - for adding the tutorial button on main menu
+
+`mindustry/core/UI.java` - for adding tutorial to init
+
+**Classes added so far:**
+
+`mindustry/ui/Tutorial.java` - context class
+
+`mindustry/ui/TutorialState.java` - state interface
+
+`mindustry/ui/TutorialWelcomeState.java` - uc1 state
+
+`mindustry/ui/TutorialBuildingState.java` - uc2 state
+
+`mindustry/ui/TutorialResearchState.java` - uc3 state
+
+`mindustry/ui/TutorialDefenseState.java` - uc4 state
+
+
 ### Implementation summary
 (*Summary description of the implementation.*)
 

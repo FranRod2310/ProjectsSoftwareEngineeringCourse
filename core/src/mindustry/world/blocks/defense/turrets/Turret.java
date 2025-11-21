@@ -287,6 +287,9 @@ public class Turret extends ReloadTurret{
 
         public @Nullable SoundLoop soundLoop = (loopSound == Sounds.none ? null : new SoundLoop(loopSound, loopSoundVolume));
 
+        //ES US2
+        public float supportDamageMultiplier = 1f;
+
         float lastRangeChange;
 
         @Override
@@ -568,6 +571,11 @@ public class Turret extends ReloadTurret{
                     updateShooting();
                 }
             }
+            resetSupportMultiplier();
+        }
+        // ES US2
+        public void resetSupportMultiplier() {
+            supportDamageMultiplier = 1f;
         }
 
         @Override
@@ -694,6 +702,9 @@ public class Turret extends ReloadTurret{
                 chargeSound.at(bulletX, bulletY, Mathf.random(soundPitchMin, soundPitchMax));
                 type.chargeEffect.at(bulletX, bulletY, rotation);
             }
+            // ES US2
+            BulletType buffedType = type.copy();
+            buffedType.damage *= supportDamageMultiplier;
 
             shoot.shoot(barrelCounter, (xOffset, yOffset, angle, delay, mover) -> {
                 queuedBullets++;
@@ -704,11 +715,11 @@ public class Turret extends ReloadTurret{
                         //hack: make sure the barrel is the same as what it was when the bullet was queued to fire
                         int prev = barrelCounter;
                         barrelCounter = barrel;
-                        bullet(type, xOffset, yOffset, angle, mover);
+                        bullet(buffedType, xOffset, yOffset, angle, mover);
                         barrelCounter = prev;
                     });
                 }else{
-                    bullet(type, xOffset, yOffset, angle, mover);
+                    bullet(buffedType, xOffset, yOffset, angle, mover);
                 }
             }, () -> barrelCounter++);
 
