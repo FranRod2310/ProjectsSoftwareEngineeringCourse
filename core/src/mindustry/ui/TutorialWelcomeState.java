@@ -40,7 +40,10 @@ public class TutorialWelcomeState implements TutorialState {
                     sector.save.delete();
                     sector.save = null;
                 }
-
+                Rules rules = new Rules();
+                //no starting resources
+                rules.loadout = ItemStack.list();
+                Vars.control.playMap(Vars.maps.loadInternalMap("groundZero"), rules);
                 // lock research - list of blocks to unlock in tutorial
                 // don't unlock the whole tree, since it deletes game progress from other saves
                 // instead, just unlock the blocks we need for the tutorial since they'll be unlocked by the end anyway

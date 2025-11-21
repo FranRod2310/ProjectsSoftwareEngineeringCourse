@@ -716,7 +716,10 @@ public class PlanetDialog extends BaseDialog implements PlanetInterfaceRenderer{
 
             int starCount = 0;
             for(Planet star : content.planets()){
-                if(star.solarSystem != star || !content.planets().contains(p -> p.solarSystem == star && selectable(p))) continue;
+
+                //UC3
+                //don't show tutorial planet
+                if(star.solarSystem != star || !content.planets().contains(p -> p.solarSystem == star && selectable(p)) || star.name.equalsIgnoreCase(Planets.tutorialPlanet.name)) continue;
 
                 starCount++;
                 if(starCount > 1) starsTable.add(star.localizedName).padLeft(10f).padBottom(10f).padTop(10f).left().width(190f).row();
