@@ -1,5 +1,6 @@
 /**
- * TODO
+ * @author Dinis Raleiras 67819
+ * @author Filipe Nobre 67850
  */
 package mindustry.world.blocks.defense;
 

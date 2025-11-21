@@ -224,9 +224,218 @@ Overall, the use case descriptions are correct, but the diagram doesn't fully re
 
 
 ## Implementation documentation
-(*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
+
+### SupportBuffTower Class
+
+
+`...\core\src\mindustry\world\blocks\defense\SuportBuffTower `
+
+In order to implement the new turret defense mechanic, we created a new class called `SupportBuffTower`, which extends the existing `PowerBlock` class which extends the `Block` class. 
+This class is responsible for providing buffs to nearby turrets within a specified radius.
+
+#### Code Snippet
+```java
+package mindustry.world.blocks.defense;
+
+
+import (...)
+
+import static mindustry.Vars.tilesize;
+
+public class SupportBuffTower extends PowerBlock {
+    public final float buffRange = 60f;
+    public final float baseDamageMultiplier = 2.5f;
+
+    public SupportBuffTower(String name) {
+        super(name);
+        update = true;
+        solid = true;
+        hasPower = true;
+        consumePower(1.2f);
+        buildTime = 120f;
+        health = 140;
+    }
+
+    @Override
+    public void setStats(){
+        super.setStats();
+
+        stats.add(Stat.damageMultiplier, baseDamageMultiplier, StatUnit.none);
+        stats.add(Stat.range, buffRange / Vars.tilesize, StatUnit.blocks);
+    }
+
+    @Override
+    public void drawPlace(int x, int y, int rotation, boolean valid) {
+        super.drawPlace(x, y, rotation, valid);
+        Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, buffRange, Pal.accent);
+    }
+
+    public class SupportBuffBuild extends Building {
+        float visualTimer = 60f;
+        float pulseTimer = 0f;
+        final float pulseDuration = 90f;
+
+        @Override
+        public void drawSelect() {
+            Drawf.dashCircle(x, y, buffRange, Pal.accent);
+        }
+
+        @Override
+        public void draw() {
+            super.draw();
+            if (efficiency <= 0f) return;
+            float radius = Mathf.lerp(0, buffRange, pulseTimer);
+            float alpha = 0.7f * Mathf.curve(pulseTimer, 0f, 0.5f) * (1f - pulseTimer);
+            Lines.stroke(3f * (1f - pulseTimer));
+            Draw.color(Pal.accent, alpha);
+            Lines.circle(x, y, radius);
+            Draw.reset();
+        }
+
+        @Override
+        public void updateTile() {
+            super.updateTile();
+
+            if (efficiency <= 0f) return;
+            visualTimer += Time.delta;
+
+            pulseTimer += Time.delta / pulseDuration;
+            if (pulseTimer >= 1f) {
+                pulseTimer = 0f;
+            }
+
+            applyDamageBoost();
+        }
+
+        void applyDamageBoost() {
+            if (efficiency <= 0) return;
+
+            float pulseRadius = Mathf.lerp(0, buffRange, pulseTimer);
+            float tolerance = 0.2f;
+
+            Vars.indexer.eachBlock(
+                    this.team,
+                    this.x,
+                    this.y,
+                    buffRange,
+                    b -> b instanceof Turret.TurretBuild,
+                    b -> {
+                        Turret.TurretBuild turret = (Turret.TurretBuild) b;
+
+                        // calcula distância do centro do buff até a torre
+                        float dist = Mathf.dst(x, y, turret.x, turret.y);
+
+                        // se o pulso "atingiu" a torre
+                        if (dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance) {
+
+                            // Efeito visual
+                            Fx.sparkExplosion.at(turret.x, turret.y, 0, Pal.accent);
+                        }
+                        // Aplica buff
+                        turret.supportDamageMultiplier = baseDamageMultiplier;
+                    }
+            );
+        }
+
+    }
+}
+```
+##### Methods
+
+- `setStats()`: Sets the statistics for the support buff tower, including damage multiplier and buff range.
+- `drawPlace(int x, int y, int rotation, boolean valid)`: Draws the placement indicator for the tower, including the buff range circle. Use Case: `UC3`
+- `SupportBuffBuild` class: Inner class that represents the building instance of the support buff tower.
+  - `drawSelect()`: Draws the selection indicator for the tower.
+  - `draw()`: Handles the visual effects of the tower, including the pulsing buff effect.
+  - `updateTile()`: Updates the tower's state, including applying damage boosts to nearby turrets. Use Case : `UC6`
+  - `applyDamageBoost()`: Applies the damage boost to turrets within the buff range when the pulse reaches them. Use Case: `UC4`, `UC5`
+
+### Turret Class
+
+`...\core\src\mindustry\world\blocks\defense\turrets\Turret `
+
+#### Changed `shoot` `UC6` method and `supportDamageMultiplier` variable
+```java
+(...) 
+public float supportDamageMultiplier = 1f;
+
+(...)
+BulletType buffedType = type.copy();
+buffedType.damage *= supportDamageMultiplier;
+(...)
+```
+
+
+This prevent turret damage from scaling permanently, the bullet type is copied during the shooting process.
+This ensures that:
+ - The original `BulletType` remains unchanged
+ - The damage multiplier applies only to the current shot
+ - No exponential or persistent damage boosts occur across multiple shots
+ - Other turrets using the same bullet type are not affected
+
+### Added resetSupportMultiplier()
+
+``` java
+ public void resetSupportMultiplier() {
+            supportDamageMultiplier = 1f;
+        }
+```
+This method is called in the end of the `updateTile` method.
+
+Calling resetSupportMultiplier() at the end of updateTile() ensures that each turret:
+- Starts every tick with a default multiplier of 1f
+- Only receives the buff if a SupportBuffTower is in range during that tick
+- Never keeps the buff permanently
+- Does not accumulate or stack damage boosts across updates
+- This guarantees consistent, non-persistent buff behavior and prevents unintended damage scaling.
+
+### Block Class
+
+`...\core\src\mindustry\content\Block `
+
+#### Initialization of `supportBuffTower`
+
+Use Cases: `UC1`, `UC3`
+
+```java
+supportBuffTower = new SupportBuffTower("support-buff-tower") {{
+    requirements(Category.turret, with(Items.copper, 200, Items.lead, 150, Items.silicon, 100));
+    size = 1;
+    update = true;
+}};
+```
+This defines the necessary resources for the construction of the Support Buff Tower.
+
+### Package support-buff-tower
+
+`\...\core\assets-raw\sprites\blocks\turrets\suppport-buff-tower`
+
+(*Sprites and visual assets for the Support Buff Tower.*)
+![SupportBuffTowerSprites.png](SupportBuffTowerSprites.png)
+
+**This Represents the image of out tower.**
+
+
+### Language Descriptions
+
+`...\core\assets\bundles\bundle.properties`
+
+``` properties
+(...)
+block.support-buff-tower.name = Advance Support Tower
+(...)
+block.support-buff-tower.description = Boost the damage of the nearby towers.
+(...)
+```
+
+**This adds the name and description of the tower in the game.**
+
+
 ### Implementation summary
-(*Summary description of the implementation.*)
+We have made changes throughout the codebase to implement the new turret defense mechanic.
+The main addition is the `SupportBuffTower` class, which handles the logic for buffing nearby turrets.
+Other changes include modifications to the `Turret` class to accommodate the damage boost functionality.
+We also created new assets for the tower and updated the language files to include the tower's name and description.
 #### Review
 *(Please add your implementation summary review here)*
 
