@@ -17,7 +17,7 @@ public class Astar{
     private static final PQueue<Tile> queue = new PQueue<>(200 * 200 / 4, (a, b) -> 0);
     private static float[] costs;
     private static byte[][] rotations;
-
+//teste branch
 
 
     public static Seq<Tile> pathfind(Tile from, Tile to, TileHeuristic th, Boolf<Tile> passable){
