@@ -83,6 +83,7 @@ public class Binding{
     blockSelect10 = KeyBind.add("block_select_10", KeyCode.num0),
 
     zoom = KeyBind.add("zoom", new Axis(KeyCode.scroll), "view"),
+    markerCreate = KeyBind.add("create_marker", KeyCode.f4),
     detachCamera = KeyBind.add("detach_camera", KeyCode.unset),
     menu = KeyBind.add("menu", Vars.android ? KeyCode.back : KeyCode.escape),
     fullscreen = KeyBind.add("fullscreen", KeyCode.f11),
