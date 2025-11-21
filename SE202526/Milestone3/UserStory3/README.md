@@ -257,25 +257,37 @@ The <<Include>> relationships, such as the dependency on Research for both Build
 
 **Classes updated so far:**
 
+`mindustry/ui/Tutorial.java` - context class NEW
+
+`mindustry/ui/TutorialState.java` - state interface NEW
+
+`mindustry/ui/TutorialWelcomeState.java` - uc1 state **NEW**
+
+`mindustry/ui/TutorialBuildingState.java` - uc2 state **NEW**
+
+`mindustry/ui/TutorialResearchState.java` - uc3 state **NEW**
+
+`mindustry/ui/TutorialDefenseState.java` - uc4 state **NEW**
+
 `mindustry/ui/fragments/MenuFragment.java` - for adding the tutorial button on main menu
 
 `mindustry/core/UI.java` - for adding tutorial to init
 
-**Classes added so far:**
+`mindustry/content/Planets.java` - added tutorial planet
 
-`mindustry/ui/Tutorial.java` - context class
+`mindustry/core/ContentLoader.java` - added checks for tutorial planet, not drawing button and label in planet menu, load tutorialTechTree
 
-`mindustry/ui/TutorialState.java` - state interface
+`mindustry/ui/dialogs/ResearchDialog.java` - hiding switch reseratchTree UI for tutorial
 
-`mindustry/ui/TutorialWelcomeState.java` - uc1 state
+`mindustry/content/SectorPresets.java` - added tutorial preset
 
-`mindustry/ui/TutorialBuildingState.java` - uc2 state
+`mindustry/content/TutorialTechTree.java` - new small tech tree just for tutorial world **NEW**
 
-`mindustry/ui/TutorialResearchState.java` - uc3 state
+`mindustry/content/Blocks.java` - added tutorial version of mechanicalDrill, duo, conveyor, copperWall, coreShard
 
-`mindustry/ui/TutorialDefenseState.java` - uc4 state
+- added sprite files
 
-
+`mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
 ### Implementation summary
 (*Summary description of the implementation.*)
 
