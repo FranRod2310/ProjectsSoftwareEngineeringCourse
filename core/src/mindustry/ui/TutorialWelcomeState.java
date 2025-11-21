@@ -14,6 +14,9 @@ import mindustry.type.Sector;
 import mindustry.ui.dialogs.FullTextDialog;
 import mindustry.ui.dialogs.ResearchDialog;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class TutorialWelcomeState implements TutorialState {
     private Tutorial context;
     private boolean rulesApplied = false;
@@ -53,9 +56,6 @@ public class TutorialWelcomeState implements TutorialState {
                 Rules rules = new Rules();
                 //no starting resources
                 rules.loadout = ItemStack.list();
-                Blocks.mechanicalDrill.clearUnlock();
-                Blocks.duo.clearUnlock();
-                Blocks.copperWall.clearUnlock();
                 Vars.control.playSector(sector);
 
                 //material and research reset
@@ -90,4 +90,23 @@ public class TutorialWelcomeState implements TutorialState {
 
     @Override
     public void exit() {}
+
+    private static class Pair<A, B> {
+        private final A first;
+        private final B second;
+
+        public Pair(A first, B second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        public A getFirst() {
+            return first;
+        }
+
+        public B getSecond() {
+            return second;
+        }
+    }
+
 }

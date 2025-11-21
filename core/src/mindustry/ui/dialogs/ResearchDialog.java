@@ -107,7 +107,7 @@ public class ResearchDialog extends BaseDialog {
 
                 addCloseButton();
             }}.show();
-        }).visible(() ->{
+        }).visible(() -> {
             if (Vars.state.isCampaign() && Vars.state.rules.sector.planet.name.equalsIgnoreCase(Planets.tutorialPlanet.name)) return false;
             return showTechSelect = TechTree.roots.count(node -> !(node.requiresUnlock && !node.content.unlockedHost())) > 1;
         }).minWidth(300f);
