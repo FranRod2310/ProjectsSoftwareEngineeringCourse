@@ -31,7 +31,7 @@ public class SectorPresets{
             startWaveTimeMultiplier = 3f;
         }};
 
-        tutorial = new SectorPreset("tutorial", serpulo, 12){{
+        tutorial = new SectorPreset("tutorial", tutorialPlanet, 1){{
             alwaysUnlocked = true;
             addStartingItems = true;
             captureWave = 10;

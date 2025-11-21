@@ -50,7 +50,11 @@ public class TutorialWelcomeState implements TutorialState {
                 Rules rules = new Rules();
                 //no starting resources
                 rules.loadout = ItemStack.list();
+                Blocks.mechanicalDrill.clearUnlock();
+                Blocks.duo.clearUnlock();
+                Blocks.copperWall.clearUnlock();
                 Vars.control.playSector(sector);
+
                 //material and research reset
             });
         });

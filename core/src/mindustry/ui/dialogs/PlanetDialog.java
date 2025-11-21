@@ -724,7 +724,7 @@ public class PlanetDialog extends BaseDialog implements PlanetInterfaceRenderer{
                 planetTable.margin(4f); //less padding
                 starsTable.add(planetTable).left().row();
                 for(Planet planet : content.planets()){
-                    if(planet.solarSystem == star && selectable(planet)){
+                    if(planet.solarSystem == star && selectable(planet) && !planet.name.equalsIgnoreCase(Planets.tutorialPlanet.name)){
                         Button planetButton = planetTable.button(planet.localizedName, Icon.icons.get(planet.icon + "Small", Icon.icons.get(planet.icon, Icon.commandRallySmall)), Styles.flatTogglet, () -> {
                             viewPlanet(planet, false);
                         }).width(200).height(40).update(bb -> bb.setChecked(state.planet == planet)).with(w -> w.marginLeft(10f)).get();
