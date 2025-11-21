@@ -18,6 +18,8 @@ public class Astar{
     private static float[] costs;
     private static byte[][] rotations;
 
+
+
     public static Seq<Tile> pathfind(Tile from, Tile to, TileHeuristic th, Boolf<Tile> passable){
         return pathfind(from.x, from.y, to.x, to.y, th, manhattan, passable);
     }
