@@ -3,6 +3,7 @@ package mindustry.ui.dialogs;
 import arc.*;
 import arc.scene.ui.layout.*;
 import mindustry.*;
+import mindustry.content.Planets;
 import mindustry.editor.*;
 import mindustry.game.*;
 import mindustry.gen.*;
@@ -56,9 +57,12 @@ public class PausedDialog extends BaseDialog{
             cont.button("@objective", Icon.info, () -> ui.fullText.show("@objective", state.rules.sector.preset.description))
             .visible(() -> state.rules.sector != null && state.rules.sector.preset != null && state.rules.sector.preset.description != null).padTop(-60f);
 
-            cont.button("@abandon", Icon.cancel, () -> ui.planet.abandonSectorConfirm(state.rules.sector, this::hide)).padTop(-60f)
-            .disabled(b -> net.client() || state.gameOver).visible(() -> state.rules.sector != null).row();
-
+            boolean isTutorial = state.rules.planet.name.equalsIgnoreCase(Planets.tutorialPlanet.name);
+            if (!isTutorial)
+                cont.button("@abandon", Icon.cancel, () -> ui.planet.abandonSectorConfirm(state.rules.sector, this::hide)).padTop(-60f)
+                .disabled(b -> net.client() || state.gameOver).visible(() -> state.rules.sector != null).row();
+            else
+                cont.button("@savegame", Icon.save, save::show).row();
             cont.button("@back", Icon.left, this::hide).name("back");
             cont.button("@settings", Icon.settings, ui.settings::show).name("settings");
 
@@ -116,9 +120,10 @@ public class PausedDialog extends BaseDialog{
             }
 
             cont.buttonRow("@hostserver.mobile", Icon.host, ui.host::show).disabled(b -> net.active());
+            boolean isTutorial = state.rules.planet.name.equalsIgnoreCase(Planets.tutorialPlanet.name);
 
             cont.buttonRow("@quit", Icon.exit, this::showQuitConfirm).update(s -> {
-                s.setText(control.saves.getCurrent() != null && control.saves.getCurrent().isAutosave() ? "@save.quit" : "@quit");
+                s.setText(control.saves.getCurrent() != null && control.saves.getCurrent().isAutosave() && isTutorial ? "@save.quit" : "@quit");
                 s.getLabelCell().growX().wrap();
             });
         }

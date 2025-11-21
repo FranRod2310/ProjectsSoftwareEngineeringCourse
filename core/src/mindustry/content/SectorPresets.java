@@ -33,7 +33,7 @@ public class SectorPresets{
 
         tutorial = new SectorPreset("tutorial", tutorialPlanet, 1){{
             alwaysUnlocked = true;
-            addStartingItems = true;
+            addStartingItems = false;
             captureWave = 10;
             difficulty = 1;
             overrideLaunchDefaults = true;

@@ -7,6 +7,7 @@ import mindustry.content.Blocks;
 import mindustry.content.Items;
 import mindustry.content.SectorPresets;
 import mindustry.content.TechTree;
+import mindustry.core.GameState;
 import mindustry.game.MapObjectives;
 import mindustry.game.Rules;
 import mindustry.type.ItemStack;
@@ -34,6 +35,7 @@ public class TutorialWelcomeState implements TutorialState {
     public void enter() {
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
+                Vars.state.set(GameState.State.tutorial);
 
                 Sector sector = SectorPresets.tutorial.sector;
 
@@ -53,10 +55,10 @@ public class TutorialWelcomeState implements TutorialState {
                 Blocks.mechanicalDrill.clearUnlock();
                 Blocks.duo.clearUnlock();
                 Blocks.copperWall.clearUnlock();*/
-                Rules rules = new Rules();
                 //no starting resources
-                rules.loadout = ItemStack.list();
                 Vars.control.playSector(sector);
+
+                //Vars.state.rules.loadout = ItemStack.list();
 
                 //material and research reset
             });
@@ -66,7 +68,7 @@ public class TutorialWelcomeState implements TutorialState {
     @Override
     public void update() {
         // wait for tutorial start
-        if (Vars.state.isGame()) {
+        if (Vars.state.isTutorial()) {
 
             // custom rules for tutorial:
             if (!rulesApplied) {
@@ -83,30 +85,13 @@ public class TutorialWelcomeState implements TutorialState {
 
             // wait for any info box to close
             //if (!Core.scene.hasDialog()) {
-                context.changeState(new TutorialBuildingState());
+                //context.changeState(new TutorialBuildingState());
             //}
         }
     }
 
     @Override
-    public void exit() {}
-
-    private static class Pair<A, B> {
-        private final A first;
-        private final B second;
-
-        public Pair(A first, B second) {
-            this.first = first;
-            this.second = second;
-        }
-
-        public A getFirst() {
-            return first;
-        }
-
-        public B getSecond() {
-            return second;
-        }
+    public void exit() {
     }
 
 }
