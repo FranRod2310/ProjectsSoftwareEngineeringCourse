@@ -132,9 +132,9 @@ The system blocks addtional input.
 
 2. The system displays the marker icons at their correct positions.
 
-3. If the player hovers the cursor over a marker:
+3. If the player has the marker in the screen;
 
-4. The marker’s text appears as a tooltip.
+4. The marker’s text appears above the marker.
 
 **Alternative Scenarios**:
     
