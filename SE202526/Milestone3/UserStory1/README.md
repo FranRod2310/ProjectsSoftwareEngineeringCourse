@@ -15,7 +15,7 @@ As a player, I want to be able to place customizable markers on the map to ident
 ### Review
 The user story is well structured, gives a clear view of the player’s perspective, and is useful for developing the new feature.
 ## Use case diagram
-![img.png](img.png)
+![img.png](UseCaseDiagram.png)
 ## Use case textual description
 ### UC1 – Create Marker
 - **Name**: Create Marker
@@ -114,8 +114,8 @@ The system blocks addtional input.
 
 - The marker no longer exists on the map.
 
-### UC4 – View Markers
-- **Name**: View Markers
+### UC4 – Visualize Markers
+- **Name**: Visualize Markers
 - **ID**: UC4
 - **Description**: The player views all markers displayed on the map.
 - **Actors**:
@@ -144,8 +144,8 @@ The system blocks addtional input.
 
 - The player correctly sees all markers.
 
-### UC5 – Persist Markers
-- **Name**: Persist Markers
+### UC5 – Save and Load Markers
+- **Name**: Save and Load Markers
 - **ID**: UC5
 - **Description**: The system saves and loads marker data so markers persist between gameplay sessions.
 - **Actors**:
