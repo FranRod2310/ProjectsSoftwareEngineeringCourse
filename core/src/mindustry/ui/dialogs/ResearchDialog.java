@@ -89,7 +89,8 @@ public class ResearchDialog extends BaseDialog {
                     t.table(Tex.button, in -> {
                         in.defaults().width(300f).height(60f);
                         for (TechNode node : TechTree.roots) {
-                            if (node.requiresUnlock && !node.content.unlockedHost() && node != getPrefRoot())
+                            //US3
+                            if ((node.requiresUnlock && !node.content.unlockedHost() && node != getPrefRoot()) || (node.name.equalsIgnoreCase("Tutorial") && !Tutorial.isPlayingTutorial()))
                                 continue;
 
                             //TODO toggle
@@ -108,7 +109,8 @@ public class ResearchDialog extends BaseDialog {
                 addCloseButton();
             }}.show();
         }).visible(() -> {
-            if (Vars.state.isCampaign() && Vars.state.isTutorial()) return false;
+            //US3
+            //if (Vars.state.isCampaign() && Tutorial.isPlayingTutorial()) return false;
             return showTechSelect = TechTree.roots.count(node -> !(node.requiresUnlock && !node.content.unlockedHost())) > 1;
         }).minWidth(300f);
         
@@ -157,7 +159,6 @@ public class ResearchDialog extends BaseDialog {
             hide();
             ui.database.show();
         }).size(210f, 64f).name("database");
-
         //scaling/drag input
         addListener(new InputListener() {
             @Override

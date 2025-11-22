@@ -6,7 +6,7 @@ import mindustry.game.EventType;
 public class Tutorial {
 
     private TutorialState currentState;
-
+    protected static boolean isPlayingTutorial = false;
 
     // run logic every frame
     public void init() {
@@ -15,6 +15,14 @@ public class Tutorial {
                 currentState.update();
             }
         });
+    }
+
+    public static boolean isPlayingTutorial() {
+        return isPlayingTutorial;
+    }
+
+    public static void exitTutorial() {
+        isPlayingTutorial = false;
     }
 
 

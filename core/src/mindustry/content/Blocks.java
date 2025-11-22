@@ -138,7 +138,7 @@ public class Blocks{
     turbineCondenser, ventCondenser, chemicalCombustionChamber, pyrolysisGenerator, fluxReactor, neoplasiaReactor,
     beamNode, beamTower, beamLink,
 
-    //tutorial  only
+    //tutorial  only US3
     tutorialMechanicalDrill, tutorialConveyor, tutorialCopperWall, tutorialDuo, tutorialCoreShard,
 
     //production
@@ -1684,7 +1684,9 @@ public class Blocks{
 
         int wallHealthMultiplier = 4;
 
+        //US3
         tutorialCopperWall = new Wall("tutorial-copper-wall"){{
+            hideDatabase = true;
             requirements(Category.defense, with(Items.copper, 6));
             health = 80 * wallHealthMultiplier;
             researchCostMultiplier = 0.1f;
@@ -2063,6 +2065,7 @@ public class Blocks{
         //endregion
         //region distribution
 
+        //US3
         tutorialConveyor = new Conveyor("tutorial-conveyor"){{
             requirements(Category.distribution, with(Items.copper, 1));
             health = 45;
@@ -2070,6 +2073,7 @@ public class Blocks{
             displayedSpeed = 4.2f;
             buildCostMultiplier = 2f;
             researchCost = with(Items.copper, 5);
+            hideDatabase = true;
         }};
 
         conveyor = new Conveyor("conveyor"){{
@@ -2868,6 +2872,7 @@ public class Blocks{
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 
+        //US3
         tutorialMechanicalDrill = new Drill("tutorial-mechanical-drill"){{
             requirements(Category.production, with(Items.copper, 12));
             tier = 2;
@@ -2876,7 +2881,7 @@ public class Blocks{
             //mechanical drill doesn't work in space
             envEnabled ^= Env.space;
             researchCost = with(Items.copper, 10);
-
+            hideDatabase = true;
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 
@@ -3126,10 +3131,11 @@ public class Blocks{
         //endregion
         //region storage
 
+        //US3
         tutorialCoreShard = new CoreBlock("tutorial-core-shard"){{
             requirements(Category.effect, BuildVisibility.coreZoneOnly, with(Items.copper, 1000, Items.lead, 800));
             alwaysUnlocked = true;
-
+            hideDatabase = true;
             isFirstTier = true;
             unitType = UnitTypes.alpha;
             health = 1100;
@@ -3278,15 +3284,16 @@ public class Blocks{
         //endregion
         //region turrets
 
+        //US3
         tutorialDuo = new ItemTurret("tutorial-duo"){{
             requirements(Category.turret, with(Items.copper, 35));
+            hideDatabase = true;
             ammo(
                 Items.copper,  new BasicBulletType(2.5f, 9){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
                     ammoMultiplier = 2;
-
                     hitEffect = despawnEffect = Fx.hitBulletColor;
                     hitColor = backColor = trailColor = Pal.copperAmmoBack;
                     frontColor = Pal.copperAmmoFront;

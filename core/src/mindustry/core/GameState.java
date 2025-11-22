@@ -109,15 +109,11 @@ public class GameState{
         return state == astate;
     }
 
-    public boolean isTutorial(){
-        return state == State.tutorial;
-    }
-
     public State getState(){
         return state;
     }
 
     public enum State{
-        paused, playing, menu, tutorial
+        paused, playing, menu
     }
 }

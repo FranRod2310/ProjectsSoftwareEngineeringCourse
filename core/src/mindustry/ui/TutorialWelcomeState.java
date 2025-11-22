@@ -3,13 +3,12 @@ package mindustry.ui;
 import arc.Core;
 import arc.struct.ObjectSet;
 import mindustry.Vars;
-import mindustry.content.Blocks;
-import mindustry.content.Items;
-import mindustry.content.SectorPresets;
-import mindustry.content.TechTree;
+import mindustry.content.*;
 import mindustry.core.GameState;
 import mindustry.game.MapObjectives;
+import mindustry.game.Objectives;
 import mindustry.game.Rules;
+import mindustry.net.WorldReloader;
 import mindustry.type.ItemStack;
 import mindustry.type.Sector;
 import mindustry.ui.dialogs.FullTextDialog;
@@ -22,6 +21,7 @@ public class TutorialWelcomeState implements TutorialState {
     private Tutorial context;
     private boolean rulesApplied = false;
 
+
     @Override
     public void setContext(Tutorial context) {
         this.context = context;
@@ -33,34 +33,34 @@ public class TutorialWelcomeState implements TutorialState {
      */
     @Override
     public void enter() {
+
+        //TODO
+        //sector captured when entered
+        //add more copper
+        //see techtree 67
+
+        Tutorial.isPlayingTutorial = true;
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
-                Vars.state.set(GameState.State.tutorial);
-
                 Sector sector = SectorPresets.tutorial.sector;
 
                 // reset save data for tutorial
                 // otherwise might load groundZero progress from main game
-                /*if (sector.save != null) {
-                    sector.save.delete();
-                    sector.save = null;
-                }
-                Rules rules = new Rules();
-                //no starting resources
-                rules.loadout = ItemStack.list();
-                Vars.control.playMap(Vars.maps.loadInternalMap("groundZero"), rules);
+
                 // lock research - list of blocks to unlock in tutorial
                 // don't unlock the whole tree, since it deletes game progress from other saves
                 // instead, just unlock the blocks we need for the tutorial since they'll be unlocked by the end anyway
-                Blocks.mechanicalDrill.clearUnlock();
-                Blocks.duo.clearUnlock();
-                Blocks.copperWall.clearUnlock();*/
+
                 //no starting resources
-                Vars.control.playSector(sector);
-
-                //Vars.state.rules.loadout = ItemStack.list();
-
-                //material and research reset
+                Vars.control.playNewSector(sector, sector, new WorldReloader());
+                List <TechTree.TechNode> techNodes = TutorialTechTree.getNodes();
+                for (int i = 0; i < techNodes.size()-1; i++) {
+                    TechTree.TechNode node = techNodes.get(i);
+                    node.content.clearUnlock();
+                    for (int j = 0; j < node.finishedRequirements.length; j++) {
+                        node.finishedRequirements[j].amount = 0;
+                    }
+                }
             });
         });
     }
@@ -68,7 +68,7 @@ public class TutorialWelcomeState implements TutorialState {
     @Override
     public void update() {
         // wait for tutorial start
-        if (Vars.state.isTutorial()) {
+        if (Tutorial.isPlayingTutorial()) {
 
             // custom rules for tutorial:
             if (!rulesApplied) {
