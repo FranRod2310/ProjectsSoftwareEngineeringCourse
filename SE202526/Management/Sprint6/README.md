@@ -20,10 +20,28 @@ Our goals for this week are:
 - To review each other's work to ensure everyone is aware of the overall progress and to minimize the probability of bugs
 
 ### Sprint Review Meeting: 
-*(Held at the end of the sprint, this meeting is attended by all stakeholders to demo the completed work and validate if the sprint goal has been met.)*
+Sprint 6 is ending, so the team gathered to evaluate the progress made throughout the week and to verify whether the sprint goals were successfully met.
+
+At the beginning of the sprint, we defined two primary goals:
+Deliver the first working version of each user story.
+Review each other's work to ensure alignment, quality, and early bug detection.
+
+By the end of the week, the team completed the initial implementations of all planned user stories. Although the first iterations are still subject to refinement, the team achieved the goal of having all features in a functional, demonstrable state.
+
+Code reviews were performed, with each member reviewing others’ contributions. This helped maintain awareness of overall progress and supported a smoother development workflow.
+
+During the review, we walked through each user story and showed their current working versions.
 
 ### Sprint Retrospective Meeting: 
-*(This meeting happens after the sprint review and before the next sprint planning meeting. The team reflects on what went well, what needs improvement, and how to enhance their processes for future sprints.)*
+Looking back at Sprint 6, the team reflected on what went well, what could be improved, and how to strengthen our development process moving forward.
+
+Compared to earlier sprints, this week was more code-focused. The decision to aim for the first working version of all user stories created a clear and achievable target. Collaboration was good, and the reviewing of each other's work reduced the probability of appearing issues later.
+
+Despite this, we noticed that some tasks took longer than we expected, particularly due to the effort required to integrate the user stories and understand where to add the code.
+
+As we prepare for the next sprint, our focus will go towards improvement, testing, and optimization. The team agrees that communication hasn't been bad, but it can get better.
+
+Overall, during Sprint 6 we made a lot of progress.
 
 ## Relevant resources
 
