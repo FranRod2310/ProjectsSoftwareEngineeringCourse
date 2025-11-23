@@ -29,19 +29,19 @@ Our goals for this week are:
 
 ### Scrum Board at the beginning of the sprint
 
-<img width="1919" height="960" alt="image" src="https://github.com/user-attachments/assets/5d736600-5316-4fbe-a9ba-c56073df0f3d" />
+<img width="1919" height="959" alt="image" src="https://github.com/user-attachments/assets/96d29f82-8fa3-4a77-92fd-8eaec175b834" />
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+<img width="1919" height="960" alt="image" src="https://github.com/user-attachments/assets/4593df16-bcb6-49ff-9bf1-238a190c6ac5" />
 
 ### Scrum Board at the end of the sprint
 
-Please add the scrumboard picture here.
+<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/4a39d2ad-ddf0-4385-b5cb-a66ee1b765ee" />
 
 ### Burndown Chart for the sprint
 
-Please add the burndown chart here.
+<img width="1258" height="632" alt="image" src="https://github.com/user-attachments/assets/3ea54886-b53d-4a3b-807b-05542e006b06" />
 
 ### Gantt Chart
 
