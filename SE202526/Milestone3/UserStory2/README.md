@@ -453,3 +453,11 @@ We also created new assets for the tower and updated the language files to inclu
 (*Test cases specification and pointers to their implementation, where adequate.*)
 ### Review
 *(Please add your test specification review here)*
+
+### Commits:
+
+| Description | ID | Author |
+|:----------|:-----|:-------|
+ Support Tower Implementation|375796f0431aaf6cb07b04a4a3bcbd15a9d7cc82 | Filipe Nobre 67850
+| Fixed bug on damageMultiplier | 77cff7f85a0b5a70e2a0ae8a00cfab68cdd38f93 | Dinis Raleiras 67819
+| Added the documentation to the User Storie 2. | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
