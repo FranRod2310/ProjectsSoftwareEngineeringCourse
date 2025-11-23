@@ -63,4 +63,4 @@ Overall, during Sprint 6 we made a lot of progress.
 
 ### Gantt Chart
 
-Please add the Gantt chart here.
+<img width="1857" height="571" alt="image" src="https://github.com/user-attachments/assets/58ec091c-b89c-4d11-a72f-e6b9c3e1a8b1" />
