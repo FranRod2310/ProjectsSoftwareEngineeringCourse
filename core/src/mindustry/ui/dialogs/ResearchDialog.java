@@ -110,7 +110,7 @@ public class ResearchDialog extends BaseDialog {
             }}.show();
         }).visible(() -> {
             //US3
-            //if (Vars.state.isCampaign() && Tutorial.isPlayingTutorial()) return false;
+            if (Tutorial.isPlayingTutorial()) return false;
             return showTechSelect = TechTree.roots.count(node -> !(node.requiresUnlock && !node.content.unlockedHost())) > 1;
         }).minWidth(300f);
         
