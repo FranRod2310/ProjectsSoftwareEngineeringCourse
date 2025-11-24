@@ -52,64 +52,61 @@ None
 None
 
 **Main flow:**
-1. The use case starts when the new player clicks on the help icon.
+1. The use case starts when the new player clicks on the tutorial.
 2. The system starts the tutorial world.
-3. The system starts the building tutorial.
-3.1 `Include`: Building tutorial.
-4. The system starts the defense tutorial.
-4.1 `Include`: Defense tutorial.
-5. The system shows a pop-up message "Tutorial completed".
-6. The system returns to the real world.
-7. The use case ends.
+3. The system starts the basic tutorial.
+   3.1 `Include`: Basic tutorial.
+4. The system starts the research tutorial.
+   4.1 `Include`: Research tutorial.
+5. The system starts the building tutorial.
+   5.1 `Include`: Building tutorial.
+6. The system starts the defense tutorial.
+   6.1 `Include`: Defense tutorial.
+7. The system shows a pop-up message "Tutorial completed".
+8. The system returns to the real world.
+9. The use case ends.
    
 **Postconditions:**
 None
 
 **Alternative flows:**
 The new player cancels the tutorial.
+(can be activated any time)
+1. System starts the `Tutorial Cancelled` use case.
 
-## Use Case: Building tutorial
+
+## Use Case: Basic Tutorial
+
 **ID:** 2
 
-**Brief description:**
-Tutorial showing how to build.
+**Brief introduction:**
+Teach new player how to mine, and gather resources.
 
-**Primary actors:**
-New Player 
+**Primary actor:**
+New player
 
-**Secondary actors:**
+**Secondary actors:** 
 None
 
-**Preconditions:**
-New player is in the tutorial world.
+**Preconditions:** 
+Player in tutorial world
 
 **Main flow:**
-1. The use case starts when the new player arrives at the tutorial world.
-2. The system shows a pop-up message explaining what to do.
-3. The player clicks on the research tree icon.
-4. The system starts the research tutorial.
-4.1 `Include`: Research Tutorial.
-5. The system shows a pop-up message explaining how to build.
-6. The new player clicks on a building.
-7. The system highlights the area where it can be built.
-8. The new player chooses a place to build and clicks on it.
-9. The system shows the factory on the position chosen.
-10. While the position chosen is invalid:
-10.1 The system shows a pop-up message "Invalid area" with specified error message.
-10.2 The system changes the color of the factory to red.
-11. The player clicks on the verify button.
-12. The system shows a pop-up message "Not enough resources".
-13. The system alternates the color of the resources between red and white.
-14. The system adds enough resources.
-15. The system builds a factory on the position chosen.
-16. The use case ends.
-    
-**Postconditions**
-1. Factory built.
-   
-**Alternative flows:**
+1. Use case starts when the new player enters the tutorial world.
+2. System highlights the closest resources.
+3. System shows a pop-up message explaining how to mine.
+4. The new player select the highlighted area and starts gathering resources.
+5. The system shows a pop-up message with gathering successful.
+6. The use case ends.
 
+**Postconditions:**
+Resources are added to loadout of the new player.
+
+**Alternative flows:**
 The new player cancels the tutorial.
+(can be activated any time)
+1. System starts the `Tutorial Cancelled` use case.
+
 
 ## Use Case: Research Tutorial
 
@@ -128,39 +125,78 @@ None
 Player in tutorial world
 
 **Main flow:**
-1. Use case starts when the player opens Research Tree menu.
+1. Use case starts when the basic tutorial ends.
 2. System highlights Research Tree button on the bottom right interface.
 3. Player selects Research Tree menu.
 4. System highlights the menu structure and displays an introduction message about the Tree System.
 5. System highlights the path to the node the player requires to learn in order to proceed with the tutorial.
 6. The player selects the highlighted node.
-7. System explains in simple terms what that node is used for.
-8. System explains the concept of resource costs and dependencies for learning and building.
-9. System highlights "Research" button.
-10. Player presses "Research".
-11. System checks that player has enough resources to complete research.
-12. System unlocks the technology and notifies the player.
+7. System checks that player has enough resources to complete research.
+8. System unlocks the technology and notifies the player.
+9. System explains in simple terms what that node is used for.
+10. System explains the concept of resource costs and dependencies for learning and building.
+11. The use case ends.
 
 **Postconditions:**
 Technology becomes unlocked for the player.
 
-
 **Alternative flows:**
 
-A1 - Not enough resources
+A1 - Not enough resources (can be activated in 7)
     
 1. System informs the player that they don't have enough resources yet.
-2. System tells the player how to gather resources.
+2. System starts `Basic Tutorial`.
 3. Use case resumes at main flow step 7 when player gets enough resources.
 
-A2 - Player closes menu too soon
+The new player cancels the tutorial.
+(can be activated any time)
+1. System starts the `Tutorial Cancelled` use case.
+
+
+## Use Case: Building tutorial
+**ID:** 4
+
+**Brief description:**
+Tutorial showing how to build.
+
+**Primary actors:**
+New Player 
+
+**Secondary actors:**
+None
+
+**Preconditions:**
+New player is in the tutorial world.
+
+**Main flow:**
+1. The use case starts when the research tutorial ends.
+2. The system shows a pop-up message explaining how to build.
+3. The new player clicks on a building.
+4. The system highlights the area where it can be built.
+5. The new player chooses a place to build and clicks on it.
+6. The system shows the factory on the position chosen.
+7. While the position chosen is invalid:
+7.1 The system shows a pop-up message "Invalid area" with specified error message.
+7.2 The system changes the color of the factory to red.
+8. The player clicks on the verify button.
+9. The system shows a pop-up message "Not enough resources".
+10. The system alternates the color of the resources between red and white.
+11. The system adds enough resources.
+12. The system builds a factory on the position chosen.
+13. The use case ends.
     
-1. System pauses tutorial.
-2. When player opens menu, resume main flow from last incomplete step.
+**Postconditions**
+1. Factory built.
+   
+**Alternative flows:**
+The new player cancels the tutorial.
+(can be activated any time)
+1. System starts the `Tutorial Cancelled` use case.
+
 
 ## Use Case: Defense Tutorial
 
-**ID:** 4
+**ID:** 5
 
 **Brief description:**
 Teach the player how to defend their base by building a turret, adding basic walls for protection, and supplying ammo before a wave arrives.
@@ -173,18 +209,15 @@ Player
 Enemy Spawner
 
 **Preconditions:**
-The player has unlocked basic ores for fuel and is in tutorial world.
+The player is in tutorial world.
 
 **Main flow:**
-
 1. Use case starts when the building tutorial ends.
 2. System shows the path of incoming enemies.
 3. System informs player of the use of turrets.
 4. Camera moves to suggested turret placement location.
 5. System highlights a recommended turret location spot.
-6. Systems highlights Research Tree.
-6.1 `Include`: Research tutorial
-7. Player selects and unlocks a turret from the menu.
+7. Player selects a turret from the menu.
 8. Player places the turret in the highlighted location.
 9. System highlights a short wall segment in front of the turret.
 10. System highlights wall item location in the menus.
@@ -198,26 +231,29 @@ The player has unlocked basic ores for fuel and is in tutorial world.
 18. Camera follows turret actions.
 19. Turret fires and the walls absorb damage.
 20. System notifies the player that they have successfully defended the base.
+21. The use case ends.
 
 **Postconditions:**
 The enemy wave is defeated.
 
 **Alternative flows**:
 
-A1 - Player places turret incorrectly:
+A1 - Player places turret incorrectly (can be activated in 8):
 
 1. System highlights the correct location again.
 2. Use case resumes at Main Flow step 8.
 
-A2 - Turret receives no ammo:
+A2 - Turret receives no ammo (can be activated in 15):
 
 1. The system highlights the ammo source and the turret’s ammo bar.
 2. The use case resumes at Main Flow step 15.
 
-
+The new player cancels the tutorial.
+(can be activated any time)
+1. System starts the `Tutorial Cancelled` use case.
 
 ## Use Case: Tutorial cancelled
-**ID:** 5
+**ID:** 6
 
 **Brief description:**
 The new player cancelled the tutorial.
