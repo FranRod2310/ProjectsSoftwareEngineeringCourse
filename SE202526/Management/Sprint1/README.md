@@ -22,15 +22,15 @@ We concluded that, although we worked well during the week, our progress did not
 
 ### Scrum Board at the beginning of the sprint
 
-![Scrum Board](ScrumBoardInit.png)
+![Scrum Board](Scrum_Board_Init_Sprint1.png)
 
 ### Scrum Board in the middle of the sprint
 
-![Scrum Board](ScrumBoardMid.png)
+![Scrum Board](Scrum_Board_Mid_Sprint1.png)
 
 ### Scrum Board at the end of the sprint
 
-![Scrum Board](ScrumBoardEnd.png)
+![Scrum Board](Scrum_Board_End_Sprint1.png)
 
 ### Burndown Chart for the sprint
 
@@ -38,4 +38,4 @@ We concluded that, although we worked well during the week, our progress did not
 
 ### Gantt Chart
 
-![Gantt Chart](GanttChart.png)
+![Gantt Chart](Gantt_Chart_Sprint1.png)
