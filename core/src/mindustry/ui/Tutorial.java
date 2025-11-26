@@ -15,7 +15,7 @@ import java.util.List;
 public class Tutorial {
 
     //tutorial order
-    private final TutorialState[] state = {new TutorialBasicState(this), new TutorialResearchState(this),new TutorialBuildingState(this), new TutorialDefenseState(this)};
+    private static final TutorialState[] state = {new TutorialBasicState(), new TutorialResearchState(),new TutorialBuildingState(), new TutorialDefenseState()};
     private static int currentStateIndex;
     private static TutorialState currentState;
     protected static boolean isPlayingTutorial = false;
@@ -43,8 +43,6 @@ public class Tutorial {
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
                 isPlayingTutorial = true;
-                currentStateIndex = 0;
-                nextState();
                 //initialize tutorial
                 Sector sector = SectorPresets.tutorial.sector;
 
@@ -58,6 +56,8 @@ public class Tutorial {
                         node.finishedRequirements[j].amount = 0;
                     }
                 }
+                for (TutorialState tutorialState : state)
+                    tutorialState.setContext(this);
             });
         });
     }
@@ -66,7 +66,12 @@ public class Tutorial {
         return currentState;
     }
 
-    public void nextState (){
+    public static void arrivedAtSector(){
+        currentStateIndex = 0;
+        nextState();
+    }
+
+    public static void nextState (){
         if (currentState != null)
             currentState.exit();
         if (currentStateIndex >= state.length) {
@@ -75,6 +80,7 @@ public class Tutorial {
         }
         currentState = state[currentStateIndex++];
         currentState.enter();
+
     }
 
 }

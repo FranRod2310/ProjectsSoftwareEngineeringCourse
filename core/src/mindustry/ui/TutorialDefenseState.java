@@ -3,9 +3,6 @@ import mindustry.Vars;
 
 public class TutorialDefenseState implements TutorialState {
     private Tutorial context;
-    public TutorialDefenseState(Tutorial context) {
-        this.context = context;
-    }
 
     @Override
     public void enter() {
@@ -22,4 +19,10 @@ public class TutorialDefenseState implements TutorialState {
     public void exit() {
 
     }
+
+    @Override
+    public void setContext(Tutorial context) {
+        this.context = context;
+    }
+
 }

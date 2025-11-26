@@ -10,4 +10,6 @@ public interface TutorialState {
 
     // state ends
     void exit();
+
+    void setContext(Tutorial context);
 }

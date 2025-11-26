@@ -17,10 +17,6 @@ public class TutorialBuildingState implements TutorialState {
     private Boolean active = false;
 
 
-    public TutorialBuildingState(Tutorial context) {
-        this.context = context;
-    }
-
     @Override
     public void enter() {
         active = true;
@@ -53,5 +49,10 @@ public class TutorialBuildingState implements TutorialState {
     @Override
     public void exit() {
 
+    }
+
+    @Override
+    public void setContext(Tutorial context) {
+        this.context = context;
     }
 }
