@@ -17,8 +17,7 @@ public class TutorialBuildingState implements TutorialState {
     private Boolean active = false;
 
 
-    @Override
-    public void setContext(Tutorial context) {
+    public TutorialBuildingState(Tutorial context) {
         this.context = context;
     }
 
@@ -48,7 +47,7 @@ public class TutorialBuildingState implements TutorialState {
 
     @Override
     public void update() {
-
+        context.nextState();
     }
 
     @Override

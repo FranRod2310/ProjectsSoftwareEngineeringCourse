@@ -2,8 +2,6 @@ package mindustry.ui;
 
 public interface TutorialState {
 
-    void setContext(Tutorial context);
-
     // state begins
     void enter();
 
