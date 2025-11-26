@@ -29,7 +29,8 @@ The only point to improve is that "step-by-step tutorial" is too vague; it could
 
 ## Use case diagram
 
-<img width="1043" height="548" alt="image" src="https://github.com/user-attachments/assets/26f1b7fa-1ad5-4b55-941b-605d18c51fd2" />
+<img width="999" height="541" alt="image" src="https://github.com/user-attachments/assets/1f17fff3-f29b-48db-a8f7-408c2f794b0f" />
+
 
 
 ---
