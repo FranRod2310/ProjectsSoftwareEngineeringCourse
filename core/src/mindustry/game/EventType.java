@@ -59,7 +59,6 @@ public class EventType{
         //planets drawn and bloom disabled
         universeDrawEnd
     }
-
     public static class WinEvent{}
     public static class LoseEvent{}
     public static class ResizeEvent{}
@@ -118,6 +117,11 @@ public class EventType{
             this.sector = sector;
         }
     }
+
+    public static class DrawEvent{
+
+    }
+
 
     /** Called when a sector is destroyed by waves when you're not there. */
     public static class SectorInvasionEvent{

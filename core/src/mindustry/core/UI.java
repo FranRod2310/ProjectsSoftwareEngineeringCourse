@@ -21,6 +21,7 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.editor.*;
+import mindustry.game.EventType;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -226,6 +227,9 @@ public class UI implements ApplicationListener, Loadable{
 
         //US3
         tutorial = new Tutorial();
+        Events.run(EventType.Trigger.draw, () -> {
+            Events.fire(new EventType.DrawEvent());
+        });
         tutorial.init();
 
         Group group = Core.scene.root;

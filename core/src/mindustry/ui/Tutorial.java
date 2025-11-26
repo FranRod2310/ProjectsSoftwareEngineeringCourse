@@ -34,12 +34,17 @@ public class Tutorial {
     }
 
     public static void exitTutorial() {
+        if (currentState != null)
+            currentState.exit();
         isPlayingTutorial = false;
         currentStateIndex = 0;
         currentState = null;
     }
 
     public void enterTutorial() {
+        //TODO
+        //sector captured when entered
+        //see techtree 67
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
                 isPlayingTutorial = true;
