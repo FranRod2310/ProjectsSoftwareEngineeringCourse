@@ -2,14 +2,24 @@ package mindustry.ui;
 
 public interface TutorialState {
 
-    // state begins
+    /**
+     * Initializes the tutorial state and displays instructions.
+     */
     void enter();
 
-    // runs 60 times per second
+    /**
+     * Updates the tutorial state logic.
+     */
     void update();
 
-    // state ends
+    /**
+     * Cleans up any event listeners or resources.
+     */
     void exit();
 
+    /**
+     * Sets the tutorial context.
+     * @param context The tutorial context.
+     */
     void setContext(Tutorial context);
 }

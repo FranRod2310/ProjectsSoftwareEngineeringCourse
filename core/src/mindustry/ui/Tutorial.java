@@ -43,6 +43,7 @@ public class Tutorial {
 
     public void enterTutorial() {
         //TODO
+
         //sector captured when entered
         //see techtree 67
         Core.app.post(() -> {
