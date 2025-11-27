@@ -440,12 +440,12 @@ We also created new assets for the tower and updated the language files to inclu
 *(Please add your implementation summary review here)*
 
 ### Class diagrams
-(*Class diagrams and their discussion in natural language.*)
+![Class_Diagram_US2](Class_Diagram.png)
 ### Review
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+![Sequence_Diagram](Sequence_Diagram.png)
 #### Review
 *(Please add your sequence diagram review here)*
 
