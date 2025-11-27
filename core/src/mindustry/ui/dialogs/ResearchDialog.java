@@ -526,6 +526,7 @@ public class ResearchDialog extends BaseDialog {
                     float offset = (Core.graphics.getHeight() % 2) / 2f;
                     button.setPosition(node.x + panX + width / 2f, node.y + panY + height / 2f + offset, Align.center);
                     //US3
+                    //In research tutorial, default button color/style is highlighted
                     if (Tutorial.isResearchTutorial())
                         button.getStyle().up = !locked(node.node) ? Tex.buttonOver : !selectable(node.node) || (!canSpend(node.node) && !net.client()) ? buttonRed : buttonSelect;
                     else
