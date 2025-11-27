@@ -71,6 +71,10 @@ public class Tutorial {
         return currentState;
     }
 
+    public static boolean isResearchTutorial(){
+        return currentState instanceof TutorialResearchState;
+    }
+
     public static void arrivedAtSector(){
         currentStateIndex = 0;
         nextState();
