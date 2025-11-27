@@ -215,9 +215,9 @@ public class TutorialDefenseState implements TutorialState {
                             "These are the basic of MINDUSTRY, but there's much more to explore!\n\n" +
                             "Jump into the campaign and HAVE FUN!", () -> {
                         textShown = false;
+                        context.nextState();
                     });
                 }
-                context.nextState();
                 break;
         }
     }
@@ -227,6 +227,7 @@ public class TutorialDefenseState implements TutorialState {
         Vars.state.rules.waves = true;
         Vars.state.rules.attackMode = true;
         Vars.state.rules.unitCrashDamageMultiplier = 0;
+        Vars.state.rules.winWave = -1;
     }
 
     private void drawEvents() {
