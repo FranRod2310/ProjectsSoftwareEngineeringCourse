@@ -1,12 +1,8 @@
 package mindustry.ui;
 
-import arc.Core; // Added this import
 import arc.Events;
+import arc.func.Cons;
 import arc.graphics.Color;
-import arc.graphics.g2d.Draw;
-import arc.math.Mathf;
-import arc.math.geom.Vec2;
-import arc.util.Align;
 import arc.util.Time;
 import mindustry.Vars;
 import mindustry.content.Blocks;
@@ -18,17 +14,13 @@ import mindustry.gen.Building;
 import mindustry.gen.Unit;
 import mindustry.graphics.Drawf;
 import mindustry.graphics.Pal;
-import mindustry.world.Block;
 import mindustry.world.Tile;
 import mindustry.world.blocks.defense.turrets.Turret;
-
-import static arc.Core.camera;
 import static mindustry.Vars.tilesize;
 
 public class TutorialDefenseState implements TutorialState {
     private Tutorial context;
 
-    // Internal steps for the defense sequence
     private enum Step {
         SHOW_PATH,
         PLACE_TURRET,
@@ -40,88 +32,93 @@ public class TutorialDefenseState implements TutorialState {
     }
 
     private Step currentStep = Step.SHOW_PATH;
-    private Tile coreTile;
+
+    private Cons<EventType.DrawEvent> drawTurretPlace;
+    private Cons<EventType.DrawEvent> drawWallPlace;
+    private Cons<EventType.DrawEvent> drawAmmoSupply;
+    private Cons<EventType.DrawEvent> drawDefend;
+
+    private static final int turretX = 50;
+    private static final int turretY = 57;
+    private static final int enemySpawnX = 49;
+    private static final int enemySpawnY = 76;
+
     private Tile enemySpawnTile;
     private Tile turretTargetTile;
-    private float timer = seconds(0);
-    private boolean waveSpawned = false;
 
-    private final int targetX = 50;
-    private final int targetY = 57;
+    private float timer = 0f;
+    private boolean waveSpawned = false;
+    private boolean textShown = false;
+
+    private Unit unit1;
+    private Unit unit2;
+
+    private static final int AMMO_TARGET = 10;
 
     @Override
     public void enter() {
-        if (Vars.player.team().core() != null) {
-            coreTile = Vars.player.team().core().tile;
-            Vars.player.team().core().items.set(Items.copper, 1000); //testing only
-        }
 
-        enemySpawnTile = Vars.world.tile(49, 76);
+        currentStep = Step.SHOW_PATH;
+        timer = 0f;
+        waveSpawned = false;
+        textShown = false;
+        unit1 = null;
+        unit2 = null;
 
-        // Fallback
-        if (enemySpawnTile == null) {
-            enemySpawnTile = Vars.player.tileOn();
-        }
+        enemySpawnTile = Vars.world.tile(enemySpawnX, enemySpawnY);
+        turretTargetTile = Vars.world.tile(turretX, turretY);
 
-        turretTargetTile = Vars.world.tile(targetX, targetY);
-        if(turretTargetTile == null && Vars.player != null) turretTargetTile = Vars.player.tileOn();
+        //DEBUG
+        //Vars.player.team().core().items.set(Items.copper, 1000);
 
-        Events.run(EventType.Trigger.draw, this::onDraw);
+        drawEvents();
     }
 
     @Override
     public void update() {
-        timer += Time.delta;
+        if (!textShown)
+            timer += Time.delta;
         forceSafeRules();
 
         switch (currentStep) {
-            //show enemy spawn path
+
             case SHOW_PATH:
+                if (!textShown) {
+                    textShown = true;
+                    Vars.ui.showInfoOnHidden("CAUTION! Enemies are about to attack your base!\n\n" +
+                            "It looks like they're coming from the north...", () -> {
 
-                if (timer < Time.delta * 2) {
-                    Vars.ui.showInfo("Enemies will approach from the red circle.");
-                }
+                        currentStep = Step.PLACE_TURRET;
 
-                float targetX, targetY;
-
-                // camera at enemy spawn for 4s
-                if (timer < seconds(4) && enemySpawnTile != null) {
-                    targetX = enemySpawnTile.worldx();
-                    targetY = enemySpawnTile.worldy();
-                    //Core.camera.project(targetX, targetY);
-
-
-                } else {
-                    // return camera to player
-                    targetX = Vars.player.x;
-                    targetY = Vars.player.y;
-                }
-
-                // move camera smoothly
-                camera.position.lerp(new arc.math.geom.Vec2(targetX, targetY), 0.08f);
-
-                // next step after 7s
-                if (timer > seconds(7)) {
-                    currentStep = Step.PLACE_TURRET;
-                    timer = 0;
-                    Vars.ui.showInfo("Build a Duo Turret in the highlighted area!");
+                        Vars.ui.showInfoOnHidden("First, build a DUO TURRET " + Blocks.duo.emoji() + " in the highlighted area!", () -> {
+                            textShown = false;
+                        });
+                        Events.on(EventType.DrawEvent.class, drawTurretPlace);
+                    });
                 }
                 break;
 
             case PLACE_TURRET:
-                // check if duo is in right place
-                if (turretTargetTile.block() == Blocks.tutorialDuo) {
-                    currentStep = Step.PLACE_WALL;
-                    Vars.ui.showInfo("Now, protect the turret with Copper Walls.");
+                if (turretTargetTile.block() == Blocks.tutorialDuo && !textShown) {
+                    textShown = true;
+                    Vars.ui.showInfoOnHidden("Great! The turret is in place.\n\n" +
+                            "Now, protect the turret with COPPER WALLs.  " + Blocks.copperWall.emoji(), () -> {
+
+                        Events.remove(EventType.DrawEvent.class, drawTurretPlace);
+                        Events.on(EventType.DrawEvent.class, drawWallPlace);
+
+                        currentStep = Step.PLACE_WALL;
+
+                        textShown = false;
+                    });
                 }
                 break;
 
             case PLACE_WALL:
                 int wallsBuilt = 0;
-                int requiredWalls = 5;
 
                 for (int xOffset = -2; xOffset <= 2; xOffset++) {
-                    // row above turret
+
                     Tile checkTile = turretTargetTile.nearby(xOffset, 1);
 
                     if (checkTile != null && checkTile.block() == Blocks.tutorialCopperWall) {
@@ -129,147 +126,184 @@ public class TutorialDefenseState implements TutorialState {
                     }
                 }
 
-                // if all walls built
-                if (wallsBuilt >= requiredWalls) {
+                if (wallsBuilt >= 5 && !textShown) {
+                    Events.remove(EventType.DrawEvent.class, drawWallPlace);
                     currentStep = Step.EXPLAIN_AMMO;
-                    timer = 0;
                 }
                 break;
 
             case EXPLAIN_AMMO:
+                if (!textShown) {
 
-                if (timer < Time.delta * 2) {
-                    Vars.ui.showInfo("The turret has no ammo!\n\n" +
-                            "You need to supply it with Copper to defend against enemies.\n\n" +
-                            "Use Conveyor Belts to transport Copper to the turret.");
-                }
+                    textShown = true;
+                    Vars.ui.showInfoOnHidden("The turret has no ammo!\n\n" +
+                            "You need to supply it with COPPER " + Blocks.oreCopper.emoji() + " to defend against enemies.\n\n" +
+                            "Use CONVEYOR BELTs " + Blocks.conveyor.emoji() + " to transport Copper to the turret.", () -> {
 
-                if (timer > seconds(6)) {
-                    currentStep = Step.SUPPLY_AMMO;
-                    timer = 0;
+                        Events.on(EventType.DrawEvent.class, drawAmmoSupply);
+
+                        currentStep = Step.SUPPLY_AMMO;
+
+                        textShown = false;
+                    });
                 }
                 break;
-
 
             case SUPPLY_AMMO:
-                // get turret
+
                 Building build = Vars.world.build(turretTargetTile.x, turretTargetTile.y);
 
-                if (build != null) {
-                    boolean hasAmmo = false;
+                if (build instanceof Turret.TurretBuild tb) {
+                    if (tb.totalAmmo >= AMMO_TARGET && !textShown) {
 
+                        textShown = true;
+                        Vars.ui.showInfoOnHidden("Great work! The turret is now loaded and ready to fire!\n\n" +
+                                "Watch out, enemies " + UnitTypes.dagger.emoji() + " are arriving!", () -> {
 
-                    if (build instanceof Turret.TurretBuild tb) {
-                        if (tb.totalAmmo > 0) hasAmmo = true;
-                    }
+                            Events.remove(EventType.DrawEvent.class, drawAmmoSupply);
+                            Events.on(EventType.DrawEvent.class, drawDefend);
 
-                    if (build.items != null && build.items.total() > 0)
-                        hasAmmo = true;
+                            currentStep = Step.DEFEND_WAVE;
 
-                    if (hasAmmo) {
-                        currentStep = Step.DEFEND_WAVE;
-                        timer = 0;
-                        Vars.ui.showInfo("Enemies approaching. Defend the base!");
+                            textShown = false;
+                            timer = 0;
+                        });
                     }
                 }
                 break;
 
-            //TODO: enemies keep exploding on spawn, WHY?????
-            //not working
             case DEFEND_WAVE:
-                if (!waveSpawned && timer > seconds(2)) {
-                    float spawnX = (enemySpawnTile != null) ? enemySpawnTile.worldx() : Vars.player.x;
-                    float spawnY = (enemySpawnTile != null) ? enemySpawnTile.worldy() : Vars.player.y;
+                if (!waveSpawned && timer > 60f * 2f) {
+                    float spawnX = enemySpawnTile.worldx();
+                    float spawnY = enemySpawnTile.worldy();
 
-                    Unit u1 = UnitTypes.dagger.create(Team.green);
-                    u1.health = 800;
-                    u1.set(spawnX, spawnY);
-                    u1.add();
+                    unit1 = UnitTypes.dagger.create(Team.green);
+                    unit1.health = 50;
+                    unit1.set(spawnX, spawnY);
+                    unit1.add();
 
-                    Unit u2 = UnitTypes.dagger.create(Team.green);
-                    u2.health = 500;
-                    u2.set(spawnX + 10f, spawnY + 5f);
-                    u2.add();
+                    unit2 = UnitTypes.dagger.create(Team.green);
+                    unit2.health = 100;
+                    unit2.set(spawnX + 10f, spawnY - 10f);
+                    unit2.add();
 
                     waveSpawned = true;
                 }
 
-                //TODO: just send final messages, maybe go to a TutorialCompleteState?
-            case FINISHED:
-                if (timer > seconds(4)) {
-                    context.nextState();
+                boolean u1Dead = (unit1 == null || unit1.dead || !unit1.isAdded());
+                boolean u2Dead = (unit2 == null || unit2.dead || !unit2.isAdded());
+
+                if (waveSpawned && u1Dead && u2Dead && !textShown) {
+                    textShown = true;
+                    Vars.ui.showInfoOnHidden("Great work! Enemy wave DEFEATED!\n\n" +
+                            "Your core is safe... for now.", () -> {
+
+                        Events.remove(EventType.DrawEvent.class, drawDefend);
+
+                        currentStep = Step.FINISHED;
+
+                        textShown = false;
+                    });
                 }
+                break;
+
+            case FINISHED:
+                if (!textShown) {
+
+                    textShown = true;
+                    Vars.ui.showInfoOnHidden("TUTORIAL COMPLETE!\n\n" +
+                            "These are the basic of MINDUSTRY, but there's much more to explore!\n\n" +
+                            "Jump into the campaign and HAVE FUN!", () -> {
+                        textShown = false;
+                    });
+                }
+                context.nextState();
                 break;
         }
     }
 
-    // desperate try to fix enemy spawning... now working
     private void forceSafeRules() {
         Vars.state.rules.unitCap = 9999;
-        //Vars.state.rules.limitMapArea = false;
-        //Vars.state.rules.dropZoneRadius = 0;
         Vars.state.rules.waves = true;
-        //Vars.state.rules.canGameOver = false;
-        //Vars.state.rules.polygonCoreProtection = false;
-        //Vars.state.rules.enemyCoreBuildRadius = 0;
-        //Vars.state.rules.airUseSpawns = true;
         Vars.state.rules.attackMode = true;
         Vars.state.rules.unitCrashDamageMultiplier = 0;
     }
 
-    private void onDraw() {
-        // Drawing logic based on current step
-        if (currentStep == Step.SHOW_PATH && enemySpawnTile != null) {
-            Drawf.circles(enemySpawnTile.worldx(), enemySpawnTile.worldy(), tilesize * 3f + Mathf.absin(10f, 5f), Pal.health);
-            Drawf.arrow(enemySpawnTile.worldx(), enemySpawnTile.worldy(), coreTile.worldx(), coreTile.worldy(),
-                    tilesize * 2f, 4f, Pal.health);
-        }
+    private void drawEvents() {
 
-        if (currentStep == Step.PLACE_TURRET && turretTargetTile != null) {
-            Drawf.square(turretTargetTile.worldx(), turretTargetTile.worldy(),
-                    tilesize * 2f + Mathf.absin(10f, 2f), Pal.accent);
+        drawTurretPlace = (e) -> {
+            Drawf.square(turretTargetTile.worldx(), turretTargetTile.worldy(), tilesize * 2f, Pal.accent);
+
             Drawf.arrow(turretTargetTile.worldx(), turretTargetTile.worldy() + 40f,
                     turretTargetTile.worldx(), turretTargetTile.worldy() + 8f,
                     tilesize, 4f, Pal.accent);
-        }
 
-        if (currentStep == Step.PLACE_WALL && turretTargetTile != null) {
+            mindustry.ui.Fonts.outline.draw(
+                    "Place DUO TURRET " + Blocks.duo.emoji() + " here!",
+                    turretTargetTile.worldx(),
+                    turretTargetTile.worldy() + (tilesize * 2.5f),
+                    Pal.accent, 0.30f, false, arc.util.Align.center
+            );
+        };
+
+
+        drawWallPlace = (e) -> {
             float recWidth = tilesize * 5f;
             float recHeight = tilesize;
             float recX = turretTargetTile.worldx() - (tilesize * 2.5f);
             float recY = turretTargetTile.worldy() + (tilesize * 0.5f);
-            Drawf.dashRect(Color.gold, recX, recY, recWidth, recHeight);
-        }
 
-        if (currentStep == Step.SUPPLY_AMMO && turretTargetTile != null) {
+            Drawf.dashRect(Color.gold, recX, recY, recWidth, recHeight);
+
+            mindustry.ui.Fonts.outline.draw(
+                    "Place COPPER WALLs " + Blocks.copperWall.emoji(),
+                    turretTargetTile.worldx(),
+                    turretTargetTile.worldy() + (tilesize * 2.5f),
+                    Color.gold, 0.30f, false, arc.util.Align.center
+            );
+        };
+
+
+        drawAmmoSupply = (e) -> {
             Drawf.square(turretTargetTile.worldx(), turretTargetTile.worldy(), tilesize * 1.5f, Color.orange);
-        }
-        if (currentStep == Step.SUPPLY_AMMO && turretTargetTile != null) {
+
             float startX = turretTargetTile.worldx();
             float startY = turretTargetTile.worldy() - (tilesize * 3f);
             Drawf.arrow(startX, startY, turretTargetTile.worldx(), turretTargetTile.worldy(), tilesize * 2f, 4f, Color.orange);
 
-        }
+            Building build = Vars.world.build(turretTargetTile.x, turretTargetTile.y);
+            int currentAmmo = 0;
+            if (build instanceof Turret.TurretBuild tb) {
+                currentAmmo = (int) tb.totalAmmo;
+            }
+            int displayAmmo = Math.min(currentAmmo, AMMO_TARGET);
 
-        if (currentStep == Step.DEFEND_WAVE && enemySpawnTile != null) {
-            Drawf.target(enemySpawnTile.worldx(), enemySpawnTile.worldy(), tilesize * 1f, Color.scarlet);
-        }
+            mindustry.ui.Fonts.outline.draw(
+                    displayAmmo + " / " + AMMO_TARGET + " COPPER " + Blocks.oreCopper.emoji(),
+                    turretTargetTile.worldx(),
+                    turretTargetTile.worldy() + (tilesize * 1.5f),
+                    Pal.accent, 0.50f, false, arc.util.Align.center
+            );
+        };
 
 
+        drawDefend = (e) -> {
+            if (enemySpawnTile != null) {
+                Drawf.target(enemySpawnTile.worldx(), enemySpawnTile.worldy(), tilesize * 1f, Color.scarlet);
+            }
+        };
     }
 
     @Override
     public void exit() {
-        // Cleanup if necessary
+        Events.remove(EventType.DrawEvent.class, drawTurretPlace);
+        Events.remove(EventType.DrawEvent.class, drawWallPlace);
+        Events.remove(EventType.DrawEvent.class, drawAmmoSupply);
+        Events.remove(EventType.DrawEvent.class, drawDefend);
     }
 
     @Override
     public void setContext(Tutorial context) {
         this.context = context;
-    }
-
-    // converts seconds into game ticks (60 ticks = 1 second)
-    private float seconds(float sec) {
-        return sec * 60f;
     }
 }
