@@ -13,7 +13,6 @@ import static mindustry.Vars.tilesize;
 public class TutorialBasicState implements TutorialState {
     private Tutorial context;
     private static final int REQUIRED_COPPER = 85;
-    private Runnable drawRunnable;
     private Cons<EventType.DrawEvent> drawConsumer;
     private static final String INSTRUCTIONS =
             "Welcome to Mindustry! In this tutorial, you'll learn the basics of resource gathering, base building and defending.\n\n" +
@@ -27,7 +26,7 @@ public class TutorialBasicState implements TutorialState {
      */
     @Override
     public void enter() {
-        Vars.ui.announce(INSTRUCTIONS, 15);
+        Vars.ui.showInfo(INSTRUCTIONS);
         drawConsumer = (e) -> {
                 Tile closestOre = Vars.indexer.findClosestOre(Vars.player.x, Vars.player.y, Items.copper);
                 if (closestOre != null) {

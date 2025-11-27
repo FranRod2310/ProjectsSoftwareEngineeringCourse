@@ -205,6 +205,8 @@ public class ResearchDialog extends BaseDialog {
         });
     }
 
+
+
     void checkMargin() {
         if (Core.graphics.isPortrait() && showTechSelect) {
             itemDisplay.marginTop(60f);
@@ -426,6 +428,10 @@ public class ResearchDialog extends BaseDialog {
         }
     }
 
+    public void blinkPath(TechNode node, boolean state){
+        view.blickPath(node, state);
+    }
+
     public class View extends Group {
         public float panX = 0, panY = -200, lastZoom = -1;
         public boolean moved = false;
@@ -434,6 +440,31 @@ public class ResearchDialog extends BaseDialog {
 
         {
             rebuildAll();
+        }
+
+        public void blickPath(TechNode node, boolean state){
+            /*boolean[] shine = new boolean[node.requirements.length];
+            boolean[] usedShine = new boolean[content.items().size];
+
+            for (int i = 0; i < node.requirements.length; i++) {
+                ItemStack req = node.requirements[i];
+                shine[i] = state;
+                usedShine[req.item.id] = state;
+                addAction(new RelativeTemporalAction() {
+                    {
+                        setDuration(0.1f);
+                        setInterpolation(Interp.fade);
+                    }
+
+                    @Override
+                    protected void updateRelative(float percentDelta) {
+                        panX -= moveBy * percentDelta;
+                    }
+                });
+            }
+            Core.scene.act();
+            rebuild(shine);
+            itemDisplay.rebuild(items, usedShine);*/
         }
 
         public void rebuildAll() {
@@ -494,7 +525,11 @@ public class ResearchDialog extends BaseDialog {
                     button.setDisabled(net.client() && !mobile);
                     float offset = (Core.graphics.getHeight() % 2) / 2f;
                     button.setPosition(node.x + panX + width / 2f, node.y + panY + height / 2f + offset, Align.center);
-                    button.getStyle().up = !locked(node.node) ? Tex.buttonOver : !selectable(node.node) || (!canSpend(node.node) && !net.client()) ? Tex.buttonRed : Tex.button;
+                    //US3
+                    if (Tutorial.isResearchTutorial())
+                        button.getStyle().up = !locked(node.node) ? Tex.buttonOver : !selectable(node.node) || (!canSpend(node.node) && !net.client()) ? buttonRed : buttonSelect;
+                    else
+                        button.getStyle().up = !locked(node.node) ? Tex.buttonOver : !selectable(node.node) || (!canSpend(node.node) && !net.client()) ? Tex.buttonRed : Tex.button;
 
                     ((TextureRegionDrawable) button.getStyle().imageUp).setRegion(node.selectable ? node.node.content.uiIcon : Icon.lock.getRegion());
                     button.getImage().setColor(!locked(node.node) ? Color.white : node.selectable ? Color.gray : Pal.gray);
