@@ -183,7 +183,7 @@ public class TutorialDefenseState implements TutorialState {
                     unit1.add();
 
                     unit2 = UnitTypes.dagger.create(Team.green);
-                    unit2.health = 100;
+                    unit2.health = 60;
                     unit2.set(spawnX + 10f, spawnY - 10f);
                     unit2.add();
 
