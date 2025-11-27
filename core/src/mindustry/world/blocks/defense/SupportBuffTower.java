@@ -1,6 +1,11 @@
 /**
  * @author Dinis Raleiras 67819
  * @author Filipe Nobre 67850
+ * A support structure that provides a temporary damage boost to allied turrets within its range.
+ * The tower periodically emits a circular pulse. When the pulse reaches a turret, a visual effect
+ * is triggered and the turret receives a damage multiplier buff.
+ * This block consumes power and remains active as long as it has sufficient efficiency.
+ * The damage buff is applied continuously to all allied turrets inside the range.
  */
 package mindustry.world.blocks.defense;
 
@@ -25,6 +30,12 @@ public class SupportBuffTower extends PowerBlock {
     public final float buffRange = 60f;
     public final float baseDamageMultiplier = 2.5f;
 
+    /**
+     * Creates a new SupportBuffTower with predefined construction time, power consumption,
+     * and defensive stats.
+     *
+     * @param name name of the block in Mindustry's content system
+     */
     public SupportBuffTower(String name) {
         super(name);
         update = true;
@@ -49,6 +60,10 @@ public class SupportBuffTower extends PowerBlock {
         Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, buffRange, Pal.accent);
     }
 
+    /**
+     * Inner build class that handles runtime behavior, animations,
+     * pulse effects, and buff application.
+     */
     public class SupportBuffBuild extends Building {
         float visualTimer = 60f;
         float pulseTimer = 0f;
@@ -86,6 +101,10 @@ public class SupportBuffTower extends PowerBlock {
             applyDamageBoost();
         }
 
+        /**
+         * Applies the supported damage multiplier to all allied turrets within the buff radius.
+         * Additionally, triggers a visual effect when the traveling pulse circle reaches a turret.
+         */
         void applyDamageBoost() {
             if (efficiency <= 0) return;
 
