@@ -462,3 +462,4 @@ We also created new assets for the tower and updated the language files to inclu
 | Fixed bug on damageMultiplier | 77cff7f85a0b5a70e2a0ae8a00cfab68cdd38f93 | Dinis Raleiras 67819
 | Added the documentation to the User Storie 2. | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
 | Added Portuguese Bundle | dd34f0f7a932389fce25bfed3c273f34b7cc14b1 | Filipe Nobre 67850
+| Commented SupportBuffTower class | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
