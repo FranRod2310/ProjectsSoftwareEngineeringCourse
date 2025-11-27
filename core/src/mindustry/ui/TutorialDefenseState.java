@@ -5,6 +5,7 @@ import arc.Events;
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
 import arc.math.Mathf;
+import arc.math.geom.Vec2;
 import arc.util.Align;
 import arc.util.Time;
 import mindustry.Vars;
@@ -21,6 +22,7 @@ import mindustry.world.Block;
 import mindustry.world.Tile;
 import mindustry.world.blocks.defense.turrets.Turret;
 
+import static arc.Core.camera;
 import static mindustry.Vars.tilesize;
 
 public class TutorialDefenseState implements TutorialState {
@@ -77,7 +79,7 @@ public class TutorialDefenseState implements TutorialState {
             case SHOW_PATH:
 
                 if (timer < Time.delta * 2) {
-                    Vars.ui.announce("Enemies will approach from the red circle.", 4);
+                    Vars.ui.showInfo("Enemies will approach from the red circle.");
                 }
 
                 float targetX, targetY;
@@ -86,6 +88,8 @@ public class TutorialDefenseState implements TutorialState {
                 if (timer < seconds(4) && enemySpawnTile != null) {
                     targetX = enemySpawnTile.worldx();
                     targetY = enemySpawnTile.worldy();
+                    //Core.camera.project(targetX, targetY);
+
 
                 } else {
                     // return camera to player
@@ -94,13 +98,13 @@ public class TutorialDefenseState implements TutorialState {
                 }
 
                 // move camera smoothly
-                Core.camera.position.lerp(new arc.math.geom.Vec2(targetX, targetY), 0.08f);
+                camera.position.lerp(new arc.math.geom.Vec2(targetX, targetY), 0.08f);
 
                 // next step after 7s
                 if (timer > seconds(7)) {
                     currentStep = Step.PLACE_TURRET;
                     timer = 0;
-                    Vars.ui.announce("Build a Duo Turret in the highlighted area!", 5);
+                    Vars.ui.showInfo("Build a Duo Turret in the highlighted area!");
                 }
                 break;
 
@@ -108,7 +112,7 @@ public class TutorialDefenseState implements TutorialState {
                 // check if duo is in right place
                 if (turretTargetTile.block() == Blocks.tutorialDuo) {
                     currentStep = Step.PLACE_WALL;
-                    Vars.ui.announce("Now, protect the turret with Copper Walls.", 5);
+                    Vars.ui.showInfo("Now, protect the turret with Copper Walls.");
                 }
                 break;
 
@@ -135,17 +139,14 @@ public class TutorialDefenseState implements TutorialState {
             case EXPLAIN_AMMO:
 
                 if (timer < Time.delta * 2) {
-                    Vars.ui.announce("The turret has no ammo!", 3);
-                }
-
-                if (timer > seconds(3) && timer < seconds(3) + Time.delta * 2) {
-                    Vars.ui.announce("It requires Copper to fire.", 3);
+                    Vars.ui.showInfo("The turret has no ammo!\n\n" +
+                            "You need to supply it with Copper to defend against enemies.\n\n" +
+                            "Use Conveyor Belts to transport Copper to the turret.");
                 }
 
                 if (timer > seconds(6)) {
                     currentStep = Step.SUPPLY_AMMO;
                     timer = 0;
-                    Vars.ui.announce("Objective: Supply Copper to the Turret using Conveyors");
                 }
                 break;
 
@@ -168,7 +169,7 @@ public class TutorialDefenseState implements TutorialState {
                     if (hasAmmo) {
                         currentStep = Step.DEFEND_WAVE;
                         timer = 0;
-                        Vars.ui.announce("Enemy approaching. Defend the base!");
+                        Vars.ui.showInfo("Enemies approaching. Defend the base!");
                     }
                 }
                 break;
@@ -180,18 +181,17 @@ public class TutorialDefenseState implements TutorialState {
                     float spawnX = (enemySpawnTile != null) ? enemySpawnTile.worldx() : Vars.player.x;
                     float spawnY = (enemySpawnTile != null) ? enemySpawnTile.worldy() : Vars.player.y;
 
-                    Unit u1 = UnitTypes.flare.create(Team.green);
+                    Unit u1 = UnitTypes.dagger.create(Team.green);
+                    u1.health = 800;
                     u1.set(spawnX, spawnY);
-                    u1.health = 100000f;
                     u1.add();
 
-                    Unit u2 = UnitTypes.flare.create(Team.green);
+                    Unit u2 = UnitTypes.dagger.create(Team.green);
+                    u2.health = 500;
                     u2.set(spawnX + 10f, spawnY + 5f);
-                    u2.health = 100000f;
                     u2.add();
 
                     waveSpawned = true;
-                    Vars.ui.announce("Targets detected...", 3);
                 }
 
                 //TODO: just send final messages, maybe go to a TutorialCompleteState?
@@ -203,15 +203,18 @@ public class TutorialDefenseState implements TutorialState {
         }
     }
 
-    // desperate try to fix enemy spawning... not working
+    // desperate try to fix enemy spawning... now working
     private void forceSafeRules() {
         Vars.state.rules.unitCap = 9999;
-        Vars.state.rules.limitMapArea = false;
-        Vars.state.rules.dropZoneRadius = 0;
-        Vars.state.rules.waves = false;
-        Vars.state.rules.canGameOver = false;
-        Vars.state.rules.polygonCoreProtection = false;
-        Vars.state.rules.enemyCoreBuildRadius = 0;
+        //Vars.state.rules.limitMapArea = false;
+        //Vars.state.rules.dropZoneRadius = 0;
+        Vars.state.rules.waves = true;
+        //Vars.state.rules.canGameOver = false;
+        //Vars.state.rules.polygonCoreProtection = false;
+        //Vars.state.rules.enemyCoreBuildRadius = 0;
+        //Vars.state.rules.airUseSpawns = true;
+        Vars.state.rules.attackMode = true;
+        Vars.state.rules.unitCrashDamageMultiplier = 0;
     }
 
     private void onDraw() {
