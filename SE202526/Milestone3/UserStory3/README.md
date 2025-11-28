@@ -266,13 +266,12 @@ New Player
 None
 
 **Preconditions:**
-New player clicked on cancel and the player is in the tutorial world.
+New player clicked on quit and the player is in the tutorial world.
 
 **Main flow:**
 1. The alternative flow can start anywhere.
-2. The system shows a pop-up message "Tutorial ended".
-3. The system returns to the real world.
-4. The use case ends.
+2. The system returns to main menu.
+3. The use case ends.
 
 **Postconditions:**
 1. The player is back to the real world
