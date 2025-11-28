@@ -463,3 +463,4 @@ We also created new assets for the tower and updated the language files to inclu
 | Added the documentation to the User Storie 2. | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
 | Added Portuguese Bundle | dd34f0f7a932389fce25bfed3c273f34b7cc14b1 | Filipe Nobre 67850
 | Commented SupportBuffTower class | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
+| Added auxiliar methods to avoid confuse and duplicated code | bfc9885382a5b8b8958ff8885fa6e3be5e680e13 | Filipe Nobre 67850
