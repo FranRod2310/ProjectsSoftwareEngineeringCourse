@@ -465,3 +465,4 @@ We also created new assets for the tower and updated the language files to inclu
 | Commented SupportBuffTower class | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
 | Added auxiliar methods to avoid confuse and duplicated code | bfc9885382a5b8b8958ff8885fa6e3be5e680e13 | Filipe Nobre 67850
 | Comented the new methods in SupportBuffTower class | 9fff5b1a087be757440059abe2aacf79fbeedd9a | Dinis Raleiras 67819
+| Added Test Class with initial tower setup | a2355b8cb2d325216ea86bb3ac16771777181ea8 | Filipe Nobre 67850
