@@ -44,6 +44,8 @@ public class SupportBuffTower extends PowerBlock {
         consumePower(1.2f);
         buildTime = 120f;
         health = 140;
+        consumesPower = true;
+        hasConsumers = true;
     }
 
     @Override

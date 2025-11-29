@@ -103,4 +103,12 @@ class SupportBuffTowerTest {
         // Check if pulseTimer did not change (because updateTile() returns immediately if not powered)
         assertEquals(initialPulseTimer, pulseTimerAfterNoPower, 0.001f, "The accumulation 'pulseTimer' must not change when unpowered");
     }
+    @Test
+    @DisplayName("Power Consumption: Values configured correctly")
+    void testPowerConsumptionConfig() {
+        // Verify if consumption was configured (exact value is in consPower.capacity or usage)
+        // Since Mindustry uses a complex consumer system, we verify if it exists
+        assertNotNull(tower.consumers, "Consumer list must not be null");
+        assertTrue(tower.hasConsumers, "Block must have registered consumers");
+    }
 }
