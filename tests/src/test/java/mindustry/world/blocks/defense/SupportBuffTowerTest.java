@@ -23,8 +23,9 @@ class SupportBuffTowerTest {
         if (Vars.content == null) {
             Vars.content = new ContentLoader();
         }
-        // Initialize the tower
-        tower = new SupportBuffTower("support-buff-tower");
+        // Initialize the new tower for each test
+        // We add the System.nanoTime() to ensure a unique name for each test instance
+        tower = new SupportBuffTower("support-buff-tower-" + System.nanoTime());
 
         // Initialize the building
         // It is an inner class so we must initialize it manually
@@ -40,5 +41,23 @@ class SupportBuffTowerTest {
         assertTrue(tower.hasPower, "The block must need power");
         assertTrue(tower.solid, "The block must be solid");
         assertTrue(tower.update, "The block must have an update logic");
+    }
+    @Test
+    @DisplayName("Power Logic: Must return true if efficiency is <= 0")
+    void testIsNotPoweredLogic() throws Exception {
+        // Access private method isNotPowered() via Reflection
+        Method isNotPoweredMethod = SupportBuffBuild.class.getDeclaredMethod("isNotPowered");
+        isNotPoweredMethod.setAccessible(true);
+
+        // Case 1: No power (efficiency = 0)
+        build.efficiency = 0f;
+        boolean resultNoPower = (boolean) isNotPoweredMethod.invoke(build);
+        System.out.println(resultNoPower);
+        assertTrue(resultNoPower, "Must return true when efficiency is 0");
+
+        // Case 2: With power (efficiency = 1)
+        build.efficiency = 1f;
+        boolean resultHasPower = (boolean) isNotPoweredMethod.invoke(build);
+        assertFalse(resultHasPower, "Must return false when efficiency is 1");
     }
 }
