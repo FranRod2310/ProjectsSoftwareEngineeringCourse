@@ -1,7 +1,10 @@
 package mindustry.world.blocks.defense;
 
 import mindustry.Vars;
+import mindustry.ai.BlockIndexer;
 import mindustry.core.ContentLoader;
+import mindustry.core.GameState;
+import mindustry.core.World;
 import mindustry.world.blocks.defense.SupportBuffTower;
 import mindustry.world.blocks.defense.SupportBuffTower.SupportBuffBuild;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,8 +23,16 @@ class SupportBuffTowerTest {
 
     @BeforeEach
     void setUp() {
+        // 1. Initialize Vars.content (Previous fix)
         if (Vars.content == null) {
             Vars.content = new ContentLoader();
+        }
+
+        // for block logic that interacts with the map (like applyDamageBoost -> Vars.indexer.eachBlock).
+        if (Vars.indexer == null) {
+            Vars.indexer = new BlockIndexer();
+            Vars.world = new World(); // Required by BlockIndexer or block methods
+            Vars.state = new GameState();
         }
         // Initialize the new tower for each test
         // We add the System.nanoTime() to ensure a unique name for each test instance
@@ -42,6 +53,7 @@ class SupportBuffTowerTest {
         assertTrue(tower.solid, "The block must be solid");
         assertTrue(tower.update, "The block must have an update logic");
     }
+
     @Test
     @DisplayName("Power Logic: Must return true if efficiency is <= 0")
     void testIsNotPoweredLogic() throws Exception {
@@ -52,12 +64,43 @@ class SupportBuffTowerTest {
         // Case 1: No power (efficiency = 0)
         build.efficiency = 0f;
         boolean resultNoPower = (boolean) isNotPoweredMethod.invoke(build);
-        System.out.println(resultNoPower);
         assertTrue(resultNoPower, "Must return true when efficiency is 0");
 
         // Case 2: With power (efficiency = 1)
         build.efficiency = 1f;
         boolean resultHasPower = (boolean) isNotPoweredMethod.invoke(build);
         assertFalse(resultHasPower, "Must return false when efficiency is 1");
+    }
+
+    @Test
+    @DisplayName("3. Buildup Progress: Should accumulate pulseTimer when powered and stop when unpowered")
+    void testBuildupProgress() throws Exception {
+        // Accesses the private pulseTimer field via Reflection to monitor progress
+        Field pulseTimerField = SupportBuffBuild.class.getDeclaredField("pulseTimer");
+        pulseTimerField.setAccessible(true);
+
+        // Test pulse when tower is powered
+        build.efficiency = 1f;
+        pulseTimerField.set(build, 0.5f); // Set initial pulseTimer state
+        float initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate tile update
+        build.updateTile();
+        float pulseTimerAfterUpdate = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer increased
+        assertTrue(pulseTimerAfterUpdate > initialPulseTimer, "The accumulation 'pulseTimer' must increase when powered");
+
+        // Test pulse when tower is unpowered
+        build.efficiency = 0f;
+        pulseTimerField.set(build, 0.6f); // New initial pulseTimer state
+        initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate update
+        build.updateTile();
+        float pulseTimerAfterNoPower = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer did not change (because updateTile() returns immediately if not powered)
+        assertEquals(initialPulseTimer, pulseTimerAfterNoPower, 0.001f, "The accumulation 'pulseTimer' must not change when unpowered");
     }
 }
