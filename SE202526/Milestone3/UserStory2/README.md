@@ -577,16 +577,16 @@ power consumers.
 
 ### Commits:
 
-| Description | ID | Author |
-|:----------|:-----|:-------|
- Support Tower Implementation|375796f0431aaf6cb07b04a4a3bcbd15a9d7cc82 | Filipe Nobre 67850
-| Fixed bug on damageMultiplier | 77cff7f85a0b5a70e2a0ae8a00cfab68cdd38f93 | Dinis Raleiras 67819
-| Added the documentation to the User Storie 2. | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
-| Added Portuguese Bundle | dd34f0f7a932389fce25bfed3c273f34b7cc14b1 | Filipe Nobre 67850
-| Commented SupportBuffTower class | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
-| Added auxiliar methods to avoid confuse and duplicated code | bfc9885382a5b8b8958ff8885fa6e3be5e680e13 | Filipe Nobre 67850
-| Comented the new methods in SupportBuffTower class | 9fff5b1a087be757440059abe2aacf79fbeedd9a | Dinis Raleiras 67819
-| Added Test Class with initial tower setup | a2355b8cb2d325216ea86bb3ac16771777181ea8 | Filipe Nobre 67850
-| Added the second Unit test for the User Story 2 - Milestone 3 | b1823d7870d03f9e205290d87bbf99793e2cb35f | Dinis Raleiras 67819
-| Added a test for the pulse update | 2b636b5561534ca7a19fa81a26be1798c5c0ee0e | Filipe Nobre 67850
-| Added test # 4 to the US 2 - milestone and minor fix to SupportBuffTower class found by testing | 006d592b8c3ef9ec393464f065481398c91ffcd9 | Dinis Raleiras 67819
+| Description                                                                                       | ID | Author |
+|:--------------------------------------------------------------------------------------------------|:-----|:-------|
+ Support Tower Implementation                                                                      |375796f0431aaf6cb07b04a4a3bcbd15a9d7cc82 | Filipe Nobre 67850
+| Fixed bug on damageMultiplier                                                                     | 77cff7f85a0b5a70e2a0ae8a00cfab68cdd38f93 | Dinis Raleiras 67819
+| Added the documentation to the User Storie 2.                                                     | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
+| Added Portuguese Bundle                                                                           | dd34f0f7a932389fce25bfed3c273f34b7cc14b1 | Filipe Nobre 67850
+| Commented SupportBuffTower class                                                                  | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
+| Added auxiliar methods to avoid confuse and duplicated code                                       | bfc9885382a5b8b8958ff8885fa6e3be5e680e13 | Filipe Nobre 67850
+| Comented the new methods in SupportBuffTower class                                                | 9fff5b1a087be757440059abe2aacf79fbeedd9a | Dinis Raleiras 67819
+| Added Test Class with initial tower setup                                                         | a2355b8cb2d325216ea86bb3ac16771777181ea8 | Filipe Nobre 67850
+| Added the second Unit test for the User Story 2 - Milestone 3                                     | b1823d7870d03f9e205290d87bbf99793e2cb35f | Dinis Raleiras 67819
+| Added a test for the pulse update                                                                 | 2b636b5561534ca7a19fa81a26be1798c5c0ee0e | Filipe Nobre 67850
+| Added test # 4 to the US 2 - Milestone 3 and minor fix to SupportBuffTower class found by testing | 006d592b8c3ef9ec393464f065481398c91ffcd9 | Dinis Raleiras 67819
