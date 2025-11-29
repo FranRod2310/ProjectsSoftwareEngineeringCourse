@@ -452,6 +452,12 @@ We also created new assets for the tower and updated the language files to inclu
 ## Test specifications
 `...\tests\src\test\java\mindustry.world.blocks.defense\SupportBuffTowerTest`
 
+### Initialization of the tower
+Implemented a setUp method annotated with `@BeforeEach` to properly initialize the testing environment.
+This method mocks Vars.content to prevent NullPointerException due to missing global game state.
+Additionally, it assigns a unique identifier to each SupportBuffTower instance using System.nanoTime() to
+resolve IllegalArgumentException conflicts caused by duplicate content names during sequential test execution.
+
 ```java
     @BeforeEach
     void setUp() {
@@ -475,11 +481,8 @@ We also created new assets for the tower and updated the language files to inclu
         build = tower.new SupportBuffBuild();
     }
 ```
-### Initialization of the tower
-Implemented a setUp method annotated with `@BeforeEach` to properly initialize the testing environment. 
-This method mocks Vars.content to prevent NullPointerException due to missing global game state.
-Additionally, it assigns a unique identifier to each SupportBuffTower instance using System.nanoTime() to 
-resolve IllegalArgumentException conflicts caused by duplicate content names during sequential test execution.
+### Test 1: Base Attributes Verification
+This unit test method's main objective is to verify the correct initialization of the base attributes and constants of the SupportBuffTower class.
 
 ```java
     @Test
@@ -494,8 +497,6 @@ resolve IllegalArgumentException conflicts caused by duplicate content names dur
     }
 
 ```
-### Test 1: Base Attributes Verification
-This unit test method's main objective is to verify the correct initialization of the base attributes and constants of the SupportBuffTower class.
 
 ### Test 2 : Power Logic Verification
 ```java
