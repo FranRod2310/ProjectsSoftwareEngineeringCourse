@@ -467,3 +467,4 @@ We also created new assets for the tower and updated the language files to inclu
 | Comented the new methods in SupportBuffTower class | 9fff5b1a087be757440059abe2aacf79fbeedd9a | Dinis Raleiras 67819
 | Added Test Class with initial tower setup | a2355b8cb2d325216ea86bb3ac16771777181ea8 | Filipe Nobre 67850
 | Added the second Unit test for the User Story 2 - Milestone 3 | b1823d7870d03f9e205290d87bbf99793e2cb35f | Dinis Raleiras 67819
+| Added a test for the pulse update | 2b636b5561534ca7a19fa81a26be1798c5c0ee0e | Filipe Nobre 67850
