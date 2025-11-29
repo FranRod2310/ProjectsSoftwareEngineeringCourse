@@ -29,7 +29,8 @@ The only point to improve is that "step-by-step tutorial" is too vague; it could
 
 ## Use case diagram
 
-<img width="999" height="541" alt="image" src="https://github.com/user-attachments/assets/1f17fff3-f29b-48db-a8f7-408c2f794b0f" />
+<img width="1196" height="783" alt="image" src="https://github.com/user-attachments/assets/4880777f-3245-4306-9aba-0d488143e7af" />
+
 
 
 
@@ -285,7 +286,7 @@ The use case descriptions are well-written, with clear actors, objectives, detai
 Postconditions could be improved by specifying the player’s status and the final state of the map. 
 Overall, the descriptions are of high quality.
 The diagram effectively represents the use cases, correctly identifying the key actors and the different tutorial modules .
-The <<Include>> relationships, such as the dependency on Research for both Building and Defense, align well with the dependencies described in the textual flows.
+
 
 
 ## Implementation documentation
