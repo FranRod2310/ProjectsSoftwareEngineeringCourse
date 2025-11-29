@@ -135,10 +135,21 @@ public class SupportBuffTower extends PowerBlock {
             );
         }
 
+        /**
+         * Determines if the pulse circle has reached a turret based on distance, pulse radius, and tolerance.
+         * @param dist
+         * @param pulseRadius
+         * @param tolerance
+         * @return true if the pulse hits the turret, false otherwise
+         */
         private boolean pulseHits(float dist, float pulseRadius, float tolerance) {
             return dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance;
         }
 
+        /**
+         * Checks if the SupportBuffTower is not powered based on its efficiency.
+         * @return true if efficiency is less than or equal to zero, false otherwise
+         */
         private boolean isNotPowered() {
             return efficiency <= 0;
         }
