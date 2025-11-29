@@ -450,7 +450,127 @@ We also created new assets for the tower and updated the language files to inclu
 *(Please add your sequence diagram review here)*
 
 ## Test specifications
-(*Test cases specification and pointers to their implementation, where adequate.*)
+`...\tests\src\test\java\mindustry.world.blocks.defense\SupportBuffTowerTest`
+
+```java
+    @BeforeEach
+    void setUp() {
+        // 1. Initialize Vars.content (Previous fix)
+        if (Vars.content == null) {
+            Vars.content = new ContentLoader();
+        }
+
+        // for block logic that interacts with the map (like applyDamageBoost -> Vars.indexer.eachBlock).
+        if (Vars.indexer == null) {
+            Vars.indexer = new BlockIndexer();
+            Vars.world = new World(); // Required by BlockIndexer or block methods
+            Vars.state = new GameState();
+        }
+        // Initialize the new tower for each test
+        // We add the System.nanoTime() to ensure a unique name for each test instance
+        tower = new SupportBuffTower("support-buff-tower-" + System.nanoTime());
+
+        // Initialize the building
+        // It is an inner class so we must initialize it manually
+        build = tower.new SupportBuffBuild();
+    }
+```
+### Initialization of the tower
+Implemented a setUp method annotated with `@BeforeEach` to properly initialize the testing environment. 
+This method mocks Vars.content to prevent NullPointerException due to missing global game state.
+Additionally, it assigns a unique identifier to each SupportBuffTower instance using System.nanoTime() to 
+resolve IllegalArgumentException conflicts caused by duplicate content names during sequential test execution.
+
+```java
+    @Test
+    @DisplayName("Must initialize with the correct base attributes")
+    void testBaseStats() {
+        assertEquals(2.5f, tower.baseDamageMultiplier, "The multiplier must be 2.5");
+        assertEquals(60f, tower.buffRange, "The range buff must be 60f");
+        assertEquals(120f, tower.buildTime, "The time to build must be 120f or 2 seconds");
+        assertTrue(tower.hasPower, "The block must need power");
+        assertTrue(tower.solid, "The block must be solid");
+        assertTrue(tower.update, "The block must have an update logic");
+    }
+
+```
+### Test 1: Base Attributes Verification
+This unit test method's main objective is to verify the correct initialization of the base attributes and constants of the SupportBuffTower class.
+
+### Test 2 : Power Logic Verification
+```java
+    @Test
+    @DisplayName("Power Logic: Must return true if efficiency is <= 0")
+    void testIsNotPoweredLogic() throws Exception {
+        // Access private method isNotPowered() via Reflection
+        Method isNotPoweredMethod = SupportBuffBuild.class.getDeclaredMethod("isNotPowered");
+        isNotPoweredMethod.setAccessible(true);
+
+        // Case 1: No power (efficiency = 0)
+        build.efficiency = 0f;
+        boolean resultNoPower = (boolean) isNotPoweredMethod.invoke(build);
+        assertTrue(resultNoPower, "Must return true when efficiency is 0");
+
+        // Case 2: With power (efficiency = 1)
+        build.efficiency = 1f;
+        boolean resultHasPower = (boolean) isNotPoweredMethod.invoke(build);
+        assertFalse(resultHasPower, "Must return false when efficiency is 1");
+    }
+```
+This test verifies the internal power-validation logic of `SupportBuffBuild` by invoking the private `isNotPowered() method through reflection. It checks that the method correctly returns true when efficiency is zero (no power) and false when efficiency is positive (powered).
+### Test 3 : Buildup Progress Verification
+```java
+    @Test
+    @DisplayName("3. Buildup Progress: Should accumulate pulseTimer when powered and stop when unpowered")
+    void testBuildupProgress() throws Exception {
+        // Accesses the private pulseTimer field via Reflection to monitor progress
+        Field pulseTimerField = SupportBuffBuild.class.getDeclaredField("pulseTimer");
+        pulseTimerField.setAccessible(true);
+
+        // Test pulse when tower is powered
+        build.efficiency = 1f;
+        pulseTimerField.set(build, 0.5f); // Set initial pulseTimer state
+        float initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate tile update
+        build.updateTile();
+        float pulseTimerAfterUpdate = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer increased
+        assertTrue(pulseTimerAfterUpdate > initialPulseTimer, "The accumulation 'pulseTimer' must increase when powered");
+
+        // Test pulse when tower is unpowered
+        build.efficiency = 0f;
+        pulseTimerField.set(build, 0.6f); // New initial pulseTimer state
+        initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate update
+        build.updateTile();
+        float pulseTimerAfterNoPower = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer did not change (because updateTile() returns immediately if not powered)
+        assertEquals(initialPulseTimer, pulseTimerAfterNoPower, 0.001f, "The accumulation 'pulseTimer' must not change when unpowered");
+    }
+```
+This test validates the buildup progression of `SupportBuffBuild` by inspecting the private *pulseTimer* field via *reflection*. It ensures that pulseTimer increases during `updateTile()` when the build is powered, 
+and remains unchanged when unpowered, confirming correct pulse accumulation behavior.
+
+### Test 4: Power Consumption Configuration
+```java
+    @Test
+    @DisplayName("Power Consumption: Values configured correctly")
+    void testPowerConsumptionConfig() {
+        // Verify if consumption was configured (exact value is in consPower.capacity or usage)
+        // Since Mindustry uses a complex consumer system, we verify if it exists
+        assertNotNull(tower.consumers, "Consumer list must not be null");
+        assertTrue(tower.hasConsumers, "Block must have registered consumers");
+    }
+```
+This test checks that the block’s power consumption system is properly configured. 
+It verifies that the `consumers` list is initialized and that the block correctly reports having registered 
+power consumers.
+
+> NOTE: We also made manual tests in the game to verify the correct functionality of the tower.
 ### Review
 *(Please add your test specification review here)*
 
