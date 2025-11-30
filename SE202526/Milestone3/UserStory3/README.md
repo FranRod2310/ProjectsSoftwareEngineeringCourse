@@ -76,7 +76,6 @@ The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
 
-<img width="901" height="1141" alt="GAME TUTORIAL" src="https://github.com/user-attachments/assets/936f8a88-a028-4a89-96eb-c085c935b4dd" />
 
 
 ## Use Case: Basic Tutorial
@@ -112,7 +111,6 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
    
-<img width="882" height="636" alt="BASIC TUTORIAL" src="https://github.com/user-attachments/assets/0595bccc-c083-4776-9582-82cf6fb4b00e" />
 
 
 ## Use Case: Research Tutorial
@@ -160,7 +158,6 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
-<img width="1140" height="942" alt="RESEARCH TUTORIAL" src="https://github.com/user-attachments/assets/246f06f6-b692-4c6c-abab-998e82dc9392" />
 
 
 
@@ -205,7 +202,6 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
-<img width="1515" height="1304" alt="BUILDING TUTORIAL" src="https://github.com/user-attachments/assets/f7bd9f50-7daf-4d19-b4a0-c63b2e850a8b" />
 
 
 ## Use Case: Defense Tutorial
@@ -260,7 +256,6 @@ The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
 
-<img width="1467" height="1798" alt="DEFENSE TUTORIAL" src="https://github.com/user-attachments/assets/f5f752c6-968b-4d1f-b7b6-907974f36e0c" />
 
 
 ## Use Case: Tutorial cancelled
@@ -290,7 +285,6 @@ New player clicked on quit and the player is in the tutorial world.
 
 None
 
-<img width="847" height="356" alt="CANCEL TUTORIAL" src="https://github.com/user-attachments/assets/1bc1d463-c249-40bc-94ed-51877ca984e9" />
 
 
 ### Review
@@ -350,7 +344,26 @@ The diagram effectively represents the use cases, correctly identifying the key 
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+## Game tutorial
+![GAME TUTORIAL](https://github.com/user-attachments/assets/787e38ea-5f65-41be-9e18-04a493cd152c)
+
+## Basic tutorial
+<img width="882" height="636" alt="BASIC TUTORIAL" src="https://github.com/user-attachments/assets/fdff311e-0d16-4a56-9f06-d71ee7186274" />
+
+## Research tutorial
+<img width="1140" height="942" alt="RESEARCH TUTORIAL" src="https://github.com/user-attachments/assets/3b530dc0-50e3-42a8-977d-e333511615ed" />
+
+## Building tutorial
+<img width="1515" height="1304" alt="BUILDING TUTORIAL" src="https://github.com/user-attachments/assets/25b0489b-9ec3-4329-b373-54c3d6bb7f9f" />
+
+## Defense tutorial
+<img width="1467" height="1798" alt="DEFENSE TUTORIAL" src="https://github.com/user-attachments/assets/22131783-55eb-41d9-bdd3-b711e1a2412a" />
+
+## Cancel tutorial
+<img width="847" height="356" alt="CANCEL TUTORIAL" src="https://github.com/user-attachments/assets/c69f1e35-fe1e-4a92-9874-bbe1405b2443" />
+
+
+
 
 #### Review
 *(Please add your sequence diagram review here)*
