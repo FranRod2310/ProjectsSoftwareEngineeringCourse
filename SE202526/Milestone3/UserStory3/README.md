@@ -215,25 +215,24 @@ The player is in tutorial world.
 
 **Main flow:**
 1. Use case starts when the building tutorial ends.
-2. System shows the path of incoming enemies.
+2. System warms of incoming enemies.
 3. System informs player of the use of turrets.
 4. Camera moves to suggested turret placement location.
 5. System highlights a recommended turret location spot.
 7. Player selects a turret from the menu.
 8. Player places the turret in the highlighted location.
 9. System highlights a short wall segment in front of the turret.
-10. System highlights wall item location in the menus.
+10. System tells player the use of walls.
 11. Player places basic walls in the highlighted area.
-12. System highlights the ammo type required by the turret.
+12. System explains how ammo works.
 13. System informs player on how to load ammo into turrets.
-14. System highlights a suggested path for conveyor placement into turrets.
+14. System highlights the turret.
 15. Player supplies the turret with ammo using conveyors.
-16. Camera moves to enemy spawn location.
-17. Enemy wave arrives.
-18. Camera follows turret actions.
-19. Turret fires and the walls absorb damage.
-20. System notifies the player that they have successfully defended the base.
-21. The use case ends.
+16. Enemy wave arrives.
+17. Camera follows turret actions.
+18. Turret fires and the walls absorb damage.
+19. System notifies the player that they have successfully defended the base.
+20. The use case ends.
 
 **Postconditions:**
 The enemy wave is defeated.
@@ -244,11 +243,6 @@ A1 - Player places turret incorrectly (can be activated in 8):
 
 1. System highlights the correct location again.
 2. Use case resumes at Main Flow step 8.
-
-A2 - Turret receives no ammo (can be activated in 15):
-
-1. The system highlights the ammo source and the turret’s ammo bar.
-2. The use case resumes at Main Flow step 15.
 
 The new player cancels the tutorial.
 (can be activated any time)
