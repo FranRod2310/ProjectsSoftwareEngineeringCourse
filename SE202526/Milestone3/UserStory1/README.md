@@ -597,6 +597,122 @@ Data persistencd (UC5) is handled by existing `MapMarkers` architecture, which w
 #### Review
 *(Please add your sequence diagram review here)*
 ## Test specifications
-(*Test cases specification and pointers to their implementation, where adequate.*)
+
+`java/testsUS1/MarkerTest.java`
+
+Before the tests we have the method setup to initialize the tests environment. This method initializes `Vars.state` to prevent `NUllPointException`. It also creates a fresh instance of `MapMarkers` for each test to ensure state isolation.
+
+```java
+@BeforeEach
+    void setUp() {
+        // Initialize Global Vars State
+        if (Vars.state == null) {
+            Vars.state = new GameState();
+        }
+
+        // Initialize the container (Using the parent class logic used by Marker)
+        markersContainer = new MapMarkers();
+
+        // Inject this container into Vars.state so static references work if needed
+        Vars.state.markers = markersContainer;
+    }
+```
+
+#### Test 1 - Marker Data Verification
+
+This test main objective is to verify that the `ShapeTextMarker` object correctly stores the attributes gived by the user, specifically the text and position.
+
+```java
+@Test
+    @DisplayName("1. Marker Data: Must store correct attributes (Text/Color/Pos)")
+    void testMarkerAttributes() {
+        // Test UC1/UC2 Data Structure
+        ShapeTextMarker marker = new ShapeTextMarker();
+        String expectedText = "Attack Here!";
+        Vec2 expectedPos = new Vec2(100f, 200f);
+
+        marker.setText(expectedText, false);
+        marker.pos.set(expectedPos);
+
+        assertEquals("Attack Here!", marker.text, "Marker text should match input");
+        assertEquals(100f, marker.pos.x, "X position should be 100");
+        assertEquals(200f, marker.pos.y, "Y position should be 200");
+    }
+```
+This ensures that the data structure used in Create and Edit (UC1, UC2) operations works as expected.
+
+#### Test 2 - Storage Logic Verification
+
+This test validates the core functionality of `MapMarkers` container, ensuring that markers can be added via unique ID's and retrieved correctly, which is essential for data persistence (UC5).
+
+```java
+@Test
+    @DisplayName("2. Storage Logic: Add and Retrieve Marker by ID")
+    void testAddAndRetrieve() {
+        ShapeTextMarker marker = new ShapeTextMarker();
+        marker.text = "Base Alpha";
+        int uniqueID = 12345;
+
+        // Add to container (Logic used in UC1)
+        markersContainer.add(uniqueID, marker);
+
+        assertTrue(markersContainer.has(uniqueID), "Container must contain the ID after adding");
+        assertEquals(marker, markersContainer.get(uniqueID), "Retrieved object must match the added object");
+        assertEquals(1, markersContainer.size(), "Size must be 1");
+    }
+```
+
+#### Test 3 - Remove By Object Reference Verification
+
+This test focus on `remove(ObjectiveMarker marker)` that we implemented in `MapMarkers` class. It verifies that the system can identify and remove a marker using the object reference with success, confirming the backend logic required for the delete button (UC3).
+
+```java
+@Test
+    @DisplayName("3. Remove Logic: Must remove marker by Object Reference (New Implementation)")
+    void testRemoveByObject() {
+        // Tests the specific method added to MapMarkers.java for UC3
+
+        ShapeTextMarker markerA = new ShapeTextMarker();
+        markerA.text = "Marker A";
+        int idA = 10;
+
+        ShapeTextMarker markerB = new ShapeTextMarker();
+        markerB.text = "Marker B";
+        int idB = 20;
+
+        markersContainer.add(idA, markerA);
+        markersContainer.add(idB, markerB);
+
+        assertEquals(2, markersContainer.size(), "Setup: Must have 2 markers");
+
+        markersContainer.remove(markerA);
+
+        assertFalse(markersContainer.has(idA), "Marker A ID should no longer exist");
+        assertTrue(markersContainer.has(idB), "Marker B should still exist");
+        assertEquals(1, markersContainer.size(), "Size must decrease to 1");
+    }
+```
+
+#### Test 4 - Color Assignment Verification
+
+This test is very simple to understand, it just checks that the color attribute (using `arc.graphics.Color`) is correctly assigned to the marker, validating the visual customization features available to the player. 
+
+```java
+@Test
+    @DisplayName("Color Logic: Must verify marker color assignment")
+    void testMarkerColor() {
+        ShapeTextMarker marker = new ShapeTextMarker();
+
+        Color expectedColor = Color.orange;
+
+        marker.color = expectedColor;
+
+        assertEquals(expectedColor, marker.color, "The marker should store the assigned color (Orange)");
+        assertNotEquals(Color.blue, marker.color, "The marker should not be blue");
+    }
+```
+
+> NOTE: Functionalities dependent on the graphics engine and user input, such as UI and rendering, were verified through manual in-game testing.
+
 ### Review
 *(Please add your test specification review here)*
