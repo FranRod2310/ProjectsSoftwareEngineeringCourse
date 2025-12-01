@@ -593,7 +593,7 @@ Data persistencd (UC5) is handled by existing `MapMarkers` architecture, which w
 ### Review
 *(Please add your class diagram review here)*
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+![img.png](SequenceDiagram.png)
 #### Review
 *(Please add your sequence diagram review here)*
 ## Test specifications
