@@ -187,7 +187,8 @@ would be more appropriate.
 
 ## Implementation documentation
 ## Marker Class
-`.../core/src/mindustry/ui/Marker`
+
+`.../core/src/mindustrrker Classy/ui/Marker`
 
 To implement our new funcionality, the marker system, we created a new class called `Marker`.
 This Class extends MapMarkers (conceptually acting as a manager) and acts as the central controller for user interaction, managing the UI dialogs to create, edit, deleting them.
@@ -588,7 +589,7 @@ Data persistencd (UC5) is handled by existing `MapMarkers` architecture, which w
 #### Review
 *(Please add your implementation summary review here)*
 ### Class diagrams
-(*Class diagrams and their discussion in natural language.*)
+![img.png](ClassDiagram.png)
 ### Review
 *(Please add your class diagram review here)*
 ### Sequence diagrams
