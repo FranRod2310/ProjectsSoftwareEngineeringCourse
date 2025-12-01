@@ -77,6 +77,7 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
+
 ## Use Case: Basic Tutorial
 
 **ID:** 2
@@ -108,6 +109,8 @@ Resources are added to loadout of the new player.
 The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
+
+   
 
 
 ## Use Case: Research Tutorial
@@ -155,6 +158,9 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
+
+
+
 ## Use Case: Building tutorial
 **ID:** 4
 
@@ -194,6 +200,8 @@ New player is in the tutorial world.
 The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
+
+
 
 
 ## Use Case: Defense Tutorial
@@ -248,6 +256,8 @@ The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
 
+
+
 ## Use Case: Tutorial cancelled
 **ID:** 6
 
@@ -274,6 +284,8 @@ New player clicked on quit and the player is in the tutorial world.
 **Alternative flows:**
 
 None
+
+
 
 ### Review
 The use case descriptions are well-written, with clear actors, objectives, detailed flows, and inclusion of sub-use-cases.
@@ -332,7 +344,36 @@ The diagram effectively represents the use cases, correctly identifying the key 
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+## Game tutorial
+![GAME TUTORIAL](https://github.com/user-attachments/assets/787e38ea-5f65-41be-9e18-04a493cd152c)
+
+Main controller for the tutorial experience. Initializes the tutorial world and then executes the four sub-tutorials (Basic, Research, Building, Defense) in a specific order using ref freames. It uses an alt fragment to handle the player cancelling the tutorial at any time versus completing it successfully.
+
+## Basic tutorial
+<img width="882" height="636" alt="BASIC TUTORIAL" src="https://github.com/user-attachments/assets/fdff311e-0d16-4a56-9f06-d71ee7186274" />
+
+Details the process of gathering resources. The loop represents the updates every frame. Inside the loop, the controller continuously instructs the renderer to highlight the closest copper ore. The loop continues until the core reports that the required amount of copper has been collected, moving to the next state.
+
+## Research tutorial
+<img width="1140" height="942" alt="RESEARCH TUTORIAL" src="https://github.com/user-attachments/assets/3b530dc0-50e3-42a8-977d-e333511615ed" />
+
+Focus on UI explanation. Models the sequence of the player opening the UI, navigating the Research Dialog, and unlocking technology. It uses an alt fragment to check resource costs: if the player lacks resources, the system shows an error; if they have enough, the system removes items from the core and unlocks the Tech Node.
+
+## Building tutorial
+<img width="1515" height="1304" alt="BUILDING TUTORIAL" src="https://github.com/user-attachments/assets/25b0489b-9ec3-4329-b373-54c3d6bb7f9f" />
+
+Models the placement of drills and conveyors. Highlights and checks valid placement.
+
+## Defense tutorial
+<img width="1467" height="1798" alt="DEFENSE TUTORIAL" src="https://github.com/user-attachments/assets/22131783-55eb-41d9-bdd3-b711e1a2412a" />
+
+Models defending enemy waves and using turrets. It introduces a secondary actor (Enemy Spawner) that creates Enemy Units. The final section uses a combat loop that represents the turrets destroying enemies.
+
+## Cancel tutorial
+<img width="847" height="356" alt="CANCEL TUTORIAL" src="https://github.com/user-attachments/assets/c69f1e35-fe1e-4a92-9874-bbe1405b2443" />
+
+Termination sequence when a player clicks "Quit". It shows the controller performing cleanup like calling exit() on the active state to remove floating arrows or highlights before instructing the Game State to load the Main Menu and return the player to the real world.
+
 
 #### Review
 *(Please add your sequence diagram review here)*
