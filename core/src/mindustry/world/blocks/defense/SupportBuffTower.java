@@ -1,5 +1,11 @@
 /**
- * TODO
+ * @author Dinis Raleiras 67819
+ * @author Filipe Nobre 67850
+ * A support structure that provides a temporary damage boost to allied turrets within its range.
+ * The tower periodically emits a circular pulse. When the pulse reaches a turret, a visual effect
+ * is triggered and the turret receives a damage multiplier buff.
+ * This block consumes power and remains active as long as it has sufficient efficiency.
+ * The damage buff is applied continuously to all allied turrets inside the range.
  */
 package mindustry.world.blocks.defense;
 
@@ -24,6 +30,12 @@ public class SupportBuffTower extends PowerBlock {
     public final float buffRange = 60f;
     public final float baseDamageMultiplier = 2.5f;
 
+    /**
+     * Creates a new SupportBuffTower with predefined construction time, power consumption,
+     * and defensive stats.
+     *
+     * @param name name of the block in Mindustry's content system
+     */
     public SupportBuffTower(String name) {
         super(name);
         update = true;
@@ -32,6 +44,8 @@ public class SupportBuffTower extends PowerBlock {
         consumePower(1.2f);
         buildTime = 120f;
         health = 140;
+        consumesPower = true;
+        hasConsumers = true;
     }
 
     @Override
@@ -48,6 +62,10 @@ public class SupportBuffTower extends PowerBlock {
         Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, buffRange, Pal.accent);
     }
 
+    /**
+     * Inner build class that handles runtime behavior, animations,
+     * pulse effects, and buff application.
+     */
     public class SupportBuffBuild extends Building {
         float visualTimer = 60f;
         float pulseTimer = 0f;
@@ -61,7 +79,7 @@ public class SupportBuffTower extends PowerBlock {
         @Override
         public void draw() {
             super.draw();
-            if (efficiency <= 0f) return;
+            if (isNotPowered()) return;
             float radius = Mathf.lerp(0, buffRange, pulseTimer);
             float alpha = 0.7f * Mathf.curve(pulseTimer, 0f, 0.5f) * (1f - pulseTimer);
             Lines.stroke(3f * (1f - pulseTimer));
@@ -74,7 +92,7 @@ public class SupportBuffTower extends PowerBlock {
         public void updateTile() {
             super.updateTile();
 
-            if (efficiency <= 0f) return;
+            if (isNotPowered()) return;
             visualTimer += Time.delta;
 
             pulseTimer += Time.delta / pulseDuration;
@@ -85,8 +103,12 @@ public class SupportBuffTower extends PowerBlock {
             applyDamageBoost();
         }
 
+        /**
+         * Applies the supported damage multiplier to all allied turrets within the buff radius.
+         * Additionally, triggers a visual effect when the traveling pulse circle reaches a turret.
+         */
         void applyDamageBoost() {
-            if (efficiency <= 0) return;
+            if (isNotPowered()) return;
 
             float pulseRadius = Mathf.lerp(0, buffRange, pulseTimer);
             float tolerance = 0.2f;
@@ -104,7 +126,7 @@ public class SupportBuffTower extends PowerBlock {
                         float dist = Mathf.dst(x, y, turret.x, turret.y);
 
                         // se o pulso "atingiu" a torre
-                        if (dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance) {
+                        if (pulseHits(dist, pulseRadius,  tolerance)) {
 
                             // Efeito visual
                             Fx.sparkExplosion.at(turret.x, turret.y, 0, Pal.accent);
@@ -113,6 +135,25 @@ public class SupportBuffTower extends PowerBlock {
                         turret.supportDamageMultiplier = baseDamageMultiplier;
                     }
             );
+        }
+
+        /**
+         * Determines if the pulse circle has reached a turret based on distance, pulse radius, and tolerance.
+         * @param dist
+         * @param pulseRadius
+         * @param tolerance
+         * @return true if the pulse hits the turret, false otherwise
+         */
+        private boolean pulseHits(float dist, float pulseRadius, float tolerance) {
+            return dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance;
+        }
+
+        /**
+         * Checks if the SupportBuffTower is not powered based on its efficiency.
+         * @return true if efficiency is less than or equal to zero, false otherwise
+         */
+        private boolean isNotPowered() {
+            return efficiency <= 0;
         }
 
     }

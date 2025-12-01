@@ -224,23 +224,369 @@ Overall, the use case descriptions are correct, but the diagram doesn't fully re
 
 
 ## Implementation documentation
-(*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
+
+### SupportBuffTower Class
+
+
+`...\core\src\mindustry\world\blocks\defense\SuportBuffTower `
+
+In order to implement the new turret defense mechanic, we created a new class called `SupportBuffTower`, which extends the existing `PowerBlock` class which extends the `Block` class. 
+This class is responsible for providing buffs to nearby turrets within a specified radius.
+
+#### Code Snippet
+```java
+package mindustry.world.blocks.defense;
+
+
+import (...)
+
+import static mindustry.Vars.tilesize;
+
+public class SupportBuffTower extends PowerBlock {
+    public final float buffRange = 60f;
+    public final float baseDamageMultiplier = 2.5f;
+
+    public SupportBuffTower(String name) {
+        super(name);
+        update = true;
+        solid = true;
+        hasPower = true;
+        consumePower(1.2f);
+        buildTime = 120f;
+        health = 140;
+    }
+
+    @Override
+    public void setStats(){
+        super.setStats();
+
+        stats.add(Stat.damageMultiplier, baseDamageMultiplier, StatUnit.none);
+        stats.add(Stat.range, buffRange / Vars.tilesize, StatUnit.blocks);
+    }
+
+    @Override
+    public void drawPlace(int x, int y, int rotation, boolean valid) {
+        super.drawPlace(x, y, rotation, valid);
+        Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, buffRange, Pal.accent);
+    }
+
+    public class SupportBuffBuild extends Building {
+        float visualTimer = 60f;
+        float pulseTimer = 0f;
+        final float pulseDuration = 90f;
+
+        @Override
+        public void drawSelect() {
+            Drawf.dashCircle(x, y, buffRange, Pal.accent);
+        }
+
+        @Override
+        public void draw() {
+            super.draw();
+            if (efficiency <= 0f) return;
+            float radius = Mathf.lerp(0, buffRange, pulseTimer);
+            float alpha = 0.7f * Mathf.curve(pulseTimer, 0f, 0.5f) * (1f - pulseTimer);
+            Lines.stroke(3f * (1f - pulseTimer));
+            Draw.color(Pal.accent, alpha);
+            Lines.circle(x, y, radius);
+            Draw.reset();
+        }
+
+        @Override
+        public void updateTile() {
+            super.updateTile();
+
+            if (efficiency <= 0f) return;
+            visualTimer += Time.delta;
+
+            pulseTimer += Time.delta / pulseDuration;
+            if (pulseTimer >= 1f) {
+                pulseTimer = 0f;
+            }
+
+            applyDamageBoost();
+        }
+
+        void applyDamageBoost() {
+            if (efficiency <= 0) return;
+
+            float pulseRadius = Mathf.lerp(0, buffRange, pulseTimer);
+            float tolerance = 0.2f;
+
+            Vars.indexer.eachBlock(
+                    this.team,
+                    this.x,
+                    this.y,
+                    buffRange,
+                    b -> b instanceof Turret.TurretBuild,
+                    b -> {
+                        Turret.TurretBuild turret = (Turret.TurretBuild) b;
+
+                        // calcula distância do centro do buff até a torre
+                        float dist = Mathf.dst(x, y, turret.x, turret.y);
+
+                        // se o pulso "atingiu" a torre
+                        if (dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance) {
+
+                            // Efeito visual
+                            Fx.sparkExplosion.at(turret.x, turret.y, 0, Pal.accent);
+                        }
+                        // Aplica buff
+                        turret.supportDamageMultiplier = baseDamageMultiplier;
+                    }
+            );
+        }
+
+    }
+}
+```
+##### Methods
+
+- `setStats()`: Sets the statistics for the support buff tower, including damage multiplier and buff range.
+- `drawPlace(int x, int y, int rotation, boolean valid)`: Draws the placement indicator for the tower, including the buff range circle. Use Case: `UC3`
+- `SupportBuffBuild` class: Inner class that represents the building instance of the support buff tower.
+  - `drawSelect()`: Draws the selection indicator for the tower.
+  - `draw()`: Handles the visual effects of the tower, including the pulsing buff effect.
+  - `updateTile()`: Updates the tower's state, including applying damage boosts to nearby turrets. Use Case : `UC6`
+  - `applyDamageBoost()`: Applies the damage boost to turrets within the buff range when the pulse reaches them. Use Case: `UC4`, `UC5`
+
+### Turret Class
+
+`...\core\src\mindustry\world\blocks\defense\turrets\Turret `
+
+#### Changed `shoot` `UC6` method and `supportDamageMultiplier` variable
+```java
+(...) 
+public float supportDamageMultiplier = 1f;
+
+(...)
+BulletType buffedType = type.copy();
+buffedType.damage *= supportDamageMultiplier;
+(...)
+```
+
+
+This prevent turret damage from scaling permanently, the bullet type is copied during the shooting process.
+This ensures that:
+ - The original `BulletType` remains unchanged
+ - The damage multiplier applies only to the current shot
+ - No exponential or persistent damage boosts occur across multiple shots
+ - Other turrets using the same bullet type are not affected
+
+### Added resetSupportMultiplier()
+
+``` java
+ public void resetSupportMultiplier() {
+            supportDamageMultiplier = 1f;
+        }
+```
+This method is called in the end of the `updateTile` method.
+
+Calling resetSupportMultiplier() at the end of updateTile() ensures that each turret:
+- Starts every tick with a default multiplier of 1f
+- Only receives the buff if a SupportBuffTower is in range during that tick
+- Never keeps the buff permanently
+- Does not accumulate or stack damage boosts across updates
+- This guarantees consistent, non-persistent buff behavior and prevents unintended damage scaling.
+
+### Block Class
+
+`...\core\src\mindustry\content\Block `
+
+#### Initialization of `supportBuffTower`
+
+Use Cases: `UC1`, `UC3`
+
+```java
+supportBuffTower = new SupportBuffTower("support-buff-tower") {{
+    requirements(Category.turret, with(Items.copper, 200, Items.lead, 150, Items.silicon, 100));
+    size = 1;
+    update = true;
+}};
+```
+This defines the necessary resources for the construction of the Support Buff Tower.
+
+### Package support-buff-tower
+
+`\...\core\assets-raw\sprites\blocks\turrets\suppport-buff-tower`
+
+(*Sprites and visual assets for the Support Buff Tower.*)
+![SupportBuffTowerSprites.png](SupportBuffTowerSprites.png)
+
+**This Represents the image of out tower.**
+
+
+### Language Descriptions
+
+`...\core\assets\bundles\bundle.properties`
+
+``` properties
+(...)
+block.support-buff-tower.name = Advance Support Tower
+(...)
+block.support-buff-tower.description = Boost the damage of the nearby towers.
+(...)
+```
+
+**This adds the name and description of the tower in the game.**
+
+
 ### Implementation summary
-(*Summary description of the implementation.*)
+We have made changes throughout the codebase to implement the new turret defense mechanic.
+The main addition is the `SupportBuffTower` class, which handles the logic for buffing nearby turrets.
+Other changes include modifications to the `Turret` class to accommodate the damage boost functionality.
+We also created new assets for the tower and updated the language files to include the tower's name and description.
 #### Review
 *(Please add your implementation summary review here)*
 
 ### Class diagrams
-(*Class diagrams and their discussion in natural language.*)
+![Class_Diagram_US2](Class_Diagram.png)
 ### Review
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+![Sequence_Diagram](Sequence_Diagram.png)
 #### Review
 *(Please add your sequence diagram review here)*
 
 ## Test specifications
-(*Test cases specification and pointers to their implementation, where adequate.*)
+`...\tests\src\test\java\mindustry.world.blocks.defense\SupportBuffTowerTest`
+
+### Initialization of the tower
+Implemented a setUp method annotated with `@BeforeEach` to properly initialize the testing environment.
+This method mocks Vars.content to prevent NullPointerException due to missing global game state.
+Additionally, it assigns a unique identifier to each SupportBuffTower instance using System.nanoTime() to
+resolve IllegalArgumentException conflicts caused by duplicate content names during sequential test execution.
+
+```java
+    @BeforeEach
+    void setUp() {
+        // 1. Initialize Vars.content (Previous fix)
+        if (Vars.content == null) {
+            Vars.content = new ContentLoader();
+        }
+
+        // for block logic that interacts with the map (like applyDamageBoost -> Vars.indexer.eachBlock).
+        if (Vars.indexer == null) {
+            Vars.indexer = new BlockIndexer();
+            Vars.world = new World(); // Required by BlockIndexer or block methods
+            Vars.state = new GameState();
+        }
+        // Initialize the new tower for each test
+        // We add the System.nanoTime() to ensure a unique name for each test instance
+        tower = new SupportBuffTower("support-buff-tower-" + System.nanoTime());
+
+        // Initialize the building
+        // It is an inner class so we must initialize it manually
+        build = tower.new SupportBuffBuild();
+    }
+```
+### Test 1: Base Attributes Verification
+This unit test method's main objective is to verify the correct initialization of the base attributes and constants of the SupportBuffTower class.
+
+```java
+    @Test
+    @DisplayName("Must initialize with the correct base attributes")
+    void testBaseStats() {
+        assertEquals(2.5f, tower.baseDamageMultiplier, "The multiplier must be 2.5");
+        assertEquals(60f, tower.buffRange, "The range buff must be 60f");
+        assertEquals(120f, tower.buildTime, "The time to build must be 120f or 2 seconds");
+        assertTrue(tower.hasPower, "The block must need power");
+        assertTrue(tower.solid, "The block must be solid");
+        assertTrue(tower.update, "The block must have an update logic");
+    }
+
+```
+
+### Test 2 : Power Logic Verification
+```java
+    @Test
+    @DisplayName("Power Logic: Must return true if efficiency is <= 0")
+    void testIsNotPoweredLogic() throws Exception {
+        // Access private method isNotPowered() via Reflection
+        Method isNotPoweredMethod = SupportBuffBuild.class.getDeclaredMethod("isNotPowered");
+        isNotPoweredMethod.setAccessible(true);
+
+        // Case 1: No power (efficiency = 0)
+        build.efficiency = 0f;
+        boolean resultNoPower = (boolean) isNotPoweredMethod.invoke(build);
+        assertTrue(resultNoPower, "Must return true when efficiency is 0");
+
+        // Case 2: With power (efficiency = 1)
+        build.efficiency = 1f;
+        boolean resultHasPower = (boolean) isNotPoweredMethod.invoke(build);
+        assertFalse(resultHasPower, "Must return false when efficiency is 1");
+    }
+```
+This test verifies the internal power-validation logic of `SupportBuffBuild` by invoking the private `isNotPowered() method through reflection. It checks that the method correctly returns true when efficiency is zero (no power) and false when efficiency is positive (powered).
+### Test 3 : Buildup Progress Verification
+```java
+    @Test
+    @DisplayName("3. Buildup Progress: Should accumulate pulseTimer when powered and stop when unpowered")
+    void testBuildupProgress() throws Exception {
+        // Accesses the private pulseTimer field via Reflection to monitor progress
+        Field pulseTimerField = SupportBuffBuild.class.getDeclaredField("pulseTimer");
+        pulseTimerField.setAccessible(true);
+
+        // Test pulse when tower is powered
+        build.efficiency = 1f;
+        pulseTimerField.set(build, 0.5f); // Set initial pulseTimer state
+        float initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate tile update
+        build.updateTile();
+        float pulseTimerAfterUpdate = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer increased
+        assertTrue(pulseTimerAfterUpdate > initialPulseTimer, "The accumulation 'pulseTimer' must increase when powered");
+
+        // Test pulse when tower is unpowered
+        build.efficiency = 0f;
+        pulseTimerField.set(build, 0.6f); // New initial pulseTimer state
+        initialPulseTimer = pulseTimerField.getFloat(build);
+
+        // Simulate update
+        build.updateTile();
+        float pulseTimerAfterNoPower = pulseTimerField.getFloat(build);
+
+        // Check if pulseTimer did not change (because updateTile() returns immediately if not powered)
+        assertEquals(initialPulseTimer, pulseTimerAfterNoPower, 0.001f, "The accumulation 'pulseTimer' must not change when unpowered");
+    }
+```
+This test validates the buildup progression of `SupportBuffBuild` by inspecting the private *pulseTimer* field via *reflection*. It ensures that pulseTimer increases during `updateTile()` when the build is powered, 
+and remains unchanged when unpowered, confirming correct pulse accumulation behavior.
+
+### Test 4: Power Consumption Configuration
+```java
+    @Test
+    @DisplayName("Power Consumption: Values configured correctly")
+    void testPowerConsumptionConfig() {
+        // Verify if consumption was configured (exact value is in consPower.capacity or usage)
+        // Since Mindustry uses a complex consumer system, we verify if it exists
+        assertNotNull(tower.consumers, "Consumer list must not be null");
+        assertTrue(tower.hasConsumers, "Block must have registered consumers");
+    }
+```
+This test checks that the block’s power consumption system is properly configured. 
+It verifies that the `consumers` list is initialized and that the block correctly reports having registered 
+power consumers.
+
+> NOTE: We also made manual tests in the game to verify the correct functionality of the tower.
 ### Review
 *(Please add your test specification review here)*
+
+### Commits:
+
+| Description                                                                                       | ID | Author |
+|:--------------------------------------------------------------------------------------------------|:-----|:-------|
+ Support Tower Implementation                                                                      |375796f0431aaf6cb07b04a4a3bcbd15a9d7cc82 | Filipe Nobre 67850
+| Fixed bug on damageMultiplier                                                                     | 77cff7f85a0b5a70e2a0ae8a00cfab68cdd38f93 | Dinis Raleiras 67819
+| Added the documentation to the User Storie 2.                                                     | 1f755ce15ec0254971d1eeb7d307aaa9bcbb46b2 | Dinis Raleiras 67819
+| Added Portuguese Bundle                                                                           | dd34f0f7a932389fce25bfed3c273f34b7cc14b1 | Filipe Nobre 67850
+| Commented SupportBuffTower class                                                                  | 4ae7b28eee705632bc45f0014185a0c523600d1c | Dinis Raleiras 67819
+| Added auxiliar methods to avoid confuse and duplicated code                                       | bfc9885382a5b8b8958ff8885fa6e3be5e680e13 | Filipe Nobre 67850
+| Comented the new methods in SupportBuffTower class                                                | 9fff5b1a087be757440059abe2aacf79fbeedd9a | Dinis Raleiras 67819
+| Added Test Class with initial tower setup                                                         | a2355b8cb2d325216ea86bb3ac16771777181ea8 | Filipe Nobre 67850
+| Added the second Unit test for the User Story 2 - Milestone 3                                     | b1823d7870d03f9e205290d87bbf99793e2cb35f | Dinis Raleiras 67819
+| Added a test for the pulse update                                                                 | 2b636b5561534ca7a19fa81a26be1798c5c0ee0e | Filipe Nobre 67850
+| Added test # 4 to the US 2 - Milestone 3 and minor fix to SupportBuffTower class found by testing | 006d592b8c3ef9ec393464f065481398c91ffcd9 | Dinis Raleiras 67819
