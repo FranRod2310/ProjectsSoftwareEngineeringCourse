@@ -40,6 +40,19 @@ public class MapMarkers implements Iterable<ObjectiveMarker>{
             }
         }
     }
+    // adicionado por nos para remove atraves do objeto
+    public void remove(ObjectiveMarker marker){
+        int foundId = -1;
+        for(var entry : map.entries()){
+            if(entry.value == marker){
+                foundId = entry.key;
+                break;
+            }
+        }
+        if(foundId != -1){
+            remove(foundId);
+        }
+    }
 
     public @Nullable ObjectiveMarker get(int id){
         return map.get(id);

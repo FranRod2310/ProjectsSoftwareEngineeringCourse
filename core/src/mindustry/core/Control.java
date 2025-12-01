@@ -29,6 +29,7 @@ import mindustry.maps.Map;
 import mindustry.maps.*;
 import mindustry.net.*;
 import mindustry.type.*;
+import mindustry.ui.Marker; //nossa clase
 import mindustry.ui.dialogs.*;
 import mindustry.world.*;
 import mindustry.world.blocks.storage.CoreBlock.*;
@@ -50,6 +51,7 @@ public class Control implements ApplicationListener, Loadable{
     public Saves saves;
     public SoundControl sound;
     public InputHandler input;
+    public Marker marker; // os nossos markers
     public AttackIndicators indicators;
 
     private Interval timer = new Interval(2);
@@ -593,6 +595,8 @@ public class Control implements ApplicationListener, Loadable{
     @Override
     public void init(){
         platform.updateRPC();
+        marker = new Marker(); // criar markers
+        marker.init(); // init markers
 
         //display UI scale changed dialog
         if(Core.settings.getBool("uiscalechanged", false)){
@@ -664,9 +668,13 @@ public class Control implements ApplicationListener, Loadable{
 
         if(state.isGame()){
             input.update();
+
             if(!state.isPaused()){
                 indicators.update();
             }
+            if(marker != null){
+                marker.update();
+            } // update do markers
 
             //auto-update rpc every 5 seconds
             if(timer.get(0, 60 * 5)){
