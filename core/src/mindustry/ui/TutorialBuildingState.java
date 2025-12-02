@@ -28,6 +28,8 @@ public class TutorialBuildingState implements TutorialState {
     private boolean convBuilt;
     private Cons<EventType.DrawEvent> drawDrill;
     private Cons<EventType.DrawEvent> drawConveyer;
+    private int convWidth;
+    private int convHeight;
 
     private static final String INSTRUCTIONS =
             "Great! Now that you've researched some buildings, it's time to build your first structures.\n\n" +
@@ -47,6 +49,8 @@ public class TutorialBuildingState implements TutorialState {
         drillBuilt = false;
         justBuiltDrill = true;
         convBuilt = false;
+        convHeight = tilesize;
+        convWidth = tilesize;
         closestOre = Vars.indexer.findClosestOre(Vars.player.x, Vars.player.y, Items.copper);
         // Draw highlight for drill placement
         drawDrill = (e) -> {
@@ -62,91 +66,40 @@ public class TutorialBuildingState implements TutorialState {
         Events.on(EventType.DrawEvent.class, drawDrill);
         // Draw highlight for conveyer placement
         drawConveyer = (e) -> {
-            float[] closestPosToCore = getClosestPosToCore();
-            Seq<Point2> points = Placement.pathfindLine(true, (int)(closestPosToCore[0]), (int)(closestPosToCore[1]), (int)(closestPosToCore[2]), (int)(closestPosToCore[3]));
-            float width = 0;
-            float height = 0;
-            Point2 point = null;
-            if (points.size > 0)
-                point = points.get(0);
-            for(int i = 0; i < points.size - 1; i++) {
-                Point2 next = points.get(i + 1);
-                if (point.y == next.y) {
-                    width += 1;
-                }
-                else if (point.x == next.x) {
-                    height += 1;
-                } else {
-                    point = next;
-                }
+            CoreBlock.CoreBuild core = Vars.player.team().core();
+            int halfTileSize = tilesize / 2;
+            Seq<Point2> horPoints = Placement.pathfindLine(true, (int) (closestOre.worldx()) + halfTileSize + tilesize, (int) (closestOre.worldy()) + halfTileSize, (int) (core.x) + halfTileSize, (int) (closestOre.worldy()) + halfTileSize);
+            convWidth = Math.max(horPoints.size - tilesize, tilesize);
+            //if the path is horizontal
+            boolean isHorizontalPath = (Math.abs(closestOre.worldy() + halfTileSize - core.y) <= tilesize);
+            if (isHorizontalPath)
+                convWidth -= tilesize;
+            Drawf.dashRect(Color.gold, closestOre.worldx() + halfTileSize + tilesize, closestOre.worldy() + halfTileSize, convWidth, tilesize);
+            if (!isHorizontalPath) {
+                Seq<Point2> verPoints = Placement.pathfindLine(true, (int) (core.x), (int) (closestOre.worldy()) + halfTileSize, (int) (core.x), (int) (core.y) - halfTileSize);
+                convHeight = Math.max(verPoints.size - tilesize, tilesize);
+                Drawf.dashRect(Color.gold, core.x - halfTileSize, closestOre.worldy() + halfTileSize, tilesize, convHeight);
             }
-            if (width == 0 && height > 0)
-                width = tilesize;
-            else if (height == 0 && width> tilesize)
-                height = tilesize;
-            Drawf.dashRect(Color.gold, closestPosToCore[0], closestPosToCore[1], width, height);
-            /*float xDiff = closestPosToCore[2] - closestPosToCore[0];
-            float yDiff = closestPosToCore[3] - closestPosToCore[1];
-            Drawf.dashRect(Color.gold, closestPosToCore[0], closestPosToCore[1], xDiff, tilesize);
-            Drawf.dashRect(Color.gold, closestPosToCore[0] + xDiff, closestPosToCore[1], tilesize, yDiff);*/
         };
-    }
-
-
-    private float[] getClosestPosToCore() {
-        CoreBlock.CoreBuild core = Vars.player.team().core();
-        float xCore = core.x;
-        float yCore = core.y;
-        float xCop = closestOre.worldx();
-        float yCop = closestOre.worldy();
-        float halfXToAdd = 0.5f * tilesize;
-        float halfYToAdd = 0.5f * tilesize;
-        if (xCore <= xCop) {
-            xCore += Blocks.tutorialCoreShard.size * tilesize * 0.5f;
-        } else {
-            xCore -= Blocks.tutorialCoreShard.size * tilesize * 0.5f;
-        }
-        if (yCore <= yCop) {
-            yCore += Blocks.tutorialCoreShard.size * tilesize * 0.5f + tilesize * 0.5f;
-        } else {
-            yCore -= Blocks.tutorialCoreShard.size * tilesize * 0.5f + tilesize * 0.5f;
-        }
-
-        float drillSize = Blocks.tutorialMechanicalDrill.size;
-        float[] closestCoor = {xCop, yCop, xCore, yCore};
-        float bestDistance = Mathf.dst2(xCore, yCore, closestCoor[0], closestCoor[1]);
-        for (float i = 0; i < drillSize * tilesize + tilesize; i+= tilesize) {
-            for (int j = 0; j < drillSize * tilesize + tilesize; j++) {
-                Tile tile = Vars.world.tileWorld(xCop - tilesize + (i * tilesize), yCop - tilesize + (j * tilesize));
-                if (tile == null || tile.block() != Blocks.tutorialMechanicalDrill) continue;
-                float currentDistance = Mathf.dst2(xCore, yCore, xCop - tilesize + (i * tilesize), yCop - tilesize + (j * tilesize));
-                if (currentDistance < bestDistance) {
-                    closestCoor[0] = xCop - tilesize + (i * tilesize);
-                    closestCoor[1] = yCop - tilesize + (j * tilesize);
-                }
-            }
-        }
-        closestCoor[0] += halfXToAdd + tilesize;
-        closestCoor[1] += halfYToAdd;
-        closestCoor[2] += tilesize;
-
-        return closestCoor;
     }
 
     /**
      * Check if the conveyer belt is built correctly.
      */
     private boolean checkConveyerBuilt() {
-        float x = closestOre.worldx();
-        float y = closestOre.worldy();
-        for (int i = 0; i < 4; i++) {
-            Tile tile = Vars.world.tileWorld(x + (tilesize * 1.5f) + (i * tilesize), y);
+        int halfTileSize = tilesize / 2;
+        float x = closestOre.worldx() + halfTileSize + tilesize;
+        float lastX = x;
+        float y = closestOre.worldy() + halfTileSize;
+        for (int i = 0; i < convWidth / tilesize; i++) {
+            Tile tile = Vars.world.tileWorld(x + (i * tilesize), y);
             if (tile == null || tile.block() != Blocks.tutorialConveyor) {
                 return false;
             }
+            lastX = x + (i * tilesize);
         }
-        for (int i = 0; i < 2; i++) {
-            Tile tile = Vars.world.tileWorld(x + (tilesize * 4.5f), y + (i * tilesize));
+        for (int i = 0; i < convHeight / tilesize; i++) {
+            Tile tile = Vars.world.tileWorld(lastX, y + (i * tilesize));
             if (tile == null || tile.block() != Blocks.tutorialConveyor) {
                 return false;
             }
