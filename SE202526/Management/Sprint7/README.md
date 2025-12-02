@@ -31,7 +31,7 @@ So we define that this week we will:
 
 ### Scrum Board in the middle of the sprint
 
-Please add the scrumboard picture here.
+![Scrum board week middle](Scrum_Board_Sprint7_Mid.png)
 
 ### Scrum Board at the end of the sprint
 

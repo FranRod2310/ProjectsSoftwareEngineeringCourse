@@ -29,7 +29,8 @@ The only point to improve is that "step-by-step tutorial" is too vague; it could
 
 ## Use case diagram
 
-<img width="999" height="541" alt="image" src="https://github.com/user-attachments/assets/1f17fff3-f29b-48db-a8f7-408c2f794b0f" />
+<img width="1196" height="783" alt="image" src="https://github.com/user-attachments/assets/4880777f-3245-4306-9aba-0d488143e7af" />
+
 
 
 
@@ -76,6 +77,7 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
+
 ## Use Case: Basic Tutorial
 
 **ID:** 2
@@ -107,6 +109,8 @@ Resources are added to loadout of the new player.
 The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
+
+   
 
 
 ## Use Case: Research Tutorial
@@ -154,6 +158,9 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
+
+
+
 ## Use Case: Building tutorial
 **ID:** 4
 
@@ -195,6 +202,8 @@ The new player cancels the tutorial.
 1. System starts the `Tutorial Cancelled` use case.
 
 
+
+
 ## Use Case: Defense Tutorial
 
 **ID:** 5
@@ -214,25 +223,24 @@ The player is in tutorial world.
 
 **Main flow:**
 1. Use case starts when the building tutorial ends.
-2. System shows the path of incoming enemies.
+2. System warms of incoming enemies.
 3. System informs player of the use of turrets.
 4. Camera moves to suggested turret placement location.
 5. System highlights a recommended turret location spot.
 7. Player selects a turret from the menu.
 8. Player places the turret in the highlighted location.
 9. System highlights a short wall segment in front of the turret.
-10. System highlights wall item location in the menus.
+10. System tells player the use of walls.
 11. Player places basic walls in the highlighted area.
-12. System highlights the ammo type required by the turret.
+12. System explains how ammo works.
 13. System informs player on how to load ammo into turrets.
-14. System highlights a suggested path for conveyor placement into turrets.
+14. System highlights the turret.
 15. Player supplies the turret with ammo using conveyors.
-16. Camera moves to enemy spawn location.
-17. Enemy wave arrives.
-18. Camera follows turret actions.
-19. Turret fires and the walls absorb damage.
-20. System notifies the player that they have successfully defended the base.
-21. The use case ends.
+16. Enemy wave arrives.
+17. Camera follows turret actions.
+18. Turret fires and the walls absorb damage.
+19. System notifies the player that they have successfully defended the base.
+20. The use case ends.
 
 **Postconditions:**
 The enemy wave is defeated.
@@ -244,14 +252,11 @@ A1 - Player places turret incorrectly (can be activated in 8):
 1. System highlights the correct location again.
 2. Use case resumes at Main Flow step 8.
 
-A2 - Turret receives no ammo (can be activated in 15):
-
-1. The system highlights the ammo source and the turret’s ammo bar.
-2. The use case resumes at Main Flow step 15.
-
 The new player cancels the tutorial.
 (can be activated any time)
 1. System starts the `Tutorial Cancelled` use case.
+
+
 
 ## Use Case: Tutorial cancelled
 **ID:** 6
@@ -266,13 +271,12 @@ New Player
 None
 
 **Preconditions:**
-New player clicked on cancel and the player is in the tutorial world.
+New player clicked on quit and the player is in the tutorial world.
 
 **Main flow:**
 1. The alternative flow can start anywhere.
-2. The system shows a pop-up message "Tutorial ended".
-3. The system returns to the real world.
-4. The use case ends.
+2. The system returns to main menu.
+3. The use case ends.
 
 **Postconditions:**
 1. The player is back to the real world
@@ -281,12 +285,14 @@ New player clicked on cancel and the player is in the tutorial world.
 
 None
 
+
+
 ### Review
 The use case descriptions are well-written, with clear actors, objectives, detailed flows, and inclusion of sub-use-cases.
 Postconditions could be improved by specifying the player’s status and the final state of the map. 
 Overall, the descriptions are of high quality.
 The diagram effectively represents the use cases, correctly identifying the key actors and the different tutorial modules .
-The <<Include>> relationships, such as the dependency on Research for both Building and Defense, align well with the dependencies described in the textual flows.
+
 
 
 ## Implementation documentation
@@ -326,19 +332,57 @@ The <<Include>> relationships, such as the dependency on Research for both Build
 
 `mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
 ### Implementation summary
-(*Summary description of the implementation.*)
+Our implementation is a Tutorial, which the user can choose to start in the initial menu. When we started the implementation we came across multiple complications. Half of the time needed to implement our tutorial was spent on preparing the world for it. After a few tries we understood than we needed to create a new world, otherwise the sector would appear on the campaign map, on the respective world. For the same reason a new sector was needed, for this new world. A new sector means a new map, so we made a new map too, with the properties we thought relevant. Afterwards some messages and user options were not adequated for our implementation, so that too we needed to dig up and find where it was being done. Even the quit menu (when pressed escape in the tutorial) was modified to our interest, for example, we didn't want it to be able to save the state of the tutorial once exited. Some buttons were also disable like the planet icon on the lower right corner, and the option to change the world's techtree (in the research menu). When we finally were going to start with our implementation, we discovered that modifying the research tree would change in it's world to, so we made our own techtree with our own blocks, with their own images, because every block points to the same, it's not possible to instantiate.
+Then the real implementation start, one class that manages the tutorial and multiple tutorial states. The `Tutorial` manages when the multiple states start and finish, and it is the one that comunicates with the other classes.
+The `TutorialBasicState` handles the mining of the resources. It explains the user how to gather resources, and marks itself as complete when the user has enough resources to complete the researches.
+The `TutorialResearchState` explains to the user how to research blocks. When all 4 blocks are researched, it passes on to the next state.
+The `TutorialBuildingState` shows where to build a drill and how it can be transported to the core. This part caused also some struggle as the algorithm to calculate the path to the core wasn´t the easiest. This state ends when the drill and the conveyer have been built in the indicated places. 
+
 
 #### Review
 *(Please add your implementation summary review here)*
 
 ### Class diagrams
-(*Class diagrams and their discussion in natural language.*)
+<img width="2140" height="1026" alt="image" src="https://github.com/user-attachments/assets/981419d3-ee43-42ee-b7ce-d587aa9b119c" />
+Despite the large number of classes we changed/edited, we choose to only show the most important ones, that we build from scratch.
+We used the state pattern to implement our user story as we though that it would be the perfect case. 
+We have a Tutorial class, which is the class that manages the tutorial, and which the other classes in the game can interact with. It stores the order of the multiple states of the tutorial, and has the power to start and end each state.
+There is a TutorialState Interface, which has the common methods between the multiple states: enter, update, exit and setContext. All 4 state classes use this interface with their additional logic methods, and have a context variable, that stores the Tutorial. The TutorialResearchState also uses the TutorialTechTree to manage it's state. The TutorialDefenseState also has it's own enum, Step, with the various steps that the tutorial goes through.
 
 ### Review
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-(*Sequence diagrams and their discussion in natural language.*)
+## Game tutorial
+![GAME TUTORIAL](https://github.com/user-attachments/assets/787e38ea-5f65-41be-9e18-04a493cd152c)
+
+Main controller for the tutorial experience. Initializes the tutorial world and then executes the four sub-tutorials (Basic, Research, Building, Defense) in a specific order using ref freames. It uses an alt fragment to handle the player cancelling the tutorial at any time versus completing it successfully.
+
+## Basic tutorial
+<img width="882" height="636" alt="BASIC TUTORIAL" src="https://github.com/user-attachments/assets/fdff311e-0d16-4a56-9f06-d71ee7186274" />
+
+Details the process of gathering resources. The loop represents the updates every frame. Inside the loop, the controller continuously instructs the renderer to highlight the closest copper ore. The loop continues until the core reports that the required amount of copper has been collected, moving to the next state.
+
+## Research tutorial
+<img width="1140" height="942" alt="RESEARCH TUTORIAL" src="https://github.com/user-attachments/assets/3b530dc0-50e3-42a8-977d-e333511615ed" />
+
+Focus on UI explanation. Models the sequence of the player opening the UI, navigating the Research Dialog, and unlocking technology. It uses an alt fragment to check resource costs: if the player lacks resources, the system shows an error; if they have enough, the system removes items from the core and unlocks the Tech Node.
+
+## Building tutorial
+<img width="1515" height="1304" alt="BUILDING TUTORIAL" src="https://github.com/user-attachments/assets/25b0489b-9ec3-4329-b373-54c3d6bb7f9f" />
+
+Models the placement of drills and conveyors. Highlights and checks valid placement.
+
+## Defense tutorial
+<img width="1467" height="1798" alt="DEFENSE TUTORIAL" src="https://github.com/user-attachments/assets/22131783-55eb-41d9-bdd3-b711e1a2412a" />
+
+Models defending enemy waves and using turrets. It introduces a secondary actor (Enemy Spawner) that creates Enemy Units. The final section uses a combat loop that represents the turrets destroying enemies.
+
+## Cancel tutorial
+<img width="847" height="356" alt="CANCEL TUTORIAL" src="https://github.com/user-attachments/assets/c69f1e35-fe1e-4a92-9874-bbe1405b2443" />
+
+Termination sequence when a player clicks "Quit". It shows the controller performing cleanup like calling exit() on the active state to remove floating arrows or highlights before instructing the Game State to load the Main Menu and return the player to the real world.
+
 
 #### Review
 *(Please add your sequence diagram review here)*

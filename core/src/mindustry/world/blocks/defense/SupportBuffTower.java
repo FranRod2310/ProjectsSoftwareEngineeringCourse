@@ -44,6 +44,8 @@ public class SupportBuffTower extends PowerBlock {
         consumePower(1.2f);
         buildTime = 120f;
         health = 140;
+        consumesPower = true;
+        hasConsumers = true;
     }
 
     @Override
@@ -77,7 +79,7 @@ public class SupportBuffTower extends PowerBlock {
         @Override
         public void draw() {
             super.draw();
-            if (efficiency <= 0f) return;
+            if (isNotPowered()) return;
             float radius = Mathf.lerp(0, buffRange, pulseTimer);
             float alpha = 0.7f * Mathf.curve(pulseTimer, 0f, 0.5f) * (1f - pulseTimer);
             Lines.stroke(3f * (1f - pulseTimer));
@@ -90,7 +92,7 @@ public class SupportBuffTower extends PowerBlock {
         public void updateTile() {
             super.updateTile();
 
-            if (efficiency <= 0f) return;
+            if (isNotPowered()) return;
             visualTimer += Time.delta;
 
             pulseTimer += Time.delta / pulseDuration;
@@ -106,7 +108,7 @@ public class SupportBuffTower extends PowerBlock {
          * Additionally, triggers a visual effect when the traveling pulse circle reaches a turret.
          */
         void applyDamageBoost() {
-            if (efficiency <= 0) return;
+            if (isNotPowered()) return;
 
             float pulseRadius = Mathf.lerp(0, buffRange, pulseTimer);
             float tolerance = 0.2f;
@@ -124,7 +126,7 @@ public class SupportBuffTower extends PowerBlock {
                         float dist = Mathf.dst(x, y, turret.x, turret.y);
 
                         // se o pulso "atingiu" a torre
-                        if (dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance) {
+                        if (pulseHits(dist, pulseRadius,  tolerance)) {
 
                             // Efeito visual
                             Fx.sparkExplosion.at(turret.x, turret.y, 0, Pal.accent);
@@ -133,6 +135,25 @@ public class SupportBuffTower extends PowerBlock {
                         turret.supportDamageMultiplier = baseDamageMultiplier;
                     }
             );
+        }
+
+        /**
+         * Determines if the pulse circle has reached a turret based on distance, pulse radius, and tolerance.
+         * @param dist
+         * @param pulseRadius
+         * @param tolerance
+         * @return true if the pulse hits the turret, false otherwise
+         */
+        private boolean pulseHits(float dist, float pulseRadius, float tolerance) {
+            return dist >= pulseRadius - tolerance && dist <= pulseRadius + tolerance;
+        }
+
+        /**
+         * Checks if the SupportBuffTower is not powered based on its efficiency.
+         * @return true if efficiency is less than or equal to zero, false otherwise
+         */
+        private boolean isNotPowered() {
+            return efficiency <= 0;
         }
 
     }

@@ -4,5 +4,5 @@
 3. Luís Muacho 68301
 4. Miguel Rosalino (68210)
 5. Leandro Rodrigues (68211)
-6. ffff ffff (fffff)
-7. gggg gggg (ggggg)
+6. Francisco Rodrigues (67753)
+7. Filipe Nobre (67850)
