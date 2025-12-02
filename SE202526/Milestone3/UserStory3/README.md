@@ -332,7 +332,12 @@ The diagram effectively represents the use cases, correctly identifying the key 
 
 `mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
 ### Implementation summary
-(*Summary description of the implementation.*)
+Our implementation is a Tutorial, which the user can choose to start in the initial menu. When we started the implementation we came across multiple complications. Half of the time needed to implement our tutorial was spent on preparing the world for it. After a few tries we understood than we needed to create a new world, otherwise the sector would appear on the campaign map, on the respective world. For the same reason a new sector was needed, for this new world. A new sector means a new map, so we made a new map too, with the properties we thought relevant. Afterwards some messages and user options were not adequated for our implementation, so that too we needed to dig up and find where it was being done. Even the quit menu (when pressed escape in the tutorial) was modified to our interest, for example, we didn't want it to be able to save the state of the tutorial once exited. Some buttons were also disable like the planet icon on the lower right corner, and the option to change the world's techtree (in the research menu). When we finally were going to start with our implementation, we discovered that modifying the research tree would change in it's world to, so we made our own techtree with our own blocks, with their own images, because every block points to the same, it's not possible to instantiate.
+Then the real implementation start, one class that manages the tutorial and multiple tutorial states. The `Tutorial` manages when the multiple states start and finish, and it is the one that comunicates with the other classes.
+The `TutorialBasicState` handles the mining of the resources. It explains the user how to gather resources, and marks itself as complete when the user has enough resources to complete the researches.
+The `TutorialResearchState` explains to the user how to research blocks. When all 4 blocks are researched, it passes on to the next state.
+The `TutorialBuildingState` shows where to build a drill and how it can be transported to the core. This part caused also some struggle as the algorithm to calculate the path to the core wasn´t the easiest. This state ends when the drill and the conveyer have been built in the indicated places. 
+
 
 #### Review
 *(Please add your implementation summary review here)*
