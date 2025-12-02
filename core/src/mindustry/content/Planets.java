@@ -15,40 +15,64 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 
-public class Planets{
+public class Planets {
     public static Planet
-    sun,
-    erekir,
-    tantros,
-    serpulo,
-    gier,
-    notva,
-    verilus;
+            sun,
+            erekir,
+            tantros,
+            serpulo,
+            gier,
+            notva,
+            verilus,
+            tutorialPlanet;
 
-    public static void load(){
-        sun = new Planet("sun", null, 4f){{
+    public static void load() {
+        sun = new Planet("sun", null, 4f) {{
             bloom = true;
             accessible = false;
 
             meshLoader = () -> new SunMesh(
-                this, 4,
-                5, 0.3, 1.7, 1.2, 1,
-                1.1f,
-                Color.valueOf("ff7a38"),
-                Color.valueOf("ff9638"),
-                Color.valueOf("ffc64c"),
-                Color.valueOf("ffc64c"),
-                Color.valueOf("ffe371"),
-                Color.valueOf("f4ee8e")
+                    this, 4,
+                    5, 0.3, 1.7, 1.2, 1,
+                    1.1f,
+                    Color.valueOf("ff7a38"),
+                    Color.valueOf("ff9638"),
+                    Color.valueOf("ffc64c"),
+                    Color.valueOf("ffc64c"),
+                    Color.valueOf("ffe371"),
+                    Color.valueOf("f4ee8e")
             );
         }};
 
-        erekir = new Planet("erekir", sun, 1f, 2){{
+        tutorialPlanet = new Planet("tutorialPlanet", null, 1f, 2) {{
+            loadPlanetData = true;
+            generator = new SerpuloPlanetGenerator();
+            meshLoader = () -> new HexMesh(this, 6);
+            cloudMeshLoader = () -> new MultiMesh(
+                    new HexSkyMesh(this, 11, 0.15f, 0.13f, 5, new Color().set(Pal.spore).mul(0.9f).a(0.75f), 2, 0.45f, 0.9f, 0.38f),
+                    new HexSkyMesh(this, 1, 0.6f, 0.16f, 5, Color.white.cpy().lerp(Pal.spore, 0.55f).a(0.75f), 2, 0.45f, 1f, 0.41f)
+            );
+
+            launchCapacityMultiplier = 0.5f;
+            sectorSeed = 2;
+            allowWaves = true;
+            allowWaveSimulation = true;
+            allowLaunchLoadout = true;
+            //doesn't play well with configs
+            prebuildBase = false;
+            startSector = 200;
+            alwaysUnlocked = true;
+            accessible = false;
+            visible = false;
+        }};
+
+
+        erekir = new Planet("erekir", sun, 1f, 2) {{
             generator = new ErekirPlanetGenerator();
             meshLoader = () -> new HexMesh(this, 5);
             cloudMeshLoader = () -> new MultiMesh(
-                new HexSkyMesh(this, 2, 0.15f, 0.14f, 5, Color.valueOf("eba768").a(0.75f), 2, 0.42f, 1f, 0.43f),
-                new HexSkyMesh(this, 3, 0.6f, 0.15f, 5, Color.valueOf("eea293").a(0.75f), 2, 0.42f, 1.2f, 0.45f)
+                    new HexSkyMesh(this, 2, 0.15f, 0.14f, 5, Color.valueOf("eba768").a(0.75f), 2, 0.42f, 1f, 0.43f),
+                    new HexSkyMesh(this, 3, 0.6f, 0.15f, 5, Color.valueOf("eea293").a(0.75f), 2, 0.42f, 1.2f, 0.45f)
             );
             alwaysUnlocked = true;
             landCloudColor = Color.valueOf("ed6542");
@@ -104,7 +128,7 @@ public class Planets{
             gen.max += 2;
         });
 
-        tantros = new Planet("tantros", sun, 1f, 2){{
+        tantros = new Planet("tantros", sun, 1f, 2) {{
             generator = new TantrosPlanetGenerator();
             meshLoader = () -> new HexMesh(this, 4);
             accessible = false;
@@ -120,13 +144,13 @@ public class Planets{
             };
         }};
 
-        serpulo = new Planet("serpulo", sun, 1f, 3){{
+        serpulo = new Planet("serpulo", sun, 1f, 3) {{
             loadPlanetData = true;
             generator = new SerpuloPlanetGenerator();
             meshLoader = () -> new HexMesh(this, 6);
             cloudMeshLoader = () -> new MultiMesh(
-                new HexSkyMesh(this, 11, 0.15f, 0.13f, 5, new Color().set(Pal.spore).mul(0.9f).a(0.75f), 2, 0.45f, 0.9f, 0.38f),
-                new HexSkyMesh(this, 1, 0.6f, 0.16f, 5, Color.white.cpy().lerp(Pal.spore, 0.55f).a(0.75f), 2, 0.45f, 1f, 0.41f)
+                    new HexSkyMesh(this, 11, 0.15f, 0.13f, 5, new Color().set(Pal.spore).mul(0.9f).a(0.75f), 2, 0.45f, 0.9f, 0.38f),
+                    new HexSkyMesh(this, 1, 0.6f, 0.16f, 5, Color.white.cpy().lerp(Pal.spore, 0.55f).a(0.75f), 2, 0.45f, 1f, 0.41f)
             );
 
             launchCapacityMultiplier = 0.5f;
@@ -165,8 +189,8 @@ public class Planets{
         });
     }
 
-    private static Planet makeAsteroid(String name, Planet parent, Block base, Block tint, int seed, float tintThresh, int pieces, float scale, Cons<AsteroidGenerator> cgen){
-        return new Planet(name, parent, 0.12f){{
+    private static Planet makeAsteroid(String name, Planet parent, Block base, Block tint, int seed, float tintThresh, int pieces, float scale, Cons<AsteroidGenerator> cgen) {
+        return new Planet(name, parent, 0.12f) {{
             hasAtmosphere = false;
             updateLighting = false;
             sectors.add(new Sector(this, Ptile.empty));
@@ -178,7 +202,7 @@ public class Planets{
             defaultEnv = Env.space;
             icon = "commandRally";
             generator = new AsteroidGenerator();
-            cgen.get((AsteroidGenerator)generator);
+            cgen.get((AsteroidGenerator) generator);
 
             meshLoader = () -> {
                 iconColor = tint.mapColor;
@@ -188,15 +212,15 @@ public class Planets{
                 Rand rand = new Rand(id + 2);
 
                 meshes.add(new NoiseMesh(
-                    this, seed, 2, radius, 2, 0.55f, 0.45f, 14f,
-                    color, tinted, 3, 0.6f, 0.38f, tintThresh
+                        this, seed, 2, radius, 2, 0.55f, 0.45f, 14f,
+                        color, tinted, 3, 0.6f, 0.38f, tintThresh
                 ));
 
-                for(int j = 0; j < pieces; j++){
+                for (int j = 0; j < pieces; j++) {
                     meshes.add(new MatMesh(
-                        new NoiseMesh(this, seed + j + 1, 1, 0.022f + rand.random(0.039f) * scale, 2, 0.6f, 0.38f, 20f,
-                        color, tinted, 3, 0.6f, 0.38f, tintThresh),
-                        new Mat3D().setToTranslation(Tmp.v31.setToRandomDirection(rand).setLength(rand.random(0.44f, 1.4f) * scale)))
+                            new NoiseMesh(this, seed + j + 1, 1, 0.022f + rand.random(0.039f) * scale, 2, 0.6f, 0.38f, 20f,
+                                    color, tinted, 3, 0.6f, 0.38f, tintThresh),
+                            new Mat3D().setToTranslation(Tmp.v31.setToRandomDirection(rand).setLength(rand.random(0.44f, 1.4f) * scale)))
                     );
                 }
 

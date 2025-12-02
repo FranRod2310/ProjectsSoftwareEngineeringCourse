@@ -531,7 +531,8 @@ public class DesktopInput extends InputHandler{
 
         table.button(Icon.map, Styles.clearNonei, () -> {
             ui.planet.show();
-        }).visible(() -> state.isCampaign()).tooltip("@planetmap");
+            //US3
+        }).visible(() -> !Tutorial.isPlayingTutorial()&& state.isCampaign()).tooltip("@planetmap");
     }
 
     void pollInputNoPlayer(){
