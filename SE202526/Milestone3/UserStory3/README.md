@@ -338,7 +338,11 @@ The diagram effectively represents the use cases, correctly identifying the key 
 *(Please add your implementation summary review here)*
 
 ### Class diagrams
-(*Class diagrams and their discussion in natural language.*)
+<img width="2140" height="1026" alt="image" src="https://github.com/user-attachments/assets/981419d3-ee43-42ee-b7ce-d587aa9b119c" />
+Despite the large number of classes we changed/edited, we choose to only show the most important ones, that we build from scratch.
+We used the state pattern to implement our user story as we though that it would be the perfect case. 
+We have a Tutorial class, which is the class that manages the tutorial, and which the other classes in the game can interact with. It stores the order of the multiple states of the tutorial, and has the power to start and end each state.
+There is a TutorialState Interface, which has the common methods between the multiple states: enter, update, exit and setContext. All 4 state classes use this interface with their additional logic methods, and have a context variable, that stores the Tutorial. The TutorialResearchState also uses the TutorialTechTree to manage it's state. The TutorialDefenseState also has it's own enum, Step, with the various steps that the tutorial goes through.
 
 ### Review
 *(Please add your class diagram review here)*
