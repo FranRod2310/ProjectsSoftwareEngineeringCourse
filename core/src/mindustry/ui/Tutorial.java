@@ -20,7 +20,9 @@ public class Tutorial {
     private static TutorialState currentState;
     protected static boolean isPlayingTutorial = false;
 
-    // run logic every frame
+    /**
+     * Runs every frame, calls current state update
+     */
     public void init() {
         Events.run(EventType.Trigger.update, () -> {
             if (currentState != null) {
@@ -29,6 +31,9 @@ public class Tutorial {
         });
     }
 
+    /**
+     * @return true if playing tutorial
+     */
     public static boolean isPlayingTutorial() {
         return isPlayingTutorial;
     }
@@ -41,11 +46,10 @@ public class Tutorial {
         currentState = null;
     }
 
+    /**
+     * Start the tutorial, show initial message, initialize the world and reset techtree
+     */
     public void enterTutorial() {
-        //TODO
-
-        //sector captured when entered
-        //see techtree 67
         Core.app.post(() -> {
             Vars.ui.showConfirm("Welcome to the Tutorial!\n\nClick 'OK' to begin.", () -> {
                 isPlayingTutorial = true;
@@ -68,19 +72,31 @@ public class Tutorial {
         });
     }
 
+    /**
+     * @return current state
+     */
     public TutorialState getCurrentState() {
         return currentState;
     }
 
+    /**
+     * @return true if in research state
+     */
     public static boolean isResearchTutorial(){
         return currentState instanceof TutorialResearchState;
     }
 
+    /**
+     * Start tutorial only when landed
+     */
     public static void arrivedAtSector(){
         currentStateIndex = 0;
         nextState();
     }
 
+    /**
+     * Call the next state
+     */
     public static void nextState (){
         if (currentState != null)
             currentState.exit();

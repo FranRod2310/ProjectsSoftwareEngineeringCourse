@@ -68,16 +68,16 @@ public class TutorialBuildingState implements TutorialState {
         drawConveyer = (e) -> {
             CoreBlock.CoreBuild core = Vars.player.team().core();
             int halfTileSize = tilesize / 2;
-            Seq<Point2> horPoints = Placement.pathfindLine(true, (int) (closestOre.worldx()) + halfTileSize + tilesize, (int) (closestOre.worldy()) + halfTileSize, (int) (core.x) + halfTileSize, (int) (closestOre.worldy()) + halfTileSize);
-            convWidth = Math.max(horPoints.size - tilesize, tilesize);
+            Seq<Point2> horPoints = Placement.pathfindLine(true, (int) (closestOre.worldx()) + halfTileSize + tilesize, (int) (closestOre.worldy()) + halfTileSize, (int) (core.x) + halfTileSize, (int) (closestOre.worldy()));
+            convWidth = horPoints.size - horPoints.size%tilesize;
             //if the path is horizontal
             boolean isHorizontalPath = (Math.abs(closestOre.worldy() + halfTileSize - core.y) <= tilesize);
             if (isHorizontalPath)
-                convWidth -= tilesize;
+                convWidth -= 2*tilesize;
             Drawf.dashRect(Color.gold, closestOre.worldx() + halfTileSize + tilesize, closestOre.worldy() + halfTileSize, convWidth, tilesize);
             if (!isHorizontalPath) {
                 Seq<Point2> verPoints = Placement.pathfindLine(true, (int) (core.x), (int) (closestOre.worldy()) + halfTileSize, (int) (core.x), (int) (core.y) - halfTileSize);
-                convHeight = Math.max(verPoints.size - tilesize, tilesize);
+                convHeight = verPoints.size - verPoints.size%tilesize - tilesize;
                 Drawf.dashRect(Color.gold, core.x - halfTileSize, closestOre.worldy() + halfTileSize, tilesize, convHeight);
             }
         };
@@ -88,9 +88,9 @@ public class TutorialBuildingState implements TutorialState {
      */
     private boolean checkConveyerBuilt() {
         int halfTileSize = tilesize / 2;
-        float x = closestOre.worldx() + halfTileSize + tilesize;
+        float x = closestOre.worldx() + 2 * tilesize;
         float lastX = x;
-        float y = closestOre.worldy() + halfTileSize;
+        float y = closestOre.worldy() + tilesize;
         for (int i = 0; i < convWidth / tilesize; i++) {
             Tile tile = Vars.world.tileWorld(x + (i * tilesize), y);
             if (tile == null || tile.block() != Blocks.tutorialConveyor) {
