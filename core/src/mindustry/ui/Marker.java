@@ -33,12 +33,12 @@ public class Marker extends MapMarkers {
     public void init() {
         if(initialized) return;
         dialog = new BaseDialog("Marker");
-        dialog.cont.add("Nota:").left().padBottom(5f).row();
+        dialog.cont.add("Note:").left().padBottom(5f).row();
         inputField = new TextField();
-        inputField.setMessageText("Escreve aqui...");
+        inputField.setMessageText("Write here...");
         dialog.cont.add(inputField).size(300f, 40f).row();
 
-        dialog.cont.add("Cor:").left().padTop(10f).padBottom(5f).row();
+        dialog.cont.add("Color:").left().padTop(10f).padBottom(5f).row();
         colorTable = new Table();
         dialog.cont.add(colorTable).row();
 
@@ -66,22 +66,22 @@ public class Marker extends MapMarkers {
     private void openDialog(ShapeTextMarker existing) {
         editingMarker = existing;
         dialog.buttons.clear();
-        dialog.buttons.button("Cancelar", dialog::hide).size(100f, 50f);
+        dialog.buttons.button("Cancel", dialog::hide).size(100f, 50f);
 
         if (existing == null) {
             // CREATE
-            dialog.title.setText("Novo Marcador");
+            dialog.title.setText("New Marker");
             inputField.setText("");
             selectedColor = palette[6]; // Default (ex: Branco)
 
-            dialog.buttons.button("Criar", () -> {
+            dialog.buttons.button("Create", () -> {
                 createMarker();
                 dialog.hide();
             }).size(100f, 50f).disabled(b -> inputField.getText().isEmpty());
 
         } else {
             // EDIT
-            dialog.title.setText("Editar Marcador");
+            dialog.title.setText("Edit Marker");
             inputField.setText(existing.text);
             selectedColor = existing.color;
 
@@ -90,7 +90,7 @@ public class Marker extends MapMarkers {
                 dialog.hide();
             }).size(50f).padRight(10f);
 
-            dialog.buttons.button("Salvar", () -> {
+            dialog.buttons.button("Save", () -> {
                 updateExistingMarker();
                 dialog.hide();
             }).size(100f, 50f).disabled(b -> inputField.getText().isEmpty());
