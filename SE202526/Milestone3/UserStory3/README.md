@@ -343,7 +343,7 @@ The `TutorialBuildingState` shows where to build a drill and how it can be trans
 *(Please add your implementation summary review here)*
 
 ### Class diagrams
-<img width="2140" height="1026" alt="image" src="https://github.com/user-attachments/assets/981419d3-ee43-42ee-b7ce-d587aa9b119c" />
+<img width="2296" height="1127" alt="image" src="https://github.com/user-attachments/assets/9e964cd0-c7d1-407f-b26c-dd7f0b3b2342" />
 Despite the large number of classes we changed/edited, we choose to only show the most important ones, that we build from scratch.
 We used the state pattern to implement our user story as we though that it would be the perfect case. 
 We have a Tutorial class, which is the class that manages the tutorial, and which the other classes in the game can interact with. It stores the order of the multiple states of the tutorial, and has the power to start and end each state.
@@ -388,7 +388,164 @@ Termination sequence when a player clicks "Quit". It shows the controller perfor
 *(Please add your sequence diagram review here)*
 
 ## Test specifications
-(*Test cases specification and pointers to their implementation, where adequate.*)
+All the videos corresponding to each test can be found in a folder called `Tests`, in the same folder as this file.
+
+### Basic Tutorial
+`Test 1`:
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Leave the tutorial.
+   4. Enter again to check if everything resetted. (0 copper0)
+
+`Test 2`:
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Wait until you have 85 copper.
+   4. Check if a message appeared indicating the next state.
+
+`Test 3`:
+   1. Enter the tutorial.
+   2. Click on a lead tile.
+   3. Wait until you have 85 lead.
+   4. Check if no message appeared indicating the next state.
+   5. Click on a copper tile.
+   6. Wait until you have 85 copper.
+   7. Check if a message appeared indicating the next state.
+
+`Test 4`: 
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Go to research tree.
+   4. Research the mechanical drill. (costs 10 copper)
+   5. Wait until you have 75 copper.
+   6. Check if a message appeared indicating the next state.
+
+`Test 5`:
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Wait until you have _ copper.
+   4. Go to research tree.
+   5. Research the mechanical drill. (costs 10 copper)
+   6. Research the conveyer. (costs 5 copper)
+   7. Research the copper wall. (costs 20 copper)
+   8. Spend _ copper on researching duo. (costs 50)
+   9. Wait until you have _ copper.
+   10. Check if a message appeared indicating the next state.
+
+`Test 6`:
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Go to research tree.
+   4. Research the mechanical drill. (costs 10 copper)
+   5. Build a mechanical drill. (costs 12 copper)
+   6. Wait until you have 63 copper.
+   7. Check if no message appeared indicating the next state.
+   8. Wait until you have 75 copper.
+   9. Check if a message appeared indicating the next state.
+
+### Research Tutorial
+`Test 1`:
+   1. Do `Test 2` from `Basic Tutorial`.
+   2. Go to the research tree.
+   3. Research the copper wall and the conveyer.
+   4. Check if no message appeared indicating the next state.
+   5. Research copper the mechanical drill and duo.
+   6. Check if a message appeared indicating the next state.
+
+`Test 2`:
+   1. Do `Test 2` from `Basic Tutorial`.
+   2. Go to the research tree.
+   3. Research the mechanical drill and the conveyer.
+   4. Leave the tutorial.
+   5. Enter the tutorial.
+   6. Go to the research tree.
+   7. Check if everything is locked.
+
+`Test 3`:
+   1. Do `Test 5` from `Basic Tutorial`.
+   2. Go to the research tree.
+   3. Research duo.
+   4. Check if a message appeared indicating the next state.
+
+`Test 4`: 
+   1. Do `Test 6` from `Basic Tutorial`.
+   2. Go to the research tree.
+   3. Research the 3 blocks left.
+   4. Check if a message appeared indicating the next state.
+
+### Building Tutorial
+`Test 1`:
+   1. Do `Test 1` from `Research Tutorial`.
+   2. Close the research tree.
+   3. Check if appeared a highlight indicating where to build the drill.
+   4. Build a mechanical drill in the indicated place.
+   5. Check if the the highlight indicating where to build the drill disappeared.
+   6. Check if appeared a highlight indicating where to build the conveyers.
+   7. Build the conveyers on the indicated place.
+   8. Check if the the highlight indicating where to build the conveyers disappeared.
+   9. Check if a message appeared indicating the next state.
+
+`Test 2`:
+   1. Do `Test 1` from `Research Tutorial`.
+   2. Close the research tree.
+   3. Check if appeared a highlight indicating where to build the drill.
+   4. Build a mechanical drill in the with half of it in the indicated place.
+   5. Check if the highlight indicating where to build the drill didn't disappear.
+   6. Check if the highlight indicating where to build the conveyers didn't appear.
+   7. Build a mechanical drill in the with half of it in the other half of the indicated place.
+   8. Check if the highlight indicating where to build the drill didn't disappear.
+   9. Check if the highlight indicating where to build the conveyers didn't appear.
+   10. Remove the 2 mechanical drills.
+   11. Build a mechanical drill in the indicated place.
+   12. Check if the highlight indicating where to build the drill disappeared.
+   13. Check if appeared a highlight indicating where to build the conveyers.
+   14. Build the conveyers  one by one on the indicated place, verifying that the highlight doesn't disappear.
+   15. Check if the highlight indicating where to build the conveyers disappeared.
+   16. Check if a message appeared indicating the next state.
+
+`Test 3`:
+   1. Enter the tutorial.
+   2. Click on a copper tile.
+   3. Go to research tree.
+   4. Research the mechanical drill. (costs 10 copper)
+   5. Build a mechanical drill on the highlighted copper ore. (costs 12 copper)
+   6. Wait until you have 75 copper.
+   7. Check if a message appeared indicating the next state.
+   8. Go to the research tree.
+   9. Research the 3 blocks left.
+   10. Check if a message appeared indicating the next state.
+   11. Close the research tree.
+   12. Check if the indicated place to build the mechanical drill are copper tiles.
+   13. Build a mechanical drill in the with half of it in the indicated place.
+   14. Check if the highlight indicating where to build the drill didn't disappear.
+   15. Check if the highlight indicating where to build the conveyers didn't appear.
+   16. Remove the mechanical drill just built.
+   17. Build a mechanical drill in the indicated place.
+   18. Check if the highlight indicating where to build the drill disappeared.
+   19. Check if appeared a highlight indicating where to build the conveyers.
+   20. Build the conveyers  one by one on the indicated place, verifying that the highlight doesn't disappear.
+   21. Check if the highlight indicating where to build the conveyers disappeared.
+   22. Check if a message appeared indicating the next state.
+
+`Test 4`: 
+   1. Do `Test 1` from `Research Tutorial`.
+   2. Close the research tree.
+   3. Check if appeared a highlight indicating where to build the drill.
+   4. Leave the tutorial.
+   5. Check that the highlight disappeared.
+   6. Redo `Test 1` from `Research Tutorial`.
+   7. Check that the highlight appeared again.
+   8. Build the mechanical drill on the indicated place.
+   9. Check if the highlight indicating where to build the drill disappeared.
+   10. Check if appeared a highlight indicating where to build the conveyers.
+   11. Leave the tutorial.
+   12. Check that the highlight disappeared.
+   13. Redo `Test 1` from `Research Tutorial`.
+   14. Build the mechanical drill on the indicated place.
+   15. Check if the highlight indicating where to build the drill disappeared.
+   16. Build the conveyers  one by one on the indicated place, verifying that the highlight doesn't disappear.
+   17. Check if the highlight indicating where to build the conveyers disappeared.
+   18. Check if a message appeared indicating the next state.
 
 ### Review
 *(Please add your test specification review here)*
