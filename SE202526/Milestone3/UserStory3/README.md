@@ -328,15 +328,33 @@ The diagram effectively represents the use cases, correctly identifying the key 
 
 `mindustry/content/Blocks.java` - added tutorial version of mechanicalDrill, duo, conveyor, copperWall, coreShard
 
+`mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
+
 - added sprite files
 
-`mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
+  
 ### Implementation summary
-Our implementation is a Tutorial, which the user can choose to start in the initial menu. When we started the implementation we came across multiple complications. Half of the time needed to implement our tutorial was spent on preparing the world for it. After a few tries we understood than we needed to create a new world, otherwise the sector would appear on the campaign map, on the respective world. For the same reason a new sector was needed, for this new world. A new sector means a new map, so we made a new map too, with the properties we thought relevant. Afterwards some messages and user options were not adequated for our implementation, so that too we needed to dig up and find where it was being done. Even the quit menu (when pressed escape in the tutorial) was modified to our interest, for example, we didn't want it to be able to save the state of the tutorial once exited. Some buttons were also disable like the planet icon on the lower right corner, and the option to change the world's techtree (in the research menu). When we finally were going to start with our implementation, we discovered that modifying the research tree would change in it's world to, so we made our own techtree with our own blocks, with their own images, because every block points to the same, it's not possible to instantiate.
-Then the real implementation start, one class that manages the tutorial and multiple tutorial states. The `Tutorial` manages when the multiple states start and finish, and it is the one that comunicates with the other classes.
-The `TutorialBasicState` handles the mining of the resources. It explains the user how to gather resources, and marks itself as complete when the user has enough resources to complete the researches.
-The `TutorialResearchState` explains to the user how to research blocks. When all 4 blocks are researched, it passes on to the next state.
+Our implementation is a new **Tutorial**, which the user can choose to start from the initial game menu. 
+
+When we started the implementation we came across multiple complications. Half of the time needed to implement our tutorial was spent on preparing the world for it. After a few tries we understood than we needed to create a new world, otherwise the sector would appear on the campaign map, on the respective world. For the same reason a new sector was needed for our tutorial. A new sector means a new map, so we made a new map too, with the properties we thought relevant. 
+
+Afterwards some messages and user options were not adequate for our implementation, so that too we needed to dig up and find where it was being done. Even the quit menu (when pressed escape in the tutorial) was modified to our interest, for example, we didn't want it to be able to save the state of the tutorial once exited. We also disabled some buttons like the planet icon on the lower right corner, and the option to change the worlds TechTree (in the research menu). 
+
+When we were finally going to start with our implementation, we discovered that modifying the research tree would also affect it in it's orignal world too. So, we made our own new techtree with our own blocks, with their own images. Since every tech node points to the same block, it's not possible to instantiate.
+
+
+Then, the real implementation started. One class that manages the tutorial and multiple tutorial states. The `Tutorial` manages when the multiple states start and finish, and is the one that comunicates with the other classes.
+
+The `TutorialBasicState` handles the mining of resources. It explains the user how to gather resources, and marks itself as complete when the user has enough resources to complete the researches.
+
+The `TutorialResearchState` explains to the user how to research blocks. When all 4 available blocks are researched, it passes on to the next state.
+
 The `TutorialBuildingState` shows where to build a drill and how it can be transported to the core. This part caused also some struggle as the algorithm to calculate the path to the core wasn´t the easiest. This state ends when the drill and the conveyer have been built in the indicated places. 
+
+Finally, the `TutorialDefenseState` serves as an introduction to enemies and how to defend the base against attacks. It begins by explaining the use of turrets to the player, and then building one. After a turret is correctly placed, the tutorial then explains building walls for defense. After placing 5 walls, we move on to explaining the concept of ammo. The player is then asked to place Conveyors into the highlighted turret, supplying it with ammo. When enough ammo is supplied, the tutorial begins the enemy wave. Two simple enemies spawn, and the player watches the turret defend the base. With both enemies defeated, the tutorial is complete.
+
+The Defense tutorial was particularly challenging to implement due to problems with spawning the enemies. At first, the enemies kept dying instantly when spawned, and it took a long time diving into the enemy logic to understand the problem. Our new sector had to update it's rules to allow conditions that permit enemy spawning. Also, the unit type and specific health pools were fine-tuned after many tests to provide the most realistic combat experience in the tutorial, using only one turret.
+
 
 
 #### Review
@@ -344,10 +362,14 @@ The `TutorialBuildingState` shows where to build a drill and how it can be trans
 
 ### Class diagrams
 <img width="2296" height="1127" alt="image" src="https://github.com/user-attachments/assets/9e964cd0-c7d1-407f-b26c-dd7f0b3b2342" />
-Despite the large number of classes we changed/edited, we choose to only show the most important ones, that we build from scratch.
-We used the state pattern to implement our user story as we though that it would be the perfect case. 
-We have a Tutorial class, which is the class that manages the tutorial, and which the other classes in the game can interact with. It stores the order of the multiple states of the tutorial, and has the power to start and end each state.
-There is a TutorialState Interface, which has the common methods between the multiple states: enter, update, exit and setContext. All 4 state classes use this interface with their additional logic methods, and have a context variable, that stores the Tutorial. The TutorialResearchState also uses the TutorialTechTree to manage it's state. The TutorialDefenseState also has it's own enum, Step, with the various steps that the tutorial goes through.
+
+Despite the large number of classes we changed/edited, we chose to only show the most important ones that we built from scratch. We used the State design pattern to implement our user story as we thought that it would be the perfect case.
+
+We have a `Tutorial` class, which is the class that manages the tutorial, and which the other classes in the game can interact with. It stores the order of the multiple states of the tutorial, and has the power to start and end each state.
+
+There is a `TutorialState` Interface, which has the common methods between the multiple states: `enter()`, `update()`, `exit()` and `setContext()`. All 4 state classes use this interface with their additional logic methods, and have a `context` variable that stores the Tutorial. 
+
+The `TutorialResearchState` also uses the `TutorialTechTree` to manage it's state. The `TutorialDefenseState` also has it's own enum, `Step`, with the various steps that the tutorial goes through.
 
 ### Review
 *(Please add your class diagram review here)*
