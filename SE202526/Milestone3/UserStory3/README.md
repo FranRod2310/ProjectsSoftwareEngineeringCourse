@@ -449,7 +449,7 @@ All the videos corresponding to each test can be found in a folder called `Tests
    2. Go to the research tree.
    3. Research the copper wall and the conveyer.
    4. Check if no message appeared indicating the next state.
-   5. Research copper the mechanical drill and duo.
+   5. Research the mechanical drill and duo.
    6. Check if a message appeared indicating the next state.
 
 `Test 2`:
