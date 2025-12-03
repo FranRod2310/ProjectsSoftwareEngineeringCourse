@@ -296,21 +296,22 @@ The diagram effectively represents the use cases, correctly identifying the key 
 
 
 ## Implementation documentation
-(*Please add the class diagram(s) illustrating your code evolution, along with a technical description of the changes made by your team. The description may include code snippets if adequate.*)
+**Classes updated/created:**
+Every time we added something to a class we commented with "//US3" except the classes that we added. (By using the universal search and typing "//US3", the modified classes will be easy to find).
 
-**Classes updated so far:**
+`mindustry/ui/Tutorial.java` - context class **NEW**
 
-`mindustry/ui/Tutorial.java` - context class NEW
+`mindustry/ui/TutorialState.java` - state interface **NEW**
 
-`mindustry/ui/TutorialState.java` - state interface NEW
+`mindustry/ui/TutorialBasicState.java` - uc1 state **NEW**
 
-`mindustry/ui/TutorialWelcomeState.java` - uc1 state **NEW**
+`mindustry/ui/TutorialBuildingState.java` - uc3 state **NEW**
 
-`mindustry/ui/TutorialBuildingState.java` - uc2 state **NEW**
-
-`mindustry/ui/TutorialResearchState.java` - uc3 state **NEW**
+`mindustry/ui/TutorialResearchState.java` - uc2 state **NEW**
 
 `mindustry/ui/TutorialDefenseState.java` - uc4 state **NEW**
+
+`mindustry/content/TutorialTechTree.java` - new small tech tree just for tutorial world **NEW**
 
 `mindustry/ui/fragments/MenuFragment.java` - for adding the tutorial button on main menu
 
@@ -318,20 +319,27 @@ The diagram effectively represents the use cases, correctly identifying the key 
 
 `mindustry/content/Planets.java` - added tutorial planet
 
-`mindustry/core/ContentLoader.java` - added checks for tutorial planet, not drawing button and label in planet menu, load tutorialTechTree
+`mindustry/core/ContentLoader.java` - load tutorialTechTree
 
-`mindustry/ui/dialogs/ResearchDialog.java` - hiding switch reseratchTree UI for tutorial
+`mindustry/ui/dialogs/ResearchDialog.java` - hiding switch researchTree UI for tutorial, changing the color of the block buttons in researchTree for a highlight,  
 
-`mindustry/content/SectorPresets.java` - added tutorial preset
-
-`mindustry/content/TutorialTechTree.java` - new small tech tree just for tutorial world **NEW**
+`mindustry/content/SectorPresets.java` - added tutorial sector preset
 
 `mindustry/content/Blocks.java` - added tutorial version of mechanicalDrill, duo, conveyor, copperWall, coreShard
 
-`mindustry/ui/dialogs/PausedDialog.java` - changed menu ui
+- added sprite files for the blocks added
 
-- added sprite files
+`mindustry/ui/dialogs/PausedDialog.java` - changed menu ui and guarantee that it doesn't save.
 
+`mindustry/ui/dialogs/DatabaseDialog.java` - Hide tutorial items from the database
+
+`mindustry/ui/fragments/HudFragment.java` - Remove the initial message "Sector captured"
+
+`mindustry/world/blocks/storage/CoreBlock.java` - Notify the tutorial when the core is landed.
+
+`mindustry/input/DesktopInput.java` - Removed the planet button while in the tutorial, so the user doesn't go to another world.
+
+We didn't add any code snippet because otherwise this segment would become very long, so we added a brief explanation of each change. As it's possible to see, we have worked with many classes, making the time needed to implement our user story longer, but it also helped understanding better the project itself.   
   
 ### Implementation summary
 Our implementation is a new **Tutorial**, which the user can choose to start from the initial game menu. 
