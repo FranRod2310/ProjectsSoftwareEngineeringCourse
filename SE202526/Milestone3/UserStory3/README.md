@@ -388,10 +388,11 @@ Termination sequence when a player clicks "Quit". It shows the controller perfor
 *(Please add your sequence diagram review here)*
 
 ## Test specifications
-All the videos corresponding to the tests can be found in the link mentioned in eacht tutorial state.
+All the videos corresponding to the tests can be found in the link mentioned in eacht tutorial state. All the videos are in 2x speed.
 
 ### Basic Tutorial
 https://youtu.be/w6NLhfivpiI
+
 `Test 1`:
    1. Enter the tutorial.
    2. Click on a copper tile.
@@ -446,6 +447,7 @@ https://youtu.be/w6NLhfivpiI
 
 ### Research Tutorial
 https://youtu.be/Op-GLzRgD38
+
 `Test 1`:
    1. Do `Test 2` from `Basic Tutorial`.
    2. Go to the research tree.
@@ -477,6 +479,7 @@ https://youtu.be/Op-GLzRgD38
 
 ### Building Tutorial
 https://youtu.be/c_JxVis2XMc
+
 `Test 1`:
    1. Do `Test 1` from `Research Tutorial`.
    2. Close the research tree.
