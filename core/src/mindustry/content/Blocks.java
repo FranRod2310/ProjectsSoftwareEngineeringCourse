@@ -138,6 +138,9 @@ public class Blocks{
     turbineCondenser, ventCondenser, chemicalCombustionChamber, pyrolysisGenerator, fluxReactor, neoplasiaReactor,
     beamNode, beamTower, beamLink,
 
+    //tutorial  only US3
+    tutorialMechanicalDrill, tutorialConveyor, tutorialCopperWall, tutorialDuo, tutorialCoreShard,
+
     //production
     mechanicalDrill, pneumaticDrill, laserDrill, blastDrill, waterExtractor, oilExtractor, cultivator,
     cliffCrusher, largeCliffCrusher, plasmaBore, largePlasmaBore, impactDrill, eruptionDrill,
@@ -1681,6 +1684,14 @@ public class Blocks{
 
         int wallHealthMultiplier = 4;
 
+        //US3
+        tutorialCopperWall = new Wall("tutorial-copper-wall"){{
+            hideDatabase = true;
+            requirements(Category.defense, with(Items.copper, 6));
+            health = 80 * wallHealthMultiplier;
+            researchCostMultiplier = 0.1f;
+        }};
+
         copperWall = new Wall("copper-wall"){{
             requirements(Category.defense, with(Items.copper, 6));
             health = 80 * wallHealthMultiplier;
@@ -2053,6 +2064,16 @@ public class Blocks{
 
         //endregion
         //region distribution
+        //US3
+        tutorialConveyor = new Conveyor("tutorial-conveyor"){{
+            requirements(Category.distribution, with(Items.copper, 1));
+            health = 45;
+            speed = 0.03f;
+            displayedSpeed = 4.2f;
+            buildCostMultiplier = 2f;
+            researchCost = with(Items.copper, 5);
+            hideDatabase = true;
+        }};
 
         conveyor = new Conveyor("conveyor"){{
             requirements(Category.distribution, with(Items.copper, 1));
@@ -2850,6 +2871,19 @@ public class Blocks{
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 
+        //US3
+        tutorialMechanicalDrill = new Drill("tutorial-mechanical-drill"){{
+            requirements(Category.production, with(Items.copper, 12));
+            tier = 2;
+            drillTime = 600;
+            size = 2;
+            //mechanical drill doesn't work in space
+            envEnabled ^= Env.space;
+            researchCost = with(Items.copper, 10);
+            hideDatabase = true;
+            consumeLiquid(Liquids.water, 0.05f).boost();
+        }};
+
         pneumaticDrill = new Drill("pneumatic-drill"){{
             requirements(Category.production, with(Items.copper, 18, Items.graphite, 10));
             tier = 3;
@@ -3096,6 +3130,21 @@ public class Blocks{
         //endregion
         //region storage
 
+        //US3
+        tutorialCoreShard = new CoreBlock("tutorial-core-shard"){{
+            requirements(Category.effect, BuildVisibility.coreZoneOnly, with(Items.copper, 1000, Items.lead, 800));
+            alwaysUnlocked = true;
+            hideDatabase = true;
+            isFirstTier = true;
+            unitType = UnitTypes.alpha;
+            health = 1100;
+            itemCapacity = 4000;
+            size = 3;
+            buildCostMultiplier = 2f;
+
+            unitCapModifier = 8;
+        }};
+
         coreShard = new CoreBlock("core-shard"){{
             requirements(Category.effect, BuildVisibility.coreZoneOnly, with(Items.copper, 1000, Items.lead, 800));
             alwaysUnlocked = true;
@@ -3233,6 +3282,78 @@ public class Blocks{
 
         //endregion
         //region turrets
+
+        //US3
+        tutorialDuo = new ItemTurret("tutorial-duo"){{
+            requirements(Category.turret, with(Items.copper, 35));
+            hideDatabase = true;
+            ammo(
+                    Items.copper,  new BasicBulletType(2.5f, 9){{
+                        width = 7f;
+                        height = 9f;
+                        lifetime = 60f;
+                        ammoMultiplier = 2;
+                        hitEffect = despawnEffect = Fx.hitBulletColor;
+                        hitColor = backColor = trailColor = Pal.copperAmmoBack;
+                        frontColor = Pal.copperAmmoFront;
+                    }},
+                    Items.graphite, new BasicBulletType(3.5f, 18){{
+                        width = 9f;
+                        height = 12f;
+                        ammoMultiplier = 4;
+                        lifetime = 60f;
+                        rangeChange = 16f;
+
+                        hitEffect = despawnEffect = Fx.hitBulletColor;
+                        hitColor = backColor = trailColor = Pal.graphiteAmmoBack;
+                        frontColor = Pal.graphiteAmmoFront;
+                    }},
+                    Items.silicon, new BasicBulletType(3f, 12){{
+                        width = 7f;
+                        height = 9f;
+                        homingPower = 0.2f;
+                        reloadMultiplier = 1.5f;
+                        ammoMultiplier = 5;
+                        lifetime = 60f;
+
+                        trailLength = 5;
+                        trailWidth = 1.5f;
+
+                        hitEffect = despawnEffect = Fx.hitBulletColor;
+                        hitColor = backColor = trailColor = Pal.siliconAmmoBack;
+                        frontColor = Pal.siliconAmmoFront;
+                    }}
+            );
+
+            shoot = new ShootAlternate(3.5f);
+
+            recoils = 2;
+            drawer = new DrawTurret(){{
+                for(int i = 0; i < 2; i ++){
+                    int f = i;
+                    parts.add(new RegionPart("-barrel-" + (i == 0 ? "l" : "r")){{
+                        progress = PartProgress.recoil;
+                        recoilIndex = f;
+                        under = true;
+                        moveY = -1.5f;
+                    }});
+                }
+            }};
+
+            recoil = 0.5f;
+            shootY = 3f;
+            reload = 20f;
+            range = 160;
+            shootCone = 15f;
+            ammoUseEffect = Fx.casing1;
+            health = 250;
+            inaccuracy = 2f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            researchCostMultiplier = 0.05f;
+
+            limitRange(5f);
+        }};
 
         duo = new ItemTurret("duo"){{
             requirements(Category.turret, with(Items.copper, 35));

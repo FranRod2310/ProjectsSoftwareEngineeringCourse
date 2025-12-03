@@ -57,6 +57,8 @@ public class ContentLoader{
         SectorPresets.load();
         SerpuloTechTree.load();
         ErekirTechTree.load();
+        //US3
+        TutorialTechTree.load();
     }
 
     /** Creates mod content, if applicable. */
