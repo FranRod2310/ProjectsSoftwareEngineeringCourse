@@ -31,6 +31,7 @@ public class SectorPresets{
             startWaveTimeMultiplier = 3f;
         }};
 
+        //US3
         tutorial = new SectorPreset("tutorial", tutorialPlanet, 1){{
             alwaysUnlocked = true;
             addStartingItems = false;

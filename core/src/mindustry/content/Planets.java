@@ -44,6 +44,7 @@ public class Planets {
             );
         }};
 
+        //US3
         tutorialPlanet = new Planet("tutorialPlanet", null, 1f, 2) {{
             loadPlanetData = true;
             generator = new SerpuloPlanetGenerator();
