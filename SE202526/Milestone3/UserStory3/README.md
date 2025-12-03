@@ -585,6 +585,7 @@ https://youtu.be/c_JxVis2XMc
 
 
 ### Defense Tutorial
+[https://www.youtube.com/watch?v=Wup_agyguAA&list=PL5TJMXb9bNplq7qxV_UZ3g34t7o1HH03_](https://youtube.com/playlist?list=PL5TJMXb9bNplq7qxV_UZ3g34t7o1HH03_&si=piAa3nC0yk9fFRes)
 
 `Test 1`:
    1. Check if defense intro messages appear.
