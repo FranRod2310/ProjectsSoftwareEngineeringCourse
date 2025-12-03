@@ -388,9 +388,10 @@ Termination sequence when a player clicks "Quit". It shows the controller perfor
 *(Please add your sequence diagram review here)*
 
 ## Test specifications
-All the videos corresponding to each test can be found in a folder called `Tests`, in the same folder as this file.
+All the videos corresponding to the tests can be found in the link mentioned in eacht tutorial state.
 
 ### Basic Tutorial
+https://youtu.be/w6NLhfivpiI
 `Test 1`:
    1. Enter the tutorial.
    2. Click on a copper tile.
@@ -444,6 +445,7 @@ All the videos corresponding to each test can be found in a folder called `Tests
    9. Check if a message appeared indicating the next state.
 
 ### Research Tutorial
+https://youtu.be/Op-GLzRgD38
 `Test 1`:
    1. Do `Test 2` from `Basic Tutorial`.
    2. Go to the research tree.
@@ -474,6 +476,7 @@ All the videos corresponding to each test can be found in a folder called `Tests
    4. Check if a message appeared indicating the next state.
 
 ### Building Tutorial
+https://youtu.be/c_JxVis2XMc
 `Test 1`:
    1. Do `Test 1` from `Research Tutorial`.
    2. Close the research tree.
