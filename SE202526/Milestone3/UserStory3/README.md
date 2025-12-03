@@ -575,5 +575,53 @@ https://youtu.be/c_JxVis2XMc
    17. Check if the highlight indicating where to build the conveyers disappeared.
    18. Check if a message appeared indicating the next state.
 
+
+### Defense Tutorial
+
+`Test 1`:
+   1. Check if defense intro messages appear.
+   2. Place duo turret in highlighted placement.
+   3. Check if wall placement message appears.
+   4. Place 5 walls in highlighted area.
+   5. Check if ammo explanation message appears.
+   6. Check if ammo count is working above turret.
+   7. Place conveyors from drill into turret.
+   8. Wait until ammo count check done.
+   9. Check if enemy spawning message appears.
+   10. Check if enemies spawn.
+   11. Check if turret can eliminate both enemies before destroying base.
+   12. Check if tutorial complete message appears after clearing wave.
+
+`Test 2`:
+   1. Place turret in another spot other than the highlight.
+   2. Check if tutorial does not advance.
+   3. Place turret in correct spot.
+   4. Check if tutorial advances as intended.
+   5. Place walls in spots other than highlighted ones.
+   6. Check if tutorial does not advance.
+   7. Place walls correctly.
+   8. Check if tutorial advances as intended.
+
+`Teste 3`:
+   1. Place turret in highlithed spot.
+   2. Check if tutorial advances as inteded.
+   3. Quit the tutorial.
+   4. Join tutorial.
+   5. Check if turret and highlight has been removed aas intended.
+   6. Advance until wall placement.
+   7. Place walls in highlihted spot.
+   8. Quit the tutorial.
+   9. Join tutorial.
+   10. Check if walls and hightlights have been removed as intended.
+
+`Teste 4`:
+   1. Proceed until enemies spawn.
+   2. Move player ship into the enemies.
+   3. Take damage from enemies.
+   4. Get ship destroyed.
+   5. Check if tutorial proceeds as intended.
+   6. Respawn.
+   7. Check if tutorial finished as intended.
+       
 ### Review
 *(Please add your test specification review here)*
