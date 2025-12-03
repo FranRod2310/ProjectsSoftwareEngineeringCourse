@@ -24,6 +24,7 @@ public class TutorialBuildingState implements TutorialState {
     private Tile closestOre;
     private Tutorial context;
     private boolean drillBuilt;
+    private boolean onlyOneDrill;
     private boolean justBuiltDrill;
     private boolean convBuilt;
     private Cons<EventType.DrawEvent> drawDrill;
@@ -49,6 +50,7 @@ public class TutorialBuildingState implements TutorialState {
         drillBuilt = false;
         justBuiltDrill = true;
         convBuilt = false;
+        onlyOneDrill = true;
         convHeight = tilesize;
         convWidth = tilesize;
         closestOre = Vars.indexer.findClosestOre(Vars.player.x, Vars.player.y, Items.copper);
@@ -84,10 +86,31 @@ public class TutorialBuildingState implements TutorialState {
     }
 
     /**
+     * Check if the drill is built correctly.
+     */
+    private boolean checkDrillBuilt() {
+        int tilesEmpty = 0;
+        float x = closestOre.worldx();
+        float y = closestOre.worldy();
+        for (int i = 0; i < Blocks.tutorialMechanicalDrill.size; i++) {
+            for (int j = 0; j < Blocks.tutorialMechanicalDrill.size; j++) {
+                Tile tile = Vars.world.tileWorld(x + (i * tilesize), y + (j * tilesize));
+                if (tile == null || tile.block() != Blocks.tutorialMechanicalDrill) {
+                    tilesEmpty ++;
+                }
+            }
+        }
+        if (tilesEmpty == 4)
+            onlyOneDrill = true;
+        else if(tilesEmpty != 0)
+            onlyOneDrill = false;
+        return tilesEmpty == 0 && onlyOneDrill;
+    }
+
+    /**
      * Check if the conveyer belt is built correctly.
      */
     private boolean checkConveyerBuilt() {
-        int halfTileSize = tilesize / 2;
         float x = closestOre.worldx() + 2 * tilesize;
         float lastX = x;
         float y = closestOre.worldy() + tilesize;
@@ -113,7 +136,7 @@ public class TutorialBuildingState implements TutorialState {
     @Override
     public void update() {
         if (closestOre == null) return;
-        drillBuilt = closestOre.block() == Blocks.tutorialMechanicalDrill;
+        drillBuilt = checkDrillBuilt();
         convBuilt = checkConveyerBuilt();
         if (drillBuilt && justBuiltDrill) {
             justBuiltDrill = false;
