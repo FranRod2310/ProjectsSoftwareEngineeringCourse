@@ -395,7 +395,7 @@ All the videos corresponding to each test can be found in a folder called `Tests
    1. Enter the tutorial.
    2. Click on a copper tile.
    3. Leave the tutorial.
-   4. Enter again to check if everything resetted. (0 copper0)
+   4. Enter again to check if everything resetted. (0 copper)
 
 `Test 2`:
    1. Enter the tutorial.
