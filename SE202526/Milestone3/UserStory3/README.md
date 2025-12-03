@@ -423,13 +423,13 @@ All the videos corresponding to each test can be found in a folder called `Tests
 `Test 5`:
    1. Enter the tutorial.
    2. Click on a copper tile.
-   3. Wait until you have _ copper.
+   3. Wait until you have 48 copper.
    4. Go to research tree.
    5. Research the mechanical drill. (costs 10 copper)
    6. Research the conveyer. (costs 5 copper)
    7. Research the copper wall. (costs 20 copper)
-   8. Spend _ copper on researching duo. (costs 50)
-   9. Wait until you have _ copper.
+   8. Spend 13 copper on researching duo. (costs 50)
+   9. Wait until you have 37 copper.
    10. Check if a message appeared indicating the next state.
 
 `Test 6`:
