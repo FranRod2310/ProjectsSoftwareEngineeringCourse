@@ -419,6 +419,7 @@ Termination sequence when a player clicks "Quit". It shows the controller perfor
 
 ## Test specifications
 All the videos corresponding to the tests can be found in the link mentioned in eacht tutorial state. All the videos are in 2x speed.
+We decided not to make unit tests and instead make them in videos, because our tests depend very much on what the user does, and that would be difficult to test using unit tests.  
 
 ### Basic Tutorial
 https://youtu.be/w6NLhfivpiI
@@ -634,3 +635,44 @@ https://youtu.be/c_JxVis2XMc
        
 ### Review
 *(Please add your test specification review here)*
+
+
+### Commits:
+
+| Description                                                                                       | ID | Author |
+|:--------------------------------------------------------------------------------------------------|:-----|:-------|
+ US3 - added tutorial button on the main menu|0dfc5a86e62a94a3800cd6f84df7dc10ecabc911 | Miguel Rosalino 68210 |
+ US3 - created tutorial class in mindustry.ui, added tutorial var to core.ui class| 0c608f528f62438bc8b89e67bf36618fdc790743 | Miguel Rosalino 68210|
+ US3 - created TutorialState interface and respective state classes.| 0e48320d13f93bef82fa57fe543ebc620d2c8ad5 | Miguel Rosalino 68210|
+ changed tutorial to start after confirmed | f19db1fb5b5cb1ef55476c303fa5657ba869e56c | Francisco Rodrigues 67753|
+ US3 - updated WelcomeState with copper ore location, removed original tutorial objectives, started BuildingTutorial | dc3417b4bf9e298e277bd7356a7686bf664f905e | Miguel Rosalino 68210|
+ added a tutorial map | ba06163daeec349544a44a6a8d6a0195413cb066 | Francisco Rodrigues 67753|
+ First draft tutorial with own world | fe8a37d40bb8aba0fa302b894ccd27a0a167d4f7 | Francisco Rodrigues 67753|
+ ui planets for tutorial removed | 7af17e08b0e35ad3f58776d2903455ad0bf794ad | Francisco Rodrigues 67753|
+ added tutorial research tree | 3410ad385e42c8374791181a289eab07c58dcc5f | Francisco Rodrigues 67753|
+ tutorial conveyors 3-4 | 668d73c8cf43d732217913e1fd91a5430e75624c | Miguel Rosalino 68210|
+ added tutorial sprite files | c2a748abea7ffc1006e762f6565485e746534c09 | Francisco Rodrigues 67753 |
+ Merge remote-tracking branch 'origin/Tutorial' into Tutorial | f1fc431a518ff2e01cf37ea22a4671d6241e149c | Francisco Rodrigues 67753 |
+ Add tutorial state and update UI for tutorial mode | 445b4fe80fdfa5ef1062533bdffeae31280f52d1 | Francisco Rodrigues 67753|
+ fixed all problems, is ready to start tutorial | cef8bd890380861de6fa88d4c739b9931381edea | Francisco Rodrigues 67753|
+ removed TechTree switch in tutorial | 527c0470bf58231b834ff5549643bbb5e3e661f8 | Francisco Rodrigues 67753|
+ added base for changing tutorial states | 0249d7c05aaf7d51e01284433b8eb8ab60ba623a | Francisco Rodrigues 67753|
+ Changed tutorial map and fixed some tutorial related bugs | e0bb8eb77f20475cc000d247e9610379a106b39e | Francisco Rodrigues 67753|
+ basic tutorial done, added events fire and added initial conditions for Research and Building states | bbc4e201bfbeb9a64c680c663f984608adcdfb85 | Francisco Rodrigues 67753|
+ implemented defense tutorial but need to fix enemy spawn bug... | 633a815080b9b67bffc69f9845d4a5c69048ba02 | Miguel Rosalino 68210|
+ fixed enemy spawn in defense tutorial | 678f5113bd624208e03f536b6b65a166e28a7866 | Miguel Rosalino 68210|
+ Added completed Research Tutorial | 1e81be8f69acd5552d6e9db9c0d7e1c443a25054 | Francisco Rodrigues 67753| 
+ Merge remote-tracking branch 'origin/Tutorial' into Tutorial | 53220c1ba8f77d5306a0421b1f19d55082270550 | Francisco Rodrigues 67753| 
+ Added completed Research Tutorial | 84c90078e8047035a94b5fdb0eb912361fd1865e | Francisco Rodrigues 67753|
+ working version tutorial from basic to building | 07718748eeb332490224414721a5edabe370a961 | Francisco Rodrigues 67753| 
+ defense tutorial refactured and functional | 72cd72356829a2de78fde968f2efca86629264c6 | Miguel Rosalino 68210| 
+ enemy hp adjustment | c322d50b77a5234ee9b3dbeacfc893d2c63f5c47 | Miguel Rosalino 68210|
+ fixed overlapping "sector cleared" text from appearing | 70e9af45fa357c43ee76fcb0610b030068069276 | Miguel Rosalino 68210| 
+ added some comments and first draft of finding path build tutorial but still with bugs | fb4ca13df2d3f3841bb6fc9700bd288aecba54ba | Francisco Rodrigues 67753| 
+ Merge remote-tracking branch 'origin/Tutorial' into Tutorial | a9c760090c4ffbe1ce6983b6402a41290c313fec | Francisco Rodrigues 67753| 
+ Final changes to build tutorial | c31a037f1c6422023a945e8e186061026a7d77a7 | Francisco Rodrigues 67753|
+ Merge remote-tracking branch 'refs/remotes/origin/Tutorial' | 51aa9666ec8d48e299ff92ba60abbbe6b8297e37 | Francisco Rodrigues 67753| 
+ fixed minor bug in TutorialBuildingState, and added final comments | b335934b023723ae4461a89c2494d84cb0b6b418 | Francisco Rodrigues 67753| 
+ Merge remote-tracking branch 'origin/main' | d9ccd85b1c17704a6873238ff773973f1fc6aebd | Francisco Rodrigues 67753| 
+ fixed small bug in TutorialBuildingState | 8efd3d3ae41c5cdb6eb2008728b3e37c9c239835 | Francisco Rodrigues 67753| 
+ Added //US3 comments to modified US3 codes | 736b753fb515335d8599eacf9f02937d88ca1958 | Francisco Rodrigues 67753
