@@ -467,8 +467,9 @@ In this diagram we represent the shoot process of the tower with the respective 
 #### Sequence Diagram 5 Overall
 In this diagram we show the order of the processes in our implementation.
 ![Sequence_Diagram](Sequence_Diagram5.png)
+
 #### Review
-*(Please add your sequence diagram review here)*
+These diagrams provide clear logical flows, using the alt fragments very well. They could benefit from having the lifeline roles identified (entity, control, boundary, etc) to improve readibility. In diagram 2, 1.4.1 "Returns answer" could be represented as a dashed arrow. In diagram 4, the enemy lifeline could be stopped after 3. Life lost. Besides these factors, they're solid, logic sequence diagrams.
 
 ## Test specifications
 `...\tests\src\test\java\mindustry.world.blocks.defense\SupportBuffTowerTest`
