@@ -445,7 +445,26 @@ We also created new assets for the tower and updated the language files to inclu
 *(Please add your class diagram review here)*
 
 ### Sequence diagrams
-![Sequence_Diagram](Sequence_Diagram.png)
+####  Sequence Diagram 1 Tower Selection
+In this diagram we represent the selection process of the twoer with the respective classes
+![Sequence_Diagram](Sequence_Diagram1.png)
+
+#### Sequence Diagram 2 Tower Deploy
+
+In this diagram we represent the deployment process of the tower with the respective classes
+![Sequence_Diagram](Sequence_Diagram2.png)
+
+#### Sequence Diagram 3 Tower Buff
+In this diagram we represent the buff process of the tower with the respective classes. This process happens every ticket of the game
+![Sequence_Diagram](Sequence_Diagram3.png)
+
+#### Sequence Diagram 4 Tower Shoot
+In this diagram we represent the shoot process of the tower with the respective classes. This process happens every ticket of the game
+![Sequence_Diagram](Sequence_Diagram4.png)
+
+#### Sequence Diagram 5 Overall
+In this diagram we show the order of the processes in our implementation.
+![Sequence_Diagram](Sequence_Diagram5.png)
 #### Review
 *(Please add your sequence diagram review here)*
 

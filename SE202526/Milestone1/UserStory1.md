@@ -28,10 +28,11 @@ The sandbox mode is accessible from the main menu, as a new option alongside exi
 ### Review
 *This user story is well-structured and clearly defined.
 It clearly identifies the player’s goal and the value it brings to the game — allowing free experimentation without enemies or resource limits.
-We agree with the proposed functionality and consider the story complete and well-specified.*
+Although this is already implemented in Mindustry game*
 
 #### Change Log
 
 - (2025-10-23): Initial creation of the “Sandbox Mode” User Story.
 - (2025-10-23): Reviewers assigned to the User Story.
 - (2025-10-24): Review completed and feedback added.
+- (2025-4-12) : Minor changes and adjustments in review section.
