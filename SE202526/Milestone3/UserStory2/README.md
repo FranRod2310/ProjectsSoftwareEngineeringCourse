@@ -595,7 +595,7 @@ power consumers.
 
 > NOTE: We also made manual tests in the game to verify the correct functionality of the tower.
 ### Review
-*(Please add your test specification review here)*
+The setup correctly initializes the game environment to prevent crashes. While the logic is well-tested, using reflection to check private variables makes the tests fragile if the code changes. Ideally, you should focus on testing public behavior instead. Overall, the combination of these unit tests and manual checks ensures the tower works correctly.
 
 ### Commits:
 
