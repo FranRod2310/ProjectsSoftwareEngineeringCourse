@@ -47,14 +47,14 @@ public class Marker extends MapMarkers {
 
     public void update() {
         if (!Vars.state.isGame() || Core.scene.hasKeyboard()) return;
-        // CRIAR COM F3
+        // CREATE with F3
         if (Core.input.keyTap(Binding.markerCreate)) {
             if(!initialized) init();
             targetX = Core.input.mouseWorld().x;
             targetY = Core.input.mouseWorld().y;
             openDialog(null);
         }
-        // EDITAR COM F4
+        // EDIT with F4
         if (Core.input.keyTap(Binding.markerEdit)) {
             ShapeTextMarker hovered = findMarkerAtMouse();
             if (hovered != null) {
@@ -100,7 +100,7 @@ public class Marker extends MapMarkers {
         Core.scene.setKeyboardFocus(inputField);
     }
 
-    // Reconstrói os botões de cor para mostrar qual está selecionado
+    // Rebuild the color buttons to show which is selected
     private void rebuildColorTable() {
         colorTable.clear();
         arc.scene.ui.ButtonGroup<ImageButton> group = new arc.scene.ui.ButtonGroup<>();
@@ -113,14 +113,14 @@ public class Marker extends MapMarkers {
             button.getStyle().imageUpColor = color;
             button.getStyle().imageCheckedColor = color;
 
-            // Marca o botão como "checkado" se for a cor atual
+            // Mark the button as "checked" if it is the actual color
             if(selectedColor.equals(color)){
                 button.setChecked(true);
             }
             group.add(button);
         }
     }
-    // Procura marcador perto do rato
+    // Search the marker near the mouse
     private ShapeTextMarker findMarkerAtMouse() {
         float worldX = Core.input.mouseWorld().x;
         float worldY = Core.input.mouseWorld().y;
@@ -146,7 +146,7 @@ public class Marker extends MapMarkers {
         marker.color = selectedColor;
         marker.radius = 4f;
 
-        // gerar id aleatorio mas verficar para caso existir gerar outro
+        // Generate random id but verifies if it doesn't already exist
         int id;
         do {
             id = Mathf.random(10000, 999999);
