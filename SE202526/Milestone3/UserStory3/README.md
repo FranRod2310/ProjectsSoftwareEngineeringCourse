@@ -366,7 +366,10 @@ The Defense tutorial was particularly challenging to implement due to problems w
 
 
 #### Review
-*(Please add your implementation summary review here)*
+
+Positive Aspects: isolation architecture: the decision to implement an isolated architecture is a major strength.
+It effectively prevents data conflicts and safeguards the main campaign saves from potential corruption; attention to UX: The focus on User Experience is evident, ensuring that the player remains immersed in the tutorial flow without distractions or the risk of accidental exit.
+Suggestions for Improvement: given the specific scope and goals of this implementation, no critical suggestions for improvement are necessary at this stage; the current approach is robust and well-executed.
 
 ### Class diagrams
 <img width="2296" height="1127" alt="image" src="https://github.com/user-attachments/assets/9e964cd0-c7d1-407f-b26c-dd7f0b3b2342" />
@@ -380,7 +383,9 @@ There is a `TutorialState` Interface, which has the common methods between the m
 The `TutorialResearchState` also uses the `TutorialTechTree` to manage it's state. The `TutorialDefenseState` also has it's own enum, `Step`, with the various steps that the tutorial goes through.
 
 ### Review
-*(Please add your class diagram review here)*
+
+The class diagram is presented with great clarity, containing all the necessary information to understand the structural design of the solution. 
+The relationships are well-defined, and the use of the State Pattern is clearly visible and appropriate for the context.
 
 ### Sequence diagrams
 ## Game tutorial
@@ -415,7 +420,9 @@ Termination sequence when a player clicks "Quit". It shows the controller perfor
 
 
 #### Review
-*(Please add your sequence diagram review here)*
+
+Although the diagram presents a distinct style, it is technically valid and fully acceptable.
+It is notably detailed and establishes a clear logical link with the test specifications, effectively visualizing the flow of execution and the expected behaviors verified in the testing phase.
 
 ## Test specifications
 All the videos corresponding to the tests can be found in the link mentioned in eacht tutorial state. All the videos are in 2x speed.
@@ -634,8 +641,10 @@ https://youtu.be/c_JxVis2XMc
    7. Check if tutorial finished as intended.
        
 ### Review
-*(Please add your test specification review here)*
 
+The testing strategy is well-suited for the nature of this feature.
+Implementing standard unit tests for such a highly interactive and visual component would have been unnecessarily complex and less effective.
+The decision to utilize video demonstrations was appropriate; they provide comprehensive coverage of all functionalities and clarify the expected behavior clearly.
 
 ### Commits:
 
