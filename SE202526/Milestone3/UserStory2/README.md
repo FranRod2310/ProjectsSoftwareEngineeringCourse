@@ -442,8 +442,9 @@ This summary, along with all the code snippets above, explains the process of im
 
 ### Class diagrams
 ![Class_Diagram_US2](Class_Diagram.png)
+
 ### Review
-*(Please add your class diagram review here)*
+The class diagram here is clean and readable. The use of generalization and dependency is justified. The information available in each class in relevant. In the SupportBuffField, attributes are missing visibility markers. As for code structure, the right side of the diagram might indicate a very deep inheritance chain, so that might be something worth looking at. Besides that, it' a well structured and informative class diagram for this user story.
 
 ### Sequence diagrams
 ####  Sequence Diagram 1 Tower Selection
