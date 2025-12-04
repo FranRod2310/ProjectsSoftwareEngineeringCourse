@@ -436,18 +436,40 @@ We have made changes throughout the codebase to implement the new turret defense
 The main addition is the `SupportBuffTower` class, which handles the logic for buffing nearby turrets.
 Other changes include modifications to the `Turret` class to accommodate the damage boost functionality.
 We also created new assets for the tower and updated the language files to include the tower's name and description.
+
 #### Review
-*(Please add your implementation summary review here)*
+This summary, along with all the code snippets above, explains the process of implementing this new tower type in a very clear and well structured way. The new class is justified and organized, and the changes made to the other classes are well documented. The implementation follows the user story and use cases previously defined very well. Overall, it's a well implemented and well documented story.
 
 ### Class diagrams
 ![Class_Diagram_US2](Class_Diagram.png)
+
 ### Review
-*(Please add your class diagram review here)*
+The class diagram here is clean and readable. The use of generalization and dependency is justified. The information available in each class in relevant. In the SupportBuffField, attributes are missing visibility markers. As for code structure, the right side of the diagram might indicate a very deep inheritance chain, so that might be something worth looking at. Besides that, it' a well structured and informative class diagram for this user story.
 
 ### Sequence diagrams
-![Sequence_Diagram](Sequence_Diagram.png)
+####  Sequence Diagram 1 Tower Selection
+In this diagram we represent the selection process of the twoer with the respective classes
+![Sequence_Diagram](Sequence_Diagram1.png)
+
+#### Sequence Diagram 2 Tower Deploy
+
+In this diagram we represent the deployment process of the tower with the respective classes
+![Sequence_Diagram](Sequence_Diagram2.png)
+
+#### Sequence Diagram 3 Tower Buff
+In this diagram we represent the buff process of the tower with the respective classes. This process happens every ticket of the game
+![Sequence_Diagram](Sequence_Diagram3.png)
+
+#### Sequence Diagram 4 Tower Shoot
+In this diagram we represent the shoot process of the tower with the respective classes. This process happens every ticket of the game
+![Sequence_Diagram](Sequence_Diagram4.png)
+
+#### Sequence Diagram 5 Overall
+In this diagram we show the order of the processes in our implementation.
+![Sequence_Diagram](Sequence_Diagram5.png)
+
 #### Review
-*(Please add your sequence diagram review here)*
+These diagrams provide clear logical flows, using the alt fragments very well. They could benefit from having the lifeline roles identified (entity, control, boundary, etc) to improve readibility. In diagram 2, 1.4.1 "Returns answer" could be represented as a dashed arrow. In diagram 4, the enemy lifeline could be stopped after 3. Life lost. Besides these factors, they're solid, logic sequence diagrams.
 
 ## Test specifications
 `...\tests\src\test\java\mindustry.world.blocks.defense\SupportBuffTowerTest`
@@ -573,7 +595,7 @@ power consumers.
 
 > NOTE: We also made manual tests in the game to verify the correct functionality of the tower.
 ### Review
-*(Please add your test specification review here)*
+The setup correctly initializes the game environment to prevent crashes. While the logic is well-tested, using reflection to check private variables makes the tests fragile if the code changes. Ideally, you should focus on testing public behavior instead. Overall, the combination of these unit tests and manual checks ensures the tower works correctly.
 
 ### Commits:
 

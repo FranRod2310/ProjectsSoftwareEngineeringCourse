@@ -347,10 +347,13 @@ public class CoreBlock extends StorageBlock{
                         launchEffect.at(this);
                         Effect.shake(5f, 5f, this);
                         thrusterTime = 1f;
-
+                        //US3
                         if(state.isCampaign() && Vars.showSectorLandInfo && (state.rules.sector.preset == null || state.rules.sector.preset.showSectorLandInfo)){
-                            ui.announce("[accent]" + state.rules.sector.name() + "\n" +
-                                (state.rules.sector.info.resources.any() ? "[lightgray]" + Core.bundle.get("sectors.resources") + "[white] " +
+                            if(Tutorial.isPlayingTutorial())
+                                Tutorial.arrivedAtSector();
+                            else
+                                ui.announce("[accent]" + state.rules.sector.name() + "\n" +
+                                    (state.rules.sector.info.resources.any() ? "[lightgray]" + Core.bundle.get("sectors.resources") + "[white] " +
                                     state.rules.sector.info.resources.toString(" ", UnlockableContent::emoji) : ""), 5);
                         }
                     });

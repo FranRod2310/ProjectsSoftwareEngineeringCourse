@@ -587,15 +587,19 @@ We implemented a custom Marker system allowing players to annotate the map dynam
 We added specific keybindings in `Binding.java`.
 Data persistencd (UC5) is handled by existing `MapMarkers` architecture, which we slightly modified to support object-based removal (UC3). Visual representation (UC4) relies on the existing `ShapeTextMarker` class, which the engine already knows how to render, meaning no custom rendering code was required in `Marker.java` other than setting the properties. 
 #### Review
-*(Please add your implementation summary review here)*
+The marker system is well-integrated into Mindustry’s existing structure and follows the engine’s conventions effectively. The separation of responsibilities is clear: the Marker class manages UI and input, while the actual data and rendering rely on the existing MapMarkers and ShapeTextMarker systems. The UI workflow for creating and editing markers is intuitive and consistent with the game’s style, and the use of F3/F4 for input feels natural.
+The changes made to Control and Binding are minimal and non-intrusive, and persistence is handled cleanly by reusing the existing serialization logic. Overall, the feature fits smoothly into the game loop without disrupting other systems.
 ### Class diagrams
 ![img.png](ClassDiagram.png)
 ### Review
-*(Please add your class diagram review here)*
+The diagram captures the structure of the marker system clearly and shows how the new `Marker` controller fits into Mindustry’s existing architecture. The relationships are easy to follow: `Marker` acts as the central manager, interacting both with `MapMarkers` for storage and with `ShapeTextMarker` for the actual marker instances. The inheritance chain from `ObjectiveMarker` down to `ShapeTextMarker` is correctly represented, making it clear how position, text, and color data flow through the system.
+Overall, the diagram is consistent, readable, and matches the implementation well. If anything, you could optionally add visibility or clarify multiplicity on the relationships, but as it stands, it effectively communicates the system’s structure and responsibilities.
 ### Sequence diagrams
 ![img.png](SequenceDiagram.png)
 #### Review
-*(Please add your sequence diagram review here)*
+The sequence diagram clearly illustrates the interaction flow between the player, the game loop, and the major system components involved in creating, editing, and removing markers. It accurately reflects how `Control` triggers updates, how `Marker` checks for key inputs, and how it interacts with UI (`BaseDialog`), input (`Core.Input`), and storage (`MapMarkers`).
+The creation flow (F3) is well-represented: the system detects the key press, retrieves the mouse position, opens the dialog, and upon confirmation creates a new `ShapeTextMarker` and adds it to `MapMarkers`. The edit/remove flow (F4) is also accurately shown, including marker lookup near the mouse, updating properties, or removing the selected marker.
+Save/load behavior is correctly placed at the end of the loop, reflecting how Mindustry serializes marker data through `MapMarkers`. Overall, the diagram is coherent, follows UML sequence conventions, and matches the implemented logic with good clarity, though it could be simplified visually by reducing nested blocks or condensing repeated UI steps.
 ## Test specifications
 
 `java/testsUS1/MarkerTest.java`
@@ -715,4 +719,31 @@ This test is very simple to understand, it just checks that the color attribute 
 > NOTE: Functionalities dependent on the graphics engine and user input, such as UI and rendering, were verified through manual in-game testing.
 
 ### Review
-*(Please add your test specification review here)*
+Before each test, the setup method initializes `Vars.state` and assigns a fresh `MapMarkers` instance to ensure isolation and avoid `NullPointerException`.
+
+**Test 1 — Marker Data Verification**
+
+Checks that ShapeTextMarker correctly stores user-provided text and position values, confirming the data model behaves properly for Create/Edit operations.
+
+**Test 2 — Storage Logic Verification**
+
+Ensures that MapMarkers can store a marker under a unique ID and retrieve it correctly, validating core persistence logic.
+
+**Test 3 — Remove by Object Reference**
+
+Tests the custom remove(ObjectiveMarker) method, confirming that markers can be removed using object references—required for the delete feature.
+
+**Test 4 — Color Assignment Verification**
+
+Validates that the color attribute is set and stored correctly, supporting the marker customization system.
+
+### Commits:
+
+| Description                                                                                       | ID | Author                    |
+|:--------------------------------------------------------------------------------------------------|:-----|:--------------------------|
+Create Branch |dd46a52d6726c1590f9155f998195e2de5edeaf2 | Leandro Rodrigues 68211   |
+classe inicial| f1cc8f8c9ddf246628fd71b5842b374668366d32 | Leandro Rodrigues 68211     |
+uma fase beta do user story| 666594965537f88c221500b524b548df8392590d | Leandro Rodrigues 68211     |
+marker atualizado| 938528237c52ea9803353daadacae93fa4121d97 | Leandro Rodrigues 68211 |
+Versão com todos os Use Cases funcionais | e54316384c08fed9db7b8df8282238aa393f1dd9 | Leandro Rodrigues 68211     |
+change to englsih | ed4c155338b2dd90d3cbd4c0b7ea240327285518 | Leandro Rodrigues 68211     |

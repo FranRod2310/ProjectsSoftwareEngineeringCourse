@@ -36,7 +36,11 @@ public class DatabaseDialog extends BaseDialog{
         addCloseButton();
         shown(() -> {
             checkTabList();
-            if(state.isCampaign() && allTabs.contains(state.getPlanet())){
+            //US3
+            if(state.rules.planet.name.equalsIgnoreCase(Planets.tutorialPlanet.name)){
+                tab = Planets.sun;
+            }
+            else if(state.isCampaign() && allTabs.contains(state.getPlanet())){
                 tab = state.getPlanet();
             }else if(state.isGame() && state.rules.planet != null && allTabs.contains(state.rules.planet)){
                 tab = state.rules.planet;
@@ -85,6 +89,9 @@ public class DatabaseDialog extends BaseDialog{
         all.table(t -> {
             int i = 0;
             for(var content : allTabs){
+                //US3
+                if (content instanceof Planet p && p.name.equalsIgnoreCase(Planets.tutorialPlanet.name))
+                    continue;
                 t.button(content == Planets.sun ? Icon.eyeSmall : content instanceof Planet p ? Icon.icons.get(p.icon, Icon.commandRally) : new TextureRegionDrawable(content.uiIcon), Styles.clearNoneTogglei, iconMed, () -> {
                     tab = content;
                     rebuild();

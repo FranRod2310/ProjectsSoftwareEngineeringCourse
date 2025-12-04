@@ -165,10 +165,13 @@ public class HudFragment{
         });
 
         Events.on(SectorCaptureEvent.class, e -> {
-            if(e.sector.isBeingPlayed()){
-                ui.announce("@sector.capture.current", 5f);
-            }else{
-                showToast(Core.bundle.format("sector.capture", e.sector.name()));
+            //US3
+            if(!Tutorial.isPlayingTutorial()){
+                if(e.sector.isBeingPlayed()){
+                    ui.announce("@sector.capture.current", 5f);
+                }else{
+                    showToast(Core.bundle.format("sector.capture", e.sector.name()));
+                }
             }
         });
 
@@ -287,7 +290,9 @@ public class HudFragment{
                             }
                         }else if(state.isCampaign()){
                             ui.research.show();
-                        }else{
+                        }
+                        //US3
+                        else if (!Tutorial.isPlayingTutorial()){
                             ui.database.show();
                         }
                     }).name("chat").update(i -> {
