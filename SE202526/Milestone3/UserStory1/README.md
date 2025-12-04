@@ -736,3 +736,14 @@ Tests the custom remove(ObjectiveMarker) method, confirming that markers can be 
 **Test 4 — Color Assignment Verification**
 
 Validates that the color attribute is set and stored correctly, supporting the marker customization system.
+
+### Commits:
+
+| Description                                                                                       | ID | Author                    |
+|:--------------------------------------------------------------------------------------------------|:-----|:--------------------------|
+Create Branch |dd46a52d6726c1590f9155f998195e2de5edeaf2 | Leandro Rodrigues 68211   |
+classe inicial| f1cc8f8c9ddf246628fd71b5842b374668366d32 | Leandro Rodrigues 68211     |
+uma fase beta do user story| 666594965537f88c221500b524b548df8392590d | Leandro Rodrigues 68211     |
+marker atualizado| 938528237c52ea9803353daadacae93fa4121d97 | Leandro Rodrigues 68211 |
+Versão com todos os Use Cases funcionais | e54316384c08fed9db7b8df8282238aa393f1dd9 | Leandro Rodrigues 68211     |
+change to englsih | ed4c155338b2dd90d3cbd4c0b7ea240327285518 | Leandro Rodrigues 68211     |
