@@ -1,3 +1,9 @@
+# Francisco Rodrigues
+
+In a group of 6 students we added features to the game Mindustry. For example, the possibility to do a tutorial in any state of the game, to place markers to comunicate with other team members, and to place a new turret that boosts other turrets.
+
+----------------------------------------
+
 ![Logo](core/assets-raw/sprites/ui/logo.png)
 
 [![Build Status](https://github.com/Anuken/Mindustry/workflows/Tests/badge.svg?event=push)](https://github.com/Anuken/Mindustry/actions)
